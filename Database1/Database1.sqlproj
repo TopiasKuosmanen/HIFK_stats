@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Database1</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{dd8e86e1-b0a7-4415-9ece-ffe18e9d20da}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Database1</RootNamespace>
+    <AssemblyName>Database1</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="PublishLocations" />
+    <Folder Include="dbo\Views" />
+    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="Compares" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Game.sql" />
+    <Build Include="dbo\Tables\Player.sql" />
+    <Build Include="dbo\Tables\Staff.sql" />
+    <Build Include="dbo\Tables\Veikkausliigastats.sql" />
+    <Build Include="dbo\Views\Person.sql" />
+    <Build Include="dbo\Tables\Suomencupstats.sql" />
+    <Build Include="dbo\Tables\Friendlystats.sql" />
+    <Build Include="dbo\Tables\Position.sql" />
+    <Build Include="dbo\Tables\Playersposition.sql" />
+    <Build Include="dbo\Stored Procedures\Person_FilterByName.sql" />
+    <Build Include="dbo\Views\Goalkeeper.sql" />
+    <Build Include="dbo\Views\Midfielder.sql" />
+    <Build Include="dbo\Views\Striker.sql" />
+    <Build Include="dbo\Views\Defender.sql" />
+    <Build Include="dbo\Tables\Nationality.sql" />
+    <Build Include="dbo\Tables\PlayersNationality.sql" />
+    <Build Include="dbo\Views\FriendlyGames.sql" />
+    <Build Include="dbo\Views\SuomencupGames.sql" />
+    <Build Include="dbo\Views\VeikkausliigaGames.sql" />
+    <Build Include="dbo\Views\TotalStats2020.sql" />
+    <Build Include="dbo\Stored Procedures\PlayerFilterByName.sql" />
+    <Build Include="dbo\Tables\Opponent.sql" />
+    <Build Include="dbo\Stored Procedures\StaffFilterByName.sql" />
+    <Build Include="dbo\Stored Procedures\BestScorersByLeague.sql" />
+    <Build Include="dbo\Stored Procedures\MostPlayedPlayersByLeague.sql" />
+    <Build Include="dbo\Stored Procedures\PlayerFilterByPosition.sql" />
+    <Build Include="dbo\Stored Procedures\ResultsByLeague.sql" />
+    <Build Include="dbo\Stored Procedures\FixturesByLeague.sql" />
+    <Build Include="dbo\Stored Procedures\AddPlayerProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\NationalityProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\PositionProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\AddPlayersPosition.sql" />
+    <Build Include="dbo\Stored Procedures\PersonByNameAndBirthday.sql" />
+    <Build Include="dbo\Stored Procedures\AddPlayersNationality.sql" />
+    <Build Include="dbo\Stored Procedures\AddPlayerToStatsTables.sql" />
+    <Build Include="dbo\Stored Procedures\OpponentProcedure.sql" />
+    <Build Include="dbo\Tables\League.sql" />
+    <Build Include="dbo\Stored Procedures\LeagueProcedure.sql" />
+    <Build Include="dbo\Tables\Stadium.sql" />
+    <Build Include="dbo\Stored Procedures\StadiumProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\HomeStadiumByTeam.sql" />
+    <Build Include="dbo\Stored Procedures\AddGameProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\GetGameWithoutTheResult.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateResult.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllPlayers.sql" />
+    <Build Include="dbo\Stored Procedures\AddResult.sql" />
+    <Build Include="dbo\Stored Procedures\AddStats.sql" />
+    <Build Include="dbo\Stored Procedures\AddStatsByGameId.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllGames.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteGame.sql" />
+    <Build Include="dbo\Stored Procedures\GetPlayersToEdit.sql" />
+    <Build Include="dbo\Stored Procedures\UpdatePlayer.sql" />
+    <Build Include="dbo\Stored Procedures\AddNewStadium.sql" />
+    <Build Include="dbo\Stored Procedures\AddNewOpponent.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Database1.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PublishLocations\Database1.publish.xml" />
+    <None Include="Compares\SqlSchemaCompare.scmp" />
+  </ItemGroup>
+</Project>

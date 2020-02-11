@@ -1,0 +1,34 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[2020Friendlystats]
+       [dbo].[2020Suomencupstats]
+       [dbo].[2020Veikkausliigastats]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[2020Friendlystats].[Id] is being dropped, data loss could occur.
+       The column [dbo].[2020Suomencupstats].[Id] is being dropped, data loss could occur.
+       The column [dbo].[2020Veikkausliigastats].[Id] is being dropped, data loss could occur.
+
+** User actions
+     Table rebuild
+       [dbo].[2020Friendlystats] (Table)
+       [dbo].[2020Suomencupstats] (Table)
+       [dbo].[2020Veikkausliigastats] (Table)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_2020FriendlyStats_Player] (Foreign Key)
+       [dbo].[FK_2020SuomencupStats_Player] (Foreign Key)
+       [dbo].[FK_2020VeikkausliigaStats_Player] (Foreign Key)
+     Create
+       [dbo].[FK_2020FriendlyStats_Player] (Foreign Key)
+       [dbo].[FK_2020SuomencupStats_Player] (Foreign Key)
+       [dbo].[FK_2020VeikkausliigaStats_Player] (Foreign Key)
+
+The column [dbo].[2020Friendlystats].[Id] is being dropped, data loss could occur.
+The column [dbo].[2020Suomencupstats].[Id] is being dropped, data loss could occur.
+The column [dbo].[2020Veikkausliigastats].[Id] is being dropped, data loss could occur.
+

@@ -1,0 +1,55 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [dbo].[CK_Game_Serie] (Check Constraint)
+     Create
+       [dbo].[Friendlystats] (Table)
+       [dbo].[Suomencupstats] (Table)
+       [dbo].[Veikkausliigastats] (Table)
+       Default Constraint: unnamed constraint on [dbo].[Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Veikkausliigastats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Veikkausliigastats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Veikkausliigastats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Veikkausliigastats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Veikkausliigastats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Veikkausliigastats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Veikkausliigastats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Veikkausliigastats] (Default Constraint)
+       [dbo].[CK_Game_Serie] (Check Constraint)
+     Alter
+       [dbo].[TotalStats2020] (View)
+       [dbo].[AddPlayerToStatsTables] (Procedure)
+       [dbo].[AddStats] (Procedure)
+       [dbo].[AddStatsByGameId] (Procedure)
+       [dbo].[BestScorersByLeague] (Procedure)
+       [dbo].[DeleteGame] (Procedure)
+       [dbo].[MostPlayedPlayersByLeague] (Procedure)
+
+** Supporting actions
+     Refresh
+       [dbo].[Player_FilterByName] (Procedure)
+       [dbo].[PlayerFilterByPosition] (Procedure)

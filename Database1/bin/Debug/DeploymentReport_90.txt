@@ -1,0 +1,22 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Game]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Game].[Opponent] is being dropped, data loss could occur.
+
+** User actions
+     Table rebuild
+       [dbo].[Game] (Table)
+
+** Supporting actions
+     Refresh
+       [dbo].[FriendlyGames2020] (View)
+       [dbo].[SuomencupGames2020] (View)
+       [dbo].[VeikkausliigaGames2020] (View)
+
+The column [dbo].[Game].[Opponent] is being dropped, data loss could occur.
+

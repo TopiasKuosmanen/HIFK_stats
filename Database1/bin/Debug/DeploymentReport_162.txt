@@ -1,0 +1,28 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [dbo].[CK_Game_Serie] (Check Constraint)
+     Alter
+       [dbo].[Game] (Table)
+     Create
+       [dbo].[CK_Game_Serie] (Check Constraint)
+       [dbo].[UpdateResult] (Procedure)
+
+** Supporting actions
+     Refresh
+       [dbo].[FriendlyGames2020] (View)
+       [dbo].[SuomencupGames2020] (View)
+       [dbo].[VeikkausliigaGames2020] (View)
+       [dbo].[AddGameProcedure] (Procedure)
+       [dbo].[FixturesByLeague] (Procedure)
+       [dbo].[GetGameWithoutTheResult] (Procedure)
+       [dbo].[ResultsByLeague] (Procedure)

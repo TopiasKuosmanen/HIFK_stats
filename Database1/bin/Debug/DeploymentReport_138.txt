@@ -1,0 +1,26 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Position]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [dbo].[CK_Game_Serie] (Check Constraint)
+     Table rebuild
+       [dbo].[Position] (Table)
+     Create
+       [dbo].[CK_Game_Serie] (Check Constraint)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_Playersposition_Position] (Foreign Key)
+     Create
+       [dbo].[FK_Playersposition_Position] (Foreign Key)
+     Refresh
+       [dbo].[AddPlayersPositionAndNationality] (Procedure)
+       [dbo].[PositionProcedure] (Procedure)

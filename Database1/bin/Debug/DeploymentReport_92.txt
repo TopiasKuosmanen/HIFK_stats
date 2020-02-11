@@ -1,0 +1,23 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column OpponentId in table [dbo].[Game] is currently  NVARCHAR (50) NULL but is being changed to  INT NULL.
+         Data loss could occur.
+
+** User actions
+     Alter
+       [dbo].[Game] (Table)
+
+** Supporting actions
+     Refresh
+       [dbo].[FriendlyGames2020] (View)
+       [dbo].[SuomencupGames2020] (View)
+       [dbo].[VeikkausliigaGames2020] (View)
+
+The type for column OpponentId in table [dbo].[Game] is currently  NVARCHAR (50) NULL but is being changed to  INT NULL. Data loss could occur.
+

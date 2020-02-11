@@ -1,0 +1,48 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[2020Friendlystats]
+       [dbo].[2020Suomencupstats]
+       [dbo].[2020Veikkausliigastats]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+     Table rebuild
+       [dbo].[2020Friendlystats] (Table)
+       [dbo].[2020Suomencupstats] (Table)
+       [dbo].[2020Veikkausliigastats] (Table)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_2020FriendlyStats_Player] (Foreign Key)
+       [dbo].[FK_2020SuomencupStats_Player] (Foreign Key)
+       [dbo].[FK_2020VeikkausliigaStats_Player] (Foreign Key)
+     Create
+       [dbo].[FK_2020FriendlyStats_Player] (Foreign Key)
+       [dbo].[FK_2020SuomencupStats_Player] (Foreign Key)
+       [dbo].[FK_2020VeikkausliigaStats_Player] (Foreign Key)
+     Refresh
+       [dbo].[TotalStats2020] (View)

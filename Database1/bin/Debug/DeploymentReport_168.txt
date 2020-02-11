@@ -1,0 +1,79 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[2020Friendlystats]
+       [dbo].[2020Suomencupstats]
+       [dbo].[2020Veikkausliigastats]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[2020Friendlystats].[GameId] on table [dbo].[2020Friendlystats] must be added, but the column has no
+         default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this
+         issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of
+         smart-defaults as a deployment option.
+       The column [dbo].[2020Suomencupstats].[GameId] on table [dbo].[2020Suomencupstats] must be added, but the column has no
+         default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this
+         issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of
+         smart-defaults as a deployment option.
+       The column [dbo].[2020Veikkausliigastats].[GameId] on table [dbo].[2020Veikkausliigastats] must be added, but the column
+         has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To
+         avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the
+         generation of smart-defaults as a deployment option.
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       [dbo].[CK_Game_Serie] (Check Constraint)
+     Table rebuild
+       [dbo].[2020Friendlystats] (Table)
+       [dbo].[2020Suomencupstats] (Table)
+       [dbo].[2020Veikkausliigastats] (Table)
+     Create
+       [dbo].[CK_Game_Serie] (Check Constraint)
+       [dbo].[AddStats] (Procedure)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_2020FriendlyStats_Player] (Foreign Key)
+       [dbo].[FK_2020SuomencupStats_Player] (Foreign Key)
+       [dbo].[FK_2020VeikkausliigaStats_Player] (Foreign Key)
+     Create
+       [dbo].[FK_2020FriendlyStats_Player] (Foreign Key)
+       [dbo].[FK_2020SuomencupStats_Player] (Foreign Key)
+       [dbo].[FK_2020VeikkausliigaStats_Player] (Foreign Key)
+     Refresh
+       [dbo].[TotalStats2020] (View)
+       [dbo].[AddPlayerToStatsTables] (Procedure)
+       [dbo].[BestScorersByLeague] (Procedure)
+       [dbo].[MostPlayedPlayersByLeague] (Procedure)
+       [dbo].[Player_FilterByName] (Procedure)
+       [dbo].[PlayerFilterByPosition] (Procedure)
+
+The column [dbo].[2020Friendlystats].[GameId] on table [dbo].[2020Friendlystats] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The column [dbo].[2020Suomencupstats].[GameId] on table [dbo].[2020Suomencupstats] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The column [dbo].[2020Veikkausliigastats].[GameId] on table [dbo].[2020Veikkausliigastats] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+

@@ -1,0 +1,32 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Player]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [dbo].[FK_FriendlyStats_Player] (Foreign Key)
+       [dbo].[FK_SuomencupStats_Player] (Foreign Key)
+       [dbo].[FK_VeikkausliigaStats_Player] (Foreign Key)
+     Table rebuild
+       [dbo].[Player] (Table)
+     Create
+       [dbo].[2020Friendlystats] (Table)
+       [dbo].[2020Suomencupstats] (Table)
+       [dbo].[2020Veikkausliigastats] (Table)
+       [dbo].[FK_2020FriendlyStats_Player] (Foreign Key)
+       [dbo].[FK_2020SuomencupStats_Player] (Foreign Key)
+       [dbo].[FK_2020VeikkausliigaStats_Player] (Foreign Key)
+       [dbo].[Stats2020] (View)
+
+** Supporting actions
+     Refresh
+       [dbo].[Person] (View)
+
+If this deployment is executed, changes to [dbo].[Person] might introduce run-time errors in [dbo].[spPersno_FilterByLastName].
+

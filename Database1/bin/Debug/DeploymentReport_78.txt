@@ -1,0 +1,61 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[2020Friendlystats] (Table)
+       [dbo].[2020Suomencupstats] (Table)
+       [dbo].[2020Veikkausliigastats] (Table)
+       [dbo].[Game] (Table)
+       [dbo].[Nationality] (Table)
+       [dbo].[Player] (Table)
+       [dbo].[PlayersNationality] (Table)
+       [dbo].[Playersposition] (Table)
+       [dbo].[Position] (Table)
+       [dbo].[Staff] (Table)
+       Default Constraint: unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Friendlystats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Suomencupstats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[2020Veikkausliigastats] (Default Constraint)
+       [dbo].[FK_2020FriendlyStats_Player] (Foreign Key)
+       [dbo].[FK_2020SuomencupStats_Player] (Foreign Key)
+       [dbo].[FK_2020VeikkausliigaStats_Player] (Foreign Key)
+       [dbo].[Defender] (View)
+       [dbo].[FriendlyGames2020] (View)
+       [dbo].[Goalkeeper] (View)
+       [dbo].[Midfielder] (View)
+       [dbo].[Person] (View)
+       [dbo].[Striker] (View)
+       [dbo].[SuomencupGames2020] (View)
+       [dbo].[TotalStats2020] (View)
+       [dbo].[VeikkausliigaGames2020] (View)
+       [dbo].[Person_FilterByLastName] (Procedure)
+
+** Supporting actions

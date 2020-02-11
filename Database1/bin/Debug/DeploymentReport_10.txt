@@ -1,0 +1,30 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Player]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Player].[ContractStartDate] is being dropped, data loss could occur.
+
+** User actions
+     Drop
+       [dbo].[FK_PlayerStats_Player] (Foreign Key)
+     Table rebuild
+       [dbo].[Player] (Table)
+     Create
+       [dbo].[Friendlystats] (Table)
+       [dbo].[Suomencupstats] (Table)
+       [dbo].[Veikkausliigastats] (Table)
+       [dbo].[FK_FriendlyStats_Player] (Foreign Key)
+       [dbo].[FK_SuomencupStats_Player] (Foreign Key)
+       [dbo].[FK_VeikkausliigaStats_Player] (Foreign Key)
+
+** Supporting actions
+     Refresh
+       [dbo].[Person] (View)
+
+The column [dbo].[Player].[ContractStartDate] is being dropped, data loss could occur.
+If this deployment is executed, changes to [dbo].[Person] might introduce run-time errors in [dbo].[spPersno_FilterByLastName].
+

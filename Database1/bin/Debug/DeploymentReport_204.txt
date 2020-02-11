@@ -1,0 +1,28 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Stadium]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [dbo].[CK_Game_Serie] (Check Constraint)
+     Table rebuild
+       [dbo].[Stadium] (Table)
+     Create
+       [dbo].[CK_Game_Serie] (Check Constraint)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_Opponent_Stadium] (Foreign Key)
+     Create
+       [dbo].[FK_Opponent_Stadium] (Foreign Key)
+     Refresh
+       [dbo].[AddNewOpponent] (Procedure)
+       [dbo].[AddNewStadium] (Procedure)
+       [dbo].[HomeStadiumByTeam] (Procedure)
+       [dbo].[StadiumProcedure] (Procedure)

@@ -1,0 +1,23 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Alter
+       [dbo].[Player] (Table)
+       [dbo].[Staff] (Table)
+       [dbo].[Person] (View)
+
+** Supporting actions
+     Refresh
+       [dbo].[Defender] (View)
+       [dbo].[Goalkeeper] (View)
+       [dbo].[Midfielder] (View)
+       [dbo].[Striker] (View)
+       [dbo].[Person_FilterByLastName] (Procedure)

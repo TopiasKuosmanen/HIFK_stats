@@ -1,0 +1,19 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Game] (Table)
+       [dbo].[Player] (Table)
+       [dbo].[PlayerStats] (Table)
+       [dbo].[Staff] (Table)
+       [dbo].[FK_PlayerStats_Player] (Foreign Key)
+
+** Supporting actions
