@@ -55,26 +55,39 @@ namespace HIFK_tilastot
         private void searchPlayerStats_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
-            stats = db.GetPlayerStats(PlayerNameText.Text);
-            UpdateBindingPlayerStats();
-        }
-        private void TopScorers_CheckedChanged(object sender, EventArgs e)
-        {
+            
+
             if (TopScorers.Checked)
             {
                 SelectLeague.Visible = true;
-                DataAccess db = new DataAccess();
                 stats = db.GetTopScorers(SelectLeague.Text);
                 UpdateBindingPlayerStats();
                 PlayerStats.DisplayMember = "TopScore";
             }
             else
             {
-                SelectLeague.Visible = false;
-                DataAccess db = new DataAccess();
                 stats = db.GetPlayerStats(PlayerNameText.Text);
                 UpdateBindingPlayerStats();
             }
+
         }
-    }
+        private void TopScorers_CheckedChanged(object sender, EventArgs e)
+        {
+            //    if (TopScorers.Checked)
+            //    {
+            //        SelectLeague.Visible = true;
+            //        DataAccess db = new DataAccess();
+            //        stats = db.GetTopScorers(SelectLeague.Text);
+            //        UpdateBindingPlayerStats();
+            //        PlayerStats.DisplayMember = "TopScore";
+            //    }
+            //    else
+            //    {
+            //        SelectLeague.Visible = false;
+            //        DataAccess db = new DataAccess();
+            //        stats = db.GetPlayerStats(PlayerNameText.Text);
+            //        UpdateBindingPlayerStats();
+            //    }
+            }
+        }
 }

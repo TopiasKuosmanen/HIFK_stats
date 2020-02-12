@@ -49,17 +49,16 @@
             "Veikkausliiga",
             "Suomen Cup",
             "Friendly"});
-            this.SelectLeague.Location = new System.Drawing.Point(926, 185);
+            this.SelectLeague.Location = new System.Drawing.Point(642, 44);
             this.SelectLeague.Name = "SelectLeague";
             this.SelectLeague.Size = new System.Drawing.Size(191, 24);
             this.SelectLeague.TabIndex = 17;
             this.SelectLeague.Text = "Select league";
-            this.SelectLeague.Visible = false;
             // 
             // TopScorers
             // 
             this.TopScorers.AutoSize = true;
-            this.TopScorers.Location = new System.Drawing.Point(932, 143);
+            this.TopScorers.Location = new System.Drawing.Point(938, 157);
             this.TopScorers.Name = "TopScorers";
             this.TopScorers.Size = new System.Drawing.Size(106, 21);
             this.TopScorers.TabIndex = 16;
@@ -80,7 +79,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(639, 85);
+            this.label1.Location = new System.Drawing.Point(639, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 17);
             this.label1.TabIndex = 14;
@@ -88,7 +87,7 @@
             // 
             // PlayerNameText
             // 
-            this.PlayerNameText.Location = new System.Drawing.Point(763, 85);
+            this.PlayerNameText.Location = new System.Drawing.Point(763, 102);
             this.PlayerNameText.Name = "PlayerNameText";
             this.PlayerNameText.Size = new System.Drawing.Size(232, 22);
             this.PlayerNameText.TabIndex = 13;

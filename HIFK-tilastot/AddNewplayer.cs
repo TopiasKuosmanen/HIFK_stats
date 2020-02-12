@@ -108,7 +108,7 @@ namespace HIFK_tilastot
                     
                 }
 
-                Result.Text = $"Player {FirstName} {LastName} was successfully added";
+                Result.Text = $"Player {FirstName.Text} {LastName.Text} was successfully added";
                 Result.ForeColor = System.Drawing.Color.Green;
             }
             if (areYouSure.trueorfalse == false)
