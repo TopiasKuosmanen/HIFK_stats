@@ -1,5 +1,5 @@
 # HIFK_stats
 
-Application where you can add games, players and stats of your football team.
+Program where I can add football team games, players and stats.
 
 I'll try to get interesting statistics of Veikkausliiga (HIFK) players, especially statistics I can't found elsewhere.
