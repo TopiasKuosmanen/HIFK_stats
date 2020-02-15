@@ -2894,6 +2894,532 @@ END]]></Value>
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAllPlayers]&#xD;&#xA;@GameDate DATETIME&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetAllStats]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+
+IF (@League = 'Veikkausliiga' AND @Year = 0)
+BEGIN
+	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Veikkausliigastats] s JOIN Player p ON s.PlayerId = p.Id
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+END
+IF (@League = 'Suomen Cup' AND @Year = 0)
+BEGIN
+	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Suomencupstats] s JOIN Player p ON s.PlayerId = p.Id
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+END
+IF (@League = 'Friendly' AND @Year = 0)
+BEGIN
+	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Friendlystats] s JOIN Player p ON s.PlayerId = p.Id
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+END
+IF (@League = 'All' AND @Year = 0)
+BEGIN
+	SELECT p.FirstName, p.LastName, s.Goals, s.Games, s.Assists, s.PlayedMinutes, s.StartingXI, s.SubstitutedIn, s.OnTheBench, s.YellowCards, s.RedCards
+	FROM TotalStats2020 s JOIN Player p ON s.PlayerId = p.Id
+	ORDER BY Goals DESC
+END
+
+IF (@Year <> 0)
+BEGIN
+	IF (@League = 'Veikkausliiga')
+	BEGIN
+		SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Veikkausliigastats] s JOIN Player p ON s.PlayerId = p.Id
+	WHERE s.GameId IN (SELECT Id
+					   FROM Game
+					   WHERE YEAR(Game.DateTime) = @Year
+					   )
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+	END
+	IF (@League = 'Suomen Cup')
+	BEGIN
+		SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Suomencupstats] s JOIN Player p ON s.PlayerId = p.Id
+	WHERE s.GameId IN (SELECT Id
+					   FROM Game
+					   WHERE YEAR(Game.DateTime) = @Year
+					   )
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+	END
+	IF (@League = 'Friendly')
+	BEGIN
+		SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Friendlystats] s JOIN Player p ON s.PlayerId = p.Id
+	WHERE s.GameId IN (SELECT Id
+					   FROM Game
+					   WHERE YEAR(Game.DateTime) = @Year
+					   )
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+	END
+	IF (@League = 'All')
+	BEGIN
+		SELECT FirstName, LastName, SUM(Games) AS Games, SUM(Goals) AS Goals, SUM(Assists) AS Assists,
+		SUM(PlayedMinutes) AS PlayedMinutes, SUM(StartingXI) AS StartingXI, SUM(SubstitutedIn) AS SubstitutedIn,
+		SUM(OnTheBench) AS OnTheBench, SUM(YellowCards) AS YellowCards, SUM(RedCards) AS RedCards 
+	    FROM
+		(
+			SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+			SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+			SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+			FROM [Veikkausliigastats] s JOIN Player p ON s.PlayerId = p.Id
+			WHERE s.GameId IN (SELECT Id
+					   FROM Game
+					   WHERE YEAR(Game.DateTime) = @Year
+					   )
+			GROUP BY p.FirstName, p.LastName
+			UNION
+			SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+			SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+			SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+			FROM [Suomencupstats] s JOIN Player p ON s.PlayerId = p.Id
+			WHERE s.GameId IN (SELECT Id
+					   FROM Game
+					   WHERE YEAR(Game.DateTime) = @Year
+					   )
+			GROUP BY p.FirstName, p.LastName
+			UNION
+			SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+			SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+			SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+			FROM [Friendlystats] s JOIN Player p ON s.PlayerId = p.Id
+			WHERE s.GameId IN (SELECT Id
+					   FROM Game
+					   WHERE YEAR(Game.DateTime) = @Year
+					   )
+			GROUP BY p.FirstName, p.LastName
+		) AS A
+		GROUP BY A.FirstName, A.LastName
+	END
+
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[GetAllStats].[@League]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetAllStats].[@Year]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[PlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[Goals]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[StartingXI]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[SubstitutedIn]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[Assists]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[PlayedMinutes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[OnTheBench]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[YellowCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[RedCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[PlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[Goals]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[StartingXI]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[SubstitutedIn]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[Assists]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[PlayedMinutes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[OnTheBench]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[YellowCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[RedCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[PlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[Goals]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[StartingXI]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[SubstitutedIn]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[Assists]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[PlayedMinutes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[OnTheBench]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[YellowCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[RedCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TotalStats2020]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TotalStats2020].[PlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TotalStats2020].[Goals]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TotalStats2020].[Games]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TotalStats2020].[Assists]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TotalStats2020].[PlayedMinutes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TotalStats2020].[StartingXI]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TotalStats2020].[SubstitutedIn]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TotalStats2020].[OnTheBench]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TotalStats2020].[YellowCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TotalStats2020].[RedCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TotalStats2020].[Goals]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[GameId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[DateTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[GameId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[DateTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[GameId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[DateTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[PlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[Goals]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[StartingXI]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[SubstitutedIn]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[Assists]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[PlayedMinutes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[OnTheBench]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[YellowCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[RedCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Veikkausliigastats].[GameId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[DateTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[PlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[Goals]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[StartingXI]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[SubstitutedIn]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[Assists]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[PlayedMinutes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[OnTheBench]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[YellowCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[RedCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Suomencupstats].[GameId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[DateTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[PlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[Goals]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[StartingXI]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[SubstitutedIn]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[Assists]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[PlayedMinutes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[OnTheBench]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[YellowCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[RedCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Friendlystats].[GameId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[DateTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[LastName]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetAllStats].[@League]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetAllStats].[@Year]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="5882" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAllStats]&#xD;&#xA;&#x9;@League NVARCHAR(50),&#xD;&#xA;&#x9;@Year INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[GetGameWithoutTheResult]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[

@@ -119,6 +119,7 @@
     <Build Include="dbo\Stored Procedures\UpdatePlayer.sql" />
     <Build Include="dbo\Stored Procedures\AddNewStadium.sql" />
     <Build Include="dbo\Stored Procedures\AddNewOpponent.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllStats.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Database1.refactorlog" />

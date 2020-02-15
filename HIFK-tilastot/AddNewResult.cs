@@ -481,6 +481,7 @@ namespace HIFK_tilastot
 
         private void ContinueButton_Click(object sender, EventArgs e)
         {
+            GoBackButton.Show();
             GameBox.Hide();
             ResultBox1.Show();
             ResultBox2.Show();
@@ -603,14 +604,8 @@ namespace HIFK_tilastot
         private void ContinueButton5_Click(object sender, EventArgs e)
         {
             subs = int.Parse(subscount.Text);
-
-            subscount.Hide();
-            if (subs == 0)
-            {
-                ContinueButton5.Hide();
-            }
-
             HeadLabel.Text = $"Add {subs} substitutions:";
+            subscount.Hide();
             In.Show();
             Out.Show();
             MinutesLabel.Show();
@@ -984,6 +979,99 @@ namespace HIFK_tilastot
             GameAddedLabel.Text = $"Result against {SelectedGame.Opponent} added.";
         }
 
+        private void GoBackButton_Click(object sender, EventArgs e)
+        {
+            if (ResultBox1.Visible == true) // Wrong game
+            {
+                GoBackButton.Hide();
+                GameBox.Show();
+                ResultBox1.Hide();
+                ResultBox2.Hide();
+                line.Hide();
+                HeadLabel.Text = "Select game:";
+                ContinueButton.Show();
+                ContinueButton2.Hide();
+            }
+            if (StartingPlayerBox.Visible == true) // Wrong result
+            {
+                ResultBox1.Show();
+                ResultBox2.Show();
+                line.Show();
+                HeadLabel.Text = "Add result:";
+                StartingPlayerBox.Hide();
+                ContinueButton2.Show();
+                ContinueButton3.Hide();
+                StartingPlayerBox.DataSource = null;
+            }
+            if (PlayersOnTheBenchBox.Visible == true) // If started players wrong
+            {
+                StartingPlayerBox.Show();
+                StartingPlayerBox.Update();
+                PlayersOnTheBenchBox.DataSource = null;
+                PlayersOnTheBenchBox.Hide();
+                HeadLabel.Text = "Select started players:";
+                ContinueButton3.Show();
+                ContinueButton4.Hide();
+
+                foreach (Person p in players)
+                {
+                    if (!StartingPlayerBox.SelectedItems.Contains(p))
+                    {
+                        onthebench.Remove(p);
+                    }
+                    else
+                    {
+                        PlayedPlayers.Remove(p);
+                        StartedPlayers.Remove(p);
+                    }
+                }
+            }
+            if (ContinueButton5.Visible == true) // If subs wrong 
+            {
+                HeadLabel.Text = "Select substitutes:";
+                foreach (Person p in PlayersOnTheBenchBox.SelectedItems)
+                {
+                    SubstitutePlayers.Remove(p);
+                    PlayedPlayers.Remove(p);
+                }
+                playertable.Columns.Remove("Id");
+                playertable.Columns.Remove("FirstName");
+                playertable.Columns.Remove("LastName");
+                playertable.Columns.Remove("Number");
+                playertable.Columns.Remove("PlayerInfo2");
+                PlayersOnTheBenchBox.Show();
+                ContinueButton4.Show();
+                ContinueButton5.Hide();
+                this.Controls.Remove(subscount);
+            }
+            if (ContinueButton6.Visible == true) // If subs count wrong
+            {
+                HeadLabel.Text = "How many subs? (0-11)";
+                subscount.Show();
+                In.Hide();
+                Out.Hide();
+                MinutesLabel.Hide();
+                ContinueButton5.Show();
+                ContinueButton6.Hide();
+                foreach (TextBox sub in Subinboxes)
+                {
+                        sub.Hide();
+                }
+                foreach (TextBox sub in Suboutboxes)
+                {
+                        sub.Hide();
+                }
+                foreach (TextBox sub in Subminboxes)
+                {
+                        sub.Hide();
+                }
+            }
+            // Seuraavaksi back-nappula myös vaihtojen korjaamiseen
+            if (ContinueButton7.Visible == true)
+            {
+                
+            }
+        }
     }
 
   

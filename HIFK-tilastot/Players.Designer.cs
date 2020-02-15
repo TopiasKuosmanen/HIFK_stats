@@ -39,6 +39,9 @@
             this.LastNameLabel = new System.Windows.Forms.Label();
             this.LastNameText = new System.Windows.Forms.TextBox();
             this.PersonfoundlistBox = new System.Windows.Forms.ListBox();
+            this.SelectYear = new System.Windows.Forms.ComboBox();
+            this.PlayersStatsView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.PlayersStatsView)).BeginInit();
             this.SuspendLayout();
             // 
             // SelectLeague
@@ -49,7 +52,7 @@
             "Veikkausliiga",
             "Suomen Cup",
             "Friendly"});
-            this.SelectLeague.Location = new System.Drawing.Point(642, 44);
+            this.SelectLeague.Location = new System.Drawing.Point(45, 22);
             this.SelectLeague.Name = "SelectLeague";
             this.SelectLeague.Size = new System.Drawing.Size(191, 24);
             this.SelectLeague.TabIndex = 17;
@@ -58,7 +61,7 @@
             // TopScorers
             // 
             this.TopScorers.AutoSize = true;
-            this.TopScorers.Location = new System.Drawing.Point(938, 157);
+            this.TopScorers.Location = new System.Drawing.Point(341, 145);
             this.TopScorers.Name = "TopScorers";
             this.TopScorers.Size = new System.Drawing.Size(106, 21);
             this.TopScorers.TabIndex = 16;
@@ -68,7 +71,7 @@
             // 
             // searchPlayerStats
             // 
-            this.searchPlayerStats.Location = new System.Drawing.Point(763, 143);
+            this.searchPlayerStats.Location = new System.Drawing.Point(166, 131);
             this.searchPlayerStats.Name = "searchPlayerStats";
             this.searchPlayerStats.Size = new System.Drawing.Size(126, 47);
             this.searchPlayerStats.TabIndex = 15;
@@ -79,7 +82,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(639, 102);
+            this.label1.Location = new System.Drawing.Point(42, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 17);
             this.label1.TabIndex = 14;
@@ -87,7 +90,7 @@
             // 
             // PlayerNameText
             // 
-            this.PlayerNameText.Location = new System.Drawing.Point(763, 102);
+            this.PlayerNameText.Location = new System.Drawing.Point(166, 90);
             this.PlayerNameText.Name = "PlayerNameText";
             this.PlayerNameText.Size = new System.Drawing.Size(232, 22);
             this.PlayerNameText.TabIndex = 13;
@@ -96,7 +99,7 @@
             // 
             this.PlayerStats.FormattingEnabled = true;
             this.PlayerStats.ItemHeight = 16;
-            this.PlayerStats.Location = new System.Drawing.Point(609, 230);
+            this.PlayerStats.Location = new System.Drawing.Point(12, 218);
             this.PlayerStats.Name = "PlayerStats";
             this.PlayerStats.Size = new System.Drawing.Size(525, 276);
             this.PlayerStats.TabIndex = 12;
@@ -110,6 +113,7 @@
             this.NoPlayers.TabIndex = 22;
             this.NoPlayers.Text = "No players";
             this.NoPlayers.UseVisualStyleBackColor = true;
+            this.NoPlayers.Visible = false;
             this.NoPlayers.CheckedChanged += new System.EventHandler(this.NoPlayers_CheckedChanged);
             // 
             // searchButton
@@ -120,6 +124,7 @@
             this.searchButton.TabIndex = 21;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Visible = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // LastNameLabel
@@ -130,6 +135,7 @@
             this.LastNameLabel.Size = new System.Drawing.Size(45, 17);
             this.LastNameLabel.TabIndex = 20;
             this.LastNameLabel.Text = "Name";
+            this.LastNameLabel.Visible = false;
             // 
             // LastNameText
             // 
@@ -137,6 +143,7 @@
             this.LastNameText.Name = "LastNameText";
             this.LastNameText.Size = new System.Drawing.Size(232, 22);
             this.LastNameText.TabIndex = 19;
+            this.LastNameText.Visible = false;
             // 
             // PersonfoundlistBox
             // 
@@ -146,12 +153,37 @@
             this.PersonfoundlistBox.Name = "PersonfoundlistBox";
             this.PersonfoundlistBox.Size = new System.Drawing.Size(395, 276);
             this.PersonfoundlistBox.TabIndex = 18;
+            this.PersonfoundlistBox.Visible = false;
+            // 
+            // SelectYear
+            // 
+            this.SelectYear.FormattingEnabled = true;
+            this.SelectYear.Items.AddRange(new object[] {
+            "All",
+            "2019",
+            "2020"});
+            this.SelectYear.Location = new System.Drawing.Point(45, 52);
+            this.SelectYear.Name = "SelectYear";
+            this.SelectYear.Size = new System.Drawing.Size(191, 24);
+            this.SelectYear.TabIndex = 23;
+            this.SelectYear.Text = "Select year";
+            // 
+            // PlayersStatsView
+            // 
+            this.PlayersStatsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PlayersStatsView.Location = new System.Drawing.Point(587, 221);
+            this.PlayersStatsView.Name = "PlayersStatsView";
+            this.PlayersStatsView.RowTemplate.Height = 24;
+            this.PlayersStatsView.Size = new System.Drawing.Size(488, 273);
+            this.PlayersStatsView.TabIndex = 24;
             // 
             // Players
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1248, 655);
+            this.ClientSize = new System.Drawing.Size(1103, 655);
+            this.Controls.Add(this.PlayersStatsView);
+            this.Controls.Add(this.SelectYear);
             this.Controls.Add(this.NoPlayers);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.LastNameLabel);
@@ -165,6 +197,7 @@
             this.Controls.Add(this.PlayerStats);
             this.Name = "Players";
             this.Text = "Players";
+            ((System.ComponentModel.ISupportInitialize)(this.PlayersStatsView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +216,7 @@
         private System.Windows.Forms.Label LastNameLabel;
         private System.Windows.Forms.TextBox LastNameText;
         private System.Windows.Forms.ListBox PersonfoundlistBox;
+        private System.Windows.Forms.ComboBox SelectYear;
+        private System.Windows.Forms.DataGridView PlayersStatsView;
     }
 }

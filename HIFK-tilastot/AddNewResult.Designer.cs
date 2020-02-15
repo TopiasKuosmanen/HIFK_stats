@@ -103,6 +103,7 @@
             this.RedsLabel = new System.Windows.Forms.Label();
             this.AddResultButton = new System.Windows.Forms.Button();
             this.GameAddedLabel = new System.Windows.Forms.Label();
+            this.GoBackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // HeadLabel
@@ -784,11 +785,24 @@
             this.GameAddedLabel.Text = "GameAddedLabel";
             this.GameAddedLabel.Visible = false;
             // 
+            // GoBackButton
+            // 
+            this.GoBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GoBackButton.Location = new System.Drawing.Point(29, 553);
+            this.GoBackButton.Name = "GoBackButton";
+            this.GoBackButton.Size = new System.Drawing.Size(152, 45);
+            this.GoBackButton.TabIndex = 120;
+            this.GoBackButton.Text = "Back";
+            this.GoBackButton.UseVisualStyleBackColor = true;
+            this.GoBackButton.Visible = false;
+            this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
+            // 
             // AddNewResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 635);
+            this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.GameAddedLabel);
             this.Controls.Add(this.AddResultButton);
             this.Controls.Add(this.RedsLabel);
@@ -947,5 +961,6 @@
         private System.Windows.Forms.Label RedsLabel;
         private System.Windows.Forms.Button AddResultButton;
         private System.Windows.Forms.Label GameAddedLabel;
+        private System.Windows.Forms.Button GoBackButton;
     }
 }

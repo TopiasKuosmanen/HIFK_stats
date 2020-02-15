@@ -49,6 +49,20 @@ namespace HIFK_tilastot
             }
         }
 
+        public List<STATS> GetAllStats(string league, int year)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
+            {
+                var output = connection.Query<STATS>("dbo.GetAllStats @League, @Year",
+                    new
+                    {
+                        League = league,
+                        Year = year
+                    }).ToList();
+                return output;
+            }
+        }
+
         public List<League> GetLeagues()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
