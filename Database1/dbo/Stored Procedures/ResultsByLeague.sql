@@ -10,28 +10,28 @@ BEGIN
 	SELECT G.*, O.Team AS 'Opponent'
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
 	WHERE Result IS NOT NULL AND Serie = 'Veikkausliiga'
-	ORDER BY DateTime
+	ORDER BY DateTime DESC
 END
 IF (@League = 'Suomen Cup')
 BEGIN
 	SELECT G.*, O.Team AS 'Opponent'
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
 	WHERE Result IS NOT NULL AND Serie = 'Suomen Cup'
-	ORDER BY DateTime
+	ORDER BY DateTime DESC
 END
 IF (@League = 'Friendly')
 BEGIN
 	SELECT G.*, O.Team AS 'Opponent'
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
 	WHERE Result IS NOT NULL AND Serie = 'Friendly'
-	ORDER BY DateTime
+	ORDER BY DateTime DESC
 END
 IF (@League = 'All')
 BEGIN
 	SELECT G.*, O.Team AS 'Opponent'
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
 	WHERE Result IS NOT NULL
-	ORDER BY DateTime
+	ORDER BY DateTime DESC
 	
 END
 END
@@ -42,28 +42,28 @@ BEGIN
 	SELECT *
 	FROM VeikkausliigaGames
 	WHERE Result IS NOT NULL AND YEAR(DateTime) = @Year
-	ORDER BY DateTime
+	ORDER BY DateTime DESC
 END
 IF (@League = 'Suomen Cup')
 BEGIN
 	SELECT *
 	FROM SuomencupGames
 	WHERE Result IS NOT NULL AND YEAR(DateTime) = @Year
-	ORDER BY DateTime 
+	ORDER BY DateTime DESC
 END
 IF (@League = 'Friendly')
 BEGIN
 	SELECT *
 	FROM FriendlyGames
 	WHERE Result IS NOT NULL AND YEAR(DateTime) = @Year
-	ORDER BY DateTime
+	ORDER BY DateTime DESC
 END
 IF (@League = 'All')
 BEGIN
 	SELECT G.*, O.Team AS 'Opponent'
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
 	WHERE Result IS NOT NULL AND YEAR(G.DateTime) = @Year
-	ORDER BY DateTime
+	ORDER BY DateTime DESC
 	
 END
 END
