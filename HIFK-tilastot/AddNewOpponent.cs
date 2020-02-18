@@ -27,6 +27,7 @@ namespace HIFK_tilastot
         private CheckBox checkBox2;
         private Button AddOpponentButton;
         private Button AddStadiumButton;
+        private Label SuccessLabel;
         ComboBox StadiumBox = new ComboBox();
 
         public AddNewOpponent()
@@ -68,6 +69,7 @@ namespace HIFK_tilastot
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.AddOpponentButton = new System.Windows.Forms.Button();
             this.AddStadiumButton = new System.Windows.Forms.Button();
+            this.SuccessLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -213,9 +215,19 @@ namespace HIFK_tilastot
             this.AddStadiumButton.Visible = false;
             this.AddStadiumButton.Click += new System.EventHandler(this.AddStadiumButton_Click);
             // 
+            // SuccessLabel
+            // 
+            this.SuccessLabel.AutoSize = true;
+            this.SuccessLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SuccessLabel.Location = new System.Drawing.Point(66, 296);
+            this.SuccessLabel.Name = "SuccessLabel";
+            this.SuccessLabel.Size = new System.Drawing.Size(0, 25);
+            this.SuccessLabel.TabIndex = 14;
+            // 
             // AddNewOpponent
             // 
             this.ClientSize = new System.Drawing.Size(452, 341);
+            this.Controls.Add(this.SuccessLabel);
             this.Controls.Add(this.AddStadiumButton);
             this.Controls.Add(this.AddOpponentButton);
             this.Controls.Add(this.checkBox2);
@@ -314,12 +326,37 @@ namespace HIFK_tilastot
             DataAccess db = new DataAccess();
             if (checkBox1.Checked == true)
             {
-                db.AddNewStadium(NewStadiumName.Text, int.Parse(Capacity.Text), TurfYesOrNo.Text);
-                db.AddNewOpponent(TeamName.Text, NewStadiumName.Text);
+                try
+                {
+                    db.AddNewStadium(NewStadiumName.Text, int.Parse(Capacity.Text), TurfYesOrNo.Text);
+                    db.AddNewOpponent(TeamName.Text, NewStadiumName.Text);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    SuccessLabel.ForeColor = System.Drawing.Color.Green;
+                    SuccessLabel.Text = $"{TeamName.Text} has been added to opponents.";
+                }
             }
             else
             {
-                db.AddNewOpponent(TeamName.Text, StadiumBox.SelectedItem.ToString());
+                try
+                {
+                    db.AddNewOpponent(TeamName.Text, StadiumBox.SelectedItem.ToString());
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    SuccessLabel.ForeColor = System.Drawing.Color.Green;
+                    SuccessLabel.Text = $"{TeamName.Text} has been added to opponents.";
+                }
             }
 
         }
@@ -327,8 +364,21 @@ namespace HIFK_tilastot
         private void AddStadiumButton_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
-            // Lisätään uusi stadikka.
-            db.AddNewStadium(NewStadiumName.Text, int.Parse(Capacity.Text), TurfYesOrNo.Text);
+            // Adding nw stadium
+            try
+            {
+                db.AddNewStadium(NewStadiumName.Text, int.Parse(Capacity.Text), TurfYesOrNo.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                SuccessLabel.ForeColor = System.Drawing.Color.Green;
+                SuccessLabel.Text = $"{NewStadiumName.Text} has been added to stadiums.";
+            }
         }
     }
 }
