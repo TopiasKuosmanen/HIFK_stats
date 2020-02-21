@@ -96,7 +96,7 @@ namespace HIFK_tilastot
         {
             if (HomeOrAway.SelectedItem.ToString() == "Home")
             {
-                StadiumBox.Text = "Telia 5G Areena";
+                StadiumBox.Text = "Bolt Arena";
                 StadiumBox.Update();
                 homegame = true;
             }
