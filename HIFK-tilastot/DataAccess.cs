@@ -15,7 +15,6 @@ namespace HIFK_tilastot
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
             {
-                //var output = connection.Query<Player>($"Select * From Player Where LastName like '%{lastName}%' or FirstName like '%{lastName}%'").ToList();
                 var output = connection.Query<Person>("dbo.Person_FilterByName @Name", new { Name = name}).ToList();
                 return output;
             }
@@ -25,7 +24,6 @@ namespace HIFK_tilastot
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
             {
-                //var output = connection.Query<Player>($"Select * From Player Where LastName like '%{lastName}%' or FirstName like '%{lastName}%'").ToList();
                 var output = connection.Query<Person>("dbo.GetPlayersToEdit @Name", new { Name = name }).ToList();
                 return output;
             }
@@ -312,14 +310,6 @@ namespace HIFK_tilastot
                         League = league,
                         PlayerId = playerid,
                         GameId = gameid,
-                        //Goals = goals,
-                        //Assists = assists,
-                        //YellowCards = yc,
-                        //RedCards = rc,
-                        //PlayedMinutes = pm,
-                        //StartingXI = starting,
-                        //SubstitutedIn = sub,
-                        //OnTheBench = bench
                     });
                 return output;
             }

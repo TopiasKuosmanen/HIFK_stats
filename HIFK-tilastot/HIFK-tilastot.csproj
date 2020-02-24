@@ -145,7 +145,6 @@
       <DependentUpon>Results.cs</DependentUpon>
     </Compile>
     <Compile Include="Stadium.cs" />
-    <Compile Include="Staff.cs" />
     <Compile Include="STATS.cs" />
     <Compile Include="Substitution.cs" />
     <EmbeddedResource Include="AddNewGame.resx">

@@ -7,6 +7,8 @@ using System.Windows.Forms;
 
 namespace HIFK_tilastot
 {
+
+    // Asks when player have received the red card for the players playedMinutes
     public partial class RedCardMinutes : Form
     {
         private Label TextLabel;
