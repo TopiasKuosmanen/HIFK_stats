@@ -433,15 +433,15 @@ namespace HIFK_tilastot
         private void DoResultBox()
         {
 
-            ResultBox1.Location = new Point(240, 54);
-            ResultBox1.Size = new Size(35, 60);
+            ResultBox1.Location = new Point(230, 54);
+            ResultBox1.Size = new Size(35, 90);
             ResultBox1.Name = "ResultBox1";
             ResultBox1.Maximum = 20;
             ResultBox1.Font = new Font(ResultBox1.Font.FontFamily, 12);
             ResultBox1.TextAlign = HorizontalAlignment.Center;
 
             ResultBox2.Location = new Point(285, 54);
-            ResultBox2.Size = new Size(35, 60);
+            ResultBox2.Size = new Size(35, 90);
             ResultBox2.Name = "ResultBox2";
             ResultBox2.Maximum = 20;
             ResultBox2.Font = new Font(ResultBox2.Font.FontFamily, 12);
@@ -463,14 +463,14 @@ namespace HIFK_tilastot
             ContinueButton7.Hide();
 
             StartingPlayerBox.Location = new Point(240, 54);
-            StartingPlayerBox.Size = new Size(200, 60);
+            StartingPlayerBox.Size = new Size(200, 260);
             StartingPlayerBox.Name = "StartingPlayerBox";
             StartingPlayerBox.SelectionMode = SelectionMode.MultiSimple;
 
             // On the bench
 
             PlayersOnTheBenchBox.Location = new Point(240, 54);
-            PlayersOnTheBenchBox.Size = new Size(200, 60);
+            PlayersOnTheBenchBox.Size = new Size(200, 260);
             PlayersOnTheBenchBox.Name = "PlayersOnTheBenchBox";
             PlayersOnTheBenchBox.SelectionMode = SelectionMode.MultiSimple;
 

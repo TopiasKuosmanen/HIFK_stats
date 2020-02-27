@@ -120,7 +120,7 @@
             // 
             this.line.AutoSize = true;
             this.line.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.line.Location = new System.Drawing.Point(357, 71);
+            this.line.Location = new System.Drawing.Point(357, 65);
             this.line.Name = "line";
             this.line.Size = new System.Drawing.Size(21, 29);
             this.line.TabIndex = 21;
@@ -151,7 +151,7 @@
             // ContinueButton3
             // 
             this.ContinueButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContinueButton3.Location = new System.Drawing.Point(293, 133);
+            this.ContinueButton3.Location = new System.Drawing.Point(293, 383);
             this.ContinueButton3.Name = "ContinueButton3";
             this.ContinueButton3.Size = new System.Drawing.Size(152, 45);
             this.ContinueButton3.TabIndex = 24;
@@ -162,7 +162,7 @@
             // ContinueButton4
             // 
             this.ContinueButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContinueButton4.Location = new System.Drawing.Point(325, 200);
+            this.ContinueButton4.Location = new System.Drawing.Point(325, 383);
             this.ContinueButton4.Name = "ContinueButton4";
             this.ContinueButton4.Size = new System.Drawing.Size(152, 45);
             this.ContinueButton4.TabIndex = 25;
