@@ -30,6 +30,8 @@ namespace HIFK_tilastot
             labels.Add(label6);
             labels.Add(label7);
             labels.Add(label8);
+            labels.Add(label9);
+            labels.Add(label10);
             textBoxes.Add(FirstName);
             textBoxes.Add(LastName);
             textBoxes.Add(Number);
@@ -55,7 +57,7 @@ namespace HIFK_tilastot
             DataAccess db = new DataAccess();
             List<PlayerPosition> positions = new List<PlayerPosition>();
             positions = db.GetPositions();
-            PBox.Location = new Point(299, 331);
+            PBox.Location = new Point(119, 311);
             PBox.Size = new Size(141, 50);
             PBox.Name = "PositionBox";
             PBox.SelectionMode = SelectionMode.MultiSimple;
@@ -80,7 +82,7 @@ namespace HIFK_tilastot
             DataAccess db = new DataAccess();
             List<PlayerNationality> nationalities = new List<PlayerNationality>();
             nationalities = db.GetNationalities();
-            NBox.Location = new Point(299, 292);
+            NBox.Location = new Point(119, 255);
             NBox.Size = new Size(141, 50);
             NBox.Name = "NationalityBox";
             NBox.SelectionMode = SelectionMode.MultiSimple;
