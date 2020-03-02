@@ -61,6 +61,15 @@ namespace HIFK_tilastot
             }
         }
 
+        public List<PlayerPosition> GetPlayersPositions(int id)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
+            {
+                var output = connection.Query<PlayerPosition>("dbo.GetPlayersPositions @Id", new { Id = id }).ToList();
+                return output;
+            }
+        }
+
         public List<League> GetLeagues()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
@@ -81,6 +90,15 @@ namespace HIFK_tilastot
                         GameId = id,
                         Result = result
                     });
+                return output;
+            }
+        }
+
+        public List<PlayerNationality> GetPlayersNationalities(int id)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
+            {
+                var output = connection.Query<PlayerNationality>("dbo.GetPlayersNationalities @Id", new { Id = id }).ToList();
                 return output;
             }
         }

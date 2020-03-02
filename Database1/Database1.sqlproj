@@ -120,6 +120,8 @@
     <Build Include="dbo\Stored Procedures\AddNewStadium.sql" />
     <Build Include="dbo\Stored Procedures\AddNewOpponent.sql" />
     <Build Include="dbo\Stored Procedures\GetAllStats.sql" />
+    <Build Include="dbo\Stored Procedures\GetPlayersPositions.sql" />
+    <Build Include="dbo\Stored Procedures\GetPlayersNationalities.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Database1.refactorlog" />

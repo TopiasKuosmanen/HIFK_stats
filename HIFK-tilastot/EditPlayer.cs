@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace HIFK_tilastot
 {
+
     public partial class EditPlayer : Form
     {
+        ListBox NBox = new ListBox();
+        ListBox PBox = new ListBox();
         List<Label> labels = new List<Label>();
         List<TextBox> textBoxes = new List<TextBox>();
         List<Person> players = new List<Person>();
@@ -47,7 +50,60 @@ namespace HIFK_tilastot
             PlayerBox.DataSource = players;
             PlayerBox.DisplayMember = "EditPlayerInfo";
         }
+        private void DoPositionsBox(Person player)
+        {
+            DataAccess db = new DataAccess();
+            List<PlayerPosition> positions = new List<PlayerPosition>();
+            positions = db.GetPositions();
+            PBox.Location = new Point(299, 331);
+            PBox.Size = new Size(141, 50);
+            PBox.Name = "PositionBox";
+            PBox.SelectionMode = SelectionMode.MultiSimple;
+            foreach (PlayerPosition n in positions)
+            {
+                PBox.Items.Add(n.Position);
+            }
+            List<PlayerPosition> playersPositions = new List<PlayerPosition>();
+            playersPositions = db.GetPlayersPositions(player.Id);
 
+            // Täytyy tehdä myös muutokset UpdatePlayer-proseduuriin!
+            foreach (var position in playersPositions)
+            {
+                PBox.SelectedItem = position.ReturnPositions;
+            }
+            
+            this.Controls.Add(PBox);
+        }
+
+        private void DoNationalityBox(Person player)
+        {
+            DataAccess db = new DataAccess();
+            List<PlayerNationality> nationalities = new List<PlayerNationality>();
+            nationalities = db.GetNationalities();
+            NBox.Location = new Point(299, 292);
+            NBox.Size = new Size(141, 50);
+            NBox.Name = "NationalityBox";
+            NBox.SelectionMode = SelectionMode.MultiSimple;
+            foreach (PlayerNationality n in nationalities)
+            {
+                NBox.Items.Add(n.Nationality);
+            }
+
+            List<PlayerNationality> playersNationalities = new List<PlayerNationality>();
+            playersNationalities = db.GetPlayersNationalities(player.Id);
+
+            // Täytyy tehdä myös muutokset UpdatePlayer-proseduuriin!
+            foreach (var nationality in playersNationalities)
+            {
+                NBox.SelectedItem = nationality.Nationality;
+            }
+
+            this.Controls.Add(NBox);
+
+            
+            
+
+        }
         private void EditButton_Click(object sender, EventArgs e)
         {
             label1.Text = "";
@@ -56,6 +112,7 @@ namespace HIFK_tilastot
             searchPlayerStats.Hide();
             PlayerBox.Hide();
             EditButton.Hide();
+
             foreach (Label l in labels)
             {
                 l.Show();
@@ -74,6 +131,8 @@ namespace HIFK_tilastot
                 ContractEndDate.Text = p.ContractEndDate.ToString();
                 BirhDate.Text = p.BirthDate.ToString();
                 playerid = p.Id;
+                DoNationalityBox(p);
+                DoPositionsBox(p);
             }
 
 
@@ -97,7 +156,15 @@ namespace HIFK_tilastot
             DataAccess db = new DataAccess();
             db.UpdatePlayerInformation(playerid, FirstName.Text, LastName.Text, int.Parse(Number.Text), int.Parse(YearOfAccession.Text), 
             Convert.ToDateTime(ContractEndDate.Text), Convert.ToDateTime(BirhDate.Text));
-
+            // Update players nationalities / positions:
+            foreach (string pos in PBox.SelectedItems)
+            {
+                db.AddPositions(playerid, pos);
+            }
+            foreach (string nat in NBox.SelectedItems)
+            {
+                db.AddNationalities(playerid, nat);
+            }
         }
 
         private void noButton_Click(object sender, EventArgs e)
