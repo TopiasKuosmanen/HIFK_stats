@@ -122,6 +122,7 @@
     <Build Include="dbo\Stored Procedures\GetAllStats.sql" />
     <Build Include="dbo\Stored Procedures\GetPlayersPositions.sql" />
     <Build Include="dbo\Stored Procedures\GetPlayersNationalities.sql" />
+    <Build Include="dbo\Stored Procedures\GetPlayersNames.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Database1.refactorlog" />

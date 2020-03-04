@@ -61,6 +61,15 @@ namespace HIFK_tilastot
             }
         }
 
+        public List<Person> GetPlayersNames()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
+            {
+                var output = connection.Query<Person>("dbo.GetPlayersNames", new { }).ToList();
+                return output;
+            }
+        }
+
         public List<PlayerPosition> GetPlayersPositions(int id)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))

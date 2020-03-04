@@ -61,20 +61,70 @@ namespace HIFK_tilastot
             MustHaveLastName.Visible = false;
             MustHaveContractEnds.Visible = false;
             MustHaveBirthday.Visible = false;
+            DataAccess db = new DataAccess();
+            List<Person> playersNames = new List<Person>();
+            playersNames = db.GetPlayersNames();
 
-            if (MustHaveLastName.Text == "")
+            AreYouSure form1 = new AreYouSure($"There is already player named {LastName.Text}. \nAre you sure you want to add player with the same name?");
+            AreYouSure form2 = new AreYouSure($"There is already player named {FirstName.Text} {LastName.Text}. \nAre you sure you want to add player with the same name??");
+            foreach (var p in playersNames)
+            {
+                if (p.LastName == LastName.Text)
+                {
+                    if (p.FirstName is null)
+                    {
+                        form1.ShowDialog();
+                        if (form1.trueorfalse == true)
+                        {
+                            continue;
+                        }
+                        if (form1.trueorfalse == false)
+                        {
+                            Result.Text = "Adding player has been canceled.";
+                            Result.ForeColor = System.Drawing.Color.Red;
+                            break;
+                        }
+                    }
+                    if (p.FirstName == FirstName.Text)
+                    {
+                        form2.ShowDialog();
+                        if (form2.trueorfalse == true)
+                        {
+                            continue;
+                        }
+                        if (form2.trueorfalse == false)
+                        {
+                            Result.Text = "Adding player has been canceled.";
+                            Result.ForeColor = System.Drawing.Color.Red;
+                            break;
+                        }
+                    }
+
+                }
+            }
+            bool co = false;
+            if (form1.trueorfalse == false || form2.trueorfalse == false)
+            {
+                co = true;
+            }
+            
+
+            if (LastName.Text == "")
             {
                 MustHaveLastName.Visible = true;
             }
-            if (MustHaveContractEnds.Text == "")
+            if (ContractEnds.Text == "")
             {
                 MustHaveContractEnds.Visible = true;
             }
-            if (MustHaveBirthday.Text == "")
+            if (Birthday.Text == "")
             {
                 MustHaveBirthday.Visible = true;
             }
-            if (MustHaveLastName.Visible == false && MustHaveContractEnds.Visible == false && MustHaveBirthday.Visible == false)
+            if (MustHaveLastName.Visible == false
+                && MustHaveContractEnds.Visible == false
+                && MustHaveBirthday.Visible == false
+                && co == false)
             {
                 AreYouSure form = new AreYouSure($"Are you sure you want to add player {FirstName.Text} {LastName.Text}");
                 form.ShowDialog();

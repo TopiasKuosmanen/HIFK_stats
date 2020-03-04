@@ -146,6 +146,8 @@ namespace HIFK_tilastot
             yesButton.Show();
             noButton.Show();
             UpdateButton.Hide();
+            NBox.Hide();
+            PBox.Hide();
             foreach (Label l in labels)
             {
                 l.Hide();

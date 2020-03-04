@@ -24,3 +24,7 @@ C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\Database1\bin\Debug\Database1.pdb
 C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\Database1\obj\Debug\Database1.sqlprojAssemblyReference.cache
 C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\Database1\obj\Debug\Database1.dll
 C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\Database1\obj\Debug\Database1.pdb
+C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\Database1\obj\Debug\Model.xml
+C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\Database1\obj\Debug\refactor.xml
+C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\Database1\obj\Debug\postdeploy.sql
+C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\Database1\obj\Debug\predeploy.sql
