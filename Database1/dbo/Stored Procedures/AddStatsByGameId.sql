@@ -11,27 +11,9 @@
 	@SubstitutedIn INT,
 	@OnTheBench INT
 AS
-IF @League = 'Veikkausliiga'
 BEGIN
-	UPDATE [Veikkausliigastats] 
+	UPDATE [Stats] 
 	SET Goals = @Goals, Assists = @Assists, YellowCards = @YellowCards, RedCards = @RedCards, PlayedMinutes = @PlayedMinutes,
 		StartingXI = @StartingXI, SubstitutedIn = @SubstitutedIn, OnTheBench = @OnTheBench
-	WHERE GameId = @GameId AND PlayerId = @PlayerId
-
+	WHERE GameId = @GameId AND PlayerId = @PlayerId AND LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
 END
-IF @League = 'Suomen Cup'
-BEGIN
-	UPDATE [Suomencupstats]
-	SET Goals = @Goals, Assists = @Assists, YellowCards = @YellowCards, RedCards = @RedCards, PlayedMinutes = @PlayedMinutes,
-		StartingXI = @StartingXI, SubstitutedIn = @SubstitutedIn, OnTheBench = @OnTheBench
-	WHERE GameId = @GameId AND PlayerId = @PlayerId
-END
-IF @League = 'Friendly'
-BEGIN
-	UPDATE [Friendlystats] 
-	SET Goals = @Goals, Assists = @Assists, YellowCards = @YellowCards, RedCards = @RedCards, PlayedMinutes = @PlayedMinutes,
-		StartingXI = @StartingXI, SubstitutedIn = @SubstitutedIn, OnTheBench = @OnTheBench
-	WHERE GameId = @GameId AND PlayerId = @PlayerId
-END
-
-

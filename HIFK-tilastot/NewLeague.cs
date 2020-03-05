@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HIFK_tilastot
 {
-    public partial class EditGame : Form
+    public partial class NewLeague : Form
     {
-        public EditGame()
+        public NewLeague()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace HIFK_tilastot
 {
-    partial class EditGame
+    partial class NewLeague
     {
         /// <summary>
         /// Required designer variable.

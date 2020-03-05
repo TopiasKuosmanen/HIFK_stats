@@ -3,20 +3,7 @@
 	@PlayerId INT,
 	@GameId INT
 AS
-IF @League = 'Veikkausliiga'
 BEGIN
-	INSERT INTO [Veikkausliigastats] (PlayerId, GameId) 
-	VALUES (@PlayerId, @GameId)
+	INSERT INTO [Stats] (LeagueId, PlayerId, GameId) 
+	VALUES ((SELECT Id FROM League WHERE LeagueName = @League), @PlayerId, @GameId)
 END
-IF @League = 'Suomen Cup'
-BEGIN
-	INSERT INTO [Suomencupstats] (PlayerId, GameId) 
-	VALUES (@PlayerId, @GameId)
-END
-IF @League = 'Friendly'
-BEGIN
-	INSERT INTO [Friendlystats] (PlayerId, GameId) 
-	VALUES (@PlayerId, @GameId)
-END
-
-

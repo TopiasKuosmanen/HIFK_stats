@@ -34,7 +34,7 @@
             this.LinkToDeleteGame = new System.Windows.Forms.LinkLabel();
             this.LinkToAddNewPlayer = new System.Windows.Forms.LinkLabel();
             this.LinkToAddOpponent = new System.Windows.Forms.LinkLabel();
-            this.LinkToEditGame = new System.Windows.Forms.LinkLabel();
+            this.LinkToNewLeague = new System.Windows.Forms.LinkLabel();
             this.LinkToEditPlayer = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
@@ -108,18 +108,17 @@
             this.LinkToAddOpponent.Text = "Add new opponent";
             this.LinkToAddOpponent.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkToAddNewOpponent_LinkClicked);
             // 
-            // LinkToEditGame
+            // LinkToNewLeague
             // 
-            this.LinkToEditGame.AutoSize = true;
-            this.LinkToEditGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkToEditGame.Location = new System.Drawing.Point(487, 428);
-            this.LinkToEditGame.Name = "LinkToEditGame";
-            this.LinkToEditGame.Size = new System.Drawing.Size(122, 29);
-            this.LinkToEditGame.TabIndex = 6;
-            this.LinkToEditGame.TabStop = true;
-            this.LinkToEditGame.Text = "Edit game";
-            this.LinkToEditGame.Visible = false;
-            this.LinkToEditGame.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkToEditGame_LinkClicked);
+            this.LinkToNewLeague.AutoSize = true;
+            this.LinkToNewLeague.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LinkToNewLeague.Location = new System.Drawing.Point(217, 411);
+            this.LinkToNewLeague.Name = "LinkToNewLeague";
+            this.LinkToNewLeague.Size = new System.Drawing.Size(187, 29);
+            this.LinkToNewLeague.TabIndex = 6;
+            this.LinkToNewLeague.TabStop = true;
+            this.LinkToNewLeague.Text = "Add new league";
+            this.LinkToNewLeague.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkToNewLeague_LinkClicked);
             // 
             // LinkToEditPlayer
             // 
@@ -139,7 +138,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 520);
             this.Controls.Add(this.LinkToEditPlayer);
-            this.Controls.Add(this.LinkToEditGame);
+            this.Controls.Add(this.LinkToNewLeague);
             this.Controls.Add(this.LinkToAddOpponent);
             this.Controls.Add(this.LinkToAddNewPlayer);
             this.Controls.Add(this.LinkToDeleteGame);
@@ -161,7 +160,7 @@
         private System.Windows.Forms.LinkLabel LinkToDeleteGame;
         private System.Windows.Forms.LinkLabel LinkToAddNewPlayer;
         private System.Windows.Forms.LinkLabel LinkToAddOpponent;
-        private System.Windows.Forms.LinkLabel LinkToEditGame;
+        private System.Windows.Forms.LinkLabel LinkToNewLeague;
         private System.Windows.Forms.LinkLabel LinkToEditPlayer;
     }
 }

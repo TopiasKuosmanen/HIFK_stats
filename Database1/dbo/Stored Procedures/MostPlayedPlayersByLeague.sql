@@ -3,50 +3,36 @@
 	@League VARCHAR(50)
 AS
 
-IF (@League = 'Veikkausliiga')
+
 BEGIN
-	IF (@MinutesOrGames = 'Minutes')
+	IF (@League = 'ALL')
 	BEGIN
+		IF (@MinutesOrGames = 'Minutes')
+		BEGIN
 		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Veikkausliigastats] s join Player p ON s.PlayerId = p.Id
+		FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
 		ORDER BY s.PlayedMinutes
 	END
 	IF (@MinutesOrGames = 'Games')
-	BEGIN
+		BEGIN
 		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Veikkausliigastats] s JOIN Player p ON s.PlayerId = p.Id
+		FROM [stats] s JOIN Player p ON s.PlayerId = p.Id
 		ORDER BY (s.StartingXI+s.SubstitutedIn)
 	END
-END
-
-IF (@League = 'Suomen Cup')
-BEGIN
+	END
+	ELSE
 	IF (@MinutesOrGames = 'Minutes')
 		BEGIN
 		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Suomencupstats] s JOIN Player p ON s.PlayerId = p.Id
+		FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
+		WHERE s.LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
 		ORDER BY s.PlayedMinutes
 	END
 	IF (@MinutesOrGames = 'Games')
 		BEGIN
 		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Suomencupstats] s JOIN Player p ON s.PlayerId = p.Id
-		ORDER BY (s.StartingXI+s.SubstitutedIn)
-	END
-END
-
-IF (@League = 'Friendly')
-BEGIN
-	IF (@MinutesOrGames = 'Minutes')
-		BEGIN
-		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Friendlystats] s JOIN Player p ON s.PlayerId = p.Id
-		ORDER BY s.PlayedMinutes
-	END
-	IF (@MinutesOrGames = 'Games')
-		BEGIN
-		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Friendlystats] s JOIN Player p ON s.PlayerId = p.Id
+		FROM [stats] s JOIN Player p ON s.PlayerId = p.Id
+		WHERE s.LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
 		ORDER BY (s.StartingXI+s.SubstitutedIn)
 	END
 END

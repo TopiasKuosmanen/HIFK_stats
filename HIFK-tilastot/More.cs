@@ -35,9 +35,9 @@ namespace HIFK_tilastot
             form.Show();
         }
 
-        private void LinkToEditGame_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkToNewLeague_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            EditGame form = new EditGame();
+            NewLeague form = new NewLeague();
             form.Show();
         }
 

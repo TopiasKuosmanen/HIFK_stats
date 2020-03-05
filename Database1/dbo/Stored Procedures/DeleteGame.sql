@@ -8,17 +8,6 @@ BEGIN
 END
 IF @Result IS NOT NULL
 BEGIN
-	IF @League = 'Veikkausliiga'
-	BEGIN
-		DELETE FROM [Veikkausliigastats] WHERE GameId = @GameId
-	END
-	IF @League = 'Suomen Cup'
-	BEGIN
-		DELETE FROM [Suomencupstats] WHERE GameId = @GameId
-	END
-	IF @League = 'Friendly'
-	BEGIN
-		DELETE FROM [Friendlystats] WHERE GameId = @GameId
-	END
+		DELETE FROM [Stats] WHERE GameId = @GameId AND LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
 END
 

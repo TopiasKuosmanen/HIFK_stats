@@ -2,14 +2,7 @@
 	@PlayerId INT
 AS
 BEGIN
-	INSERT INTO dbo.[Suomencupstats] (PlayerId, GameId)
-	VALUES (@PlayerId, 0)
-END
-BEGIN
-	INSERT INTO dbo.[Veikkausliigastats] (PlayerId, GameId)
-	VALUES (@PlayerId, 0)
-END
-BEGIN
-	INSERT INTO dbo.[Friendlystats] (PlayerId, GameId)
-	VALUES (@PlayerId, 0)
+	INSERT INTO dbo.[Stats] (LeagueId, PlayerId, GameId)
+	SELECT Id, (@PlayerId), (0)
+	FROM dbo.League
 END

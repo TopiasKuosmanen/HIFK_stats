@@ -64,6 +64,7 @@ namespace HIFK_tilastot
             DataAccess db = new DataAccess();
             List<Person> playersNames = new List<Person>();
             playersNames = db.GetPlayersNames();
+            bool co = true;
 
             AreYouSure form1 = new AreYouSure($"There is already player named {LastName.Text}. \nAre you sure you want to add player with the same name?");
             AreYouSure form2 = new AreYouSure($"There is already player named {FirstName.Text} {LastName.Text}. \nAre you sure you want to add player with the same name??");
@@ -82,6 +83,7 @@ namespace HIFK_tilastot
                         {
                             Result.Text = "Adding player has been canceled.";
                             Result.ForeColor = System.Drawing.Color.Red;
+                            co = false;
                             break;
                         }
                     }
@@ -96,17 +98,15 @@ namespace HIFK_tilastot
                         {
                             Result.Text = "Adding player has been canceled.";
                             Result.ForeColor = System.Drawing.Color.Red;
+                            co = false;
                             break;
                         }
                     }
 
                 }
             }
-            bool co = false;
-            if (form1.trueorfalse == false || form2.trueorfalse == false)
-            {
-                co = true;
-            }
+            
+            
             
 
             if (LastName.Text == "")
@@ -124,7 +124,7 @@ namespace HIFK_tilastot
             if (MustHaveLastName.Visible == false
                 && MustHaveContractEnds.Visible == false
                 && MustHaveBirthday.Visible == false
-                && co == false)
+                && co == true)
             {
                 AreYouSure form = new AreYouSure($"Are you sure you want to add player {FirstName.Text} {LastName.Text}");
                 form.ShowDialog();

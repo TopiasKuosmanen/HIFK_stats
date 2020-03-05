@@ -428,6 +428,134 @@
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
 		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Stats]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[Stats].[Goals]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="27" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Stats]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[Stats].[Assists]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="28" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Stats]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[Stats].[YellowCards]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="29" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Stats]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[Stats].[RedCards]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="30" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Stats]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[Stats].[PlayedMinutes]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="31" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Stats]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[Stats].[StartingXI]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="32" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Stats]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[Stats].[SubstitutedIn]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="33" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Stats]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[Stats].[OnTheBench]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="34" />
+		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
 				<Entry>
@@ -445,7 +573,7 @@
 					<References Name="[dbo].[Opponent]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="27" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="35" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -464,7 +592,7 @@
 					<References Name="[dbo].[Nationality]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="28" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="36" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -483,7 +611,7 @@
 					<References Name="[dbo].[Position]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="29" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="37" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -502,7 +630,7 @@
 					<References Name="[dbo].[Staff]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="30" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="38" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -521,26 +649,7 @@
 					<References Name="[dbo].[Player]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="31" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[Game].[Id]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Game]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="32" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="39" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -559,7 +668,7 @@
 					<References Name="[dbo].[Stadium]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="33" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="40" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -578,7 +687,26 @@
 					<References Name="[dbo].[League]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="34" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="41" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Game].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Game]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="42" />
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[AddGameProcedure]">
 			<Property Name="BodyScript">
@@ -1240,49 +1368,33 @@ END]]></Value>
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 BEGIN
-	INSERT INTO dbo.[Suomencupstats] (PlayerId, GameId)
-	VALUES (@PlayerId, 0)
-END
-BEGIN
-	INSERT INTO dbo.[Veikkausliigastats] (PlayerId, GameId)
-	VALUES (@PlayerId, 0)
-END
-BEGIN
-	INSERT INTO dbo.[Friendlystats] (PlayerId, GameId)
-	VALUES (@PlayerId, 0)
+	INSERT INTO dbo.[Stats] (LeagueId, PlayerId, GameId)
+	SELECT Id, (@PlayerId), (0)
+	FROM dbo.League
 END]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
+					<References Name="[dbo].[Stats]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats].[PlayerId]" />
+					<References Name="[dbo].[Stats].[LeagueId]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats].[GameId]" />
+					<References Name="[dbo].[Stats].[PlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[GameId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[League]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[League].[Id]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddPlayerToStatsTables].[@PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[GameId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[GameId]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -1308,7 +1420,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="340" />
+				<Property Name="Length" Value="182" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddPlayerToStatsTables]&#xD;&#xA;&#x9;@PlayerId INT&#xD;&#xA;AS" />
@@ -1389,59 +1501,42 @@ END]]></Value>
 		<Element Type="SqlProcedure" Name="[dbo].[AddStats]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
-IF @League = 'Veikkausliiga'
 BEGIN
-	INSERT INTO [Veikkausliigastats] (PlayerId, GameId) 
-	VALUES (@PlayerId, @GameId)
-END
-IF @League = 'Suomen Cup'
-BEGIN
-	INSERT INTO [Suomencupstats] (PlayerId, GameId) 
-	VALUES (@PlayerId, @GameId)
-END
-IF @League = 'Friendly'
-BEGIN
-	INSERT INTO [Friendlystats] (PlayerId, GameId) 
-	VALUES (@PlayerId, @GameId)
+	INSERT INTO [Stats] (LeagueId, PlayerId, GameId) 
+	VALUES ((SELECT Id FROM League WHERE LeagueName = @League), @PlayerId, @GameId)
 END]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
+					<References Name="[dbo].[Stats]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[LeagueId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[PlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[GameId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[League]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[League].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[League].[LeagueName]" />
+				</Entry>
+				<Entry>
 					<References Name="[dbo].[AddStats].[@League]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[GameId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddStats].[@PlayerId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddStats].[@GameId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[GameId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[GameId]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -1498,7 +1593,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="456" />
+				<Property Name="Length" Value="238" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddStats]&#xD;&#xA;&#x9;@League NVARCHAR(50),&#xD;&#xA;&#x9;@PlayerId INT,&#xD;&#xA;&#x9;@GameId INT&#xD;&#xA;AS" />
@@ -1507,162 +1602,92 @@ END]]></Value>
 		<Element Type="SqlProcedure" Name="[dbo].[AddStatsByGameId]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
-IF @League = 'Veikkausliiga'
 BEGIN
-	UPDATE [Veikkausliigastats] 
+	UPDATE [Stats] 
 	SET Goals = @Goals, Assists = @Assists, YellowCards = @YellowCards, RedCards = @RedCards, PlayedMinutes = @PlayedMinutes,
 		StartingXI = @StartingXI, SubstitutedIn = @SubstitutedIn, OnTheBench = @OnTheBench
-	WHERE GameId = @GameId AND PlayerId = @PlayerId
-
-END
-IF @League = 'Suomen Cup'
-BEGIN
-	UPDATE [Suomencupstats]
-	SET Goals = @Goals, Assists = @Assists, YellowCards = @YellowCards, RedCards = @RedCards, PlayedMinutes = @PlayedMinutes,
-		StartingXI = @StartingXI, SubstitutedIn = @SubstitutedIn, OnTheBench = @OnTheBench
-	WHERE GameId = @GameId AND PlayerId = @PlayerId
-END
-IF @League = 'Friendly'
-BEGIN
-	UPDATE [Friendlystats] 
-	SET Goals = @Goals, Assists = @Assists, YellowCards = @YellowCards, RedCards = @RedCards, PlayedMinutes = @PlayedMinutes,
-		StartingXI = @StartingXI, SubstitutedIn = @SubstitutedIn, OnTheBench = @OnTheBench
-	WHERE GameId = @GameId AND PlayerId = @PlayerId
+	WHERE GameId = @GameId AND PlayerId = @PlayerId AND LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
 END]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
-					<References Name="[dbo].[AddStatsByGameId].[@League]" />
+					<References Name="[dbo].[Stats]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[Goals]" />
+					<References Name="[dbo].[Stats].[Goals]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddStatsByGameId].[@Goals]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[Assists]" />
+					<References Name="[dbo].[Stats].[Assists]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddStatsByGameId].[@Assists]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[YellowCards]" />
+					<References Name="[dbo].[Stats].[YellowCards]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddStatsByGameId].[@YellowCards]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[RedCards]" />
+					<References Name="[dbo].[Stats].[RedCards]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddStatsByGameId].[@RedCards]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[PlayedMinutes]" />
+					<References Name="[dbo].[Stats].[PlayedMinutes]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddStatsByGameId].[@PlayedMinutes]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[StartingXI]" />
+					<References Name="[dbo].[Stats].[StartingXI]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddStatsByGameId].[@StartingXI]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[SubstitutedIn]" />
+					<References Name="[dbo].[Stats].[SubstitutedIn]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddStatsByGameId].[@SubstitutedIn]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[OnTheBench]" />
+					<References Name="[dbo].[Stats].[OnTheBench]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddStatsByGameId].[@OnTheBench]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[GameId]" />
+					<References Name="[dbo].[Stats].[GameId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddStatsByGameId].[@GameId]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[PlayerId]" />
+					<References Name="[dbo].[Stats].[PlayerId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddStatsByGameId].[@PlayerId]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
+					<References Name="[dbo].[Stats].[LeagueId]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats].[Goals]" />
+					<References Name="[dbo].[League]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats].[Assists]" />
+					<References Name="[dbo].[League].[Id]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats].[YellowCards]" />
+					<References Name="[dbo].[League].[LeagueName]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats].[RedCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[PlayedMinutes]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[SubstitutedIn]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[OnTheBench]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[GameId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[Assists]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[YellowCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[RedCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[PlayedMinutes]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[SubstitutedIn]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[OnTheBench]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[GameId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[PlayerId]" />
+					<References Name="[dbo].[AddStatsByGameId].[@League]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -1839,7 +1864,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1232" />
+				<Property Name="Length" Value="605" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddStatsByGameId]&#xD;&#xA;&#x9;@League NVARCHAR(50),&#xD;&#xA;&#x9;@PlayerId INT,&#xD;&#xA;&#x9;@GameId INT,&#xD;&#xA;&#x9;@Goals INT,&#xD;&#xA;&#x9;@Assists INT,&#xD;&#xA;&#x9;@YellowCards INT,&#xD;&#xA;&#x9;@RedCards INT,&#xD;&#xA;&#x9;@PlayedMinutes INT,&#xD;&#xA;&#x9;@StartingXI INT,&#xD;&#xA;&#x9;@SubstitutedIn INT,&#xD;&#xA;&#x9;@OnTheBench INT&#xD;&#xA;AS" />
@@ -1848,32 +1873,19 @@ END]]></Value>
 		<Element Type="SqlProcedure" Name="[dbo].[BestScorersByLeague]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
-
-IF (@League = 'Veikkausliiga')
-BEGIN
-	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals
-	FROM [Veikkausliigastats] s JOIN Player p ON s.PlayerId = p.Id
-	GROUP BY p.FirstName, p.LastName
-	ORDER BY Goals DESC
-END
-IF (@League = 'Suomen Cup')
-BEGIN
-	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals
-	FROM [Suomencupstats] s JOIN Player p ON s.PlayerId = p.Id
-	GROUP BY p.FirstName, p.LastName
-	ORDER BY Goals DESC
-END
-IF (@League = 'Friendly')
-BEGIN
-	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals
-	FROM [Friendlystats] s JOIN Player p ON s.PlayerId = p.Id
-	GROUP BY p.FirstName, p.LastName
-	ORDER BY Goals DESC
-END
 IF (@League = 'All')
 BEGIN
-	SELECT p.FirstName, p.LastName, S.Goals
-	FROM TotalStats2020 s JOIN Player p ON s.PlayerId = p.Id
+	SELECT p.FirstName, p.LastName, SUM(S.Goals) AS Goals
+	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+END
+ELSE
+BEGIN
+	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals
+	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
+	WHERE s.LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
+	GROUP BY p.FirstName, p.LastName	
 	ORDER BY Goals DESC
 END]]></Value>
 			</Property>
@@ -1883,13 +1895,13 @@ END]]></Value>
 					<References Name="[dbo].[BestScorersByLeague].[@League]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
+					<References Name="[dbo].[Stats]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Player]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[PlayerId]" />
+					<References Name="[dbo].[Stats].[PlayerId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Player].[Id]" />
@@ -1901,64 +1913,22 @@ END]]></Value>
 					<References Name="[dbo].[Player].[LastName]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[Goals]" />
+					<References Name="[dbo].[Stats].[Goals]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
+					<References Name="[dbo].[Stats].[Goals]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats].[PlayerId]" />
+					<References Name="[dbo].[Stats].[LeagueId]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
+					<References Name="[dbo].[League]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
+					<References Name="[dbo].[League].[Id]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Goals]" />
+					<References Name="[dbo].[League].[LeagueName]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -1985,27 +1955,55 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="879" />
+				<Property Name="Length" Value="526" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[BestScorersByLeague]&#xD;&#xA;&#x9;@League NVARCHAR(50)&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
-		<Element Type="SqlCheckConstraint" Name="[dbo].[CK_Game_Serie]">
-			<Property Name="CheckExpressionScript">
-				<Value><![CDATA[Serie IN ('Veikkausliiga', 'Suomen Cup', 'Friendly')]]></Value>
-			</Property>
-			<Relationship Name="CheckExpressionDependencies">
+		<Element Type="SqlInlineTableValuedFunction" Name="[dbo].[CheckLeague]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
 				<Entry>
-					<References Name="[dbo].[Game].[Serie]" />
+					<References Name="[dbo].[League]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[League].[LeagueName]" />
 				</Entry>
 			</Relationship>
-			<Relationship Name="DefiningTable">
+			<Relationship Name="Columns">
 				<Entry>
-					<References Name="[dbo].[Game]" />
+					<Element Type="SqlComputedColumn" Name="[dbo].[CheckLeague].[LeagueName]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[League].[LeagueName]" />
+							</Entry>
+						</Relationship>
+					</Element>
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="35" />
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+SELECT LeagueName
+	FROM League]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="99" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION [dbo].[CheckLeague]&#xD;&#xA;()&#xD;&#xA;RETURNS TABLE&#xD;&#xA;AS&#xD;&#xA;RETURN" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
 		</Element>
 		<Element Type="SqlView" Name="[dbo].[Defender]">
 			<Property Name="QueryScript">
@@ -2113,18 +2111,7 @@ BEGIN
 END
 IF @Result IS NOT NULL
 BEGIN
-	IF @League = 'Veikkausliiga'
-	BEGIN
-		DELETE FROM [Veikkausliigastats] WHERE GameId = @GameId
-	END
-	IF @League = 'Suomen Cup'
-	BEGIN
-		DELETE FROM [Suomencupstats] WHERE GameId = @GameId
-	END
-	IF @League = 'Friendly'
-	BEGIN
-		DELETE FROM [Friendlystats] WHERE GameId = @GameId
-	END
+		DELETE FROM [Stats] WHERE GameId = @GameId AND LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
 END]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2142,25 +2129,25 @@ END]]></Value>
 					<References Name="[dbo].[DeleteGame].[@Result]" />
 				</Entry>
 				<Entry>
+					<References Name="[dbo].[Stats]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[GameId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[LeagueId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[League]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[League].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[League].[LeagueName]" />
+				</Entry>
+				<Entry>
 					<References Name="[dbo].[DeleteGame].[@League]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[GameId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[GameId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[GameId]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -2218,7 +2205,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="487" />
+				<Property Name="Length" Value="304" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[DeleteGame]&#xD;&#xA;&#x9;@League NVARCHAR(50),&#xD;&#xA;&#x9;@GameId INT,&#xD;&#xA;&#x9;@Result NVARCHAR(10)&#xD;&#xA;AS" />
@@ -2228,34 +2215,19 @@ END]]></Value>
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 BEGIN
-IF (@League = 'Veikkausliiga')
-BEGIN
-	SELECT G.*, O.Team AS 'Opponent'
-	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
-	WHERE Result IS NULL AND Serie = 'Veikkausliiga'
-	ORDER BY DateTime
-END
-IF (@League = 'Suomen Cup')
-BEGIN
-	SELECT G.*, O.Team AS 'Opponent'
-	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
-	WHERE Result IS NULL AND Serie = 'Suomen Cup'
-	ORDER BY DateTime
-END
-IF (@League = 'Friendly')
-BEGIN
-	SELECT G.*, O.Team AS 'Opponent'
-	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
-	WHERE Result IS NULL AND Serie = 'Friendly'
-	ORDER BY DateTime
-END
 IF (@League = 'All')
 BEGIN
 	SELECT G.*, O.Team AS 'Opponent'
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
 	WHERE Result IS NULL
 	ORDER BY DateTime
-	
+END
+ELSE
+BEGIN
+	SELECT G.*, O.Team AS 'Opponent'
+	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
+	WHERE Result IS NULL AND Serie = @League
+	ORDER BY DateTime
 END
 END]]></Value>
 			</Property>
@@ -2310,7 +2282,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="841" />
+				<Property Name="Length" Value="414" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[FixturesByLeague]&#xD;&#xA;&#x9;@League NVARCHAR(50)&#xD;&#xA;AS" />
@@ -2337,7 +2309,7 @@ END]]></Value>
 					<References Name="[dbo].[Stadium]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="36" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="43" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_PlayersNationality_Nationality]">
 			<Relationship Name="Columns">
@@ -2360,7 +2332,7 @@ END]]></Value>
 					<References Name="[dbo].[Nationality]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="37" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="44" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Playersposition_Position]">
 			<Relationship Name="Columns">
@@ -2383,127 +2355,30 @@ END]]></Value>
 					<References Name="[dbo].[Position]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="38" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="45" />
 		</Element>
-		<Element Type="SqlView" Name="[dbo].[FriendlyGames]">
-			<Property Name="QueryScript">
-				<Value><![CDATA[ 
-	SELECT g.Id, g.DateTime, g.Serie, g.Result, g.Stadion, g.Home_match, o.Team AS 'Opponent'
-	FROM Game g JOIN Opponent o ON g.OpponentId = o.Id
-	WHERE g.Serie = 'Friendly']]></Value>
-			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Stats_League]">
 			<Relationship Name="Columns">
 				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[FriendlyGames].[Id]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[Id]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[FriendlyGames].[DateTime]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[DateTime]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[FriendlyGames].[Serie]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[Serie]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[FriendlyGames].[Result]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[Result]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[FriendlyGames].[Stadion]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[Stadion]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[FriendlyGames].[Home_match]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[Home_match]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[FriendlyGames].[Opponent]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Opponent].[Team]" />
-							</Entry>
-						</Relationship>
-					</Element>
+					<References Name="[dbo].[Stats].[LeagueId]" />
 				</Entry>
 			</Relationship>
-			<Relationship Name="QueryDependencies">
+			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Game]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Opponent]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[OpponentId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Opponent].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[DateTime]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Serie]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Result]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Stadion]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Home_match]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Opponent].[Team]" />
+					<References Name="[dbo].[Stats]" />
 				</Entry>
 			</Relationship>
-			<Relationship Name="Schema">
+			<Relationship Name="ForeignColumns">
 				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
+					<References Name="[dbo].[League].[Id]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="213" />
-				<Property Name="StartLine" Value="1" />
-				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE VIEW [dbo].[FriendlyGames]&#xD;&#xA;&#x9;AS" />
-			</Annotation>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[League]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="46" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Friendlystats]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2693,7 +2568,6 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="32" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2798,7 +2672,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="35" />
+			<AttachedAnnotation Disambiguator="42" />
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[GetAllGames]">
 			<Property Name="BodyScript">
@@ -2900,81 +2774,28 @@ END]]></Value>
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 
-IF (@League = 'Veikkausliiga' AND @Year = 0)
+IF (@Year = 0 AND @League <> 'All')
 BEGIN
 	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
 	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
 	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
-	FROM [Veikkausliigastats] s JOIN Player p ON s.PlayerId = p.Id
-	GROUP BY p.FirstName, p.LastName
-	ORDER BY Goals DESC
-END
-IF (@League = 'Suomen Cup' AND @Year = 0)
-BEGIN
-	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
-	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
-	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
-	FROM [Suomencupstats] s JOIN Player p ON s.PlayerId = p.Id
-	GROUP BY p.FirstName, p.LastName
-	ORDER BY Goals DESC
-END
-IF (@League = 'Friendly' AND @Year = 0)
-BEGIN
-	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
-	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
-	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
-	FROM [Friendlystats] s JOIN Player p ON s.PlayerId = p.Id
+	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
+	WHERE s.LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
 	GROUP BY p.FirstName, p.LastName
 	ORDER BY Goals DESC
 END
 IF (@League = 'All' AND @Year = 0)
 BEGIN
-	SELECT p.FirstName, p.LastName, s.Goals, s.Games, s.Assists, s.PlayedMinutes, s.StartingXI, s.SubstitutedIn, s.OnTheBench, s.YellowCards, s.RedCards
-	FROM TotalStats2020 s JOIN Player p ON s.PlayerId = p.Id
+	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
+	GROUP BY p.FirstName, p.LastName
 	ORDER BY Goals DESC
 END
 
 IF (@Year <> 0)
 BEGIN
-	IF (@League = 'Veikkausliiga')
-	BEGIN
-		SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
-	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
-	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
-	FROM [Veikkausliigastats] s JOIN Player p ON s.PlayerId = p.Id
-	WHERE s.GameId IN (SELECT Id
-					   FROM Game
-					   WHERE YEAR(Game.DateTime) = @Year
-					   )
-	GROUP BY p.FirstName, p.LastName
-	ORDER BY Goals DESC
-	END
-	IF (@League = 'Suomen Cup')
-	BEGIN
-		SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
-	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
-	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
-	FROM [Suomencupstats] s JOIN Player p ON s.PlayerId = p.Id
-	WHERE s.GameId IN (SELECT Id
-					   FROM Game
-					   WHERE YEAR(Game.DateTime) = @Year
-					   )
-	GROUP BY p.FirstName, p.LastName
-	ORDER BY Goals DESC
-	END
-	IF (@League = 'Friendly')
-	BEGIN
-		SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
-	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
-	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
-	FROM [Friendlystats] s JOIN Player p ON s.PlayerId = p.Id
-	WHERE s.GameId IN (SELECT Id
-					   FROM Game
-					   WHERE YEAR(Game.DateTime) = @Year
-					   )
-	GROUP BY p.FirstName, p.LastName
-	ORDER BY Goals DESC
-	END
 	IF (@League = 'All')
 	BEGIN
 		SELECT FirstName, LastName, SUM(Games) AS Games, SUM(Goals) AS Goals, SUM(Assists) AS Assists,
@@ -2985,54 +2806,48 @@ BEGIN
 			SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
 			SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
 			SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
-			FROM [Veikkausliigastats] s JOIN Player p ON s.PlayerId = p.Id
+			FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
 			WHERE s.GameId IN (SELECT Id
 					   FROM Game
 					   WHERE YEAR(Game.DateTime) = @Year
 					   )
 			GROUP BY p.FirstName, p.LastName
-			UNION
-			SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
-			SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
-			SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
-			FROM [Suomencupstats] s JOIN Player p ON s.PlayerId = p.Id
-			WHERE s.GameId IN (SELECT Id
-					   FROM Game
-					   WHERE YEAR(Game.DateTime) = @Year
-					   )
-			GROUP BY p.FirstName, p.LastName
-			UNION
-			SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
-			SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
-			SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
-			FROM [Friendlystats] s JOIN Player p ON s.PlayerId = p.Id
-			WHERE s.GameId IN (SELECT Id
-					   FROM Game
-					   WHERE YEAR(Game.DateTime) = @Year
-					   )
-			GROUP BY p.FirstName, p.LastName
-		) AS A
-		GROUP BY A.FirstName, A.LastName
+		) AS p
+		GROUP BY FirstName, LastName
 	END
+	ELSE
+	BEGIN
+		SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
+	WHERE s.GameId IN (SELECT Id
+					   FROM Game
+					   WHERE YEAR(Game.DateTime) = @Year
+					   ) AND s.LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+	END
+	
 
 END]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
-					<References Name="[dbo].[GetAllStats].[@League]" />
-				</Entry>
-				<Entry>
 					<References Name="[dbo].[GetAllStats].[@Year]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
+					<References Name="[dbo].[GetAllStats].[@League]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Player]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[PlayerId]" />
+					<References Name="[dbo].[Stats].[PlayerId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Player].[Id]" />
@@ -3044,73 +2859,49 @@ END]]></Value>
 					<References Name="[dbo].[Player].[LastName]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[Goals]" />
+					<References Name="[dbo].[Stats].[Goals]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[StartingXI]" />
+					<References Name="[dbo].[Stats].[StartingXI]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[SubstitutedIn]" />
+					<References Name="[dbo].[Stats].[SubstitutedIn]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[Assists]" />
+					<References Name="[dbo].[Stats].[Assists]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[PlayedMinutes]" />
+					<References Name="[dbo].[Stats].[PlayedMinutes]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[OnTheBench]" />
+					<References Name="[dbo].[Stats].[OnTheBench]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[YellowCards]" />
+					<References Name="[dbo].[Stats].[YellowCards]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[RedCards]" />
+					<References Name="[dbo].[Stats].[RedCards]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
+					<References Name="[dbo].[Stats].[LeagueId]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats].[PlayerId]" />
+					<References Name="[dbo].[League]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
+					<References Name="[dbo].[League].[Id]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
+					<References Name="[dbo].[League].[LeagueName]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
+					<References Name="[dbo].[Stats]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats].[Goals]" />
+					<References Name="[dbo].[Player]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[SubstitutedIn]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[Assists]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[PlayedMinutes]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[OnTheBench]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[YellowCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[RedCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[PlayerId]" />
+					<References Name="[dbo].[Stats].[PlayerId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Player].[Id]" />
@@ -3122,76 +2913,31 @@ END]]></Value>
 					<References Name="[dbo].[Player].[LastName]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Friendlystats].[Goals]" />
+					<References Name="[dbo].[Stats].[Goals]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Friendlystats].[StartingXI]" />
+					<References Name="[dbo].[Stats].[StartingXI]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Friendlystats].[SubstitutedIn]" />
+					<References Name="[dbo].[Stats].[SubstitutedIn]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Friendlystats].[Assists]" />
+					<References Name="[dbo].[Stats].[Assists]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Friendlystats].[PlayedMinutes]" />
+					<References Name="[dbo].[Stats].[PlayedMinutes]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Friendlystats].[OnTheBench]" />
+					<References Name="[dbo].[Stats].[OnTheBench]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Friendlystats].[YellowCards]" />
+					<References Name="[dbo].[Stats].[YellowCards]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Friendlystats].[RedCards]" />
+					<References Name="[dbo].[Stats].[RedCards]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Games]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Assists]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[PlayedMinutes]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[SubstitutedIn]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[OnTheBench]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[YellowCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[RedCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[GameId]" />
+					<References Name="[dbo].[Stats].[GameId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Game]" />
@@ -3203,67 +2949,13 @@ END]]></Value>
 					<References Name="[dbo].[Game].[DateTime]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats].[GameId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[DateTime]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[GameId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[DateTime]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
-				</Entry>
-				<Entry>
 					<References Name="[dbo].[Player].[FirstName]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Player].[LastName]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[SubstitutedIn]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[Assists]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[PlayedMinutes]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[OnTheBench]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[YellowCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[RedCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[GameId]" />
+					<References Name="[dbo].[Stats].[GameId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Game]" />
@@ -3273,108 +2965,6 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Game].[DateTime]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[SubstitutedIn]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[Assists]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[PlayedMinutes]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[OnTheBench]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[YellowCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[RedCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[GameId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[DateTime]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[SubstitutedIn]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[Assists]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[PlayedMinutes]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[OnTheBench]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[YellowCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[RedCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[GameId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[DateTime]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -3416,7 +3006,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="5882" />
+				<Property Name="Length" Value="2784" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAllStats]&#xD;&#xA;&#x9;@League NVARCHAR(50),&#xD;&#xA;&#x9;@Year INT&#xD;&#xA;AS" />
@@ -3855,7 +3445,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="34" />
+						<AttachedAnnotation Disambiguator="41" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -4009,50 +3599,36 @@ END]]></Value>
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 
-IF (@League = 'Veikkausliiga')
+
 BEGIN
-	IF (@MinutesOrGames = 'Minutes')
+	IF (@League = 'ALL')
 	BEGIN
+		IF (@MinutesOrGames = 'Minutes')
+		BEGIN
 		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Veikkausliigastats] s join Player p ON s.PlayerId = p.Id
+		FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
 		ORDER BY s.PlayedMinutes
 	END
 	IF (@MinutesOrGames = 'Games')
-	BEGIN
+		BEGIN
 		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Veikkausliigastats] s JOIN Player p ON s.PlayerId = p.Id
+		FROM [stats] s JOIN Player p ON s.PlayerId = p.Id
 		ORDER BY (s.StartingXI+s.SubstitutedIn)
 	END
-END
-
-IF (@League = 'Suomen Cup')
-BEGIN
+	END
+	ELSE
 	IF (@MinutesOrGames = 'Minutes')
 		BEGIN
 		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Suomencupstats] s JOIN Player p ON s.PlayerId = p.Id
+		FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
+		WHERE s.LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
 		ORDER BY s.PlayedMinutes
 	END
 	IF (@MinutesOrGames = 'Games')
 		BEGIN
 		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Suomencupstats] s JOIN Player p ON s.PlayerId = p.Id
-		ORDER BY (s.StartingXI+s.SubstitutedIn)
-	END
-END
-
-IF (@League = 'Friendly')
-BEGIN
-	IF (@MinutesOrGames = 'Minutes')
-		BEGIN
-		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Friendlystats] s JOIN Player p ON s.PlayerId = p.Id
-		ORDER BY s.PlayedMinutes
-	END
-	IF (@MinutesOrGames = 'Games')
-		BEGIN
-		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Friendlystats] s JOIN Player p ON s.PlayerId = p.Id
+		FROM [stats] s JOIN Player p ON s.PlayerId = p.Id
+		WHERE s.LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
 		ORDER BY (s.StartingXI+s.SubstitutedIn)
 	END
 END]]></Value>
@@ -4066,13 +3642,13 @@ END]]></Value>
 					<References Name="[dbo].[MostPlayedPlayersByLeague].[@MinutesOrGames]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
+					<References Name="[dbo].[Stats]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Player]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[PlayerId]" />
+					<References Name="[dbo].[Stats].[PlayerId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Player].[Id]" />
@@ -4084,19 +3660,16 @@ END]]></Value>
 					<References Name="[dbo].[Player].[LastName]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[PlayedMinutes]" />
+					<References Name="[dbo].[Stats].[PlayedMinutes]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[StartingXI]" />
+					<References Name="[dbo].[Stats].[StartingXI]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[SubstitutedIn]" />
+					<References Name="[dbo].[Stats].[SubstitutedIn]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[PlayerId]" />
+					<References Name="[dbo].[Stats].[PlayerId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Player].[Id]" />
@@ -4108,37 +3681,34 @@ END]]></Value>
 					<References Name="[dbo].[Player].[LastName]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats].[PlayedMinutes]" />
+					<References Name="[dbo].[Stats].[PlayedMinutes]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats].[StartingXI]" />
+					<References Name="[dbo].[Stats].[StartingXI]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Suomencupstats].[SubstitutedIn]" />
+					<References Name="[dbo].[Stats].[SubstitutedIn]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
+					<References Name="[dbo].[Stats].[LeagueId]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Friendlystats].[PlayerId]" />
+					<References Name="[dbo].[League]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
+					<References Name="[dbo].[League].[Id]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
+					<References Name="[dbo].[League].[LeagueName]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
+					<References Name="[dbo].[Stats].[LeagueId]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Friendlystats].[PlayedMinutes]" />
+					<References Name="[dbo].[League].[Id]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Friendlystats].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[SubstitutedIn]" />
+					<References Name="[dbo].[League].[LeagueName]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -4181,7 +3751,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1720" />
+				<Property Name="Length" Value="1264" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[MostPlayedPlayersByLeague]&#xD;&#xA;&#x9;@MinutesOrGames VARCHAR(50),&#xD;&#xA;&#x9;@League VARCHAR(50)&#xD;&#xA;AS" />
@@ -4205,7 +3775,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="28" />
+						<AttachedAnnotation Disambiguator="36" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -4275,7 +3845,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="27" />
+						<AttachedAnnotation Disambiguator="35" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -4316,7 +3886,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="36" />
+			<AttachedAnnotation Disambiguator="43" />
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[OpponentProcedure]">
 			<Property Name="BodyScript">
@@ -4672,7 +4242,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="31" />
+						<AttachedAnnotation Disambiguator="39" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -5114,7 +4684,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="37" />
+			<AttachedAnnotation Disambiguator="44" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Playersposition]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -5157,7 +4727,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="38" />
+			<AttachedAnnotation Disambiguator="45" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Position]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -5177,7 +4747,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="29" />
+						<AttachedAnnotation Disambiguator="37" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -5235,66 +4805,36 @@ END]]></Value>
 
 IF (@Year = 0)
 BEGIN
-IF (@League = 'Veikkausliiga')
-BEGIN
-	SELECT G.*, O.Team AS 'Opponent'
-	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
-	WHERE Result IS NOT NULL AND Serie = 'Veikkausliiga'
-	ORDER BY DateTime DESC
-END
-IF (@League = 'Suomen Cup')
-BEGIN
-	SELECT G.*, O.Team AS 'Opponent'
-	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
-	WHERE Result IS NOT NULL AND Serie = 'Suomen Cup'
-	ORDER BY DateTime DESC
-END
-IF (@League = 'Friendly')
-BEGIN
-	SELECT G.*, O.Team AS 'Opponent'
-	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
-	WHERE Result IS NOT NULL AND Serie = 'Friendly'
-	ORDER BY DateTime DESC
-END
 IF (@League = 'All')
 BEGIN
 	SELECT G.*, O.Team AS 'Opponent'
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
 	WHERE Result IS NOT NULL
 	ORDER BY DateTime DESC
-	
+END
+ELSE
+BEGIN
+	SELECT G.*, O.Team AS 'Opponent'
+	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
+	WHERE Result IS NOT NULL AND Serie = @League
+	ORDER BY DateTime DESC
 END
 END
 ELSE
 BEGIN
-IF (@League = 'Veikkausliiga')
-BEGIN
-	SELECT *
-	FROM VeikkausliigaGames
-	WHERE Result IS NOT NULL AND YEAR(DateTime) = @Year
-	ORDER BY DateTime DESC
-END
-IF (@League = 'Suomen Cup')
-BEGIN
-	SELECT *
-	FROM SuomencupGames
-	WHERE Result IS NOT NULL AND YEAR(DateTime) = @Year
-	ORDER BY DateTime DESC
-END
-IF (@League = 'Friendly')
-BEGIN
-	SELECT *
-	FROM FriendlyGames
-	WHERE Result IS NOT NULL AND YEAR(DateTime) = @Year
-	ORDER BY DateTime DESC
-END
 IF (@League = 'All')
 BEGIN
 	SELECT G.*, O.Team AS 'Opponent'
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
 	WHERE Result IS NOT NULL AND YEAR(G.DateTime) = @Year
 	ORDER BY DateTime DESC
-	
+END
+ELSE
+BEGIN
+	SELECT *
+	FROM Game
+	WHERE Result IS NOT NULL AND YEAR(DateTime) = @Year AND Serie = @League
+	ORDER BY DateTime DESC
 END
 END]]></Value>
 			</Property>
@@ -5328,34 +4868,16 @@ END]]></Value>
 					<References Name="[dbo].[Game].[Serie]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[VeikkausliigaGames]" />
+					<References Name="[dbo].[Game].[DateTime]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[VeikkausliigaGames].[Result]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[VeikkausliigaGames].[DateTime]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[SuomencupGames]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[SuomencupGames].[Result]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[SuomencupGames].[DateTime]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[FriendlyGames]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[FriendlyGames].[Result]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[FriendlyGames].[DateTime]" />
+					<References Name="[dbo].[Game].[Result]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Game].[DateTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Serie]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -5398,7 +4920,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1602" />
+				<Property Name="Length" Value="831" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[ResultsByLeague]&#xD;&#xA;&#x9;@League NVARCHAR(50),&#xD;&#xA;&#x9;@Year NVARCHAR(5)&#xD;&#xA;AS" />
@@ -5422,7 +4944,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="33" />
+						<AttachedAnnotation Disambiguator="40" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -5522,7 +5044,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="30" />
+						<AttachedAnnotation Disambiguator="38" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -5682,6 +5204,193 @@ END]]></Value>
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[StaffFilterByName]&#xD;&#xA;&#x9;@StaffName NVARCHAR (50)&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
+		<Element Type="SqlTable" Name="[dbo].[Stats]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Stats].[LeagueId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Stats].[PlayerId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Stats].[GameId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Stats].[Goals]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="27" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Stats].[Assists]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="28" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Stats].[YellowCards]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="29" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Stats].[RedCards]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="30" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Stats].[PlayedMinutes]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="31" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Stats].[StartingXI]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="32" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Stats].[SubstitutedIn]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="33" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Stats].[OnTheBench]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="34" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="46" />
+		</Element>
 		<Element Type="SqlView" Name="[dbo].[Striker]">
 			<Property Name="QueryScript">
 				<Value><![CDATA[ SELECT p.FirstName, p.LastName, p.BirthDate, p.Number, p.Id
@@ -5778,126 +5487,6 @@ END]]></Value>
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE VIEW [dbo].[Striker]&#xD;&#xA;&#x9;AS" />
-			</Annotation>
-		</Element>
-		<Element Type="SqlView" Name="[dbo].[SuomencupGames]">
-			<Property Name="QueryScript">
-				<Value><![CDATA[ 
-	SELECT g.Id, g.DateTime, g.Serie, g.Result, g.Stadion, g.Home_match, o.Team AS 'Opponent'
-	FROM Game g JOIN Opponent o ON g.OpponentId = o.Id
-	WHERE g.Serie = 'Suomen Cup']]></Value>
-			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="Columns">
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[SuomencupGames].[Id]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[Id]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[SuomencupGames].[DateTime]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[DateTime]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[SuomencupGames].[Serie]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[Serie]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[SuomencupGames].[Result]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[Result]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[SuomencupGames].[Stadion]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[Stadion]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[SuomencupGames].[Home_match]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[Home_match]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[SuomencupGames].[Opponent]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Opponent].[Team]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="QueryDependencies">
-				<Entry>
-					<References Name="[dbo].[Game]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Opponent]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[OpponentId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Opponent].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[DateTime]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Serie]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Result]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Stadion]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Home_match]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Opponent].[Team]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="Schema">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="216" />
-				<Property Name="StartLine" Value="1" />
-				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE VIEW [dbo].[SuomencupGames]&#xD;&#xA;&#x9;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Suomencupstats]">
@@ -6493,126 +6082,6 @@ END]]></Value>
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[UpdateResult]&#xD;&#xA;&#x9;@GameId INT,&#xD;&#xA;&#x9;@Result NVARCHAR(10)&#xD;&#xA;&#xD;&#xA;AS" />
-			</Annotation>
-		</Element>
-		<Element Type="SqlView" Name="[dbo].[VeikkausliigaGames]">
-			<Property Name="QueryScript">
-				<Value><![CDATA[ 
-	SELECT g.Id, g.DateTime, g.Serie, g.Result, g.Stadion, g.Home_match, o.Team AS 'Opponent'
-	FROM Game g JOIN Opponent o ON g.OpponentId = o.Id
-	WHERE g.Serie = 'Veikkausliiga']]></Value>
-			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="Columns">
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[VeikkausliigaGames].[Id]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[Id]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[VeikkausliigaGames].[DateTime]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[DateTime]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[VeikkausliigaGames].[Serie]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[Serie]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[VeikkausliigaGames].[Result]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[Result]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[VeikkausliigaGames].[Stadion]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[Stadion]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[VeikkausliigaGames].[Home_match]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Game].[Home_match]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[VeikkausliigaGames].[Opponent]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Opponent].[Team]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="QueryDependencies">
-				<Entry>
-					<References Name="[dbo].[Game]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Opponent]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[OpponentId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Opponent].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[DateTime]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Serie]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Result]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Stadion]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Home_match]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Opponent].[Team]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="Schema">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="223" />
-				<Property Name="StartLine" Value="1" />
-				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE VIEW [dbo].[VeikkausliigaGames]&#xD;&#xA;&#x9;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Veikkausliigastats]">

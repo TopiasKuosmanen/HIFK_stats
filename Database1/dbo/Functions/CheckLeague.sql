@@ -1,0 +1,7 @@
+﻿CREATE FUNCTION [dbo].[CheckLeague]
+()
+RETURNS TABLE
+AS
+RETURN
+SELECT LeagueName
+	FROM League
