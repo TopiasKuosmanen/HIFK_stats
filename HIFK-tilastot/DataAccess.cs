@@ -38,6 +38,19 @@ namespace HIFK_tilastot
             }
         }
 
+        public League AddLeague(string name)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
+            {
+                var output = connection.ExecuteScalar<League>("dbo.AddNewLeague @LeagueName",
+                    new
+                    {
+                        LeagueName = name
+                    });
+                return output;
+            }
+        }
+
         public List<Game> GetAllGames()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))

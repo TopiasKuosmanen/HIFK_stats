@@ -70,3 +70,4 @@ C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\HIFK-tilastot\obj\Debug\HIFK-tilast
 C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\HIFK-tilastot\obj\Debug\HIFK-tilastot.csproj.CopyComplete
 C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\HIFK-tilastot\obj\Debug\HIFK-tilastot.exe
 C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\HIFK-tilastot\obj\Debug\HIFK-tilastot.pdb
+C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\HIFK-tilastot\obj\Debug\HIFK_tilastot.NewLeague.resources

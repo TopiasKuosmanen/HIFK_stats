@@ -177,6 +177,9 @@
     <EmbeddedResource Include="More.resx">
       <DependentUpon>More.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewLeague.resx">
+      <DependentUpon>NewLeague.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Players.resx">
       <DependentUpon>Players.cs</DependentUpon>
     </EmbeddedResource>
