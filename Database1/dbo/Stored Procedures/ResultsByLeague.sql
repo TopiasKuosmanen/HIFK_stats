@@ -31,8 +31,8 @@ BEGIN
 END
 ELSE
 BEGIN
-	SELECT *
-	FROM Game
+	SELECT G.*, O.Team AS 'Opponent'
+	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
 	WHERE Result IS NOT NULL AND YEAR(DateTime) = @Year AND Serie = @League
 	ORDER BY DateTime DESC
 END
