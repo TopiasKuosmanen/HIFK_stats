@@ -10,10 +10,10 @@ namespace HIFK_tilastot
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public DateTime BirthDate { get; set; }
-        public string League { get; set; }
-        public int Age { get; set; }
-        public int Id { get; set; }
+        //public DateTime BirthDate { get; set; }
+        //public string League { get; set; }
+        //public int Age { get; set; }
+        //public int Id { get; set; }
         public int Goals { get; set; }
         public int Assists { get; set; }
         public int YellowCards { get; set; }

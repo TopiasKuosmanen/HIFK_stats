@@ -14,6 +14,7 @@ namespace HIFK_tilastot
     {
         ListBox GameBox = new ListBox();
         Game selectedgame;
+        List<Game> games = new List<Game>();
         public DeleteGameButton()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace HIFK_tilastot
         private void DoGameBox()
         {
             DataAccess db = new DataAccess();
-            List<Game> games = new List<Game>();
+            
 
             games = db.GetGamesToDelete();
             GameBox1.DataSource = games;
@@ -52,6 +53,8 @@ namespace HIFK_tilastot
 
                 Result.Text = $"Game {selectedgame.SmallFixtureWithoutTheDate} was successfully deleted";
                 Result.ForeColor = System.Drawing.Color.Green;
+                games = db.GetGamesToDelete();
+                GameBox1.DataSource = games;
             }
             if (areYouSure.trueorfalse == false)
             {

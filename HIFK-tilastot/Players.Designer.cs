@@ -67,6 +67,7 @@
             this.TopScorers.TabIndex = 16;
             this.TopScorers.Text = "Top scorers";
             this.TopScorers.UseVisualStyleBackColor = true;
+            this.TopScorers.Visible = false;
             this.TopScorers.CheckedChanged += new System.EventHandler(this.TopScorers_CheckedChanged);
             // 
             // searchPlayerStats
@@ -103,6 +104,7 @@
             this.PlayerStats.Name = "PlayerStats";
             this.PlayerStats.Size = new System.Drawing.Size(525, 276);
             this.PlayerStats.TabIndex = 12;
+            this.PlayerStats.Visible = false;
             // 
             // NoPlayers
             // 
@@ -171,10 +173,10 @@
             // PlayersStatsView
             // 
             this.PlayersStatsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PlayersStatsView.Location = new System.Drawing.Point(587, 221);
+            this.PlayersStatsView.Location = new System.Drawing.Point(25, 221);
             this.PlayersStatsView.Name = "PlayersStatsView";
             this.PlayersStatsView.RowTemplate.Height = 24;
-            this.PlayersStatsView.Size = new System.Drawing.Size(488, 273);
+            this.PlayersStatsView.Size = new System.Drawing.Size(1050, 273);
             this.PlayersStatsView.TabIndex = 24;
             // 
             // Players

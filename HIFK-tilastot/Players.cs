@@ -66,10 +66,15 @@ namespace HIFK_tilastot
             {
                 allStats = db.GetAllStats(SelectLeague.Text, int.Parse(SelectYear.Text));
             }
-
             PlayersStatsView.DataSource = allStats;
-            
-            //Koita saada vain olleelliset tierot
+
+            foreach (DataGridViewColumn column in PlayersStatsView.Columns)
+            {
+                // ei toimi:
+                // https://stackoverflow.com/questions/5553100/how-to-enable-datagridview-sorting-when-user-clicks-on-the-column-header
+                // https://timvw.be/2007/02/22/presenting-the-sortablebindinglistt/
+                column.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
 
             if (TopScorers.Checked)
             {
