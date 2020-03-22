@@ -13,7 +13,7 @@ namespace HIFK_tilastot
     public partial class DeleteGameButton : Form
     {
         ListBox GameBox = new ListBox();
-        Game selectedgame;
+        List<Game> selectedgames = new List<Game>();
         List<Game> games = new List<Game>();
         public DeleteGameButton()
         {
@@ -29,6 +29,7 @@ namespace HIFK_tilastot
             games = db.GetGamesToDelete();
             GameBox1.DataSource = games;
             GameBox1.DisplayMember = "FullInfo";
+            GameBox1.SelectionMode = SelectionMode.MultiSimple;
 
         }
 
@@ -36,11 +37,24 @@ namespace HIFK_tilastot
         {
             foreach (Game game in GameBox1.SelectedItems)
             {
-                selectedgame = game;
+                selectedgames.Add(game);
             }
-            AreYouSure form = new AreYouSure($"Are you sure you want to delete game {selectedgame.SmallFixtureWithoutTheDate}");
-            form.ShowDialog();
-            Confirmation(form);
+            if (selectedgames.Count == 1)
+            {
+                foreach (Game game in selectedgames)
+                {
+                    AreYouSure form = new AreYouSure($"Are you sure you want to delete game {game.SmallFixtureWithoutTheDate}");
+                    form.ShowDialog();
+                    Confirmation(form);
+                }
+            }
+            if (selectedgames.Count > 1)
+            {
+                AreYouSure form = new AreYouSure($"Are you sure you want to delete selected games?");
+                form.ShowDialog();
+                Confirmation(form);
+            }
+            
         }
 
         private void Confirmation(AreYouSure areYouSure)
@@ -49,9 +63,14 @@ namespace HIFK_tilastot
             if (areYouSure.trueorfalse == true)
             {
                 DataAccess db = new DataAccess();
-                db.DeleteGame(selectedgame.Serie, selectedgame.Id, selectedgame.Result);
+                foreach (Game g in selectedgames)
+                {
+                    db.DeleteGame(g.Serie, g.Id, g.Result);
 
-                Result.Text = $"Game {selectedgame.SmallFixtureWithoutTheDate} was successfully deleted";
+                }
+                
+
+                Result.Text = $"Game or games was successfully deleted";
                 Result.ForeColor = System.Drawing.Color.Green;
                 games = db.GetGamesToDelete();
                 GameBox1.DataSource = games;
