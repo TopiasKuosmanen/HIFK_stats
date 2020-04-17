@@ -30,17 +30,26 @@ namespace HIFK_tilastot
             {
                 if (LeagueName.Text == l.LeagueName)
                 {
+                    noLeague.Visible = true;
                     label3.ForeColor = System.Drawing.Color.Red;
                     label3.Text = $"There is already league named {l.LeagueName}";
                     already = true;
                 }
             }
-            if (already == false)
+            if (LeagueName.Text == "")
             {
+                noLeague.Visible = true;
+                label3.ForeColor = System.Drawing.Color.Red;
+                label3.Text = $"Empty";
+            }
+            if (already == false && LeagueName.Text != "")
+            {
+                noLeague.Visible = false;
                 db.AddLeague(LeagueName.Text);
                 label3.ForeColor = System.Drawing.Color.Green;
                 label3.Text = $"League {LeagueName.Text} added succesfully";
             }
+            
 
         }
     }

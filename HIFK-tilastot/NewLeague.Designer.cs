@@ -33,6 +33,7 @@
             this.LeagueName = new System.Windows.Forms.TextBox();
             this.AddLeagueButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.noLeague = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -81,11 +82,24 @@
             this.label3.Size = new System.Drawing.Size(0, 17);
             this.label3.TabIndex = 4;
             // 
+            // noLeague
+            // 
+            this.noLeague.AutoSize = true;
+            this.noLeague.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noLeague.ForeColor = System.Drawing.Color.Red;
+            this.noLeague.Location = new System.Drawing.Point(289, 75);
+            this.noLeague.Name = "noLeague";
+            this.noLeague.Size = new System.Drawing.Size(22, 31);
+            this.noLeague.TabIndex = 5;
+            this.noLeague.Text = "!";
+            this.noLeague.Visible = false;
+            // 
             // NewLeague
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(338, 364);
+            this.Controls.Add(this.noLeague);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.AddLeagueButton);
             this.Controls.Add(this.LeagueName);
@@ -105,5 +119,6 @@
         private System.Windows.Forms.TextBox LeagueName;
         private System.Windows.Forms.Button AddLeagueButton;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label noLeague;
     }
 }
