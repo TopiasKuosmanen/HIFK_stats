@@ -14,6 +14,7 @@ namespace HIFK_tilastot
         //public string League { get; set; }
         //public int Age { get; set; }
         //public int Id { get; set; }
+        public int Games { get; set; }
         public int Goals { get; set; }
         public int Assists { get; set; }
         public int YellowCards { get; set; }
@@ -22,23 +23,22 @@ namespace HIFK_tilastot
         public int StartingXI { get; set; }
         public int SubstitutedIn { get; set; }
         public int OnTheBench { get; set; }
-        public int Games { get; set; }
-        public string FullInfo
-        {
-            get
-            {
-                return $"{FirstName} {LastName}, Maalit: {Goals}, Syötöt: {Assists}, P: {Games}";
-            }
+        //public string FullInfo
+        //{
+        //    get
+        //    {
+        //        return $"{FirstName} {LastName}, Maalit: {Goals}, Syötöt: {Assists}, P: {Games}";
+        //    }
 
-        }
+        //}
 
-        public string TopScore
-        {
-            get
-            {
-                return $"{FirstName} {LastName}, Goals: {Goals}";
-            }
-        }
+        //public string TopScore
+        //{
+        //    get
+        //    {
+        //        return $"{FirstName} {LastName}, Goals: {Goals}";
+        //    }
+        //}
 
     }
 }

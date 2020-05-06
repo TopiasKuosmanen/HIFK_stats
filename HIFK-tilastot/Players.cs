@@ -24,12 +24,12 @@ namespace HIFK_tilastot
         private void UpdateBindingPerson()
         {
             PersonfoundlistBox.DataSource = persons;
-            PersonfoundlistBox.DisplayMember = "FullInfo";
+            //PersonfoundlistBox.DisplayMember = "FullInfo";
         }
         private void UpdateBindingPlayerStats()
         {
             PlayerStats.DataSource = stats;
-            PlayerStats.DisplayMember = "FullInfo";
+            //PlayerStats.DisplayMember = "FullInfo";
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -56,48 +56,59 @@ namespace HIFK_tilastot
         private void searchPlayerStats_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
-
-
-            if (SelectYear.Text == "All")
+            if (SelectYear.Text != "Select year" && SelectLeague.Text != "Select league")
             {
-                allStats = db.GetAllStats(SelectLeague.Text, 0);
+                noYear.Visible = false;
+                noLeague.Visible = false;
+                if (SelectYear.Text == "All")
+                {
+                    allStats = db.GetAllStats(SelectLeague.Text, 0);
+                }
+                else
+                {
+                    allStats = db.GetAllStats(SelectLeague.Text, int.Parse(SelectYear.Text));
+                }
+                PlayersStatsView.DataSource = allStats;
+
+                foreach (DataGridViewColumn column in PlayersStatsView.Columns)
+                {
+                    // ei toimi:
+                    // https://stackoverflow.com/questions/5553100/how-to-enable-datagridview-sorting-when-user-clicks-on-the-column-header
+                    // https://timvw.be/2007/02/22/presenting-the-sortablebindinglistt/
+                    column.SortMode = DataGridViewColumnSortMode.Automatic;
+                }
+
+                if (TopScorers.Checked)
+                {
+                    SelectLeague.Visible = true;
+                    stats = db.GetTopScorers(SelectLeague.Text);
+                    UpdateBindingPlayerStats();
+                    PlayerStats.DisplayMember = "TopScore";
+                }
+                else
+                {
+                    stats = db.GetPlayerStats(PlayerNameText.Text);
+                    UpdateBindingPlayerStats();
+                }
             }
             else
             {
-                allStats = db.GetAllStats(SelectLeague.Text, int.Parse(SelectYear.Text));
+                if (SelectYear.Text == "Select year")
+                {
+                    noYear.Visible = true;
+                }
+                if (SelectLeague.Text == "Select league")
+                {
+                    noLeague.Visible = true;
+                }
             }
-            PlayersStatsView.DataSource = allStats;
-
-            foreach (DataGridViewColumn column in PlayersStatsView.Columns)
-            {
-                // ei toimi:
-                // https://stackoverflow.com/questions/5553100/how-to-enable-datagridview-sorting-when-user-clicks-on-the-column-header
-                // https://timvw.be/2007/02/22/presenting-the-sortablebindinglistt/
-                column.SortMode = DataGridViewColumnSortMode.Automatic;
-            }
-
-            if (TopScorers.Checked)
-            {
-                SelectLeague.Visible = true;
-                stats = db.GetTopScorers(SelectLeague.Text);
-                UpdateBindingPlayerStats();
-                PlayerStats.DisplayMember = "TopScore";
-            }
-            else
-            {
-                stats = db.GetPlayerStats(PlayerNameText.Text);
-                UpdateBindingPlayerStats();
-            }
-
-
-
-
-
+            
 
         }
         private void TopScorers_CheckedChanged(object sender, EventArgs e)
         {
             
-            }
         }
+
+    }
 }

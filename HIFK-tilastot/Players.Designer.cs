@@ -41,6 +41,8 @@
             this.PersonfoundlistBox = new System.Windows.Forms.ListBox();
             this.SelectYear = new System.Windows.Forms.ComboBox();
             this.PlayersStatsView = new System.Windows.Forms.DataGridView();
+            this.noLeague = new System.Windows.Forms.Label();
+            this.noYear = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PlayersStatsView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,11 +181,37 @@
             this.PlayersStatsView.Size = new System.Drawing.Size(1050, 273);
             this.PlayersStatsView.TabIndex = 24;
             // 
+            // noLeague
+            // 
+            this.noLeague.AutoSize = true;
+            this.noLeague.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noLeague.ForeColor = System.Drawing.Color.Red;
+            this.noLeague.Location = new System.Drawing.Point(19, 15);
+            this.noLeague.Name = "noLeague";
+            this.noLeague.Size = new System.Drawing.Size(22, 31);
+            this.noLeague.TabIndex = 25;
+            this.noLeague.Text = "!";
+            this.noLeague.Visible = false;
+            // 
+            // noYear
+            // 
+            this.noYear.AutoSize = true;
+            this.noYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noYear.ForeColor = System.Drawing.Color.Red;
+            this.noYear.Location = new System.Drawing.Point(19, 45);
+            this.noYear.Name = "noYear";
+            this.noYear.Size = new System.Drawing.Size(22, 31);
+            this.noYear.TabIndex = 26;
+            this.noYear.Text = "!";
+            this.noYear.Visible = false;
+            // 
             // Players
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1103, 655);
+            this.Controls.Add(this.noYear);
+            this.Controls.Add(this.noLeague);
             this.Controls.Add(this.PlayersStatsView);
             this.Controls.Add(this.SelectYear);
             this.Controls.Add(this.NoPlayers);
@@ -220,5 +248,7 @@
         private System.Windows.Forms.ListBox PersonfoundlistBox;
         private System.Windows.Forms.ComboBox SelectYear;
         private System.Windows.Forms.DataGridView PlayersStatsView;
+        private System.Windows.Forms.Label noLeague;
+        private System.Windows.Forms.Label noYear;
     }
 }
