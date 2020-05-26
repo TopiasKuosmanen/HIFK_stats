@@ -712,11 +712,11 @@
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 BEGIN
-	INSERT INTO dbo.Game(OpponentId, DateTime, Serie, Stadion, Home_match)
+	INSERT INTO dbo.Game(OpponentId, DateTime, Serie, Stadion, Home_match, Extra_time, Penalties)
 	VALUES ((SELECT Opponent.Id
 			 FROM Opponent
 			 WHERE Opponent.Team = @Opponent),
-			 @DateTime, @League, @Stadium, @Homegame)
+			 @DateTime, @League, @Stadium, @Homegame, @ExtraTime, @Penalties)
 END]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -738,6 +738,12 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Game].[Home_match]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Extra_time]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Penalties]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Opponent]" />
@@ -762,6 +768,12 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddGameProcedure].[@Homegame]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[AddGameProcedure].[@ExtraTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[AddGameProcedure].[@Penalties]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -843,6 +855,36 @@ END]]></Value>
 						</Relationship>
 					</Element>
 				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[AddGameProcedure].[@ExtraTime]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[AddGameProcedure].[@Penalties]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
 			</Relationship>
 			<Relationship Name="Schema">
 				<Entry>
@@ -850,10 +892,10 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="377" />
+				<Property Name="Length" Value="460" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddGameProcedure]&#xD;&#xA;&#x9;@League NVARCHAR(50),&#xD;&#xA;&#x9;@Opponent NVARCHAR(50),&#xD;&#xA;&#x9;@DateTime DATETIME,&#xD;&#xA;&#x9;@Homegame BIT,&#xD;&#xA;&#x9;@Stadium NVARCHAR(50)&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddGameProcedure]&#xD;&#xA;&#x9;@League NVARCHAR(50),&#xD;&#xA;&#x9;@Opponent NVARCHAR(50),&#xD;&#xA;&#x9;@DateTime DATETIME,&#xD;&#xA;&#x9;@Homegame BIT,&#xD;&#xA;&#x9;@Stadium NVARCHAR(50),&#xD;&#xA;&#x9;@ExtraTime BIT,&#xD;&#xA;&#x9;@Penalties BIT&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[AddNewLeague]">
@@ -2703,6 +2745,36 @@ END]]></Value>
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[Game].[Home_match]">
 						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Game].[Extra_time]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Game].[Penalties]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">

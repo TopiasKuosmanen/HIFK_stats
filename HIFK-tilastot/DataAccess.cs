@@ -251,18 +251,21 @@ namespace HIFK_tilastot
 
         }
 
-        public Game AddNewGame(string league, string opponent, DateTime datetime, Boolean homegame, string stadium)
+        public Game AddNewGame(string league, string opponent, DateTime datetime, Boolean homegame, string stadium, Boolean extratime, Boolean penalties)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
             {
-                var output = connection.ExecuteScalar<Game>("dbo.AddGameProcedure @League, @Opponent, @DateTime, @Homegame, @Stadium",
+                var output = connection.ExecuteScalar<Game>("dbo.AddGameProcedure @League, @Opponent, @DateTime, @Homegame, @Stadium, @ExtraTime, @Penalties",
                     new
                     {
                         League = league,
                         Opponent = opponent,
                         DateTime = datetime,
                         Homegame = homegame,
-                        Stadium = stadium
+                        Stadium = stadium,
+                        ExtraTime = extratime,
+                        Penalties = penalties
+
                     });
                 return output;
             }

@@ -1,0 +1,25 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Alter
+       [dbo].[Game] (Table)
+       [dbo].[AddGameProcedure] (Procedure)
+       [dbo].[GetAllStats] (Procedure)
+
+** Supporting actions
+     Refresh
+       [dbo].[AddResult] (Procedure)
+       [dbo].[DeleteGame] (Procedure)
+       [dbo].[FixturesByLeague] (Procedure)
+       [dbo].[GetAllGames] (Procedure)
+       [dbo].[GetGameWithoutTheResult] (Procedure)
+       [dbo].[ResultsByLeague] (Procedure)
+       [dbo].[UpdateResult] (Procedure)

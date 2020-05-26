@@ -43,6 +43,10 @@
             this.MustHaveOpponent = new System.Windows.Forms.Label();
             this.MustHaveHomeAway = new System.Windows.Forms.Label();
             this.TimeForm = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.extraTimeOrNot = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.penaltiesOrNot = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Result
@@ -70,7 +74,7 @@
             // AddingGameButton
             // 
             this.AddingGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddingGameButton.Location = new System.Drawing.Point(292, 311);
+            this.AddingGameButton.Location = new System.Drawing.Point(251, 387);
             this.AddingGameButton.Name = "AddingGameButton";
             this.AddingGameButton.Size = new System.Drawing.Size(168, 52);
             this.AddingGameButton.TabIndex = 39;
@@ -204,11 +208,61 @@
             this.TimeForm.Text = "00:00";
             this.TimeForm.Visible = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(195, 296);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 25);
+            this.label8.TabIndex = 52;
+            this.label8.Text = "Extra time:";
+            // 
+            // extraTimeOrNot
+            // 
+            this.extraTimeOrNot.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.extraTimeOrNot.FormattingEnabled = true;
+            this.extraTimeOrNot.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this.extraTimeOrNot.Location = new System.Drawing.Point(319, 296);
+            this.extraTimeOrNot.Name = "extraTimeOrNot";
+            this.extraTimeOrNot.Size = new System.Drawing.Size(161, 28);
+            this.extraTimeOrNot.TabIndex = 53;
+            this.extraTimeOrNot.SelectedIndexChanged += new System.EventHandler(this.extraTimeOrNot_SelectedIndexChanged_1);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(195, 334);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(98, 25);
+            this.label9.TabIndex = 54;
+            this.label9.Text = "Penalties:";
+            // 
+            // penaltiesOrNot
+            // 
+            this.penaltiesOrNot.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.penaltiesOrNot.FormattingEnabled = true;
+            this.penaltiesOrNot.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this.penaltiesOrNot.Location = new System.Drawing.Point(319, 334);
+            this.penaltiesOrNot.Name = "penaltiesOrNot";
+            this.penaltiesOrNot.Size = new System.Drawing.Size(161, 28);
+            this.penaltiesOrNot.TabIndex = 55;
+            this.penaltiesOrNot.SelectedIndexChanged += new System.EventHandler(this.penaltiesOrNot_SelectedIndexChanged_1);
+            // 
             // AddNewGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 545);
+            this.Controls.Add(this.penaltiesOrNot);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.extraTimeOrNot);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.TimeForm);
             this.Controls.Add(this.MustHaveHomeAway);
             this.Controls.Add(this.MustHaveOpponent);
@@ -248,5 +302,9 @@
         private System.Windows.Forms.Label MustHaveOpponent;
         private System.Windows.Forms.Label MustHaveHomeAway;
         private System.Windows.Forms.Label TimeForm;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox extraTimeOrNot;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox penaltiesOrNot;
     }
 }

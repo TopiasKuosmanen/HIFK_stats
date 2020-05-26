@@ -10,6 +10,12 @@ using System.Windows.Forms;
 
 namespace HIFK_tilastot
 {
+
+    // Next thing to do: 
+    // I want to add property where I can choose if game has an extra time or not. Usually not of course.
+    // If I choose that there was an extra time on the game, application asks if there was penalties on the game.
+    // If there was penalties, you have to set shooters and succesful and unsuccesful penalties. 
+    // I have to think if winning pen will give a goal to players stats or not. 
     public partial class AddNewGame : Form
     {
         string team;
@@ -18,6 +24,8 @@ namespace HIFK_tilastot
         ComboBox StadiumBox = new ComboBox();
         DateTimePicker DateTimeBox = new DateTimePicker();
         Boolean homegame;
+        Boolean extratime = false;
+        Boolean penalties = false;
 
         public AddNewGame()
         {
@@ -26,6 +34,8 @@ namespace HIFK_tilastot
             DoLeagueBox();
             DoStadiumBox();
             DoDateTimeBox();
+            extraTimeOrNot.Text = "No";
+            penaltiesOrNot.Text = "No";
         }
 
         private void DoDateTimeBox()
@@ -90,8 +100,6 @@ namespace HIFK_tilastot
             }
             this.Controls.Add(StadiumBox);
         }
-
-
         private void HomeOrAway_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (HomeOrAway.SelectedItem.ToString() == "Home")
@@ -141,7 +149,7 @@ namespace HIFK_tilastot
                 TimeForm.Visible = true;
             }
             if (MustHaveHomeAway.Visible == false && MustHaveLeague.Visible == false && MustHaveOpponent.Visible == false && TimeForm.Visible == false)
-            {
+            { 
                 AreYouSure form = new AreYouSure($"Are you sure you want to add {LeagueBox.SelectedItem.ToString()} game against {OpponentBox.SelectedItem.ToString()}");
                 form.ShowDialog();
                 Confirmation(form);
@@ -157,7 +165,7 @@ namespace HIFK_tilastot
                 DateTime datetime;
                 datetime = Convert.ToDateTime(DateTimeBox.Text.ToString() + " " + TimeBox.Text.ToString());
 
-                db.AddNewGame(LeagueBox.SelectedItem.ToString(), OpponentBox.SelectedItem.ToString(), datetime, homegame, StadiumBox.SelectedItem.ToString());
+                db.AddNewGame(LeagueBox.SelectedItem.ToString(), OpponentBox.SelectedItem.ToString(), datetime, homegame, StadiumBox.SelectedItem.ToString(), extratime, penalties);
 
                 Result.Text = $"Game against {OpponentBox.SelectedItem} was successfully added";
                 Result.ForeColor = System.Drawing.Color.Green;
@@ -166,6 +174,30 @@ namespace HIFK_tilastot
             {
                 Result.Text = "Adding game has been canceled.";
                 Result.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void penaltiesOrNot_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (penaltiesOrNot.SelectedItem.ToString() == "No")
+            {
+                penalties = false;
+            }
+            if (penaltiesOrNot.SelectedItem.ToString() == "Yes")
+            {
+                penalties = true;
+            }
+        }
+
+        private void extraTimeOrNot_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (extraTimeOrNot.SelectedItem.ToString() == "No")
+            {
+                extratime = false;
+            }
+            if (extraTimeOrNot.SelectedItem.ToString() == "Yes")
+            {
+                extratime = true;
             }
         }
     }
