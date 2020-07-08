@@ -178,7 +178,7 @@
             this.PlayersStatsView.Location = new System.Drawing.Point(25, 221);
             this.PlayersStatsView.Name = "PlayersStatsView";
             this.PlayersStatsView.RowTemplate.Height = 24;
-            this.PlayersStatsView.Size = new System.Drawing.Size(1050, 273);
+            this.PlayersStatsView.Size = new System.Drawing.Size(1542, 300);
             this.PlayersStatsView.TabIndex = 24;
             // 
             // noLeague
@@ -209,7 +209,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1103, 655);
+            this.ClientSize = new System.Drawing.Size(1579, 592);
             this.Controls.Add(this.noYear);
             this.Controls.Add(this.noLeague);
             this.Controls.Add(this.PlayersStatsView);

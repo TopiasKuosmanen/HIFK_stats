@@ -230,6 +230,7 @@
             this.extraTimeOrNot.Size = new System.Drawing.Size(161, 28);
             this.extraTimeOrNot.TabIndex = 53;
             this.extraTimeOrNot.SelectedIndexChanged += new System.EventHandler(this.extraTimeOrNot_SelectedIndexChanged_1);
+            //this.OpponentBox.SelectedIndexChanged += new System.EventHandler(this.OpponentBox_SelectedIndexChanged);
             // 
             // label9
             // 

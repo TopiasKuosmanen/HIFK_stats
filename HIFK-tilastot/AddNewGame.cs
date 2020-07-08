@@ -123,7 +123,37 @@ namespace HIFK_tilastot
                 StadiumBox.Update();
                 homegame = false;
             }
+            
         }
+
+        // Same thing with changing opponent: (NOT WORKING YET)
+
+        //private void OpponentBox_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (HomeOrAway.SelectedItem.ToString() == "Home" || HomeOrAway.SelectedItem.ToString() == "")
+        //    {
+        //        StadiumBox.Text = "Bolt Arena";
+        //        StadiumBox.Update();
+        //        homegame = true;
+        //    }
+        //    if (HomeOrAway.SelectedItem.ToString() == "Away")
+        //    {
+        //        DataAccess db = new DataAccess();
+        //        List<Stadium> stadium = new List<Stadium>();
+        //        team = OpponentBox.SelectedItem.ToString();
+        //        stadium = db.GetStadiumByTeam(team);
+
+        //        foreach (Stadium s in stadium)
+        //        {
+        //            StadiumBox.Text = s.Name;
+        //        }
+
+        //        StadiumBox.Update();
+        //        homegame = false;
+        //    }
+        //}
+
+
 
         private void AddingGameButton_Click(object sender, EventArgs e)
         {
