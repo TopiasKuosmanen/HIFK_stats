@@ -43,6 +43,10 @@
             this.PlayersStatsView = new System.Windows.Forms.DataGridView();
             this.noLeague = new System.Windows.Forms.Label();
             this.noYear = new System.Windows.Forms.Label();
+            this.toExcel = new System.Windows.Forms.Button();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.PlayersStatsView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -205,11 +209,48 @@
             this.noYear.Text = "!";
             this.noYear.Visible = false;
             // 
+            // toExcel
+            // 
+            this.toExcel.Location = new System.Drawing.Point(1364, 527);
+            this.toExcel.Name = "toExcel";
+            this.toExcel.Size = new System.Drawing.Size(203, 55);
+            this.toExcel.TabIndex = 27;
+            this.toExcel.Text = "Export to Excel";
+            this.toExcel.UseVisualStyleBackColor = true;
+            this.toExcel.Click += new System.EventHandler(this.toExcel_Click);
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(25, 527);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(1333, 53);
+            this.progressBar.TabIndex = 28;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(573, 594);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(110, 17);
+            this.lblStatus.TabIndex = 29;
+            this.lblStatus.Text = "Processing...0%";
+            // 
+            // backgroundWorker
+            // 
+            this.backgroundWorker.WorkerReportsProgress = true;
+            this.backgroundWorker.WorkerSupportsCancellation = true;
+            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
+            this.backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_ProgressChanged);
+            this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
+            // 
             // Players
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1579, 592);
+            this.ClientSize = new System.Drawing.Size(1579, 621);
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.progressBar);
+            this.Controls.Add(this.toExcel);
             this.Controls.Add(this.noYear);
             this.Controls.Add(this.noLeague);
             this.Controls.Add(this.PlayersStatsView);
@@ -250,5 +291,9 @@
         private System.Windows.Forms.DataGridView PlayersStatsView;
         private System.Windows.Forms.Label noLeague;
         private System.Windows.Forms.Label noYear;
+        private System.Windows.Forms.Button toExcel;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Label lblStatus;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
     }
 }
