@@ -8,6 +8,7 @@
     [Home_match] BIT           NOT NULL,
 	[Extra_time] BIT		   NULL,
 	[Penalties]  BIT		   NULL,
+	[ResultCode] INT CONSTRAINT Tie_Win_Lose_ETW_ETL_PKW_PKL CHECK (ResultCode BETWEEN 0 AND 6) NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
    -- CONSTRAINT [CK_Game_Serie] CHECK (([Serie]) IN (CheckLeague()))
 );

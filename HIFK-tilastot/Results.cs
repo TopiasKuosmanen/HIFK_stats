@@ -73,6 +73,7 @@ namespace HIFK_tilastot
                     results = db.GetResults(SelectLeague.Text, int.Parse(SelectYear.Text));
                 }
             }
+            ResultsDataGridView.DataSource = results;
             UpdateBindingResults();
         }
     }

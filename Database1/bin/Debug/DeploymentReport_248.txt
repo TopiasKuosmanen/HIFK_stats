@@ -1,0 +1,27 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Alter
+       [dbo].[Game] (Table)
+       [dbo].[AddResult] (Procedure)
+     Create
+       [dbo].[Tie_Win_Lose_ETW_ETL_PKW_PKL] (Check Constraint)
+
+** Supporting actions
+     Refresh
+       [dbo].[AddGameProcedure] (Procedure)
+       [dbo].[DeleteGame] (Procedure)
+       [dbo].[FixturesByLeague] (Procedure)
+       [dbo].[GetAllGames] (Procedure)
+       [dbo].[GetAllStats] (Procedure)
+       [dbo].[GetGameWithoutTheResult] (Procedure)
+       [dbo].[ResultsByLeague] (Procedure)
+       [dbo].[UpdateResult] (Procedure)

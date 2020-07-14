@@ -36,6 +36,8 @@
             this.MustHaveLeague = new System.Windows.Forms.Label();
             this.MustHaveYear = new System.Windows.Forms.Label();
             this.ResultsBox = new System.Windows.Forms.ListView();
+            this.ResultsDataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.ResultsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // SelectLeague
@@ -130,11 +132,21 @@
             this.ResultsBox.TabIndex = 19;
             this.ResultsBox.UseCompatibleStateImageBehavior = false;
             // 
+            // ResultsDataGridView
+            // 
+            this.ResultsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ResultsDataGridView.Location = new System.Drawing.Point(12, 259);
+            this.ResultsDataGridView.Name = "ResultsDataGridView";
+            this.ResultsDataGridView.RowTemplate.Height = 24;
+            this.ResultsDataGridView.Size = new System.Drawing.Size(903, 384);
+            this.ResultsDataGridView.TabIndex = 20;
+            // 
             // Results
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 655);
+            this.Controls.Add(this.ResultsDataGridView);
             this.Controls.Add(this.ResultsBox);
             this.Controls.Add(this.MustHaveYear);
             this.Controls.Add(this.MustHaveLeague);
@@ -145,6 +157,7 @@
             this.Controls.Add(this.SelectLeague);
             this.Name = "Results";
             this.Text = "Results";
+            ((System.ComponentModel.ISupportInitialize)(this.ResultsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,5 +173,6 @@
         private System.Windows.Forms.Label MustHaveLeague;
         private System.Windows.Forms.Label MustHaveYear;
         private System.Windows.Forms.ListView ResultsBox;
+        private System.Windows.Forms.DataGridView ResultsDataGridView;
     }
 }

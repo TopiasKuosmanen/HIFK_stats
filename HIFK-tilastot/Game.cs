@@ -13,6 +13,7 @@ namespace HIFK_tilastot
         public DateTime DateTime { get; set; }
         public string Serie { get; set; }
         public string Result { get; set; }
+        public int ResultCode { get; set; }
         public string Stadion { get; set; }
         public Boolean Home_match { get; set; }
 

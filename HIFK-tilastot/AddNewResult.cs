@@ -894,9 +894,38 @@ namespace HIFK_tilastot
         private void AddResultButton_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
-            
+
             // Adding result 
-            db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}");
+            if (SelectedGame.Home_match == true)
+            {
+                if (ResultBox1.Value > ResultBox2.Value)
+                {
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}",1);
+                }
+                if (ResultBox1.Value < ResultBox2.Value)
+                {
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 2);
+                }
+                if (ResultBox1.Value == ResultBox2.Value)
+                {
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 0);
+                }
+            }
+            else if(SelectedGame.Home_match == false)
+            {
+                if (ResultBox1.Value < ResultBox2.Value)
+                {
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 1);
+                }
+                if (ResultBox1.Value > ResultBox2.Value)
+                {
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 2);
+                }
+                if (ResultBox1.Value == ResultBox2.Value)
+                {
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 0);
+                }
+            }
 
             // Adding player id and game id to stats table
             foreach (Person p in PlayedPlayers)

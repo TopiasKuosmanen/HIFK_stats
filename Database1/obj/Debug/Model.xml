@@ -1523,7 +1523,7 @@ END]]></Value>
 				<Value><![CDATA[
 BEGIN
 	UPDATE Game
-	SET Result = @Result
+	SET Result = @Result, ResultCode = @ResultCode
 	WHERE Game.Id = @Id
 END]]></Value>
 			</Property>
@@ -1537,6 +1537,12 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddResult].[@Result]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[ResultCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[AddResult].[@ResultCode]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Game].[Id]" />
@@ -1577,6 +1583,21 @@ END]]></Value>
 						</Relationship>
 					</Element>
 				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[AddResult].[@ResultCode]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
 			</Relationship>
 			<Relationship Name="Schema">
 				<Entry>
@@ -1584,10 +1605,10 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="143" />
+				<Property Name="Length" Value="188" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddResult]&#xD;&#xA;&#x9;@Id INT,&#xD;&#xA;&#x9;@Result NVARCHAR(10)&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddResult]&#xD;&#xA;&#x9;@Id INT,&#xD;&#xA;&#x9;@Result NVARCHAR(10),&#xD;&#xA;&#x9;@ResultCode INT&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[AddStats]">
@@ -2786,6 +2807,22 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Game].[ResultCode]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="47" />
 					</Element>
 				</Entry>
 			</Relationship>
@@ -5774,6 +5811,22 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
+		</Element>
+		<Element Type="SqlCheckConstraint" Name="[dbo].[Tie_Win_Lose_ETW_ETL_PKW_PKL]">
+			<Property Name="CheckExpressionScript">
+				<Value><![CDATA[ResultCode BETWEEN 0 AND 6]]></Value>
+			</Property>
+			<Relationship Name="CheckExpressionDependencies">
+				<Entry>
+					<References Name="[dbo].[Game].[ResultCode]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Game]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="47" />
 		</Element>
 		<Element Type="SqlView" Name="[dbo].[TotalStats2020]">
 			<Property Name="QueryScript">
