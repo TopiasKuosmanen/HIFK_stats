@@ -37,6 +37,10 @@
             this.MustHaveYear = new System.Windows.Forms.Label();
             this.ResultsBox = new System.Windows.Forms.ListView();
             this.ResultsDataGridView = new System.Windows.Forms.DataGridView();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.toExcel = new System.Windows.Forms.Button();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.ResultsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,14 +142,51 @@
             this.ResultsDataGridView.Location = new System.Drawing.Point(12, 259);
             this.ResultsDataGridView.Name = "ResultsDataGridView";
             this.ResultsDataGridView.RowTemplate.Height = 24;
-            this.ResultsDataGridView.Size = new System.Drawing.Size(903, 384);
+            this.ResultsDataGridView.Size = new System.Drawing.Size(1542, 300);
             this.ResultsDataGridView.TabIndex = 20;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(560, 632);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(110, 17);
+            this.lblStatus.TabIndex = 32;
+            this.lblStatus.Text = "Processing...0%";
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(12, 565);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(1333, 53);
+            this.progressBar.TabIndex = 31;
+            // 
+            // toExcel
+            // 
+            this.toExcel.Location = new System.Drawing.Point(1351, 565);
+            this.toExcel.Name = "toExcel";
+            this.toExcel.Size = new System.Drawing.Size(203, 55);
+            this.toExcel.TabIndex = 30;
+            this.toExcel.Text = "Export to Excel";
+            this.toExcel.UseVisualStyleBackColor = true;
+            this.toExcel.Click += new System.EventHandler(this.toExcel_Click);
+            // 
+            // backgroundWorker
+            // 
+            this.backgroundWorker.WorkerReportsProgress = true;
+            this.backgroundWorker.WorkerSupportsCancellation = true;
+            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
+            this.backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_ProgressChanged);
+            this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
             // 
             // Results
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 655);
+            this.ClientSize = new System.Drawing.Size(1579, 655);
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.progressBar);
+            this.Controls.Add(this.toExcel);
             this.Controls.Add(this.ResultsDataGridView);
             this.Controls.Add(this.ResultsBox);
             this.Controls.Add(this.MustHaveYear);
@@ -174,5 +215,9 @@
         private System.Windows.Forms.Label MustHaveYear;
         private System.Windows.Forms.ListView ResultsBox;
         private System.Windows.Forms.DataGridView ResultsDataGridView;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Button toExcel;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
     }
 }

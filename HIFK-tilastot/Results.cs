@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -75,6 +77,75 @@ namespace HIFK_tilastot
             }
             ResultsDataGridView.DataSource = results;
             UpdateBindingResults();
+        }
+        // Export to Excel
+        struct DataParameter
+        {
+            public List<Game> ResultsList;
+            public string FileName { get; set; }
+        }
+        DataParameter _inputParameter;
+
+        private void toExcel_Click(object sender, EventArgs e)
+        {
+            if (backgroundWorker.IsBusy)
+                return;
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "CSV|*.csv", ValidateNames = true })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    _inputParameter.ResultsList = ResultsDataGridView.DataSource as List<Game>;
+                    _inputParameter.FileName = sfd.FileName;
+                    progressBar.Minimum = 0;
+                    progressBar.Value = 0;
+                    backgroundWorker.RunWorkerAsync(_inputParameter);
+                }
+            }
+        }
+
+        private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            List<Game> list = ((DataParameter)e.Argument).ResultsList;
+            string filename = ((DataParameter)e.Argument).FileName;
+            int index = 1;
+            int process = list.Count;
+            using (StreamWriter sw = new StreamWriter(new FileStream(filename, FileMode.Create), Encoding.UTF8))
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("Id,Opponent,DateTime,Serie,Result,ResultCode,Stadion,Home_match,HomeMatchInfo,FullInfo");
+                foreach (Game g in list)
+                {
+                    if (!backgroundWorker.CancellationPending)
+                    {
+                        backgroundWorker.ReportProgress(index++ * 100 / process);
+                        sb.AppendLine(string.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                            g.Id,
+                            g.Opponent,
+                            g.DateTime,
+                            g.Serie,
+                            g.Result,
+                            g.ResultCode,
+                            g.Stadion,
+                            g.Home_match,
+                            g.HomeMatchInfo,
+                            g.FullInfo));
+                    }
+                }
+                sw.Write(sb.ToString());
+            }
+        }
+
+        private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Thread.Sleep(100);
+            lblStatus.Text = "Your data has been succefully exported.";
+        }
+
+        private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar.Value = e.ProgressPercentage;
+            lblStatus.Text = string.Format("Processing...{0}%", e.ProgressPercentage);
+            progressBar.Update();
         }
     }
 }
