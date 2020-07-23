@@ -210,11 +210,11 @@ namespace HIFK_tilastot
         }
 
 
-        public List<Game> GetResults(string league, int year)
+        public List<Game> GetResults(string league, DateTime startingday, DateTime endingday)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
             {
-                var output = connection.Query<Game>("dbo.ResultsByLeague @League, @Year", new { League = league, Year = year }).ToList();
+                var output = connection.Query<Game>("dbo.ResultsByLeague @League, @StartingDay, @EndingDay", new { League = league, StartingDay = startingday, EndingDay = endingday }).ToList();
                 return output;
             }
         }

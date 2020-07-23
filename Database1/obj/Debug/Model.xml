@@ -657,6 +657,25 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
+								<References Name="[dbo].[Game].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Game]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="40" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
 								<References Name="[dbo].[Stadium].[Id]" />
 							</Entry>
 						</Relationship>
@@ -668,7 +687,7 @@
 					<References Name="[dbo].[Stadium]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="40" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="41" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -685,25 +704,6 @@
 			<Relationship Name="DefiningTable">
 				<Entry>
 					<References Name="[dbo].[League]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="41" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[Game].[Id]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Game]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="42" />
@@ -2831,7 +2831,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="42" />
+			<AttachedAnnotation Disambiguator="40" />
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[GetAllGames]">
 			<Property Name="BodyScript">
@@ -3604,7 +3604,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="41" />
+						<AttachedAnnotation Disambiguator="42" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -4962,7 +4962,7 @@ END]]></Value>
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 
-IF (@Year = 0)
+IF (@StartingDay = 0 AND @EndingDay = 0)
 BEGIN
 IF (@League = 'All')
 BEGIN
@@ -4985,14 +4985,14 @@ IF (@League = 'All')
 BEGIN
 	SELECT G.*, O.Team AS 'Opponent'
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
-	WHERE Result IS NOT NULL AND YEAR(G.DateTime) = @Year
+	WHERE Result IS NOT NULL AND G.DateTime >= @StartingDay AND G.DateTime <= @EndingDay
 	ORDER BY DateTime DESC
 END
 ELSE
 BEGIN
 	SELECT G.*, O.Team AS 'Opponent'
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
-	WHERE Result IS NOT NULL AND YEAR(DateTime) = @Year AND Serie = @League
+	WHERE Result IS NOT NULL AND G.DateTime >= @StartingDay AND G.DateTime <= @EndingDay AND Serie = @League
 	ORDER BY DateTime DESC
 END
 END]]></Value>
@@ -5000,7 +5000,10 @@ END]]></Value>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
-					<References Name="[dbo].[ResultsByLeague].[@Year]" />
+					<References Name="[dbo].[ResultsByLeague].[@StartingDay]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ResultsByLeague].[@EndingDay]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[ResultsByLeague].[@League]" />
@@ -5029,9 +5032,6 @@ END]]></Value>
 				<Entry>
 					<References Name="[dbo].[Game].[DateTime]" />
 				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[DateTime]" />
-				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
 				<Entry>
@@ -5051,14 +5051,28 @@ END]]></Value>
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[dbo].[ResultsByLeague].[@Year]">
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ResultsByLeague].[@StartingDay]">
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
-									<Property Name="Length" Value="5" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ResultsByLeague].[@EndingDay]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -5073,10 +5087,10 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="896" />
+				<Property Name="Length" Value="1013" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[ResultsByLeague]&#xD;&#xA;&#x9;@League NVARCHAR(50),&#xD;&#xA;&#x9;@Year NVARCHAR(5)&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[ResultsByLeague]&#xD;&#xA;&#x9;@League NVARCHAR(50),&#xD;&#xA;&#x9;@StartingDay DATETIME,&#xD;&#xA;&#x9;@EndingDay DATETIME&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Stadium]">
@@ -5097,7 +5111,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="40" />
+						<AttachedAnnotation Disambiguator="41" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -5159,12 +5173,16 @@ END]]></Value>
 				<Value><![CDATA[
 BEGIN
 	SELECT * FROM Stadium
+	ORDER BY Name
 END]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References Name="[dbo].[Stadium]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stadium].[Name]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Schema">
@@ -5173,7 +5191,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="83" />
+				<Property Name="Length" Value="99" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[StadiumProcedure]&#xD;&#xA;&#xD;&#xA;AS" />

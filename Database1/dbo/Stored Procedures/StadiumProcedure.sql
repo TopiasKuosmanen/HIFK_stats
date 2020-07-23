@@ -3,4 +3,5 @@
 AS
 BEGIN
 	SELECT * FROM Stadium
+	ORDER BY Name
 END

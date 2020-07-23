@@ -15,10 +15,14 @@ namespace HIFK_tilastot
     public partial class Results : Form
     {
         List<Game> results = new List<Game>();
+        DateTimePicker DateTimeBox1 = new DateTimePicker();
+        DateTimePicker DateTimeBox2 = new DateTimePicker();
         public Results()
         {
             InitializeComponent();
             UpdateBindingResults();
+            DoDateTimeBox1();
+            DoDateTimeBox2();
         }
 
         private void UpdateBindingResults()
@@ -50,30 +54,41 @@ namespace HIFK_tilastot
             ResultsBox1.DisplayMember = "FullInfo";
         }
 
+        private void DoDateTimeBox1()
+        {
+            DateTimeBox1.Location = new Point(280, 88);
+            DateTimeBox1.Size = new Size(141, 50);
+            DateTimeBox1.Text = DateTime.Now.Date.ToShortDateString();
+            DateTimeBox1.Format = DateTimePickerFormat.Custom;
+            DateTimeBox1.CustomFormat = "dd.MM.yyyy";
+            DateTimeBox1.Name = "DateTimeBox";
+
+            this.Controls.Add(DateTimeBox1);
+        }
+        private void DoDateTimeBox2()
+        {
+            DateTimeBox2.Location = new Point(280, 110);
+            DateTimeBox2.Size = new Size(141, 50);
+            DateTimeBox2.Text = DateTime.Now.Date.ToShortDateString();
+            DateTimeBox2.Format = DateTimePickerFormat.Custom;
+            DateTimeBox2.CustomFormat = "dd.MM.yyyy";
+            DateTimeBox2.Name = "DateTimeBox";
+
+            this.Controls.Add(DateTimeBox2);
+        }
+
         private void SearchResultsButton_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
             MustHaveLeague.Visible = false;
-            MustHaveYear.Visible = false;
 
             if (SelectLeague.Text == "Select league")
             {
                 MustHaveLeague.Visible = true;
             }
-            if (SelectYear.Text == "Select year")
+            if (MustHaveLeague.Visible == false)
             {
-                MustHaveYear.Visible = true;
-            }
-            if (MustHaveYear.Visible == false && MustHaveLeague.Visible == false)
-            {
-                if (SelectYear.Text == "All")
-                {
-                    results = db.GetResults(SelectLeague.Text, 0);
-                }
-                else
-                {
-                    results = db.GetResults(SelectLeague.Text, int.Parse(SelectYear.Text));
-                }
+                results = db.GetResults(SelectLeague.Text, Convert.ToDateTime(DateTimeBox1.Text.ToString()), Convert.ToDateTime(DateTimeBox2.Text.ToString()));
             }
             ResultsDataGridView.DataSource = results;
             UpdateBindingResults();

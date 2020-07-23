@@ -1,9 +1,10 @@
 ﻿CREATE PROCEDURE [dbo].[ResultsByLeague]
 	@League NVARCHAR(50),
-	@Year NVARCHAR(5)
+	@StartingDay DATETIME,
+	@EndingDay DATETIME
 AS
 
-IF (@Year = 0)
+IF (@StartingDay = 0 AND @EndingDay = 0)
 BEGIN
 IF (@League = 'All')
 BEGIN
@@ -26,14 +27,14 @@ IF (@League = 'All')
 BEGIN
 	SELECT G.*, O.Team AS 'Opponent'
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
-	WHERE Result IS NOT NULL AND YEAR(G.DateTime) = @Year
+	WHERE Result IS NOT NULL AND G.DateTime >= @StartingDay AND G.DateTime <= @EndingDay
 	ORDER BY DateTime DESC
 END
 ELSE
 BEGIN
 	SELECT G.*, O.Team AS 'Opponent'
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
-	WHERE Result IS NOT NULL AND YEAR(DateTime) = @Year AND Serie = @League
+	WHERE Result IS NOT NULL AND G.DateTime >= @StartingDay AND G.DateTime <= @EndingDay AND Serie = @League
 	ORDER BY DateTime DESC
 END
 END

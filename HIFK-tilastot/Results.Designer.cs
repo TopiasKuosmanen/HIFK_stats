@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.SelectLeague = new System.Windows.Forms.ComboBox();
-            this.SelectYear = new System.Windows.Forms.ComboBox();
             this.SearchResultsButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ResultsBox1 = new System.Windows.Forms.ListBox();
             this.MustHaveLeague = new System.Windows.Forms.Label();
-            this.MustHaveYear = new System.Windows.Forms.Label();
             this.ResultsBox = new System.Windows.Forms.ListView();
             this.ResultsDataGridView = new System.Windows.Forms.DataGridView();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -53,25 +51,11 @@
             "Veikkausliiga",
             "Suomen Cup",
             "Friendly"});
-            this.SelectLeague.Location = new System.Drawing.Point(372, 75);
+            this.SelectLeague.Location = new System.Drawing.Point(372, 60);
             this.SelectLeague.Name = "SelectLeague";
             this.SelectLeague.Size = new System.Drawing.Size(191, 39);
             this.SelectLeague.TabIndex = 12;
             this.SelectLeague.Text = "Select league";
-            // 
-            // SelectYear
-            // 
-            this.SelectYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectYear.FormattingEnabled = true;
-            this.SelectYear.Items.AddRange(new object[] {
-            "All",
-            "2020",
-            "2019"});
-            this.SelectYear.Location = new System.Drawing.Point(372, 125);
-            this.SelectYear.Name = "SelectYear";
-            this.SelectYear.Size = new System.Drawing.Size(191, 39);
-            this.SelectYear.TabIndex = 13;
-            this.SelectYear.Text = "Select year";
             // 
             // SearchResultsButton
             // 
@@ -114,18 +98,6 @@
             this.MustHaveLeague.TabIndex = 17;
             this.MustHaveLeague.Text = "!";
             this.MustHaveLeague.Visible = false;
-            // 
-            // MustHaveYear
-            // 
-            this.MustHaveYear.AutoSize = true;
-            this.MustHaveYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MustHaveYear.ForeColor = System.Drawing.Color.Red;
-            this.MustHaveYear.Location = new System.Drawing.Point(343, 125);
-            this.MustHaveYear.Name = "MustHaveYear";
-            this.MustHaveYear.Size = new System.Drawing.Size(23, 36);
-            this.MustHaveYear.TabIndex = 18;
-            this.MustHaveYear.Text = "!";
-            this.MustHaveYear.Visible = false;
             // 
             // ResultsBox
             // 
@@ -189,12 +161,10 @@
             this.Controls.Add(this.toExcel);
             this.Controls.Add(this.ResultsDataGridView);
             this.Controls.Add(this.ResultsBox);
-            this.Controls.Add(this.MustHaveYear);
             this.Controls.Add(this.MustHaveLeague);
             this.Controls.Add(this.ResultsBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SearchResultsButton);
-            this.Controls.Add(this.SelectYear);
             this.Controls.Add(this.SelectLeague);
             this.Name = "Results";
             this.Text = "Results";
@@ -207,12 +177,10 @@
         #endregion
 
         private System.Windows.Forms.ComboBox SelectLeague;
-        private System.Windows.Forms.ComboBox SelectYear;
         private System.Windows.Forms.Button SearchResultsButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox ResultsBox1;
         private System.Windows.Forms.Label MustHaveLeague;
-        private System.Windows.Forms.Label MustHaveYear;
         private System.Windows.Forms.ListView ResultsBox;
         private System.Windows.Forms.DataGridView ResultsDataGridView;
         private System.Windows.Forms.Label lblStatus;
