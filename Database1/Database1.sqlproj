@@ -124,6 +124,10 @@
     <Build Include="dbo\Functions\CheckLeague.sql" />
     <Build Include="dbo\Tables\Stats.sql" />
     <Build Include="dbo\Stored Procedures\AddNewLeague.sql" />
+    <Build Include="dbo\Tables\Goal.sql" />
+    <Build Include="dbo\Tables\OpponentGoal.sql" />
+    <Build Include="dbo\Stored Procedures\AddGoal.sql" />
+    <Build Include="dbo\Stored Procedures\AddOpponentsGoal.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Database1.refactorlog" />

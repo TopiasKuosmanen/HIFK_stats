@@ -412,6 +412,43 @@ namespace HIFK_tilastot
                 return output;
             }
         }
+        public GOAL AddGoal(int gameid, string goal, bool winner, int player, int? assist, bool penalty, int minute)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
+            {
+                var output = connection.ExecuteScalar<GOAL>("dbo.AddGoal @GameId, @Goal, @Winner, @Player, @Assist, @Penalty, @Minute",
+                    new
+                    {
+                        GameId = gameid,
+                        Goal = goal,
+                        Winner = winner,
+                        Player = player,
+                        Assist = assist,
+                        Penalty = penalty,
+                        Minute = minute
+                    });
+
+                return output;
+            }
+        }
+        public OpponentGoal AddOpponentGoal(int gameid, string goal, bool winner, bool penalty, int minute)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
+            {
+                var output = connection.ExecuteScalar<OpponentGoal>("dbo.AddOpponentsGoal @GameId, @Goal, @Winner, @Penalty, @Minute",
+                    new
+                    {
+                        GameId = gameid,
+                        Goal = goal,
+                        Winner = winner,
+                        Penalty = penalty,
+                        Minute = minute
+                    });
+
+                return output;
+            }
+        }
+
     }
 
 }

@@ -1,0 +1,33 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Goal]
+       [dbo].[OpponentGoal]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [dbo].[Tie_Win_Lose_ETW_ETL_PKW_PKL] (Check Constraint)
+     Table rebuild
+       [dbo].[Goal] (Table)
+       [dbo].[OpponentGoal] (Table)
+     Create
+       [dbo].[Tie_Win_Lose_ETW_ETL_PKW_PKL] (Check Constraint)
+       [dbo].[AddGoal] (Procedure)
+       [dbo].[AddOpponentsGoal] (Procedure)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_Goal_AssistPlayer] (Foreign Key)
+       [dbo].[FK_Goal_Game] (Foreign Key)
+       [dbo].[FK_Goal_GoalPlayer] (Foreign Key)
+       [dbo].[FK_OpponentGoal_Game] (Foreign Key)
+     Create
+       [dbo].[FK_Goal_AssistPlayer] (Foreign Key)
+       [dbo].[FK_Goal_Game] (Foreign Key)
+       [dbo].[FK_Goal_GoalPlayer] (Foreign Key)
+       [dbo].[FK_OpponentGoal_Game] (Foreign Key)

@@ -104,6 +104,80 @@
             this.AddResultButton = new System.Windows.Forms.Button();
             this.GameAddedLabel = new System.Windows.Forms.Label();
             this.GoBackButton = new System.Windows.Forms.Button();
+            this.MinuteLabel1 = new System.Windows.Forms.Label();
+            this.MinuteLabel2 = new System.Windows.Forms.Label();
+            this.MinuteLabel3 = new System.Windows.Forms.Label();
+            this.MinuteLabel4 = new System.Windows.Forms.Label();
+            this.MinuteLabel5 = new System.Windows.Forms.Label();
+            this.MinuteLabel6 = new System.Windows.Forms.Label();
+            this.MinuteLabel7 = new System.Windows.Forms.Label();
+            this.MinuteLabel8 = new System.Windows.Forms.Label();
+            this.MinuteLabel9 = new System.Windows.Forms.Label();
+            this.MinuteLabel10 = new System.Windows.Forms.Label();
+            this.MinuteLabel11 = new System.Windows.Forms.Label();
+            this.MinuteLabel12 = new System.Windows.Forms.Label();
+            this.MinuteBox1 = new System.Windows.Forms.TextBox();
+            this.MinuteBox2 = new System.Windows.Forms.TextBox();
+            this.MinuteBox3 = new System.Windows.Forms.TextBox();
+            this.MinuteBox4 = new System.Windows.Forms.TextBox();
+            this.MinuteBox5 = new System.Windows.Forms.TextBox();
+            this.MinuteBox6 = new System.Windows.Forms.TextBox();
+            this.MinuteBox7 = new System.Windows.Forms.TextBox();
+            this.MinuteBox8 = new System.Windows.Forms.TextBox();
+            this.MinuteBox9 = new System.Windows.Forms.TextBox();
+            this.MinuteBox10 = new System.Windows.Forms.TextBox();
+            this.MinuteBox11 = new System.Windows.Forms.TextBox();
+            this.MinuteBox12 = new System.Windows.Forms.TextBox();
+            this.Pen1 = new System.Windows.Forms.CheckBox();
+            this.Pen2 = new System.Windows.Forms.CheckBox();
+            this.Pen3 = new System.Windows.Forms.CheckBox();
+            this.Pen4 = new System.Windows.Forms.CheckBox();
+            this.Pen5 = new System.Windows.Forms.CheckBox();
+            this.Pen6 = new System.Windows.Forms.CheckBox();
+            this.Pen7 = new System.Windows.Forms.CheckBox();
+            this.Pen8 = new System.Windows.Forms.CheckBox();
+            this.Pen9 = new System.Windows.Forms.CheckBox();
+            this.Pen10 = new System.Windows.Forms.CheckBox();
+            this.Pen11 = new System.Windows.Forms.CheckBox();
+            this.Pen12 = new System.Windows.Forms.CheckBox();
+            this.Winner1 = new System.Windows.Forms.RadioButton();
+            this.Winner2 = new System.Windows.Forms.RadioButton();
+            this.Winner3 = new System.Windows.Forms.RadioButton();
+            this.Winner6 = new System.Windows.Forms.RadioButton();
+            this.Winner5 = new System.Windows.Forms.RadioButton();
+            this.Winner4 = new System.Windows.Forms.RadioButton();
+            this.Winner12 = new System.Windows.Forms.RadioButton();
+            this.Winner11 = new System.Windows.Forms.RadioButton();
+            this.Winner10 = new System.Windows.Forms.RadioButton();
+            this.Winner9 = new System.Windows.Forms.RadioButton();
+            this.Winner8 = new System.Windows.Forms.RadioButton();
+            this.Winner7 = new System.Windows.Forms.RadioButton();
+            this.minuteText = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.scoreText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // HeadLabel
@@ -797,11 +871,839 @@
             this.GoBackButton.Visible = false;
             this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
             // 
+            // MinuteLabel1
+            // 
+            this.MinuteLabel1.AutoSize = true;
+            this.MinuteLabel1.Location = new System.Drawing.Point(578, 80);
+            this.MinuteLabel1.Name = "MinuteLabel1";
+            this.MinuteLabel1.Size = new System.Drawing.Size(54, 17);
+            this.MinuteLabel1.TabIndex = 121;
+            this.MinuteLabel1.Text = "minute:";
+            this.MinuteLabel1.Visible = false;
+            // 
+            // MinuteLabel2
+            // 
+            this.MinuteLabel2.AutoSize = true;
+            this.MinuteLabel2.Location = new System.Drawing.Point(578, 120);
+            this.MinuteLabel2.Name = "MinuteLabel2";
+            this.MinuteLabel2.Size = new System.Drawing.Size(54, 17);
+            this.MinuteLabel2.TabIndex = 122;
+            this.MinuteLabel2.Text = "minute:";
+            this.MinuteLabel2.Visible = false;
+            // 
+            // MinuteLabel3
+            // 
+            this.MinuteLabel3.AutoSize = true;
+            this.MinuteLabel3.Location = new System.Drawing.Point(578, 160);
+            this.MinuteLabel3.Name = "MinuteLabel3";
+            this.MinuteLabel3.Size = new System.Drawing.Size(54, 17);
+            this.MinuteLabel3.TabIndex = 123;
+            this.MinuteLabel3.Text = "minute:";
+            this.MinuteLabel3.Visible = false;
+            // 
+            // MinuteLabel4
+            // 
+            this.MinuteLabel4.AutoSize = true;
+            this.MinuteLabel4.Location = new System.Drawing.Point(578, 200);
+            this.MinuteLabel4.Name = "MinuteLabel4";
+            this.MinuteLabel4.Size = new System.Drawing.Size(54, 17);
+            this.MinuteLabel4.TabIndex = 124;
+            this.MinuteLabel4.Text = "minute:";
+            this.MinuteLabel4.Visible = false;
+            // 
+            // MinuteLabel5
+            // 
+            this.MinuteLabel5.AutoSize = true;
+            this.MinuteLabel5.Location = new System.Drawing.Point(578, 240);
+            this.MinuteLabel5.Name = "MinuteLabel5";
+            this.MinuteLabel5.Size = new System.Drawing.Size(54, 17);
+            this.MinuteLabel5.TabIndex = 125;
+            this.MinuteLabel5.Text = "minute:";
+            this.MinuteLabel5.Visible = false;
+            // 
+            // MinuteLabel6
+            // 
+            this.MinuteLabel6.AutoSize = true;
+            this.MinuteLabel6.Location = new System.Drawing.Point(578, 280);
+            this.MinuteLabel6.Name = "MinuteLabel6";
+            this.MinuteLabel6.Size = new System.Drawing.Size(54, 17);
+            this.MinuteLabel6.TabIndex = 126;
+            this.MinuteLabel6.Text = "minute:";
+            this.MinuteLabel6.Visible = false;
+            // 
+            // MinuteLabel7
+            // 
+            this.MinuteLabel7.AutoSize = true;
+            this.MinuteLabel7.Location = new System.Drawing.Point(578, 320);
+            this.MinuteLabel7.Name = "MinuteLabel7";
+            this.MinuteLabel7.Size = new System.Drawing.Size(54, 17);
+            this.MinuteLabel7.TabIndex = 127;
+            this.MinuteLabel7.Text = "minute:";
+            this.MinuteLabel7.Visible = false;
+            // 
+            // MinuteLabel8
+            // 
+            this.MinuteLabel8.AutoSize = true;
+            this.MinuteLabel8.Location = new System.Drawing.Point(578, 360);
+            this.MinuteLabel8.Name = "MinuteLabel8";
+            this.MinuteLabel8.Size = new System.Drawing.Size(54, 17);
+            this.MinuteLabel8.TabIndex = 128;
+            this.MinuteLabel8.Text = "minute:";
+            this.MinuteLabel8.Visible = false;
+            // 
+            // MinuteLabel9
+            // 
+            this.MinuteLabel9.AutoSize = true;
+            this.MinuteLabel9.Location = new System.Drawing.Point(578, 400);
+            this.MinuteLabel9.Name = "MinuteLabel9";
+            this.MinuteLabel9.Size = new System.Drawing.Size(54, 17);
+            this.MinuteLabel9.TabIndex = 129;
+            this.MinuteLabel9.Text = "minute:";
+            this.MinuteLabel9.Visible = false;
+            // 
+            // MinuteLabel10
+            // 
+            this.MinuteLabel10.AutoSize = true;
+            this.MinuteLabel10.Location = new System.Drawing.Point(578, 440);
+            this.MinuteLabel10.Name = "MinuteLabel10";
+            this.MinuteLabel10.Size = new System.Drawing.Size(54, 17);
+            this.MinuteLabel10.TabIndex = 130;
+            this.MinuteLabel10.Text = "minute:";
+            this.MinuteLabel10.Visible = false;
+            // 
+            // MinuteLabel11
+            // 
+            this.MinuteLabel11.AutoSize = true;
+            this.MinuteLabel11.Location = new System.Drawing.Point(578, 480);
+            this.MinuteLabel11.Name = "MinuteLabel11";
+            this.MinuteLabel11.Size = new System.Drawing.Size(54, 17);
+            this.MinuteLabel11.TabIndex = 131;
+            this.MinuteLabel11.Text = "minute:";
+            this.MinuteLabel11.Visible = false;
+            // 
+            // MinuteLabel12
+            // 
+            this.MinuteLabel12.AutoSize = true;
+            this.MinuteLabel12.Location = new System.Drawing.Point(578, 520);
+            this.MinuteLabel12.Name = "MinuteLabel12";
+            this.MinuteLabel12.Size = new System.Drawing.Size(54, 17);
+            this.MinuteLabel12.TabIndex = 132;
+            this.MinuteLabel12.Text = "minute:";
+            this.MinuteLabel12.Visible = false;
+            // 
+            // MinuteBox1
+            // 
+            this.MinuteBox1.Location = new System.Drawing.Point(638, 77);
+            this.MinuteBox1.MaxLength = 3;
+            this.MinuteBox1.Name = "MinuteBox1";
+            this.MinuteBox1.Size = new System.Drawing.Size(44, 22);
+            this.MinuteBox1.TabIndex = 133;
+            this.MinuteBox1.Visible = false;
+            // 
+            // MinuteBox2
+            // 
+            this.MinuteBox2.Location = new System.Drawing.Point(638, 117);
+            this.MinuteBox2.MaxLength = 3;
+            this.MinuteBox2.Name = "MinuteBox2";
+            this.MinuteBox2.Size = new System.Drawing.Size(44, 22);
+            this.MinuteBox2.TabIndex = 134;
+            this.MinuteBox2.Visible = false;
+            // 
+            // MinuteBox3
+            // 
+            this.MinuteBox3.Location = new System.Drawing.Point(638, 157);
+            this.MinuteBox3.MaxLength = 3;
+            this.MinuteBox3.Name = "MinuteBox3";
+            this.MinuteBox3.Size = new System.Drawing.Size(44, 22);
+            this.MinuteBox3.TabIndex = 135;
+            this.MinuteBox3.Visible = false;
+            // 
+            // MinuteBox4
+            // 
+            this.MinuteBox4.Location = new System.Drawing.Point(638, 200);
+            this.MinuteBox4.MaxLength = 3;
+            this.MinuteBox4.Name = "MinuteBox4";
+            this.MinuteBox4.Size = new System.Drawing.Size(44, 22);
+            this.MinuteBox4.TabIndex = 136;
+            this.MinuteBox4.Visible = false;
+            // 
+            // MinuteBox5
+            // 
+            this.MinuteBox5.Location = new System.Drawing.Point(638, 237);
+            this.MinuteBox5.MaxLength = 3;
+            this.MinuteBox5.Name = "MinuteBox5";
+            this.MinuteBox5.Size = new System.Drawing.Size(44, 22);
+            this.MinuteBox5.TabIndex = 137;
+            this.MinuteBox5.Visible = false;
+            // 
+            // MinuteBox6
+            // 
+            this.MinuteBox6.Location = new System.Drawing.Point(638, 277);
+            this.MinuteBox6.MaxLength = 3;
+            this.MinuteBox6.Name = "MinuteBox6";
+            this.MinuteBox6.Size = new System.Drawing.Size(44, 22);
+            this.MinuteBox6.TabIndex = 138;
+            this.MinuteBox6.Visible = false;
+            // 
+            // MinuteBox7
+            // 
+            this.MinuteBox7.Location = new System.Drawing.Point(638, 320);
+            this.MinuteBox7.MaxLength = 3;
+            this.MinuteBox7.Name = "MinuteBox7";
+            this.MinuteBox7.Size = new System.Drawing.Size(44, 22);
+            this.MinuteBox7.TabIndex = 139;
+            this.MinuteBox7.Visible = false;
+            // 
+            // MinuteBox8
+            // 
+            this.MinuteBox8.Location = new System.Drawing.Point(638, 357);
+            this.MinuteBox8.MaxLength = 3;
+            this.MinuteBox8.Name = "MinuteBox8";
+            this.MinuteBox8.Size = new System.Drawing.Size(44, 22);
+            this.MinuteBox8.TabIndex = 140;
+            this.MinuteBox8.Visible = false;
+            // 
+            // MinuteBox9
+            // 
+            this.MinuteBox9.Location = new System.Drawing.Point(638, 397);
+            this.MinuteBox9.MaxLength = 3;
+            this.MinuteBox9.Name = "MinuteBox9";
+            this.MinuteBox9.Size = new System.Drawing.Size(44, 22);
+            this.MinuteBox9.TabIndex = 141;
+            this.MinuteBox9.Visible = false;
+            // 
+            // MinuteBox10
+            // 
+            this.MinuteBox10.Location = new System.Drawing.Point(638, 437);
+            this.MinuteBox10.MaxLength = 3;
+            this.MinuteBox10.Name = "MinuteBox10";
+            this.MinuteBox10.Size = new System.Drawing.Size(44, 22);
+            this.MinuteBox10.TabIndex = 142;
+            this.MinuteBox10.Visible = false;
+            // 
+            // MinuteBox11
+            // 
+            this.MinuteBox11.Location = new System.Drawing.Point(638, 477);
+            this.MinuteBox11.MaxLength = 3;
+            this.MinuteBox11.Name = "MinuteBox11";
+            this.MinuteBox11.Size = new System.Drawing.Size(44, 22);
+            this.MinuteBox11.TabIndex = 143;
+            this.MinuteBox11.Visible = false;
+            // 
+            // MinuteBox12
+            // 
+            this.MinuteBox12.Location = new System.Drawing.Point(638, 517);
+            this.MinuteBox12.MaxLength = 3;
+            this.MinuteBox12.Name = "MinuteBox12";
+            this.MinuteBox12.Size = new System.Drawing.Size(44, 22);
+            this.MinuteBox12.TabIndex = 144;
+            this.MinuteBox12.Visible = false;
+            // 
+            // Pen1
+            // 
+            this.Pen1.AutoSize = true;
+            this.Pen1.Location = new System.Drawing.Point(809, 79);
+            this.Pen1.Name = "Pen1";
+            this.Pen1.Size = new System.Drawing.Size(84, 21);
+            this.Pen1.TabIndex = 157;
+            this.Pen1.Text = "penalty?";
+            this.Pen1.UseVisualStyleBackColor = true;
+            this.Pen1.Visible = false;
+            // 
+            // Pen2
+            // 
+            this.Pen2.AutoSize = true;
+            this.Pen2.Location = new System.Drawing.Point(809, 119);
+            this.Pen2.Name = "Pen2";
+            this.Pen2.Size = new System.Drawing.Size(84, 21);
+            this.Pen2.TabIndex = 158;
+            this.Pen2.Text = "penalty?";
+            this.Pen2.UseVisualStyleBackColor = true;
+            this.Pen2.Visible = false;
+            // 
+            // Pen3
+            // 
+            this.Pen3.AutoSize = true;
+            this.Pen3.Location = new System.Drawing.Point(809, 159);
+            this.Pen3.Name = "Pen3";
+            this.Pen3.Size = new System.Drawing.Size(84, 21);
+            this.Pen3.TabIndex = 159;
+            this.Pen3.Text = "penalty?";
+            this.Pen3.UseVisualStyleBackColor = true;
+            this.Pen3.Visible = false;
+            // 
+            // Pen4
+            // 
+            this.Pen4.AutoSize = true;
+            this.Pen4.Location = new System.Drawing.Point(809, 199);
+            this.Pen4.Name = "Pen4";
+            this.Pen4.Size = new System.Drawing.Size(84, 21);
+            this.Pen4.TabIndex = 160;
+            this.Pen4.Text = "penalty?";
+            this.Pen4.UseVisualStyleBackColor = true;
+            this.Pen4.Visible = false;
+            // 
+            // Pen5
+            // 
+            this.Pen5.AutoSize = true;
+            this.Pen5.Location = new System.Drawing.Point(809, 239);
+            this.Pen5.Name = "Pen5";
+            this.Pen5.Size = new System.Drawing.Size(84, 21);
+            this.Pen5.TabIndex = 161;
+            this.Pen5.Text = "penalty?";
+            this.Pen5.UseVisualStyleBackColor = true;
+            this.Pen5.Visible = false;
+            // 
+            // Pen6
+            // 
+            this.Pen6.AutoSize = true;
+            this.Pen6.Location = new System.Drawing.Point(809, 279);
+            this.Pen6.Name = "Pen6";
+            this.Pen6.Size = new System.Drawing.Size(84, 21);
+            this.Pen6.TabIndex = 162;
+            this.Pen6.Text = "penalty?";
+            this.Pen6.UseVisualStyleBackColor = true;
+            this.Pen6.Visible = false;
+            // 
+            // Pen7
+            // 
+            this.Pen7.AutoSize = true;
+            this.Pen7.Location = new System.Drawing.Point(809, 319);
+            this.Pen7.Name = "Pen7";
+            this.Pen7.Size = new System.Drawing.Size(84, 21);
+            this.Pen7.TabIndex = 163;
+            this.Pen7.Text = "penalty?";
+            this.Pen7.UseVisualStyleBackColor = true;
+            this.Pen7.Visible = false;
+            // 
+            // Pen8
+            // 
+            this.Pen8.AutoSize = true;
+            this.Pen8.Location = new System.Drawing.Point(809, 359);
+            this.Pen8.Name = "Pen8";
+            this.Pen8.Size = new System.Drawing.Size(84, 21);
+            this.Pen8.TabIndex = 164;
+            this.Pen8.Text = "penalty?";
+            this.Pen8.UseVisualStyleBackColor = true;
+            this.Pen8.Visible = false;
+            // 
+            // Pen9
+            // 
+            this.Pen9.AutoSize = true;
+            this.Pen9.Location = new System.Drawing.Point(809, 399);
+            this.Pen9.Name = "Pen9";
+            this.Pen9.Size = new System.Drawing.Size(84, 21);
+            this.Pen9.TabIndex = 165;
+            this.Pen9.Text = "penalty?";
+            this.Pen9.UseVisualStyleBackColor = true;
+            this.Pen9.Visible = false;
+            // 
+            // Pen10
+            // 
+            this.Pen10.AutoSize = true;
+            this.Pen10.Location = new System.Drawing.Point(809, 439);
+            this.Pen10.Name = "Pen10";
+            this.Pen10.Size = new System.Drawing.Size(84, 21);
+            this.Pen10.TabIndex = 166;
+            this.Pen10.Text = "penalty?";
+            this.Pen10.UseVisualStyleBackColor = true;
+            this.Pen10.Visible = false;
+            // 
+            // Pen11
+            // 
+            this.Pen11.AutoSize = true;
+            this.Pen11.Location = new System.Drawing.Point(809, 479);
+            this.Pen11.Name = "Pen11";
+            this.Pen11.Size = new System.Drawing.Size(84, 21);
+            this.Pen11.TabIndex = 167;
+            this.Pen11.Text = "penalty?";
+            this.Pen11.UseVisualStyleBackColor = true;
+            this.Pen11.Visible = false;
+            // 
+            // Pen12
+            // 
+            this.Pen12.AutoSize = true;
+            this.Pen12.Location = new System.Drawing.Point(809, 519);
+            this.Pen12.Name = "Pen12";
+            this.Pen12.Size = new System.Drawing.Size(84, 21);
+            this.Pen12.TabIndex = 168;
+            this.Pen12.Text = "penalty?";
+            this.Pen12.UseVisualStyleBackColor = true;
+            this.Pen12.Visible = false;
+            // 
+            // Winner1
+            // 
+            this.Winner1.AutoSize = true;
+            this.Winner1.Location = new System.Drawing.Point(899, 79);
+            this.Winner1.Name = "Winner1";
+            this.Winner1.Size = new System.Drawing.Size(82, 21);
+            this.Winner1.TabIndex = 181;
+            this.Winner1.TabStop = true;
+            this.Winner1.Text = "Winner?";
+            this.Winner1.UseVisualStyleBackColor = true;
+            this.Winner1.Visible = false;
+            // 
+            // Winner2
+            // 
+            this.Winner2.AutoSize = true;
+            this.Winner2.Location = new System.Drawing.Point(899, 119);
+            this.Winner2.Name = "Winner2";
+            this.Winner2.Size = new System.Drawing.Size(82, 21);
+            this.Winner2.TabIndex = 182;
+            this.Winner2.TabStop = true;
+            this.Winner2.Text = "Winner?";
+            this.Winner2.UseVisualStyleBackColor = true;
+            this.Winner2.Visible = false;
+            // 
+            // Winner3
+            // 
+            this.Winner3.AutoSize = true;
+            this.Winner3.Location = new System.Drawing.Point(899, 159);
+            this.Winner3.Name = "Winner3";
+            this.Winner3.Size = new System.Drawing.Size(82, 21);
+            this.Winner3.TabIndex = 183;
+            this.Winner3.TabStop = true;
+            this.Winner3.Text = "Winner?";
+            this.Winner3.UseVisualStyleBackColor = true;
+            this.Winner3.Visible = false;
+            // 
+            // Winner6
+            // 
+            this.Winner6.AutoSize = true;
+            this.Winner6.Location = new System.Drawing.Point(899, 280);
+            this.Winner6.Name = "Winner6";
+            this.Winner6.Size = new System.Drawing.Size(82, 21);
+            this.Winner6.TabIndex = 186;
+            this.Winner6.TabStop = true;
+            this.Winner6.Text = "Winner?";
+            this.Winner6.UseVisualStyleBackColor = true;
+            this.Winner6.Visible = false;
+            // 
+            // Winner5
+            // 
+            this.Winner5.AutoSize = true;
+            this.Winner5.Location = new System.Drawing.Point(899, 239);
+            this.Winner5.Name = "Winner5";
+            this.Winner5.Size = new System.Drawing.Size(82, 21);
+            this.Winner5.TabIndex = 185;
+            this.Winner5.TabStop = true;
+            this.Winner5.Text = "Winner?";
+            this.Winner5.UseVisualStyleBackColor = true;
+            this.Winner5.Visible = false;
+            // 
+            // Winner4
+            // 
+            this.Winner4.AutoSize = true;
+            this.Winner4.Location = new System.Drawing.Point(899, 199);
+            this.Winner4.Name = "Winner4";
+            this.Winner4.Size = new System.Drawing.Size(82, 21);
+            this.Winner4.TabIndex = 184;
+            this.Winner4.TabStop = true;
+            this.Winner4.Text = "Winner?";
+            this.Winner4.UseVisualStyleBackColor = true;
+            this.Winner4.Visible = false;
+            // 
+            // Winner12
+            // 
+            this.Winner12.AutoSize = true;
+            this.Winner12.Location = new System.Drawing.Point(899, 518);
+            this.Winner12.Name = "Winner12";
+            this.Winner12.Size = new System.Drawing.Size(82, 21);
+            this.Winner12.TabIndex = 192;
+            this.Winner12.TabStop = true;
+            this.Winner12.Text = "Winner?";
+            this.Winner12.UseVisualStyleBackColor = true;
+            this.Winner12.Visible = false;
+            // 
+            // Winner11
+            // 
+            this.Winner11.AutoSize = true;
+            this.Winner11.Location = new System.Drawing.Point(899, 478);
+            this.Winner11.Name = "Winner11";
+            this.Winner11.Size = new System.Drawing.Size(82, 21);
+            this.Winner11.TabIndex = 191;
+            this.Winner11.TabStop = true;
+            this.Winner11.Text = "Winner?";
+            this.Winner11.UseVisualStyleBackColor = true;
+            this.Winner11.Visible = false;
+            // 
+            // Winner10
+            // 
+            this.Winner10.AutoSize = true;
+            this.Winner10.Location = new System.Drawing.Point(899, 438);
+            this.Winner10.Name = "Winner10";
+            this.Winner10.Size = new System.Drawing.Size(82, 21);
+            this.Winner10.TabIndex = 190;
+            this.Winner10.TabStop = true;
+            this.Winner10.Text = "Winner?";
+            this.Winner10.UseVisualStyleBackColor = true;
+            this.Winner10.Visible = false;
+            // 
+            // Winner9
+            // 
+            this.Winner9.AutoSize = true;
+            this.Winner9.Location = new System.Drawing.Point(899, 398);
+            this.Winner9.Name = "Winner9";
+            this.Winner9.Size = new System.Drawing.Size(82, 21);
+            this.Winner9.TabIndex = 189;
+            this.Winner9.TabStop = true;
+            this.Winner9.Text = "Winner?";
+            this.Winner9.UseVisualStyleBackColor = true;
+            this.Winner9.Visible = false;
+            // 
+            // Winner8
+            // 
+            this.Winner8.AutoSize = true;
+            this.Winner8.Location = new System.Drawing.Point(899, 358);
+            this.Winner8.Name = "Winner8";
+            this.Winner8.Size = new System.Drawing.Size(82, 21);
+            this.Winner8.TabIndex = 188;
+            this.Winner8.TabStop = true;
+            this.Winner8.Text = "Winner?";
+            this.Winner8.UseVisualStyleBackColor = true;
+            this.Winner8.Visible = false;
+            // 
+            // Winner7
+            // 
+            this.Winner7.AutoSize = true;
+            this.Winner7.Location = new System.Drawing.Point(899, 318);
+            this.Winner7.Name = "Winner7";
+            this.Winner7.Size = new System.Drawing.Size(82, 21);
+            this.Winner7.TabIndex = 187;
+            this.Winner7.TabStop = true;
+            this.Winner7.Text = "Winner?";
+            this.Winner7.UseVisualStyleBackColor = true;
+            this.Winner7.Visible = false;
+            // 
+            // minuteText
+            // 
+            this.minuteText.AutoSize = true;
+            this.minuteText.ForeColor = System.Drawing.Color.Red;
+            this.minuteText.Location = new System.Drawing.Point(596, 43);
+            this.minuteText.Name = "minuteText";
+            this.minuteText.Size = new System.Drawing.Size(103, 17);
+            this.minuteText.TabIndex = 193;
+            this.minuteText.Text = "Check minutes!";
+            this.minuteText.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(759, 517);
+            this.textBox1.MaxLength = 3;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(44, 22);
+            this.textBox1.TabIndex = 217;
+            this.textBox1.Visible = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(759, 477);
+            this.textBox2.MaxLength = 3;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(44, 22);
+            this.textBox2.TabIndex = 216;
+            this.textBox2.Visible = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(759, 437);
+            this.textBox3.MaxLength = 3;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(44, 22);
+            this.textBox3.TabIndex = 215;
+            this.textBox3.Visible = false;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(759, 397);
+            this.textBox4.MaxLength = 3;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(44, 22);
+            this.textBox4.TabIndex = 214;
+            this.textBox4.Visible = false;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(759, 357);
+            this.textBox5.MaxLength = 3;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(44, 22);
+            this.textBox5.TabIndex = 213;
+            this.textBox5.Visible = false;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(759, 320);
+            this.textBox6.MaxLength = 3;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(44, 22);
+            this.textBox6.TabIndex = 212;
+            this.textBox6.Visible = false;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(759, 277);
+            this.textBox7.MaxLength = 3;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(44, 22);
+            this.textBox7.TabIndex = 211;
+            this.textBox7.Visible = false;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(759, 237);
+            this.textBox8.MaxLength = 3;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(44, 22);
+            this.textBox8.TabIndex = 210;
+            this.textBox8.Visible = false;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(759, 200);
+            this.textBox9.MaxLength = 3;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(44, 22);
+            this.textBox9.TabIndex = 209;
+            this.textBox9.Visible = false;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(759, 157);
+            this.textBox10.MaxLength = 3;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(44, 22);
+            this.textBox10.TabIndex = 208;
+            this.textBox10.Visible = false;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(759, 117);
+            this.textBox11.MaxLength = 3;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(44, 22);
+            this.textBox11.TabIndex = 207;
+            this.textBox11.Visible = false;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(759, 77);
+            this.textBox12.MaxLength = 5;
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(44, 22);
+            this.textBox12.TabIndex = 206;
+            this.textBox12.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(699, 520);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 17);
+            this.label1.TabIndex = 205;
+            this.label1.Text = "score:";
+            this.label1.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(699, 480);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 17);
+            this.label2.TabIndex = 204;
+            this.label2.Text = "score:";
+            this.label2.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(699, 440);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 17);
+            this.label3.TabIndex = 203;
+            this.label3.Text = "score:";
+            this.label3.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(699, 400);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 17);
+            this.label4.TabIndex = 202;
+            this.label4.Text = "score:";
+            this.label4.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(699, 360);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 17);
+            this.label5.TabIndex = 201;
+            this.label5.Text = "score:";
+            this.label5.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(699, 320);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 17);
+            this.label6.TabIndex = 200;
+            this.label6.Text = "score:";
+            this.label6.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(699, 280);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 17);
+            this.label7.TabIndex = 199;
+            this.label7.Text = "score:";
+            this.label7.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(699, 240);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 17);
+            this.label8.TabIndex = 198;
+            this.label8.Text = "score:";
+            this.label8.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(699, 200);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 17);
+            this.label9.TabIndex = 197;
+            this.label9.Text = "score:";
+            this.label9.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(699, 160);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 17);
+            this.label10.TabIndex = 196;
+            this.label10.Text = "score:";
+            this.label10.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(699, 120);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(47, 17);
+            this.label11.TabIndex = 195;
+            this.label11.Text = "score:";
+            this.label11.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(699, 80);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(47, 17);
+            this.label12.TabIndex = 194;
+            this.label12.Text = "score:";
+            this.label12.Visible = false;
+            // 
+            // scoreText
+            // 
+            this.scoreText.AutoSize = true;
+            this.scoreText.ForeColor = System.Drawing.Color.Red;
+            this.scoreText.Location = new System.Drawing.Point(745, 45);
+            this.scoreText.Name = "scoreText";
+            this.scoreText.Size = new System.Drawing.Size(85, 17);
+            this.scoreText.TabIndex = 218;
+            this.scoreText.Text = "1-0, 2-,0 etc";
+            this.scoreText.Visible = false;
+            // 
             // AddNewResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 635);
+            this.ClientSize = new System.Drawing.Size(984, 635);
+            this.Controls.Add(this.scoreText);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.minuteText);
+            this.Controls.Add(this.Winner12);
+            this.Controls.Add(this.Winner11);
+            this.Controls.Add(this.Winner10);
+            this.Controls.Add(this.Winner9);
+            this.Controls.Add(this.Winner8);
+            this.Controls.Add(this.Winner7);
+            this.Controls.Add(this.Winner6);
+            this.Controls.Add(this.Winner5);
+            this.Controls.Add(this.Winner4);
+            this.Controls.Add(this.Winner3);
+            this.Controls.Add(this.Winner2);
+            this.Controls.Add(this.Winner1);
+            this.Controls.Add(this.Pen12);
+            this.Controls.Add(this.Pen11);
+            this.Controls.Add(this.Pen10);
+            this.Controls.Add(this.Pen9);
+            this.Controls.Add(this.Pen8);
+            this.Controls.Add(this.Pen7);
+            this.Controls.Add(this.Pen6);
+            this.Controls.Add(this.Pen5);
+            this.Controls.Add(this.Pen4);
+            this.Controls.Add(this.Pen3);
+            this.Controls.Add(this.Pen2);
+            this.Controls.Add(this.Pen1);
+            this.Controls.Add(this.MinuteBox12);
+            this.Controls.Add(this.MinuteBox11);
+            this.Controls.Add(this.MinuteBox10);
+            this.Controls.Add(this.MinuteBox9);
+            this.Controls.Add(this.MinuteBox8);
+            this.Controls.Add(this.MinuteBox7);
+            this.Controls.Add(this.MinuteBox6);
+            this.Controls.Add(this.MinuteBox5);
+            this.Controls.Add(this.MinuteBox4);
+            this.Controls.Add(this.MinuteBox3);
+            this.Controls.Add(this.MinuteBox2);
+            this.Controls.Add(this.MinuteBox1);
+            this.Controls.Add(this.MinuteLabel12);
+            this.Controls.Add(this.MinuteLabel11);
+            this.Controls.Add(this.MinuteLabel10);
+            this.Controls.Add(this.MinuteLabel9);
+            this.Controls.Add(this.MinuteLabel8);
+            this.Controls.Add(this.MinuteLabel7);
+            this.Controls.Add(this.MinuteLabel6);
+            this.Controls.Add(this.MinuteLabel5);
+            this.Controls.Add(this.MinuteLabel4);
+            this.Controls.Add(this.MinuteLabel3);
+            this.Controls.Add(this.MinuteLabel2);
+            this.Controls.Add(this.MinuteLabel1);
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.GameAddedLabel);
             this.Controls.Add(this.AddResultButton);
@@ -962,5 +1864,79 @@
         private System.Windows.Forms.Button AddResultButton;
         private System.Windows.Forms.Label GameAddedLabel;
         private System.Windows.Forms.Button GoBackButton;
+        private System.Windows.Forms.Label MinuteLabel1;
+        private System.Windows.Forms.Label MinuteLabel2;
+        private System.Windows.Forms.Label MinuteLabel3;
+        private System.Windows.Forms.Label MinuteLabel4;
+        private System.Windows.Forms.Label MinuteLabel5;
+        private System.Windows.Forms.Label MinuteLabel6;
+        private System.Windows.Forms.Label MinuteLabel7;
+        private System.Windows.Forms.Label MinuteLabel8;
+        private System.Windows.Forms.Label MinuteLabel9;
+        private System.Windows.Forms.Label MinuteLabel10;
+        private System.Windows.Forms.Label MinuteLabel11;
+        private System.Windows.Forms.Label MinuteLabel12;
+        private System.Windows.Forms.TextBox MinuteBox1;
+        private System.Windows.Forms.TextBox MinuteBox2;
+        private System.Windows.Forms.TextBox MinuteBox3;
+        private System.Windows.Forms.TextBox MinuteBox4;
+        private System.Windows.Forms.TextBox MinuteBox5;
+        private System.Windows.Forms.TextBox MinuteBox6;
+        private System.Windows.Forms.TextBox MinuteBox7;
+        private System.Windows.Forms.TextBox MinuteBox8;
+        private System.Windows.Forms.TextBox MinuteBox9;
+        private System.Windows.Forms.TextBox MinuteBox10;
+        private System.Windows.Forms.TextBox MinuteBox11;
+        private System.Windows.Forms.TextBox MinuteBox12;
+        private System.Windows.Forms.CheckBox Pen1;
+        private System.Windows.Forms.CheckBox Pen2;
+        private System.Windows.Forms.CheckBox Pen3;
+        private System.Windows.Forms.CheckBox Pen4;
+        private System.Windows.Forms.CheckBox Pen5;
+        private System.Windows.Forms.CheckBox Pen6;
+        private System.Windows.Forms.CheckBox Pen7;
+        private System.Windows.Forms.CheckBox Pen8;
+        private System.Windows.Forms.CheckBox Pen9;
+        private System.Windows.Forms.CheckBox Pen10;
+        private System.Windows.Forms.CheckBox Pen11;
+        private System.Windows.Forms.CheckBox Pen12;
+        private System.Windows.Forms.RadioButton Winner1;
+        private System.Windows.Forms.RadioButton Winner2;
+        private System.Windows.Forms.RadioButton Winner3;
+        private System.Windows.Forms.RadioButton Winner6;
+        private System.Windows.Forms.RadioButton Winner5;
+        private System.Windows.Forms.RadioButton Winner4;
+        private System.Windows.Forms.RadioButton Winner12;
+        private System.Windows.Forms.RadioButton Winner11;
+        private System.Windows.Forms.RadioButton Winner10;
+        private System.Windows.Forms.RadioButton Winner9;
+        private System.Windows.Forms.RadioButton Winner8;
+        private System.Windows.Forms.RadioButton Winner7;
+        private System.Windows.Forms.Label minuteText;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label scoreText;
     }
 }
