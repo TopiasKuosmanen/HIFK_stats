@@ -65,8 +65,15 @@ namespace HIFK_tilastot
         List<Label> scorelabels = new List<Label>();
         List<TextBox> scoreboxes = new List<TextBox>();
 
+        List<Label> Ominutelabels = new List<Label>();
+        List<TextBox> Ominuteboxes = new List<TextBox>();
+        List<CheckBox> Openboxes = new List<CheckBox>();
+        List<RadioButton> Owinnerboxes = new List<RadioButton>();
+        List<Label> Oscorelabels = new List<Label>();
+        List<TextBox> Oscoreboxes = new List<TextBox>();
+
         int goalscount;
-        int opponentgoals;
+        int opponentgoalscount;
 
         List<Person> players = new List<Person>();
         List<Person> starting = new List<Person>();
@@ -96,8 +103,88 @@ namespace HIFK_tilastot
             DoPlayerboxes();
             DoSubBoxes();
             DoGoalBoxes();
+            DoOpponentsGoalBoxes();
         }
+        private void DoOpponentsGoalBoxes()
+        {
+            Ominutelabels.Add(label38);
+            Ominutelabels.Add(label37);
+            Ominutelabels.Add(label36);
+            Ominutelabels.Add(label35);
+            Ominutelabels.Add(label34);
+            Ominutelabels.Add(label33);
+            Ominutelabels.Add(label32);
+            Ominutelabels.Add(label31);
+            Ominutelabels.Add(label30);
+            Ominutelabels.Add(label29);
+            Ominutelabels.Add(label28);
+            Ominutelabels.Add(label27);
 
+            Ominuteboxes.Add(textBox36);
+            Ominuteboxes.Add(textBox35);
+            Ominuteboxes.Add(textBox34);
+            Ominuteboxes.Add(textBox33);
+            Ominuteboxes.Add(textBox32);
+            Ominuteboxes.Add(textBox31);
+            Ominuteboxes.Add(textBox30);
+            Ominuteboxes.Add(textBox29);
+            Ominuteboxes.Add(textBox28);
+            Ominuteboxes.Add(textBox27);
+            Ominuteboxes.Add(textBox26);
+            Ominuteboxes.Add(textBox25);
+
+            Openboxes.Add(checkBox12);
+            Openboxes.Add(checkBox11);
+            Openboxes.Add(checkBox10);
+            Openboxes.Add(checkBox9);
+            Openboxes.Add(checkBox8);
+            Openboxes.Add(checkBox7);
+            Openboxes.Add(checkBox6);
+            Openboxes.Add(checkBox5);
+            Openboxes.Add(checkBox4);
+            Openboxes.Add(checkBox3);
+            Openboxes.Add(checkBox2);
+            Openboxes.Add(checkBox1);
+
+            Owinnerboxes.Add(radioButton12);
+            Owinnerboxes.Add(radioButton11);
+            Owinnerboxes.Add(radioButton10);
+            Owinnerboxes.Add(radioButton9);
+            Owinnerboxes.Add(radioButton8);
+            Owinnerboxes.Add(radioButton7);
+            Owinnerboxes.Add(radioButton6);
+            Owinnerboxes.Add(radioButton5);
+            Owinnerboxes.Add(radioButton4);
+            Owinnerboxes.Add(radioButton3);
+            Owinnerboxes.Add(radioButton2);
+            Owinnerboxes.Add(radioButton1);
+
+            Oscorelabels.Add(label25);
+            Oscorelabels.Add(label24);
+            Oscorelabels.Add(label23);
+            Oscorelabels.Add(label22);
+            Oscorelabels.Add(label21);
+            Oscorelabels.Add(label20);
+            Oscorelabels.Add(label19);
+            Oscorelabels.Add(label18);
+            Oscorelabels.Add(label17);
+            Oscorelabels.Add(label16);
+            Oscorelabels.Add(label15);
+            Oscorelabels.Add(label14);
+
+            Oscoreboxes.Add(textBox24);
+            Oscoreboxes.Add(textBox23);
+            Oscoreboxes.Add(textBox22);
+            Oscoreboxes.Add(textBox21);
+            Oscoreboxes.Add(textBox20);
+            Oscoreboxes.Add(textBox19);
+            Oscoreboxes.Add(textBox18);
+            Oscoreboxes.Add(textBox17);
+            Oscoreboxes.Add(textBox16);
+            Oscoreboxes.Add(textBox15);
+            Oscoreboxes.Add(textBox14);
+            Oscoreboxes.Add(textBox13);
+        }
         private void DoGoalBoxes()
         {
             goalboxes.Add(Goal1);
@@ -562,6 +649,8 @@ namespace HIFK_tilastot
 
         private void ContinueButton_Click(object sender, EventArgs e)
         {
+            AttendanceBox.Show();
+            AttendanceLabel.Show();
             GoBackButton.Show();
             GameBox.Hide();
             ResultBox1.Show();
@@ -579,6 +668,8 @@ namespace HIFK_tilastot
         private void ContinueButton2_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
+            AttendanceBox.Hide();
+            AttendanceLabel.Hide();
             ResultBox1.Hide();
             ResultBox2.Hide();
             line.Hide();
@@ -918,6 +1009,61 @@ namespace HIFK_tilastot
         }
         private void AddOpponentsStats(int i)
         {
+            int counter1 = 0;
+            int counter2 = 0;
+            int counter3 = 0;
+            int counter4 = 0;
+            int counter5 = 0;
+            int counter6 = 0;
+
+            foreach (Label x in Ominutelabels)
+            {
+                counter1++;
+                if (counter1 <= i)
+                {
+                    x.Show();
+                }
+            }
+            foreach (TextBox x in Ominuteboxes)
+            {
+                counter2++;
+                if (counter2 <= i)
+                {
+                    x.Show();
+                }
+            }
+            foreach (CheckBox x in Openboxes)
+            {
+                counter3++;
+                if (counter3 <= i)
+                {
+                    x.Show();
+                }
+            }
+            foreach (RadioButton x in Owinnerboxes)
+            {
+                counter4++;
+                if (counter4 <= i)
+                {
+                    x.Show();
+                }
+            }
+            foreach (Label x in Oscorelabels)
+            {
+                counter5++;
+                if (counter5 <= i)
+                {
+                    x.Show();
+                }
+            }
+            foreach (TextBox x in Oscoreboxes)
+            {
+                counter6++;
+                if (counter6 <= i)
+                {
+                    x.Show();
+                }
+            }
 
         }
 
@@ -1028,7 +1174,17 @@ namespace HIFK_tilastot
         List<Person> redCardPlayers = new List<Person>();
         private void ContinueButton8_Click(object sender, EventArgs e)
         {
-
+            foreach (Game g in GameBox.SelectedItems)
+            {
+                if (g.Home_match == false)
+                {
+                    AddOpponentsStats(int.Parse(ResultBox1.Text));
+                }
+                if (g.Home_match == true)
+                {
+                    AddOpponentsStats(int.Parse(ResultBox2.Text));
+                }
+            }
 
 
             // Showing all the information to user
@@ -1038,64 +1194,141 @@ namespace HIFK_tilastot
             BookedLabel.Hide();
             RedCardBox.Hide();
             BookingBox.Hide();
-            HeadLabel.Text = $"Check the information on game {SelectedGame.SmallFixtureWithoutTheDate}:";
+            HeadLabel.Text = "Add opponents goals.";
 
-            StartedPlayersLabel.Text = "Started players: \n";
-            foreach (Person p in StartedPlayers)
+            ContinueButton9.Show();
+        }
+        private void ContinueButton9_Click(object sender, EventArgs e)
+        {
+            bool stop = false;
+            int number;
+            opponentgoalscount = 0; // CHECK MINUTES
+            foreach (TextBox min in Ominuteboxes)
             {
-                StartedPlayersLabel.Text += (p.FirstName + " " + p.LastName + "\n").ToString();
-            }
-            SubstitutesLabel.Text = "Bench:\n";
-            SubstitutesLabel.Text += $"{PlayersOnTheBenchBox.SelectedItems.Count} players:\n";
-            foreach (Person p in SubstitutePlayers)
-            {
-                SubstitutesLabel.Text += (p.FirstName + " " + p.LastName + "\n").ToString();
-            }
-            SubsLabel.Text = "Subs in: \n";
-            foreach (TextBox sub in Subinboxes)
-            {
-                if (sub.Text != "")
+                if (min.Visible == true)
                 {
-                    SubsLabel.Text += $"{sub.Text}\n";
+                    opponentgoalscount++;
+                    if (int.TryParse(min.Text, out number))
+                    {
+                        if (int.Parse(min.Text) < 0 || int.Parse(min.Text) > 120)
+                        {
+                            label26.Visible = true;
+                            stop = true;
+                        }
+                    }
+                    else
+                    {
+                        label26.Visible = true;
+                        stop = true;
+                    }
                 }
-            }
-            SubsLabel.Text += "Subs out: \n";
-            foreach (TextBox sub in Suboutboxes)
-            {
-                if (sub.Text != "")
-                {
-                    SubsLabel.Text += $"{sub.Text}\n";
-                }
-            }
-            ResultLabel.Text = $"Result: {ResultBox1.Value} - {ResultBox2.Value}";
-            GoalsLabel.Text = "Goals: \n";
-            foreach (ComboBox goal in goalboxes)
-            {
-                if (goal.Text != "")
-                {
-                    GoalsLabel.Text += $"{goal.Text}\n";
-                }
-            }
-            AssistsLabel.Text = "Assists: \n";
-            foreach (ComboBox assist in assistboxes)
-            {
-                if (assist.Text != "")
-                {
-                    AssistsLabel.Text += $"{assist.Text}\n";
-                }
-            }
-            YellowsLabel.Text = "Bookings: \n";
-            foreach (Person p in BookingBox.SelectedItems)
-            {
-                YellowsLabel.Text += $"{p.FirstName} {p.LastName}\n";
-            }
-            RedsLabel.Text = "Red cards: \n";
-            foreach (Person p in RedCardBox.SelectedItems)
-            {
-                RedsLabel.Text += $"{p.FirstName} {p.LastName}\n";
             }
 
-            AddResultButton.Show();
+            // CHECK SCORES
+            foreach (TextBox score in scoreboxes)
+            {
+                if (score.Visible == true)
+                {
+                    if (score.Text.Length < 3 || score.Text.Length > 5)
+                    {
+                        label13.Visible = true;
+                        stop = true;
+                    }
+                    if (!Regex.IsMatch(score.Text, @"-"))
+                    {
+                        label13.Visible = true;
+                        stop = true;
+                    }
+                }
+            }
+
+            if (stop == false)
+            {
+                label13.Visible = false;
+                label26.Visible = false;
+                HeadLabel.Text = $"Check the information on game {SelectedGame.SmallFixtureWithoutTheDate}:";
+                StartedPlayersLabel.Text = "Started players: \n";
+                foreach (Person p in StartedPlayers)
+                {
+                    StartedPlayersLabel.Text += (p.FirstName + " " + p.LastName + "\n").ToString();
+                }
+                SubstitutesLabel.Text = "Bench:\n";
+                SubstitutesLabel.Text += $"{PlayersOnTheBenchBox.SelectedItems.Count} players:\n";
+                foreach (Person p in SubstitutePlayers)
+                {
+                    SubstitutesLabel.Text += (p.FirstName + " " + p.LastName + "\n").ToString();
+                }
+                SubsLabel.Text = "Subs in: \n";
+                foreach (TextBox sub in Subinboxes)
+                {
+                    if (sub.Text != "")
+                    {
+                        SubsLabel.Text += $"{sub.Text}\n";
+                    }
+                }
+                SubsLabel.Text += "Subs out: \n";
+                foreach (TextBox sub in Suboutboxes)
+                {
+                    if (sub.Text != "")
+                    {
+                        SubsLabel.Text += $"{sub.Text}\n";
+                    }
+                }
+                ResultLabel.Text = $"Result: {ResultBox1.Value} - {ResultBox2.Value}";
+                GoalsLabel.Text = "Goals: \n";
+                foreach (ComboBox goal in goalboxes)
+                {
+                    if (goal.Text != "")
+                    {
+                        GoalsLabel.Text += $"{goal.Text}\n";
+                    }
+                }
+                AssistsLabel.Text = "Assists: \n";
+                foreach (ComboBox assist in assistboxes)
+                {
+                    if (assist.Text != "")
+                    {
+                        AssistsLabel.Text += $"{assist.Text}\n";
+                    }
+                }
+                YellowsLabel.Text = "Bookings: \n";
+                foreach (Person p in BookingBox.SelectedItems)
+                {
+                    YellowsLabel.Text += $"{p.FirstName} {p.LastName}\n";
+                }
+                RedsLabel.Text = "Red cards: \n";
+                foreach (Person p in RedCardBox.SelectedItems)
+                {
+                    RedsLabel.Text += $"{p.FirstName} {p.LastName}\n";
+                }
+                AddResultButton.Show();
+
+                foreach (Label label in Ominutelabels)
+                {
+                    label.Hide();
+                }
+                foreach (TextBox min in Ominuteboxes)
+                {
+                    min.Hide();
+                }
+                foreach (CheckBox pen in Openboxes)
+                {
+                    pen.Hide();
+                }
+                foreach (RadioButton winner in Owinnerboxes)
+                {
+                    winner.Hide();
+                }
+                foreach (Label label in Oscorelabels)
+                {
+                    label.Hide();
+                }
+                foreach (TextBox min in Oscoreboxes)
+                {
+                    min.Hide();
+                }
+                ContinueButton9.Visible = false;
+            }
         }
 
         private void AddResultButton_Click(object sender, EventArgs e)
@@ -1111,30 +1344,30 @@ namespace HIFK_tilastot
             {
                 if (ResultBox1.Value > ResultBox2.Value)
                 {
-                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}",1);
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}",1, int.Parse(AttendanceBox.Text));
                 }
                 if (ResultBox1.Value < ResultBox2.Value)
                 {
-                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 2);
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 2, int.Parse(AttendanceBox.Text));
                 }
                 if (ResultBox1.Value == ResultBox2.Value)
                 {
-                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 0);
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 0, int.Parse(AttendanceBox.Text));
                 }
             }
             else if(SelectedGame.Home_match == false)
             {
                 if (ResultBox1.Value < ResultBox2.Value)
                 {
-                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 1);
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 1, int.Parse(AttendanceBox.Text));
                 }
                 if (ResultBox1.Value > ResultBox2.Value)
                 {
-                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 2);
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 2, int.Parse(AttendanceBox.Text));
                 }
                 if (ResultBox1.Value == ResultBox2.Value)
                 {
-                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 0);
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 0, int.Parse(AttendanceBox.Text));
                 }
             }
 
@@ -1297,6 +1530,63 @@ namespace HIFK_tilastot
                 }
 
                 db.AddGoal(SelectedGame.Id, scoreforgoals, winnerforgoals, playerforgoals, assistforgoals, penforgoals, minuteforgoals);
+            }
+
+            // Add opponents goals:
+
+            for (int i = 0; i < opponentgoalscount; i++)
+            {
+                int counter1 = 0;
+                int counter2 = 0;
+                int counter3 = 0;
+                int counter4 = 0;
+                string scoreforgoals = "";
+                bool winnerforgoals = false;
+                bool penforgoals = false;
+                int minuteforgoals = 0;
+
+                foreach (TextBox p in Oscoreboxes)
+                {
+                    if (counter1 == i)
+                    {
+                        scoreforgoals = p.Text;
+                    }
+                    counter1++;
+                }
+                foreach (RadioButton p in Owinnerboxes)
+                {
+                    if (counter2 == i && p.Checked)
+                    {
+                        winnerforgoals = true;
+                    }
+                    if (counter2 == i && !p.Checked)
+                    {
+                        winnerforgoals = false;
+                    }
+                    counter2++;
+                }
+                foreach (CheckBox p in Openboxes)
+                {
+                    if (counter3 == i && p.Checked)
+                    {
+                        penforgoals = true;
+                    }
+                    if (counter3 == i && !p.Checked)
+                    {
+                        penforgoals = false;
+                    }
+                    counter3++;
+                }
+                foreach (TextBox p in Ominuteboxes)
+                {
+                    if (counter4 == i)
+                    {
+                        minuteforgoals = int.Parse(p.Text);
+                    }
+                    counter4++;
+                }
+
+                db.AddOpponentGoal(SelectedGame.Id, scoreforgoals, winnerforgoals, penforgoals, minuteforgoals);
             }
 
 

@@ -329,16 +329,17 @@ namespace HIFK_tilastot
             }
         }
 
-        public Game AddResult(int id, string result, int resultcode)
+        public Game AddResult(int id, string result, int resultcode, int attendance)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
             {
-                var output = connection.ExecuteScalar<Game>("dbo.AddResult @Id, @Result, @ResultCode",
+                var output = connection.ExecuteScalar<Game>("dbo.AddResult @Id, @Result, @ResultCode, @Attendance",
                     new
                     {
                         Id = id,
                         Result = result,
-                        ResultCode = resultcode
+                        ResultCode = resultcode,
+                        Attendance = attendance
                     });
                 return output;
             }
