@@ -1,5 +1,7 @@
 # HIFK_stats
 
-Program where I can add football team games, players and stats.
+Tilastointisovellus jalkapallojoukkueelle, josta saan ottelu- sekä pelaajatilastoja csv-tiedostoina. 
 
-I'll try to get interesting statistics of Veikkausliiga (HIFK) players, especially statistics I can't found elsewhere.
+Sovellus on tehty C#:lla ja tietokanta paikalliselle SQL-Serverille. 
+
+Tarkoitukseni on kerätä dataa HIFK:n otteluista ja pelaajista, sekä visualisoida dataa Pythonin (Pandas) avulla.

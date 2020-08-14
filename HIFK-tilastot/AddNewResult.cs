@@ -1602,6 +1602,8 @@ namespace HIFK_tilastot
                 GameBox.Show();
                 ResultBox1.Hide();
                 ResultBox2.Hide();
+                AttendanceBox.Hide();
+                AttendanceLabel.Hide();
                 line.Hide();
                 HeadLabel.Text = "Select game:";
                 ContinueButton.Show();
@@ -1613,6 +1615,8 @@ namespace HIFK_tilastot
                 ResultBox2.Show();
                 line.Show();
                 HeadLabel.Text = "Add result:";
+                AttendanceBox.Show();
+                AttendanceLabel.Show();
                 StartingPlayerBox.Hide();
                 ContinueButton2.Show();
                 ContinueButton3.Hide();
