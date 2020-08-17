@@ -17,12 +17,56 @@ namespace HIFK_tilastot
         List<Person> persons = new List<Person>();
         List<STATS> stats = new List<STATS>();
         List<STATS> allStats = new List<STATS>();
+        DateTimePicker DateTimeBox1 = new DateTimePicker();
+        DateTimePicker DateTimeBox2 = new DateTimePicker();
+        ListBox OpponentBox = new ListBox();
 
         public Players()
         {
             InitializeComponent();
             UpdateBindingPlayerStats();
             UpdateBindingPerson();
+            DoDateTimeBox1();
+            DoDateTimeBox2();
+            DoOpponentBox();
+        }
+        private void DoDateTimeBox1()
+        {
+            DateTimeBox1.Location = new Point(280, 88);
+            DateTimeBox1.Size = new Size(141, 50);
+            DateTimeBox1.Text = DateTime.Now.Date.ToShortDateString();
+            DateTimeBox1.Format = DateTimePickerFormat.Custom;
+            DateTimeBox1.CustomFormat = "dd.MM.yyyy";
+            DateTimeBox1.Name = "DateTimeBox";
+
+            this.Controls.Add(DateTimeBox1);
+        }
+        private void DoDateTimeBox2()
+        {
+            DateTimeBox2.Location = new Point(280, 110);
+            DateTimeBox2.Size = new Size(141, 50);
+            DateTimeBox2.Text = DateTime.Now.Date.ToShortDateString();
+            DateTimeBox2.Format = DateTimePickerFormat.Custom;
+            DateTimeBox2.CustomFormat = "dd.MM.yyyy";
+            DateTimeBox2.Name = "DateTimeBox";
+
+            this.Controls.Add(DateTimeBox2);
+        }
+        private void DoOpponentBox()
+        {
+            DataAccess db = new DataAccess();
+            List<Opponent> opponents = new List<Opponent>();
+
+            opponents = db.GetOpponents();
+            OpponentBox.Location = new Point(130, 28);
+            OpponentBox.Size = new Size(141, 150);
+            OpponentBox.Name = "OpponentBox";
+            OpponentBox.SelectionMode = SelectionMode.One;
+            foreach (Opponent o in opponents)
+            {
+                OpponentBox.Items.Add(o.Team);
+            }
+            this.Controls.Add(OpponentBox);
         }
         private void UpdateBindingPerson()
         {
@@ -38,79 +82,27 @@ namespace HIFK_tilastot
         private void searchButton_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
-            persons = db.GetPersons(LastNameText.Text);
-            UpdateBindingPerson();
+            stats = db.GetAllStats(listBox1.SelectedItem.ToString(), OpponentBox.SelectedItem.ToString(), Convert.ToDateTime(DateTimeBox1.Text.ToString()), Convert.ToDateTime(DateTimeBox2.Text.ToString()), PlayerNameText.Text);
+           // UpdateBindingPerson();
+            PlayersStatsView.DataSource = stats;
         }
-        private void NoPlayers_CheckedChanged(object sender, EventArgs e)
-        {
-            if (NoPlayers.Checked)
-            {
-                DataAccess db = new DataAccess();
-                persons = db.GetPersonsWithoutPlayers(LastNameText.Text);
-                UpdateBindingPerson();
-            }
-            else
-            {
-                DataAccess db = new DataAccess();
-                persons = db.GetPersons(LastNameText.Text);
-                UpdateBindingPerson();
-            }
-        }
+        
         private void searchPlayerStats_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
-            if (SelectYear.Text != "Select year" && SelectLeague.Text != "Select league")
+            PlayersStatsView.DataSource = allStats;
+
+            foreach (DataGridViewColumn column in PlayersStatsView.Columns)
             {
-                noYear.Visible = false;
-                noLeague.Visible = false;
-                if (SelectYear.Text == "All")
-                {
-                    allStats = db.GetAllStats(SelectLeague.Text, 0);
-                }
-                else
-                {
-                    allStats = db.GetAllStats(SelectLeague.Text, int.Parse(SelectYear.Text));
-                }
-                PlayersStatsView.DataSource = allStats;
-
-                foreach (DataGridViewColumn column in PlayersStatsView.Columns)
-                {
-                    // ei toimi:
-                    // https://stackoverflow.com/questions/5553100/how-to-enable-datagridview-sorting-when-user-clicks-on-the-column-header
-                    // https://timvw.be/2007/02/22/presenting-the-sortablebindinglistt/
-                    column.SortMode = DataGridViewColumnSortMode.Automatic;
-                }
-
-                if (TopScorers.Checked)
-                {
-                    SelectLeague.Visible = true;
-                    stats = db.GetTopScorers(SelectLeague.Text);
-                    UpdateBindingPlayerStats();
-                    PlayerStats.DisplayMember = "TopScore";
-                }
-                else
-                {
-                    stats = db.GetPlayerStats(PlayerNameText.Text);
-                    UpdateBindingPlayerStats();
-                }
+                // ei toimi:
+                // https://stackoverflow.com/questions/5553100/how-to-enable-datagridview-sorting-when-user-clicks-on-the-column-header
+                // https://timvw.be/2007/02/22/presenting-the-sortablebindinglistt/
+                column.SortMode = DataGridViewColumnSortMode.Automatic;
             }
-            else
-            {
-                if (SelectYear.Text == "Select year")
-                {
-                    noYear.Visible = true;
-                }
-                if (SelectLeague.Text == "Select league")
-                {
-                    noLeague.Visible = true;
-                }
-            }
-            
 
-        }
-        private void TopScorers_CheckedChanged(object sender, EventArgs e)
-        {
-            
+                
+            stats = db.GetPlayerStats(PlayerNameText.Text);
+            UpdateBindingPlayerStats();
         }
         // Export to Excel
         private void toExcel_Click(object sender, EventArgs e)

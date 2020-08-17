@@ -1,0 +1,28 @@
+﻿Id,Opponent,DateTime,Serie,Result,ResultCode,Stadion,Home_match,HomeMatchInfo,FullInfo
+19175,AC Kajaani,27.10.2018 13.00.00,Ykkönen,0-1,1,Kajaanin liikuntapuisto,False,Away,Ykkönen 27.10.2018 13.00 AC Kajaani - HIFK 0-1     Kajaanin liikuntapuisto
+19174,KPV,20.10.2018 14.00.00,Ykkönen,2-1,1,Bolt Arena,True,Home,Ykkönen 20.10.2018 14.00 HIFK - KPV 2-1     Bolt Arena
+19173,KTP,6.10.2018 17.00.00,Ykkönen,1-0,1,Bolt Arena,True,Home,Ykkönen 06.10.2018 17.00 HIFK - KTP 1-0     Bolt Arena
+19172,JJK,29.9.2018 17.00.00,Ykkönen,0-2,1,Harjun stadion,False,Away,Ykkönen 29.09.2018 17.00 JJK - HIFK 0-2     Harjun stadion
+19171,EIF,23.9.2018 18.30.00,Ykkönen,0-3,1,Tammisaaren Keskuskenttä,False,Away,Ykkönen 23.09.2018 18.30 EIF - HIFK 0-3     Tammisaaren Keskuskenttä
+19170,Klubi 04,17.9.2018 18.30.00,Ykkönen,3-0,1,Bolt Arena,True,Home,Ykkönen 17.09.2018 18.30 HIFK - Klubi 04 3-0     Bolt Arena
+19169,FF Jaro,10.9.2018 18.30.00,Ykkönen,0-1,2,Bolt Arena,True,Home,Ykkönen 10.09.2018 18.30 HIFK - FF Jaro 0-1     Bolt Arena
+19168,AC Oulu,1.9.2018 17.00.00,Ykkönen,2-1,2,Raatin stadion,False,Away,Ykkönen 01.09.2018 17.00 AC Oulu - HIFK 2-1     Raatin stadion
+19167,Haka,27.8.2018 18.30.00,Ykkönen,2-0,1,Bolt Arena,True,Home,Ykkönen 27.08.2018 18.30 HIFK - Haka 2-0     Bolt Arena
+19166,Klubi 04,23.8.2018 18.30.00,Ykkönen,1-3,1,Bolt Arena,False,Away,Ykkönen 23.08.2018 18.30 Klubi 04 - HIFK 1-3     Bolt Arena
+19165,AC Kajaani,19.8.2018 18.30.00,Ykkönen,2-2,0,Bolt Arena,True,Home,Ykkönen 19.08.2018 18.30 HIFK - AC Kajaani 2-2     Bolt Arena
+19164,KPV,11.8.2018 17.00.00,Ykkönen,2-2,0,Kokkolan keskuskenttä,False,Away,Ykkönen 11.08.2018 17.00 KPV - HIFK 2-2     Kokkolan keskuskenttä
+19163,KTP,6.8.2018 18.30.00,Ykkönen,2-1,2,Arto Tolsa Areena,False,Away,Ykkönen 06.08.2018 18.30 KTP - HIFK 2-1     Arto Tolsa Areena
+19162,JJK,27.7.2018 18.30.00,Ykkönen,2-2,0,Bolt Arena,True,Home,Ykkönen 27.07.2018 18.30 HIFK - JJK 2-2     Bolt Arena
+19161,EIF,21.7.2018 17.00.00,Ykkönen,1-1,0,Bolt Arena,True,Home,Ykkönen 21.07.2018 17.00 HIFK - EIF 1-1     Bolt Arena
+19160,FF Jaro,9.7.2018 18.30.00,Ykkönen,0-3,1,Pietarsaaren keskuskenttä,False,Away,Ykkönen 09.07.2018 18.30 FF Jaro - HIFK 0-3     Pietarsaaren keskuskenttä
+19159,AC Oulu,30.6.2018 15.00.00,Ykkönen,3-0,1,Bolt Arena,True,Home,Ykkönen 30.06.2018 15.00 HIFK - AC Oulu 3-0     Bolt Arena
+19158,Haka,26.6.2018 18.30.00,Ykkönen,2-0,1,Bolt Arena,True,Home,Ykkönen 26.06.2018 18.30 HIFK - Haka 2-0     Bolt Arena
+19157,AC Kajaani,20.6.2018 18.30.00,Ykkönen,2-1,2,Kajaanin liikuntapuisto,False,Away,Ykkönen 20.06.2018 18.30 AC Kajaani - HIFK 2-1     Kajaanin liikuntapuisto
+19156,KPV,13.6.2018 18.30.00,Ykkönen,2-0,1,Bolt Arena,True,Home,Ykkönen 13.06.2018 18.30 HIFK - KPV 2-0     Bolt Arena
+19155,KTP,9.6.2018 17.00.00,Ykkönen,1-1,0,Bolt Arena,True,Home,Ykkönen 09.06.2018 17.00 HIFK - KTP 1-1     Bolt Arena
+19154,JJK,1.6.2018 18.30.00,Ykkönen,0-2,1,Harjun stadion,False,Away,Ykkönen 01.06.2018 18.30 JJK - HIFK 0-2     Harjun stadion
+19153,EIF,26.5.2018 17.00.00,Ykkönen,0-0,0,Tammisaaren Keskuskenttä,False,Away,Ykkönen 26.05.2018 17.00 EIF - HIFK 0-0     Tammisaaren Keskuskenttä
+19152,Klubi 04,21.5.2018 18.30.00,Ykkönen,2-0,1,Bolt Arena,True,Home,Ykkönen 21.05.2018 18.30 HIFK - Klubi 04 2-0     Bolt Arena
+19151,FF Jaro,14.5.2018 18.30.00,Ykkönen,2-1,1,Bolt Arena,True,Home,Ykkönen 14.05.2018 18.30 HIFK - FF Jaro 2-1     Bolt Arena
+19150,AC Oulu,9.5.2018 18.30.00,Ykkönen,3-1,2,Raatin stadion,False,Away,Ykkönen 09.05.2018 18.30 AC Oulu - HIFK 3-1     Raatin stadion
+19149,Haka,28.4.2018 17.00.00,Ykkönen,1-2,1,Tehtaan kenttä,False,Away,Ykkönen 28.04.2018 17.00 Haka - HIFK 1-2     Tehtaan kenttä

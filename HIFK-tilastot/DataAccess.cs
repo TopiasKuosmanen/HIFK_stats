@@ -60,15 +60,18 @@ namespace HIFK_tilastot
             }
         }
 
-        public List<STATS> GetAllStats(string league, int year)
+        public List<STATS> GetAllStats(string leagues, string opponents, DateTime start, DateTime end, string player)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
             {
-                var output = connection.Query<STATS>("dbo.GetAllStats @League, @Year",
+                var output = connection.Query<STATS>("dbo.GetStatsWithParameters @Leagues, @Opponents, @Startingday, @EndingDay, @Player",
                     new
                     {
-                        League = league,
-                        Year = year
+                        Leagues = leagues,
+                        Opponents = opponents,
+                        StartingDay = start,
+                        EndingDay = end,
+                        Player = player
                     }).ToList();
                 return output;
             }

@@ -3823,6 +3823,317 @@ END]]></Value>
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetPlayersToEdit]&#xD;&#xA;&#x9;@Name NVARCHAR(50)&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetStatsWithParameters]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+IF(@Leagues = 'All' AND @Opponents = 'All' AND @Player = '')
+BEGIN
+	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id JOIN Game g ON s.GameId = g.Id
+	WHERE g.DateTime >= @StartingDay AND g.DateTime <= @EndingDay
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+END
+IF (@Leagues = 'ALL' AND @Opponents != 'All' AND @Player = '')
+BEGIN
+	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id JOIN Game g ON s.GameId = g.Id JOIN Opponent o ON g.OpponentId = o.Id
+	WHERE g.DateTime >= @StartingDay AND g.DateTime <= @EndingDay AND o.Team = @Opponents
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+END
+IF (@Leagues != 'ALL' AND @Opponents = 'All' AND @Player = '')
+BEGIN
+	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id JOIN Game g ON s.GameId = g.Id
+	WHERE g.DateTime >= @StartingDay AND g.DateTime <= @EndingDay AND g.Serie = @Leagues
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+END
+IF (@Leagues != 'ALL' AND @Opponents != 'All' AND @Player = '')
+BEGIN
+	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id JOIN Game g ON s.GameId = g.Id JOIN Opponent o ON g.OpponentId = o.Id
+	WHERE g.DateTime >= @StartingDay AND g.DateTime <= @EndingDay AND g.Serie = @Leagues AND o.Team = @Opponents
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+END
+IF (@Leagues != 'ALL' AND @Opponents != 'All' AND @Player != '')
+BEGIN
+	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id JOIN Game g ON s.GameId = g.Id JOIN Opponent o ON g.OpponentId = o.Id
+	WHERE g.DateTime >= @StartingDay AND g.DateTime <= @EndingDay AND g.Serie = @Leagues AND o.Team = @Opponents AND (LastName LIKE '%' + @Player + '%' OR FirstName LIKE '%' + @Player + '%')
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+END
+IF (@Leagues != 'ALL' AND @Opponents = 'All' AND @Player != '')
+BEGIN
+	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id JOIN Game g ON s.GameId = g.Id
+	WHERE g.DateTime >= @StartingDay AND g.DateTime <= @EndingDay AND g.Serie = @Leagues AND (LastName LIKE '%' + @Player + '%' OR FirstName LIKE '%' + @Player + '%')
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+END
+IF (@Leagues = 'ALL' AND @Opponents != 'All' AND @Player != '')
+BEGIN
+	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id JOIN Game g ON s.GameId = g.Id JOIN Opponent o ON g.OpponentId = o.Id
+	WHERE g.DateTime >= @StartingDay AND g.DateTime <= @EndingDay AND o.Team = @Opponents AND (LastName LIKE '%' + @Player + '%' OR FirstName LIKE '%' + @Player + '%')
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+END
+IF (@Leagues = 'ALL' AND @Opponents = 'All' AND @Player != '')
+BEGIN
+	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
+	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
+	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards
+	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id JOIN Game g ON s.GameId = g.Id
+	WHERE g.DateTime >= @StartingDay AND g.DateTime <= @EndingDay AND (LastName LIKE '%' + @Player + '%' OR FirstName LIKE '%' + @Player + '%')
+	GROUP BY p.FirstName, p.LastName
+	ORDER BY Goals DESC
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[GetStatsWithParameters].[@Leagues]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetStatsWithParameters].[@Opponents]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetStatsWithParameters].[@Player]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[PlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[GameId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[Goals]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[StartingXI]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[SubstitutedIn]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[Assists]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[PlayedMinutes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[OnTheBench]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[YellowCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[RedCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[DateTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetStatsWithParameters].[@StartingDay]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetStatsWithParameters].[@EndingDay]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Opponent]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[OpponentId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Opponent].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[Goals]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[StartingXI]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[SubstitutedIn]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[Assists]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[PlayedMinutes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[OnTheBench]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[YellowCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Stats].[RedCards]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[DateTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Opponent].[Team]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Serie]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Serie]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Player].[FirstName]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetStatsWithParameters].[@Leagues]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetStatsWithParameters].[@Opponents]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetStatsWithParameters].[@StartingDay]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetStatsWithParameters].[@EndingDay]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetStatsWithParameters].[@Player]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="5851" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetStatsWithParameters]&#xD;&#xA;&#x9;@Leagues NVARCHAR(50),&#xD;&#xA;&#x9;@Opponents NVARCHAR(50),&#xD;&#xA;&#x9;@StartingDay DATETIME,&#xD;&#xA;&#x9;@EndingDay DATETIME,&#xD;&#xA;&#x9;@Player NVARCHAR(50)&#xD;&#xA;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Goal]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">

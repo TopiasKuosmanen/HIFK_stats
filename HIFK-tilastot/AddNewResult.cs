@@ -878,8 +878,6 @@ namespace HIFK_tilastot
                 SubsList.Add(new Substitution(int.Parse(sub11in.Text), int.Parse(sub11out.Text), int.Parse(min11.Text)));
             }
 
-
-            HeadLabel.Text = "Add goals and assists";
             In.Hide();
             Out.Hide();
             MinutesLabel.Hide();
@@ -896,21 +894,130 @@ namespace HIFK_tilastot
                 sub.Hide();
             }
 
-            foreach (Game g in GameBox.SelectedItems)
+            ContinueButton6.Hide();
+            if (SelectedGame.Home_match == true && int.Parse(ResultBox1.Text) != 0 || SelectedGame.Home_match == false && int.Parse(ResultBox2.Text) != 0)
             {
-                if (g.Home_match == false)
+                HeadLabel.Text = "Add goals and assists";
+                foreach (Game g in GameBox.SelectedItems)
                 {
-                    AddStats(int.Parse(ResultBox2.Text));
-                    SelectedGame = g;
+                    if (g.Home_match == false)
+                    {
+                        AddStats(int.Parse(ResultBox2.Text));
+                        SelectedGame = g;
+                    }
+                    if (g.Home_match == true)
+                    {
+                        AddStats(int.Parse(ResultBox1.Text));
+                        SelectedGame = g;
+                    }
                 }
-                if (g.Home_match == true)
+                ContinueButton7.Show();
+            }
+            else
+            {
+                ContinueButton8.Show();
+                bool stop = false;
+                int number;
+                goalscount = 0; // CHECK MINUTES
+                foreach (TextBox min in minuteboxes)
                 {
-                    AddStats(int.Parse(ResultBox1.Text));
-                    SelectedGame = g;
+                    if (min.Visible == true)
+                    {
+                        goalscount++;
+                        if (int.TryParse(min.Text, out number))
+                        {
+                            if (int.Parse(min.Text) < 0 || int.Parse(min.Text) > 120)
+                            {
+                                minuteText.Visible = true;
+                                stop = true;
+                            }
+                        }
+                        else
+                        {
+                            minuteText.Visible = true;
+                            stop = true;
+                        }
+                    }
+                }
+
+                // CHECK SCORES
+                foreach (TextBox score in scoreboxes)
+                {
+                    if (score.Visible == true)
+                    {
+                        if (score.Text.Length < 3 || score.Text.Length > 5)
+                        {
+                            scoreText.Visible = true;
+                            stop = true;
+                        }
+                        if (!Regex.IsMatch(score.Text, @"-"))
+                        {
+                            scoreText.Visible = true;
+                            stop = true;
+                        }
+                    }
+                }
+                if (stop == false)
+                {
+                    minuteText.Visible = false;
+                    scoreText.Visible = false;
+                    RedCardsLabel.Show();
+                    BookedLabel.Show();
+                    HeadLabel.Text = "Add bookings and red cards";
+
+                    foreach (ComboBox goal in goalboxes)
+                    {
+                        goal.Hide();
+                    }
+                    foreach (Label label in goallabels)
+                    {
+                        label.Hide();
+                    }
+                    foreach (ComboBox assist in assistboxes)
+                    {
+                        assist.Hide();
+                    }
+                    foreach (Label label in assistlabels)
+                    {
+                        label.Hide();
+                    }
+                    foreach (Label label in minutelabels)
+                    {
+                        label.Hide();
+                    }
+                    foreach (TextBox min in minuteboxes)
+                    {
+                        min.Hide();
+                    }
+                    foreach (CheckBox pen in penboxes)
+                    {
+                        pen.Hide();
+                    }
+                    foreach (RadioButton winner in winnerboxes)
+                    {
+                        winner.Hide();
+                    }
+                    foreach (Label label in scorelabels)
+                    {
+                        label.Hide();
+                    }
+                    foreach (TextBox min in scoreboxes)
+                    {
+                        min.Hide();
+                    }
+                    foreach (Person p in PlayedPlayers)
+                    {
+                        RedCardBox.Items.Add(p);
+                        RedCardBox.DisplayMember = "PlayerInfo";
+                        BookingBox.Items.Add(p);
+                        BookingBox.DisplayMember = "PlayerInfo";
+                    }
+                    RedCardBox.Show();
+                    BookingBox.Show();
+                    ContinueButton7.Hide();
+                    ContinueButton8.Show();
                 }
             }
-            ContinueButton6.Hide();
-            ContinueButton7.Show();
         }
 
         private void AddStats(int i)
@@ -1167,9 +1274,22 @@ namespace HIFK_tilastot
                 }
                 RedCardBox.Show();
                 BookingBox.Show();
+            }
+            if (SelectedGame.Home_match == false && int.Parse(ResultBox1.Text) == 0 || SelectedGame.Home_match == true && int.Parse(ResultBox2.Text) == 0)
+            {
+                ContinueButton9.Show();
+                ContinueButton7.Show();
+                RedCardsLabel.Show();
+                BookedLabel.Show();
+                RedCardBox.Show();
+                BookingBox.Show();
+            }
+            else
+            {
                 ContinueButton7.Hide();
                 ContinueButton8.Show();
             }
+
         }
         List<Person> redCardPlayers = new List<Person>();
         private void ContinueButton8_Click(object sender, EventArgs e)
@@ -1185,7 +1305,7 @@ namespace HIFK_tilastot
                     AddOpponentsStats(int.Parse(ResultBox2.Text));
                 }
             }
-
+            
 
             // Showing all the information to user
 
@@ -1194,8 +1314,10 @@ namespace HIFK_tilastot
             BookedLabel.Hide();
             RedCardBox.Hide();
             BookingBox.Hide();
-            HeadLabel.Text = "Add opponents goals.";
-
+            if (SelectedGame.Home_match == false && int.Parse(ResultBox1.Text) == 0 || SelectedGame.Home_match == true && int.Parse(ResultBox2.Text) == 0)
+            {
+                HeadLabel.Text = "Add opponents goals.";
+            }
             ContinueButton9.Show();
         }
         private void ContinueButton9_Click(object sender, EventArgs e)
@@ -1223,6 +1345,11 @@ namespace HIFK_tilastot
                     }
                 }
             }
+
+            RedCardsLabel.Hide();
+            BookedLabel.Hide();
+            RedCardBox.Hide();
+            BookingBox.Hide();
 
             // CHECK SCORES
             foreach (TextBox score in scoreboxes)
@@ -1417,15 +1544,28 @@ namespace HIFK_tilastot
                     {
                         form.ShowDialog();
                         redcards++;
-                        minutes -= (90-form.Minute);
-
+                        if (SelectedGame.Extra_time == true)
+                        {
+                            minutes -= (120 - form.Minute);
+                        }
+                        else
+                        {
+                            minutes -= (90 - form.Minute);
+                        }
                     }
                     
                 }
                 if (StartedPlayers.Contains(p))
                 {
                     starting++;
-                    minutes += 90;                    
+                    if (SelectedGame.Extra_time == true)
+                    {
+                        minutes += 120;
+                    }
+                    else
+                    {
+                        minutes += 90;
+                    }                
                 }
                 if (SubstitutePlayers.Contains(p))
                 {
@@ -1436,6 +1576,10 @@ namespace HIFK_tilastot
                 {
                     if (p.Number == sub.PlayerIn)
                     {
+                        if (SelectedGame.Extra_time == true)
+                        {
+                            minutes += 30;
+                        }
                         minutes += sub.PlayerInMinutes;
                         substitutedin++;
                     }

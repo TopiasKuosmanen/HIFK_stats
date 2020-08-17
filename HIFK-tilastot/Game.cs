@@ -16,6 +16,9 @@ namespace HIFK_tilastot
         public int ResultCode { get; set; }
         public string Stadion { get; set; }
         public Boolean Home_match { get; set; }
+        public Boolean Extra_time { get; set; }
+        public Boolean Penalties { get; set; }
+
 
         public string HomeMatchInfo
         {
