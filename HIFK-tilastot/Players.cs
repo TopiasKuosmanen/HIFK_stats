@@ -82,7 +82,14 @@ namespace HIFK_tilastot
         private void searchButton_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
-            stats = db.GetAllStats(listBox1.SelectedItem.ToString(), OpponentBox.SelectedItem.ToString(), Convert.ToDateTime(DateTimeBox1.Text.ToString()), Convert.ToDateTime(DateTimeBox2.Text.ToString()), PlayerNameText.Text);
+            if (AllOpponents.Checked)
+            {
+                stats = db.GetAllStats(listBox1.SelectedItem.ToString(), "All", Convert.ToDateTime(DateTimeBox1.Text.ToString()), Convert.ToDateTime(DateTimeBox2.Text.ToString()), PlayerNameText.Text);
+            }
+            else
+            {
+                stats = db.GetAllStats(listBox1.SelectedItem.ToString(), OpponentBox.SelectedItem.ToString(), Convert.ToDateTime(DateTimeBox1.Text.ToString()), Convert.ToDateTime(DateTimeBox2.Text.ToString()), PlayerNameText.Text);
+            }
            // UpdateBindingPerson();
             PlayersStatsView.DataSource = stats;
         }

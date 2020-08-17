@@ -40,6 +40,7 @@
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.AllOpponents = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PlayersStatsView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,11 +158,22 @@
             this.label2.TabIndex = 32;
             this.label2.Text = "League";
             // 
+            // AllOpponents
+            // 
+            this.AllOpponents.AutoSize = true;
+            this.AllOpponents.Location = new System.Drawing.Point(168, 8);
+            this.AllOpponents.Name = "AllOpponents";
+            this.AllOpponents.Size = new System.Drawing.Size(88, 21);
+            this.AllOpponents.TabIndex = 33;
+            this.AllOpponents.Text = "Select All";
+            this.AllOpponents.UseVisualStyleBackColor = true;
+            // 
             // Players
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1579, 621);
+            this.Controls.Add(this.AllOpponents);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.lblStatus);
@@ -194,5 +206,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox AllOpponents;
     }
 }
