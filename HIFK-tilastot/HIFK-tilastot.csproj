@@ -65,6 +65,12 @@
     <Compile Include="AddNewplayer.Designer.cs">
       <DependentUpon>AddNewplayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddNewReferee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewReferee.Designer.cs">
+      <DependentUpon>AddNewReferee.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddNewResult.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewplayer.resx">
       <DependentUpon>AddNewplayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewReferee.resx">
+      <DependentUpon>AddNewReferee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewResult.resx">
       <DependentUpon>AddNewResult.cs</DependentUpon>

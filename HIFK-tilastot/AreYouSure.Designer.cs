@@ -37,7 +37,7 @@
             // 
             this.TextLabel.AutoSize = true;
             this.TextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextLabel.Location = new System.Drawing.Point(27, 53);
+            this.TextLabel.Location = new System.Drawing.Point(115, 44);
             this.TextLabel.Name = "TextLabel";
             this.TextLabel.Size = new System.Drawing.Size(301, 25);
             this.TextLabel.TabIndex = 0;
@@ -46,7 +46,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(98, 145);
+            this.button1.Location = new System.Drawing.Point(149, 132);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 40);
             this.button1.TabIndex = 1;
@@ -57,7 +57,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(246, 145);
+            this.button2.Location = new System.Drawing.Point(297, 132);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(105, 40);
             this.button2.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 299);
+            this.ClientSize = new System.Drawing.Size(636, 299);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TextLabel);

@@ -36,6 +36,7 @@
             this.LinkToAddOpponent = new System.Windows.Forms.LinkLabel();
             this.LinkToNewLeague = new System.Windows.Forms.LinkLabel();
             this.LinkToEditPlayer = new System.Windows.Forms.LinkLabel();
+            this.LinkToNewReferee = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -132,11 +133,24 @@
             this.LinkToEditPlayer.Text = "Edit player";
             this.LinkToEditPlayer.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkToEditPlayer_LinkClicked);
             // 
+            // LinkToNewReferee
+            // 
+            this.LinkToNewReferee.AutoSize = true;
+            this.LinkToNewReferee.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LinkToNewReferee.Location = new System.Drawing.Point(217, 450);
+            this.LinkToNewReferee.Name = "LinkToNewReferee";
+            this.LinkToNewReferee.Size = new System.Drawing.Size(191, 29);
+            this.LinkToNewReferee.TabIndex = 8;
+            this.LinkToNewReferee.TabStop = true;
+            this.LinkToNewReferee.Text = "Add new referee";
+            this.LinkToNewReferee.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkToNewReferee_LinkClicked);
+            // 
             // More
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 520);
+            this.Controls.Add(this.LinkToNewReferee);
             this.Controls.Add(this.LinkToEditPlayer);
             this.Controls.Add(this.LinkToNewLeague);
             this.Controls.Add(this.LinkToAddOpponent);
@@ -162,5 +176,6 @@
         private System.Windows.Forms.LinkLabel LinkToAddOpponent;
         private System.Windows.Forms.LinkLabel LinkToNewLeague;
         private System.Windows.Forms.LinkLabel LinkToEditPlayer;
+        private System.Windows.Forms.LinkLabel LinkToNewReferee;
     }
 }

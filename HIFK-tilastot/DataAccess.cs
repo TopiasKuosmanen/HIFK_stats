@@ -38,6 +38,22 @@ namespace HIFK_tilastot
             }
         }
 
+        public Person AddNewReferee(string firstname, string lastname, DateTime birthday)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
+            {
+                var output = connection.ExecuteScalar<Person>("dbo.AddReferee @FirstName, @LastName, @BirthDate",
+                    new
+                    {
+                        FirstName = firstname,
+                        LastName = lastname,
+                        BirthDate = birthday
+                    });
+
+                return output;
+            }
+        }
+
         public League AddLeague(string name)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))

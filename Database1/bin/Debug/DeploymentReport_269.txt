@@ -1,0 +1,22 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Referee]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [dbo].[Tie_Win_Lose_ETW_ETL_PKW_PKL] (Check Constraint)
+     Table rebuild
+       [dbo].[Referee] (Table)
+     Create
+       [dbo].[Tie_Win_Lose_ETW_ETL_PKW_PKL] (Check Constraint)
+       [dbo].[AddReferee] (Procedure)
+     Alter
+       [dbo].[AddResult] (Procedure)
+
+** Supporting actions

@@ -58,6 +58,12 @@ namespace HIFK_tilastot
             EditPlayer form = new EditPlayer();
             form.Show();
         }
+
+        private void LinkToNewReferee_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AddNewReferee form = new AddNewReferee();
+            form.Show();
+        }
     }
 
 }
