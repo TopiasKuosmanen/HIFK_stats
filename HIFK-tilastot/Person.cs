@@ -41,6 +41,13 @@ namespace HIFK_tilastot
                 return $"{LastName} {FirstName} {Id}";
             }
         }
+        public string RefereeInfo
+        {
+            get
+            {
+                return $"{LastName} {FirstName}";
+            }
+        }
 
         public string EditPlayerInfo
         {

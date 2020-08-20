@@ -255,6 +255,7 @@
             this.label38 = new System.Windows.Forms.Label();
             this.AttendanceLabel = new System.Windows.Forms.Label();
             this.AttendanceBox = new System.Windows.Forms.TextBox();
+            this.RefereeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // HeadLabel
@@ -2488,11 +2489,23 @@
             this.AttendanceBox.TabIndex = 295;
             this.AttendanceBox.Visible = false;
             // 
+            // RefereeLabel
+            // 
+            this.RefereeLabel.AutoSize = true;
+            this.RefereeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RefereeLabel.Location = new System.Drawing.Point(185, 165);
+            this.RefereeLabel.Name = "RefereeLabel";
+            this.RefereeLabel.Size = new System.Drawing.Size(86, 25);
+            this.RefereeLabel.TabIndex = 296;
+            this.RefereeLabel.Text = "Referee:";
+            this.RefereeLabel.Visible = false;
+            // 
             // AddNewResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 635);
+            this.Controls.Add(this.RefereeLabel);
             this.Controls.Add(this.AttendanceBox);
             this.Controls.Add(this.AttendanceLabel);
             this.Controls.Add(this.label13);
@@ -2955,5 +2968,6 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label AttendanceLabel;
         private System.Windows.Forms.TextBox AttendanceBox;
+        private System.Windows.Forms.Label RefereeLabel;
     }
 }

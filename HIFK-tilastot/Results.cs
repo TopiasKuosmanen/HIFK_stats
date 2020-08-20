@@ -127,13 +127,13 @@ namespace HIFK_tilastot
             using (StreamWriter sw = new StreamWriter(new FileStream(filename, FileMode.Create), Encoding.UTF8))
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine("Id,Opponent,DateTime,Serie,Result,ResultCode,Stadion,Home_match,HomeMatchInfo,FullInfo");
+                sb.AppendLine("Id,Opponent,DateTime,Serie,Result,ResultCode,Stadion,Home_match,HomeMatchInfo,FullInfo,Referee");
                 foreach (Game g in list)
                 {
                     if (!backgroundWorker.CancellationPending)
                     {
                         backgroundWorker.ReportProgress(index++ * 100 / process);
-                        sb.AppendLine(string.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                        sb.AppendLine(string.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}",
                             g.Id,
                             g.Opponent,
                             g.DateTime,
@@ -143,7 +143,8 @@ namespace HIFK_tilastot
                             g.Stadion,
                             g.Home_match,
                             g.HomeMatchInfo,
-                            g.FullInfo));
+                            g.FullInfo,
+                            g.Referee));
                     }
                 }
                 sw.Write(sb.ToString());

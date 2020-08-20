@@ -1,0 +1,5 @@
+﻿CREATE PROCEDURE [dbo].[GetAllReferees]
+AS
+BEGIN
+SELECT * FROM Referee
+END

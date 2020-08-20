@@ -15,7 +15,9 @@ namespace HIFK_tilastot
     {
         
         ListBox GameBox = new ListBox();
+        ListBox RefereeBox = new ListBox();
         Game SelectedGame;
+        Person SelectedReferee;
         NumericUpDown ResultBox1 = new NumericUpDown();
         NumericUpDown ResultBox2 = new NumericUpDown();
         ListBox StartingPlayerBox = new ListBox();
@@ -104,7 +106,24 @@ namespace HIFK_tilastot
             DoSubBoxes();
             DoGoalBoxes();
             DoOpponentsGoalBoxes();
+            DoRefereeBox();
         }
+
+        private void DoRefereeBox()
+        {
+            DataAccess db = new DataAccess();
+            List<Person> Referees = new List<Person>();
+            Referees = db.GetAllReferees();
+
+            RefereeBox.Location = new Point(240, 140);
+            RefereeBox.Size = new Size(141, 50);
+            RefereeBox.Name = "RefereeBox";
+            RefereeBox.DataSource = Referees;
+            RefereeBox.DisplayMember = "RefereeInfo";
+            this.Controls.Add(RefereeBox);
+            RefereeBox.Visible = false;
+        }
+
         private void DoOpponentsGoalBoxes()
         {
             Ominutelabels.Add(label38);
@@ -332,6 +351,7 @@ namespace HIFK_tilastot
         {
             DataAccess db = new DataAccess();
             List<Game> games = new List<Game>();
+            List<Person> Referees = new List<Person>();
 
             games = db.GetAllGames();
             GameBox.Location = new Point(200, 54);
@@ -649,25 +669,36 @@ namespace HIFK_tilastot
 
         private void ContinueButton_Click(object sender, EventArgs e)
         {
-            AttendanceBox.Show();
-            AttendanceLabel.Show();
-            GoBackButton.Show();
-            GameBox.Hide();
-            ResultBox1.Show();
-            ResultBox2.Show();
-            line.Show();
-            HeadLabel.Text = "Add result:";
-            ContinueButton.Hide();
-            ContinueButton2.Show();
-            foreach (Game g in GameBox.SelectedItems)
+            if (GameBox.SelectedItem is null)
             {
-                SelectedGame = g;
+
+            }
+            else
+            {
+                RefereeBox.Show();
+                RefereeLabel.Show();
+                AttendanceBox.Show();
+                AttendanceLabel.Show();
+                GoBackButton.Show();
+                GameBox.Hide();
+                ResultBox1.Show();
+                ResultBox2.Show();
+                line.Show();
+                HeadLabel.Text = "Add result:";
+                ContinueButton.Hide();
+                ContinueButton2.Show();
+                foreach (Game g in GameBox.SelectedItems)
+                {
+                    SelectedGame = g;
+                }
             }
         }
 
         private void ContinueButton2_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
+            RefereeBox.Hide();
+            RefereeLabel.Hide();
             AttendanceBox.Hide();
             AttendanceLabel.Hide();
             ResultBox1.Hide();
@@ -1463,6 +1494,10 @@ namespace HIFK_tilastot
             // Hide buttons
             GoBackButton.Visible = false;
             AddResultButton.Visible = false;
+            foreach (Person selected in RefereeBox.SelectedItems)
+            {
+                SelectedReferee = selected;
+            }
 
             DataAccess db = new DataAccess();
 
@@ -1471,30 +1506,30 @@ namespace HIFK_tilastot
             {
                 if (ResultBox1.Value > ResultBox2.Value)
                 {
-                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}",1, int.Parse(AttendanceBox.Text));
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}",1, int.Parse(AttendanceBox.Text), SelectedReferee.Id);
                 }
                 if (ResultBox1.Value < ResultBox2.Value)
                 {
-                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 2, int.Parse(AttendanceBox.Text));
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 2, int.Parse(AttendanceBox.Text), SelectedReferee.Id);
                 }
                 if (ResultBox1.Value == ResultBox2.Value)
                 {
-                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 0, int.Parse(AttendanceBox.Text));
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 0, int.Parse(AttendanceBox.Text), SelectedReferee.Id);
                 }
             }
             else if(SelectedGame.Home_match == false)
             {
                 if (ResultBox1.Value < ResultBox2.Value)
                 {
-                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 1, int.Parse(AttendanceBox.Text));
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 1, int.Parse(AttendanceBox.Text), SelectedReferee.Id);
                 }
                 if (ResultBox1.Value > ResultBox2.Value)
                 {
-                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 2, int.Parse(AttendanceBox.Text));
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 2, int.Parse(AttendanceBox.Text), SelectedReferee.Id);
                 }
                 if (ResultBox1.Value == ResultBox2.Value)
                 {
-                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 0, int.Parse(AttendanceBox.Text));
+                    db.AddResult(SelectedGame.Id, $"{ResultBox1.Value}-{ResultBox2.Value}", 0, int.Parse(AttendanceBox.Text), SelectedReferee.Id);
                 }
             }
 
@@ -1748,6 +1783,8 @@ namespace HIFK_tilastot
                 ResultBox2.Hide();
                 AttendanceBox.Hide();
                 AttendanceLabel.Hide();
+                RefereeBox.Hide();
+                RefereeLabel.Hide();
                 line.Hide();
                 HeadLabel.Text = "Select game:";
                 ContinueButton.Show();
@@ -1761,6 +1798,8 @@ namespace HIFK_tilastot
                 HeadLabel.Text = "Add result:";
                 AttendanceBox.Show();
                 AttendanceLabel.Show();
+                RefereeBox.Show();
+                RefereeLabel.Show();
                 StartingPlayerBox.Hide();
                 ContinueButton2.Show();
                 ContinueButton3.Hide();

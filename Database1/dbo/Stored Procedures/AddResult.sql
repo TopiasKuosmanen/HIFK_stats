@@ -7,6 +7,6 @@
 AS
 BEGIN
 	UPDATE Game
-	SET Result = @Result, ResultCode = @ResultCode, Attendance = @Attendance
+	SET Result = @Result, ResultCode = @ResultCode, Attendance = @Attendance, RefereeId = @Referee
 	WHERE Game.Id = @Id
 END

@@ -18,6 +18,7 @@ namespace HIFK_tilastot
         public Boolean Home_match { get; set; }
         public Boolean Extra_time { get; set; }
         public Boolean Penalties { get; set; }
+        public string Referee { get; set; }
 
 
         public string HomeMatchInfo

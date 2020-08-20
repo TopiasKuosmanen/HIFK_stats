@@ -733,7 +733,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Game].[Id]" />
+								<References Name="[dbo].[Referee].[Id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -741,7 +741,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Game]" />
+					<References Name="[dbo].[Referee]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="44" />
@@ -752,7 +752,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Referee].[Id]" />
+								<References Name="[dbo].[Game].[Id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -760,7 +760,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Referee]" />
+					<References Name="[dbo].[Game]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="45" />
@@ -1983,7 +1983,7 @@ END]]></Value>
 				<Value><![CDATA[
 BEGIN
 	UPDATE Game
-	SET Result = @Result, ResultCode = @ResultCode, Attendance = @Attendance
+	SET Result = @Result, ResultCode = @ResultCode, Attendance = @Attendance, RefereeId = @Referee
 	WHERE Game.Id = @Id
 END]]></Value>
 			</Property>
@@ -2009,6 +2009,12 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[AddResult].[@Attendance]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[RefereeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[AddResult].[@Referee]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Game].[Id]" />
@@ -2101,7 +2107,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="249" />
+				<Property Name="Length" Value="271" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddResult]&#xD;&#xA;&#x9;@Id INT,&#xD;&#xA;&#x9;@Result NVARCHAR(10),&#xD;&#xA;&#x9;@ResultCode INT,&#xD;&#xA;&#x9;@Attendance INT,&#xD;&#xA;&#x9;@Referee INT&#xD;&#xA;AS" />
@@ -3351,7 +3357,7 @@ END]]></Value>
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Game].[Referee]">
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Game].[RefereeId]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -3371,7 +3377,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="44" />
+			<AttachedAnnotation Disambiguator="45" />
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[GetAllGames]">
 			<Property Name="BodyScript">
@@ -3467,6 +3473,31 @@ END]]></Value>
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAllPlayers]&#xD;&#xA;@GameDate DATETIME&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetAllReferees]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+SELECT * FROM Referee
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Referee]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="78" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAllReferees]&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[GetAllStats]">
@@ -6046,7 +6077,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="45" />
+						<AttachedAnnotation Disambiguator="44" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -6112,15 +6143,15 @@ IF (@StartingDay = 0 AND @EndingDay = 0)
 BEGIN
 IF (@League = 'All')
 BEGIN
-	SELECT G.*, O.Team AS 'Opponent'
-	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
+	SELECT G.*, O.Team AS 'Opponent', (R.FirstName+' '+R.LastName) AS Referee
+	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id LEFT JOIN REFEREE R ON R.Id = G.RefereeId
 	WHERE Result IS NOT NULL
 	ORDER BY DateTime DESC
 END
 ELSE
 BEGIN
-	SELECT G.*, O.Team AS 'Opponent'
-	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
+	SELECT G.*, O.Team AS 'Opponent', (R.FirstName+' '+R.LastName) AS Referee
+	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id LEFT JOIN REFEREE R ON R.Id = G.RefereeId
 	WHERE Result IS NOT NULL AND Serie = @League
 	ORDER BY DateTime DESC
 END
@@ -6129,15 +6160,15 @@ ELSE
 BEGIN
 IF (@League = 'All')
 BEGIN
-	SELECT G.*, O.Team AS 'Opponent'
-	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
+	SELECT G.*, O.Team AS 'Opponent', (R.FirstName+' '+R.LastName) AS Referee
+	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id LEFT JOIN REFEREE R ON R.Id = G.RefereeId
 	WHERE Result IS NOT NULL AND G.DateTime >= @StartingDay AND G.DateTime <= @EndingDay
 	ORDER BY DateTime DESC
 END
 ELSE
 BEGIN
-	SELECT G.*, O.Team AS 'Opponent'
-	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id
+	SELECT G.*, O.Team AS 'Opponent', (R.FirstName+' '+R.LastName) AS Referee
+	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id LEFT JOIN REFEREE R ON R.Id = G.RefereeId
 	WHERE Result IS NOT NULL AND G.DateTime >= @StartingDay AND G.DateTime <= @EndingDay AND Serie = @League
 	ORDER BY DateTime DESC
 END
@@ -6167,7 +6198,22 @@ END]]></Value>
 					<References Name="[dbo].[Opponent].[Id]" />
 				</Entry>
 				<Entry>
+					<References Name="[dbo].[Referee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Referee].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[RefereeId]" />
+				</Entry>
+				<Entry>
 					<References Name="[dbo].[Opponent].[Team]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Referee].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Referee].[LastName]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Game].[Result]" />
@@ -6233,7 +6279,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1013" />
+				<Property Name="Length" Value="1345" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[ResultsByLeague]&#xD;&#xA;&#x9;@League NVARCHAR(50),&#xD;&#xA;&#x9;@StartingDay DATETIME,&#xD;&#xA;&#x9;@EndingDay DATETIME&#xD;&#xA;AS" />

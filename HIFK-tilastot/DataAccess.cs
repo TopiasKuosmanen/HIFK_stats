@@ -316,6 +316,16 @@ namespace HIFK_tilastot
                 return output;
             }
         }
+
+        public List<Person> GetAllReferees()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
+            {
+                var output = connection.Query<Person>("dbo.GetAllReferees", new { }).ToList();
+                return output;
+            }
+        }
+
         public Person AddNationalities(int id, string nationality)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
@@ -348,17 +358,18 @@ namespace HIFK_tilastot
             }
         }
 
-        public Game AddResult(int id, string result, int resultcode, int attendance)
+        public Game AddResult(int id, string result, int resultcode, int? attendance, int? referee)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
             {
-                var output = connection.ExecuteScalar<Game>("dbo.AddResult @Id, @Result, @ResultCode, @Attendance",
+                var output = connection.ExecuteScalar<Game>("dbo.AddResult @Id, @Result, @ResultCode, @Attendance, @Referee",
                     new
                     {
                         Id = id,
                         Result = result,
                         ResultCode = resultcode,
-                        Attendance = attendance
+                        Attendance = attendance,
+                        Referee = referee
                     });
                 return output;
             }
