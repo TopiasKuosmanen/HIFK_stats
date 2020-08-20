@@ -132,6 +132,7 @@
     <Build Include="dbo\Tables\Referee.sql" />
     <Build Include="dbo\Stored Procedures\AddReferee.sql" />
     <Build Include="dbo\Stored Procedures\GetAllReferees.sql" />
+    <Build Include="dbo\Stored Procedures\GamesOnThisDay.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Database1.refactorlog" />

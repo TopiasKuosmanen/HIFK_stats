@@ -15,6 +15,7 @@ namespace HIFK_tilastot
     public partial class Results : Form
     {
         List<Game> results = new List<Game>();
+        List<Game> onthisday = new List<Game>();
         DateTimePicker DateTimeBox1 = new DateTimePicker();
         DateTimePicker DateTimeBox2 = new DateTimePicker();
         public Results()
@@ -23,12 +24,30 @@ namespace HIFK_tilastot
             UpdateBindingResults();
             DoDateTimeBox1();
             DoDateTimeBox2();
+            Onthisday();
+        }
+
+        private void Onthisday()
+        {
+            DataAccess db = new DataAccess();
+            onthisday = db.GetOnThisDayGames();
+            if (onthisday.Count == 0)
+            {
+                onthisdaylabel.Text = "";
+                OnThisDayDataGridView.Hide();
+            }
+            else
+            {
+                onthisdaylabel.Text = "Games on this day:";
+                OnThisDayDataGridView.Show();
+                OnThisDayDataGridView.DataSource = onthisday;
+            }
         }
 
         private void UpdateBindingResults()
         {
-            ResultsBox.Hide();
-            ResultsBox1.DataSource = results;
+            //ResultsBox.Hide();
+           // ResultsBox1.DataSource = results;
             //ResultsBox.Columns.Add("Game", 20, HorizontalAlignment.Left);
             //ResultsBox.Columns.Add("Result", -2, HorizontalAlignment.Left);
             //ResultsBox.Columns.Add("Date", -2, HorizontalAlignment.Left);
@@ -51,12 +70,12 @@ namespace HIFK_tilastot
             //}
 
 
-            ResultsBox1.DisplayMember = "FullInfo";
+          //  ResultsBox1.DisplayMember = "FullInfo";
         }
 
         private void DoDateTimeBox1()
         {
-            DateTimeBox1.Location = new Point(280, 88);
+            DateTimeBox1.Location = new Point(64, 88);
             DateTimeBox1.Size = new Size(141, 50);
             DateTimeBox1.Text = DateTime.Now.Date.ToShortDateString();
             DateTimeBox1.Format = DateTimePickerFormat.Custom;
@@ -67,7 +86,7 @@ namespace HIFK_tilastot
         }
         private void DoDateTimeBox2()
         {
-            DateTimeBox2.Location = new Point(280, 110);
+            DateTimeBox2.Location = new Point(64, 110);
             DateTimeBox2.Size = new Size(141, 50);
             DateTimeBox2.Text = DateTime.Now.Date.ToShortDateString();
             DateTimeBox2.Format = DateTimePickerFormat.Custom;
@@ -91,7 +110,7 @@ namespace HIFK_tilastot
                 results = db.GetResults(SelectLeague.Text, Convert.ToDateTime(DateTimeBox1.Text.ToString()), Convert.ToDateTime(DateTimeBox2.Text.ToString()));
             }
             ResultsDataGridView.DataSource = results;
-            UpdateBindingResults();
+           // UpdateBindingResults();
         }
         // Export to Excel
         struct DataParameter

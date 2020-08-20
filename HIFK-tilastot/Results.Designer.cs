@@ -39,7 +39,10 @@
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.toExcel = new System.Windows.Forms.Button();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.onthisdaylabel = new System.Windows.Forms.Label();
+            this.OnThisDayDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.ResultsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OnThisDayDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // SelectLeague
@@ -51,7 +54,7 @@
             "Veikkausliiga",
             "Suomen Cup",
             "Friendly"});
-            this.SelectLeague.Location = new System.Drawing.Point(372, 60);
+            this.SelectLeague.Location = new System.Drawing.Point(83, 60);
             this.SelectLeague.Name = "SelectLeague";
             this.SelectLeague.Size = new System.Drawing.Size(191, 39);
             this.SelectLeague.TabIndex = 12;
@@ -59,7 +62,7 @@
             // 
             // SearchResultsButton
             // 
-            this.SearchResultsButton.Location = new System.Drawing.Point(393, 180);
+            this.SearchResultsButton.Location = new System.Drawing.Point(104, 180);
             this.SearchResultsButton.Name = "SearchResultsButton";
             this.SearchResultsButton.Size = new System.Drawing.Size(118, 58);
             this.SearchResultsButton.TabIndex = 14;
@@ -71,7 +74,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(322, 25);
+            this.label1.Location = new System.Drawing.Point(33, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(308, 25);
             this.label1.TabIndex = 15;
@@ -92,7 +95,7 @@
             this.MustHaveLeague.AutoSize = true;
             this.MustHaveLeague.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MustHaveLeague.ForeColor = System.Drawing.Color.Red;
-            this.MustHaveLeague.Location = new System.Drawing.Point(343, 75);
+            this.MustHaveLeague.Location = new System.Drawing.Point(54, 75);
             this.MustHaveLeague.Name = "MustHaveLeague";
             this.MustHaveLeague.Size = new System.Drawing.Size(23, 36);
             this.MustHaveLeague.TabIndex = 17;
@@ -151,11 +154,31 @@
             this.backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_ProgressChanged);
             this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
             // 
+            // onthisdaylabel
+            // 
+            this.onthisdaylabel.AutoSize = true;
+            this.onthisdaylabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.onthisdaylabel.Location = new System.Drawing.Point(507, 25);
+            this.onthisdaylabel.Name = "onthisdaylabel";
+            this.onthisdaylabel.Size = new System.Drawing.Size(0, 25);
+            this.onthisdaylabel.TabIndex = 33;
+            // 
+            // OnThisDayDataGridView
+            // 
+            this.OnThisDayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.OnThisDayDataGridView.Location = new System.Drawing.Point(473, 83);
+            this.OnThisDayDataGridView.Name = "OnThisDayDataGridView";
+            this.OnThisDayDataGridView.RowTemplate.Height = 24;
+            this.OnThisDayDataGridView.Size = new System.Drawing.Size(1081, 155);
+            this.OnThisDayDataGridView.TabIndex = 34;
+            // 
             // Results
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1579, 655);
+            this.Controls.Add(this.OnThisDayDataGridView);
+            this.Controls.Add(this.onthisdaylabel);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.toExcel);
@@ -169,6 +192,7 @@
             this.Name = "Results";
             this.Text = "Results";
             ((System.ComponentModel.ISupportInitialize)(this.ResultsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OnThisDayDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +211,7 @@
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Button toExcel;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
+        private System.Windows.Forms.Label onthisdaylabel;
+        private System.Windows.Forms.DataGridView OnThisDayDataGridView;
     }
 }

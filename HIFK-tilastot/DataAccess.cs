@@ -29,6 +29,15 @@ namespace HIFK_tilastot
             }
         }
 
+        public List<Game> GetOnThisDayGames()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
+            {
+                var output = connection.Query<Game>("dbo.GamesOnThisDay", new { }).ToList();
+                return output;
+            }
+        }
+
         public List<Game> GetGamesToDelete()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))

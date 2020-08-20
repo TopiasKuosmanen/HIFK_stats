@@ -3379,6 +3379,87 @@ END]]></Value>
 			</Relationship>
 			<AttachedAnnotation Disambiguator="45" />
 		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GamesOnThisDay]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT o.Team AS Opponent, g.OpponentId, g.DateTime, DATENAME(WEEKDAY, g.DateTime) AS WeekDay, g.Serie, g.Result, g.Stadion, g.Home_match, g.ResultCode, g.Attendance, (r.FirstName + ' ' + r.LastName) AS Referee
+	FROM Game g JOIN Opponent o ON g.OpponentId = o.Id LEFT JOIN Referee r ON g.RefereeId = r.Id
+	WHERE DAY(DateTime) = DAY(GETDATE()) AND MONTH(DateTime) = MONTH(GETDATE()) AND YEAR(DateTime) != YEAR(GETDATE())
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Game]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Opponent]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[OpponentId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Opponent].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Referee]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[RefereeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Referee].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Opponent].[Team]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[OpponentId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[DateTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Serie]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Result]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Stadion]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Home_match]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[ResultCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Attendance]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Referee].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Referee].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[DateTime]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="479" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GamesOnThisDay]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[GetAllGames]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
@@ -6143,14 +6224,14 @@ IF (@StartingDay = 0 AND @EndingDay = 0)
 BEGIN
 IF (@League = 'All')
 BEGIN
-	SELECT G.*, O.Team AS 'Opponent', (R.FirstName+' '+R.LastName) AS Referee
+	SELECT G.*, O.Team AS 'Opponent', (R.FirstName+' '+R.LastName) AS Referee, DATENAME(WEEKDAY, g.DateTime) AS WeekDay
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id LEFT JOIN REFEREE R ON R.Id = G.RefereeId
 	WHERE Result IS NOT NULL
 	ORDER BY DateTime DESC
 END
 ELSE
 BEGIN
-	SELECT G.*, O.Team AS 'Opponent', (R.FirstName+' '+R.LastName) AS Referee
+	SELECT G.*, O.Team AS 'Opponent', (R.FirstName+' '+R.LastName) AS Referee, DATENAME(WEEKDAY, g.DateTime) AS WeekDay
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id LEFT JOIN REFEREE R ON R.Id = G.RefereeId
 	WHERE Result IS NOT NULL AND Serie = @League
 	ORDER BY DateTime DESC
@@ -6160,14 +6241,14 @@ ELSE
 BEGIN
 IF (@League = 'All')
 BEGIN
-	SELECT G.*, O.Team AS 'Opponent', (R.FirstName+' '+R.LastName) AS Referee
+	SELECT G.*, O.Team AS 'Opponent', (R.FirstName+' '+R.LastName) AS Referee, DATENAME(WEEKDAY, g.DateTime) AS WeekDay
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id LEFT JOIN REFEREE R ON R.Id = G.RefereeId
 	WHERE Result IS NOT NULL AND G.DateTime >= @StartingDay AND G.DateTime <= @EndingDay
 	ORDER BY DateTime DESC
 END
 ELSE
 BEGIN
-	SELECT G.*, O.Team AS 'Opponent', (R.FirstName+' '+R.LastName) AS Referee
+	SELECT G.*, O.Team AS 'Opponent', (R.FirstName+' '+R.LastName) AS Referee, DATENAME(WEEKDAY, g.DateTime) AS WeekDay
 	FROM Game G JOIN Opponent O ON G.OpponentId = O.Id LEFT JOIN REFEREE R ON R.Id = G.RefereeId
 	WHERE Result IS NOT NULL AND G.DateTime >= @StartingDay AND G.DateTime <= @EndingDay AND Serie = @League
 	ORDER BY DateTime DESC
@@ -6214,6 +6295,9 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Referee].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[DateTime]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Game].[Result]" />
@@ -6279,7 +6363,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1345" />
+				<Property Name="Length" Value="1513" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[ResultsByLeague]&#xD;&#xA;&#x9;@League NVARCHAR(50),&#xD;&#xA;&#x9;@StartingDay DATETIME,&#xD;&#xA;&#x9;@EndingDay DATETIME&#xD;&#xA;AS" />
