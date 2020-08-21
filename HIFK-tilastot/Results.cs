@@ -21,7 +21,6 @@ namespace HIFK_tilastot
         public Results()
         {
             InitializeComponent();
-            UpdateBindingResults();
             DoDateTimeBox1();
             DoDateTimeBox2();
             Onthisday();
@@ -44,34 +43,6 @@ namespace HIFK_tilastot
             }
         }
 
-        private void UpdateBindingResults()
-        {
-            //ResultsBox.Hide();
-           // ResultsBox1.DataSource = results;
-            //ResultsBox.Columns.Add("Game", 20, HorizontalAlignment.Left);
-            //ResultsBox.Columns.Add("Result", -2, HorizontalAlignment.Left);
-            //ResultsBox.Columns.Add("Date", -2, HorizontalAlignment.Left);
-            //ResultsBox.Columns.Add("League", -2, HorizontalAlignment.Left);
-            //ResultsBox.Columns.Add("Stadium", -2, HorizontalAlignment.Left);
-            //foreach (Game g in results)
-            //{
-            //    var a = new ListViewItem(new [] { g.SmallFixtureWithoutTheDate, g.Result, $"{g.DateTime}", g.Serie, g.Stadion});
-            //    ResultsBox.Items.Add(a);
-            //}
-
-            //foreach (Game g in results)
-            //{
-            //    ResultsBox.Items.AddRange(new object[]{
-            //        $"{g.SmallFixture}",
-            //        $"{g.Result}",
-            //        $"{g.Serie}",
-            //        $"{g.Stadion}"
-            //    });
-            //}
-
-
-          //  ResultsBox1.DisplayMember = "FullInfo";
-        }
 
         private void DoDateTimeBox1()
         {
@@ -110,7 +81,6 @@ namespace HIFK_tilastot
                 results = db.GetResults(SelectLeague.Text, Convert.ToDateTime(DateTimeBox1.Text.ToString()), Convert.ToDateTime(DateTimeBox2.Text.ToString()));
             }
             ResultsDataGridView.DataSource = results;
-           // UpdateBindingResults();
         }
         // Export to Excel
         struct DataParameter

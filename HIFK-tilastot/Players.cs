@@ -14,6 +14,7 @@ namespace HIFK_tilastot
 {
     public partial class Players : Form
     {
+        List<Person> birthday = new List<Person>();
         List<Person> persons = new List<Person>();
         List<STATS> stats = new List<STATS>();
         List<STATS> allStats = new List<STATS>();
@@ -24,12 +25,32 @@ namespace HIFK_tilastot
         public Players()
         {
             InitializeComponent();
+            BirthdayPlayers();
             UpdateBindingPlayerStats();
             UpdateBindingPerson();
             DoDateTimeBox1();
             DoDateTimeBox2();
             DoOpponentBox();
         }
+
+        private void BirthdayPlayers()
+        {
+            DataAccess db = new DataAccess();
+            birthday = db.GetBirthdays();
+
+            if (birthday.Count == 0)
+            {
+                label3.Text = "";
+                birtdayDataGridView.Hide();
+            }
+            else
+            {
+                label3.Text = "Birthdays:";
+                birtdayDataGridView.Show();
+                birtdayDataGridView.DataSource = birthday;
+            }
+        }
+
         private void DoDateTimeBox1()
         {
             DateTimeBox1.Location = new Point(280, 88);

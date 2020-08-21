@@ -41,13 +41,16 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.AllOpponents = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.birtdayDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.PlayersStatsView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.birtdayDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(542, 59);
+            this.label1.Location = new System.Drawing.Point(383, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 17);
             this.label1.TabIndex = 14;
@@ -55,7 +58,7 @@
             // 
             // PlayerNameText
             // 
-            this.PlayerNameText.Location = new System.Drawing.Point(626, 59);
+            this.PlayerNameText.Location = new System.Drawing.Point(386, 65);
             this.PlayerNameText.Name = "PlayerNameText";
             this.PlayerNameText.Size = new System.Drawing.Size(232, 22);
             this.PlayerNameText.TabIndex = 13;
@@ -168,11 +171,31 @@
             this.AllOpponents.Text = "Select All";
             this.AllOpponents.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(656, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 25);
+            this.label3.TabIndex = 34;
+            // 
+            // birtdayDataGridView
+            // 
+            this.birtdayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.birtdayDataGridView.Location = new System.Drawing.Point(644, 55);
+            this.birtdayDataGridView.Name = "birtdayDataGridView";
+            this.birtdayDataGridView.RowTemplate.Height = 24;
+            this.birtdayDataGridView.Size = new System.Drawing.Size(923, 157);
+            this.birtdayDataGridView.TabIndex = 35;
+            // 
             // Players
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1579, 621);
+            this.Controls.Add(this.birtdayDataGridView);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.AllOpponents);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBox1);
@@ -188,6 +211,7 @@
             this.Name = "Players";
             this.Text = "Players";
             ((System.ComponentModel.ISupportInitialize)(this.PlayersStatsView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.birtdayDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +231,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox AllOpponents;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView birtdayDataGridView;
     }
 }

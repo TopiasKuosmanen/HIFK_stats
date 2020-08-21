@@ -38,6 +38,15 @@ namespace HIFK_tilastot
             }
         }
 
+        public List<Person> GetBirthdays()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
+            {
+                var output = connection.Query<Person>("dbo.BirthdayProcedure", new { }).ToList();
+                return output;
+            }
+        }
+
         public List<Game> GetGamesToDelete()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
