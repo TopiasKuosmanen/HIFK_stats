@@ -30,7 +30,9 @@ LossesX = Data3.dropna()
 Ties = len(TiesX.index)
 Wins = len(WinsX.index)
 Losses = len(LossesX.index)
-
+Points = (Ties) + (Wins * 3)
+Games = (Ties + Wins + Losses)
+PointsPerGame = Points/Games
 
 
 data = pd.DataFrame({"Voitot": [Wins],
@@ -51,7 +53,7 @@ plt.xlabel("")
 plt.ylabel("Ottelut")
 plt.title("HIFK:n Veikkausliiga-ottelut Thodesenin alaisuudessa")
 plt.xticks(x_index, x, rotation=10)
-
+plt.text(1, 10.5, ('Pistekeskiarvo ' + str("%.2f" % PointsPerGame)), fontsize = 14)
 
 
 

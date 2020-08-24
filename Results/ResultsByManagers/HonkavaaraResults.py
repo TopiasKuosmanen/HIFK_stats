@@ -23,7 +23,9 @@ Data2 = Data.where(Data['ResultCode'] == 1)
 WinsX = Data2.dropna()
 Data3 = Data.where(Data['ResultCode'] == 2)
 LossesX = Data3.dropna()
-
+Points = (Ties) + (Wins * 3)
+Games = (Ties + Wins + Losses)
+PointsPerGame = Points/Games
 
 
 
@@ -51,7 +53,7 @@ plt.xlabel("")
 plt.ylabel("Ottelut")
 plt.title("HIFK:n Veikkausliiga-ottelut Honkavaaran alaisuudessa")
 plt.xticks(x_index, x, rotation=10)
-
+plt.text(-0.4, 20, ('Pistekeskiarvo ' + str("%.2f" % PointsPerGame)), fontsize = 14)
 
 
 
