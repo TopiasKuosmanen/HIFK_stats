@@ -21,6 +21,7 @@ namespace HIFK_tilastot
         DateTimePicker DateTimeBox1 = new DateTimePicker();
         DateTimePicker DateTimeBox2 = new DateTimePicker();
         ListBox OpponentBox = new ListBox();
+        List<League> leagues = new List<League>();
 
         public Players()
         {
@@ -48,6 +49,14 @@ namespace HIFK_tilastot
                 label3.Text = "Birthdays:";
                 birtdayDataGridView.Show();
                 birtdayDataGridView.DataSource = birthday;
+            }
+
+            // LEAGUES
+            leagues = db.GetLeagues();
+
+            foreach (League l in leagues)
+            {
+                listBox1.Items.Add(l.LeagueName);
             }
         }
 

@@ -141,12 +141,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Items.AddRange(new object[] {
-            "All",
-            "Veikkausliiga",
-            "Suomen Cup",
-            "Ykkönen",
-            "Liigakarsinta",
-            "Friendly"});
+            "All"});
             this.listBox1.Location = new System.Drawing.Point(25, 29);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(123, 148);

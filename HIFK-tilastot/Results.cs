@@ -16,10 +16,13 @@ namespace HIFK_tilastot
     {
         List<Game> results = new List<Game>();
         List<Game> onthisday = new List<Game>();
+        List<League> leagues = new List<League>();
         DateTimePicker DateTimeBox1 = new DateTimePicker();
         DateTimePicker DateTimeBox2 = new DateTimePicker();
         public Results()
         {
+            DataAccess db = new DataAccess();
+            leagues = db.GetLeagues();
             InitializeComponent();
             DoDateTimeBox1();
             DoDateTimeBox2();
