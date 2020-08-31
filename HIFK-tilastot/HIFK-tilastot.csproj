@@ -103,6 +103,12 @@
       <DependentUpon>DeletePlayer.cs</DependentUpon>
     </Compile>
     <Compile Include="Goal.cs" />
+    <Compile Include="Goals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Goals.Designer.cs">
+      <DependentUpon>Goals.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewLeague.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fixtures.resx">
       <DependentUpon>Fixtures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Goals.resx">
+      <DependentUpon>Goals.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="More.resx">
       <DependentUpon>More.cs</DependentUpon>

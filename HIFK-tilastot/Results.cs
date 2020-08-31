@@ -21,8 +21,6 @@ namespace HIFK_tilastot
         DateTimePicker DateTimeBox2 = new DateTimePicker();
         public Results()
         {
-            DataAccess db = new DataAccess();
-            leagues = db.GetLeagues();
             InitializeComponent();
             DoDateTimeBox1();
             DoDateTimeBox2();
@@ -44,6 +42,14 @@ namespace HIFK_tilastot
                 OnThisDayDataGridView.Show();
                 OnThisDayDataGridView.DataSource = onthisday;
             }
+
+            // LeagueBox
+            leagues = db.GetLeagues();
+            foreach (League l in leagues)
+            {
+                SelectLeague.Items.Add(l.LeagueName);
+            }
+
         }
 
 
@@ -84,6 +90,7 @@ namespace HIFK_tilastot
                 results = db.GetResults(SelectLeague.Text, Convert.ToDateTime(DateTimeBox1.Text.ToString()), Convert.ToDateTime(DateTimeBox2.Text.ToString()));
             }
             ResultsDataGridView.DataSource = results;
+            
         }
         // Export to Excel
         struct DataParameter

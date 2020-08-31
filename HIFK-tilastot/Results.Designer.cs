@@ -50,10 +50,7 @@
             this.SelectLeague.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SelectLeague.FormattingEnabled = true;
             this.SelectLeague.Items.AddRange(new object[] {
-            "All",
-            "Veikkausliiga",
-            "Suomen Cup",
-            "Friendly"});
+            "All"});
             this.SelectLeague.Location = new System.Drawing.Point(83, 60);
             this.SelectLeague.Name = "SelectLeague";
             this.SelectLeague.Size = new System.Drawing.Size(191, 39);

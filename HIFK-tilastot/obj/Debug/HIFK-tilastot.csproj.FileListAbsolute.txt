@@ -72,3 +72,4 @@ C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\HIFK-tilastot\obj\Debug\HIFK-tilast
 C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\HIFK-tilastot\obj\Debug\HIFK-tilastot.pdb
 C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\HIFK-tilastot\obj\Debug\HIFK_tilastot.NewLeague.resources
 C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\HIFK-tilastot\obj\Debug\HIFK_tilastot.AddNewReferee.resources
+C:\Users\Topias Kuosmanen\Desktop\HIFK_stats\HIFK-tilastot\obj\Debug\HIFK_tilastot.Goals.resources

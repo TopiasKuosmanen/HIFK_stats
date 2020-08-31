@@ -16,5 +16,9 @@ namespace HIFK_tilastot
         public int Assist { get; set; }
         public bool Penalty { get; set; }
         public int Minute { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string AssistFirstName { get; set; }
+        public string AssistLastName { get; set; }
     }
 }

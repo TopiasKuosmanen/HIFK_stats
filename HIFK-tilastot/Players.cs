@@ -124,23 +124,7 @@ namespace HIFK_tilastot
             PlayersStatsView.DataSource = stats;
         }
         
-        private void searchPlayerStats_Click(object sender, EventArgs e)
-        {
-            DataAccess db = new DataAccess();
-            PlayersStatsView.DataSource = allStats;
 
-            foreach (DataGridViewColumn column in PlayersStatsView.Columns)
-            {
-                // ei toimi:
-                // https://stackoverflow.com/questions/5553100/how-to-enable-datagridview-sorting-when-user-clicks-on-the-column-header
-                // https://timvw.be/2007/02/22/presenting-the-sortablebindinglistt/
-                column.SortMode = DataGridViewColumnSortMode.Automatic;
-            }
-
-                
-            stats = db.GetPlayerStats(PlayerNameText.Text);
-            UpdateBindingPlayerStats();
-        }
         // Export to Excel
         private void toExcel_Click(object sender, EventArgs e)
         {
@@ -200,6 +184,12 @@ namespace HIFK_tilastot
         {
             Thread.Sleep(100);
             lblStatus.Text = "Your data has been succefully exported.";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string Cellnro12Value = PlayersStatsView.SelectedRows[0].Cells[11].Value.ToString();
+            label4.Text = Cellnro12Value;
         }
     }
 }

@@ -41,5 +41,11 @@ namespace HIFK_tilastot
             More form = new More();
             form.Show();
         }
+
+        private void LinkToGoals_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Goals form = new Goals();
+            form.Show();
+        }
     }
 }

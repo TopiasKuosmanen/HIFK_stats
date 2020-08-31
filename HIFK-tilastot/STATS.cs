@@ -23,6 +23,7 @@ namespace HIFK_tilastot
         public int StartingXI { get; set; }
         public int SubstitutedIn { get; set; }
         public int OnTheBench { get; set; }
+        public int PlayerId { get; set; }
         //public string FullInfo
         //{
         //    get

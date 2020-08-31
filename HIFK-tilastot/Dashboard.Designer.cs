@@ -34,6 +34,7 @@
             this.LinkToResults = new System.Windows.Forms.LinkLabel();
             this.LinkToPlayersAndStats = new System.Windows.Forms.LinkLabel();
             this.LinkToMore = new System.Windows.Forms.LinkLabel();
+            this.LinkToGoals = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // AddingGame
@@ -86,7 +87,7 @@
             // LinkToMore
             // 
             this.LinkToMore.AutoSize = true;
-            this.LinkToMore.Location = new System.Drawing.Point(36, 173);
+            this.LinkToMore.Location = new System.Drawing.Point(36, 198);
             this.LinkToMore.Name = "LinkToMore";
             this.LinkToMore.Size = new System.Drawing.Size(79, 32);
             this.LinkToMore.TabIndex = 15;
@@ -94,11 +95,23 @@
             this.LinkToMore.Text = "More";
             this.LinkToMore.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkToMore_LinkClicked);
             // 
+            // LinkToGoals
+            // 
+            this.LinkToGoals.AutoSize = true;
+            this.LinkToGoals.Location = new System.Drawing.Point(36, 166);
+            this.LinkToGoals.Name = "LinkToGoals";
+            this.LinkToGoals.Size = new System.Drawing.Size(90, 32);
+            this.LinkToGoals.TabIndex = 16;
+            this.LinkToGoals.TabStop = true;
+            this.LinkToGoals.Text = "Goals";
+            this.LinkToGoals.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkToGoals_LinkClicked);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(229, 250);
+            this.ClientSize = new System.Drawing.Size(229, 275);
+            this.Controls.Add(this.LinkToGoals);
             this.Controls.Add(this.LinkToMore);
             this.Controls.Add(this.LinkToPlayersAndStats);
             this.Controls.Add(this.LinkToResults);
@@ -121,6 +134,7 @@
         private System.Windows.Forms.LinkLabel LinkToResults;
         private System.Windows.Forms.LinkLabel LinkToPlayersAndStats;
         private System.Windows.Forms.LinkLabel LinkToMore;
+        private System.Windows.Forms.LinkLabel LinkToGoals;
     }
 }
 

@@ -111,6 +111,27 @@ namespace HIFK_tilastot
             }
         }
 
+        public List<GOAL> GetGoals(string leagues, string opponents, DateTime start, DateTime end, string player, bool winner, bool penalty, string assist, int? minute)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
+            {
+                var output = connection.Query<GOAL>("dbo.GetGoals @Leagues, @Opponents, @StartingDay, @EndingDay, @Player, @Winner, @Penalty, @Assist, @Minute",
+                    new
+                    {
+                        Leagues = leagues,
+                        Opponents = opponents,
+                        StartingDay = start,
+                        EndingDay = end,
+                        Player = player,
+                        Winner = winner,
+                        Penalty = penalty,
+                        Assist = assist,
+                        Minute = minute
+                    }).ToList();
+                return output;
+            }
+        }
+
         public List<Person> GetPlayersNames()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
