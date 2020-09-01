@@ -45,8 +45,10 @@
             this.PenBox = new System.Windows.Forms.CheckBox();
             this.AssistBox = new System.Windows.Forms.TextBox();
             this.AssistLabel = new System.Windows.Forms.Label();
-            this.MinuteBox = new System.Windows.Forms.TextBox();
+            this.MinMinute = new System.Windows.Forms.TextBox();
             this.MinuteLabel = new System.Windows.Forms.Label();
+            this.MaxMinute = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GoalsDataView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,9 +171,9 @@
             this.WinnerBox.AutoSize = true;
             this.WinnerBox.Location = new System.Drawing.Point(652, 24);
             this.WinnerBox.Name = "WinnerBox";
-            this.WinnerBox.Size = new System.Drawing.Size(82, 21);
+            this.WinnerBox.Size = new System.Drawing.Size(111, 21);
             this.WinnerBox.TabIndex = 51;
-            this.WinnerBox.Text = "Winners";
+            this.WinnerBox.Text = "Only winners";
             this.WinnerBox.UseVisualStyleBackColor = true;
             // 
             // PenBox
@@ -179,9 +181,9 @@
             this.PenBox.AutoSize = true;
             this.PenBox.Location = new System.Drawing.Point(652, 56);
             this.PenBox.Name = "PenBox";
-            this.PenBox.Size = new System.Drawing.Size(88, 21);
+            this.PenBox.Size = new System.Drawing.Size(110, 21);
             this.PenBox.TabIndex = 52;
-            this.PenBox.Text = "Penalties";
+            this.PenBox.Text = "No Penalties";
             this.PenBox.UseVisualStyleBackColor = true;
             // 
             // AssistBox
@@ -200,12 +202,12 @@
             this.AssistLabel.TabIndex = 54;
             this.AssistLabel.Text = "Assist";
             // 
-            // MinuteBox
+            // MinMinute
             // 
-            this.MinuteBox.Location = new System.Drawing.Point(747, 129);
-            this.MinuteBox.Name = "MinuteBox";
-            this.MinuteBox.Size = new System.Drawing.Size(232, 22);
-            this.MinuteBox.TabIndex = 55;
+            this.MinMinute.Location = new System.Drawing.Point(747, 129);
+            this.MinMinute.Name = "MinMinute";
+            this.MinMinute.Size = new System.Drawing.Size(34, 22);
+            this.MinMinute.TabIndex = 55;
             // 
             // MinuteLabel
             // 
@@ -216,13 +218,31 @@
             this.MinuteLabel.TabIndex = 56;
             this.MinuteLabel.Text = "Minute";
             // 
+            // MaxMinute
+            // 
+            this.MaxMinute.Location = new System.Drawing.Point(821, 129);
+            this.MaxMinute.Name = "MaxMinute";
+            this.MaxMinute.Size = new System.Drawing.Size(34, 22);
+            this.MaxMinute.TabIndex = 57;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(787, 132);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 17);
+            this.label4.TabIndex = 58;
+            this.label4.Text = "TO";
+            // 
             // Goals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1579, 621);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.MaxMinute);
             this.Controls.Add(this.MinuteLabel);
-            this.Controls.Add(this.MinuteBox);
+            this.Controls.Add(this.MinMinute);
             this.Controls.Add(this.AssistLabel);
             this.Controls.Add(this.AssistBox);
             this.Controls.Add(this.PenBox);
@@ -265,7 +285,9 @@
         private System.Windows.Forms.CheckBox PenBox;
         private System.Windows.Forms.TextBox AssistBox;
         private System.Windows.Forms.Label AssistLabel;
-        private System.Windows.Forms.TextBox MinuteBox;
+        private System.Windows.Forms.TextBox MinMinute;
         private System.Windows.Forms.Label MinuteLabel;
+        private System.Windows.Forms.TextBox MaxMinute;
+        private System.Windows.Forms.Label label4;
     }
 }

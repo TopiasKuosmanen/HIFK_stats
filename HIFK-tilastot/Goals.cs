@@ -75,6 +75,24 @@ namespace HIFK_tilastot
         {
             bool winners;
             bool penalties;
+            int? minmin;
+            int? maxmin;
+            if (MinMinute.Text == "")
+            {
+                minmin = null;
+            }
+            else
+            {
+                minmin = int.Parse(MinMinute.Text);
+            }
+            if (MaxMinute.Text == "")
+            {
+                maxmin = null;
+            }
+            else
+            {
+                maxmin = int.Parse(MaxMinute.Text);
+            }
             if (WinnerBox.Checked)
             {
                 winners = true;
@@ -95,11 +113,11 @@ namespace HIFK_tilastot
             DataAccess db = new DataAccess();
             if (AllOpponents.Checked)
             {
-                goals = db.GetGoals("All", "All", Convert.ToDateTime(DateTimeBox1.Text.ToString()), Convert.ToDateTime(DateTimeBox2.Text.ToString()), PlayerNameText.Text, winners, penalties, AssistBox.Text, null);
+                goals = db.GetGoals(listBox1.SelectedItem.ToString(), "All", Convert.ToDateTime(DateTimeBox1.Text.ToString()), Convert.ToDateTime(DateTimeBox2.Text.ToString()), PlayerNameText.Text, winners, penalties, AssistBox.Text, minmin, maxmin);
             }
             else
             {
-                goals = db.GetGoals(listBox1.SelectedItem.ToString(), OpponentBox.SelectedItem.ToString(), Convert.ToDateTime(DateTimeBox1.Text.ToString()), Convert.ToDateTime(DateTimeBox2.Text.ToString()), PlayerNameText.Text, winners, penalties, AssistBox.Text, int.Parse(MinuteBox.Text));
+                goals = db.GetGoals(listBox1.SelectedItem.ToString(), OpponentBox.SelectedItem.ToString(), Convert.ToDateTime(DateTimeBox1.Text.ToString()), Convert.ToDateTime(DateTimeBox2.Text.ToString()), PlayerNameText.Text, winners, penalties, AssistBox.Text, minmin, maxmin);
             }
 
             GoalsDataView.DataSource = goals;

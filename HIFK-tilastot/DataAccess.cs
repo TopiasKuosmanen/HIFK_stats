@@ -111,11 +111,11 @@ namespace HIFK_tilastot
             }
         }
 
-        public List<GOAL> GetGoals(string leagues, string opponents, DateTime start, DateTime end, string player, bool winner, bool penalty, string assist, int? minute)
+        public List<GOAL> GetGoals(string leagues, string opponents, DateTime start, DateTime end, string player, bool winner, bool penalty, string assist, int? min, int? max)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
             {
-                var output = connection.Query<GOAL>("dbo.GetGoals @Leagues, @Opponents, @StartingDay, @EndingDay, @Player, @Winner, @Penalty, @Assist, @Minute",
+                var output = connection.Query<GOAL>("dbo.GetGoals @Leagues, @Opponents, @StartingDay, @EndingDay, @Player, @Winner, @Penalty, @Assist, @Min, @Max",
                     new
                     {
                         Leagues = leagues,
@@ -126,7 +126,8 @@ namespace HIFK_tilastot
                         Winner = winner,
                         Penalty = penalty,
                         Assist = assist,
-                        Minute = minute
+                        Min = min,
+                        Max = max
                     }).ToList();
                 return output;
             }
