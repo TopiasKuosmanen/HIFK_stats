@@ -43,7 +43,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 28);
+            this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(573, 25);
             this.label1.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             this.LinkToNewGame.AutoSize = true;
             this.LinkToNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkToNewGame.Location = new System.Drawing.Point(217, 94);
+            this.LinkToNewGame.Location = new System.Drawing.Point(194, 78);
             this.LinkToNewGame.Name = "LinkToNewGame";
             this.LinkToNewGame.Size = new System.Drawing.Size(174, 29);
             this.LinkToNewGame.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             this.LinkToNewResult.AutoSize = true;
             this.LinkToNewResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkToNewResult.Location = new System.Drawing.Point(217, 147);
+            this.LinkToNewResult.Location = new System.Drawing.Point(194, 128);
             this.LinkToNewResult.Name = "LinkToNewResult";
             this.LinkToNewResult.Size = new System.Drawing.Size(121, 29);
             this.LinkToNewResult.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             this.LinkToDeleteGame.AutoSize = true;
             this.LinkToDeleteGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkToDeleteGame.Location = new System.Drawing.Point(217, 206);
+            this.LinkToDeleteGame.Location = new System.Drawing.Point(194, 178);
             this.LinkToDeleteGame.Name = "LinkToDeleteGame";
             this.LinkToDeleteGame.Size = new System.Drawing.Size(151, 29);
             this.LinkToDeleteGame.TabIndex = 3;
@@ -89,7 +89,7 @@
             // 
             this.LinkToAddNewPlayer.AutoSize = true;
             this.LinkToAddNewPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkToAddNewPlayer.Location = new System.Drawing.Point(217, 310);
+            this.LinkToAddNewPlayer.Location = new System.Drawing.Point(194, 278);
             this.LinkToAddNewPlayer.Name = "LinkToAddNewPlayer";
             this.LinkToAddNewPlayer.Size = new System.Drawing.Size(179, 29);
             this.LinkToAddNewPlayer.TabIndex = 4;
@@ -101,7 +101,7 @@
             // 
             this.LinkToAddOpponent.AutoSize = true;
             this.LinkToAddOpponent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkToAddOpponent.Location = new System.Drawing.Point(217, 366);
+            this.LinkToAddOpponent.Location = new System.Drawing.Point(194, 328);
             this.LinkToAddOpponent.Name = "LinkToAddOpponent";
             this.LinkToAddOpponent.Size = new System.Drawing.Size(215, 29);
             this.LinkToAddOpponent.TabIndex = 5;
@@ -113,7 +113,7 @@
             // 
             this.LinkToNewLeague.AutoSize = true;
             this.LinkToNewLeague.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkToNewLeague.Location = new System.Drawing.Point(217, 411);
+            this.LinkToNewLeague.Location = new System.Drawing.Point(194, 378);
             this.LinkToNewLeague.Name = "LinkToNewLeague";
             this.LinkToNewLeague.Size = new System.Drawing.Size(187, 29);
             this.LinkToNewLeague.TabIndex = 6;
@@ -125,7 +125,7 @@
             // 
             this.LinkToEditPlayer.AutoSize = true;
             this.LinkToEditPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkToEditPlayer.Location = new System.Drawing.Point(217, 253);
+            this.LinkToEditPlayer.Location = new System.Drawing.Point(194, 228);
             this.LinkToEditPlayer.Name = "LinkToEditPlayer";
             this.LinkToEditPlayer.Size = new System.Drawing.Size(127, 29);
             this.LinkToEditPlayer.TabIndex = 7;
@@ -137,7 +137,7 @@
             // 
             this.LinkToNewReferee.AutoSize = true;
             this.LinkToNewReferee.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkToNewReferee.Location = new System.Drawing.Point(217, 450);
+            this.LinkToNewReferee.Location = new System.Drawing.Point(194, 428);
             this.LinkToNewReferee.Name = "LinkToNewReferee";
             this.LinkToNewReferee.Size = new System.Drawing.Size(191, 29);
             this.LinkToNewReferee.TabIndex = 8;
@@ -149,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(655, 520);
+            this.ClientSize = new System.Drawing.Size(601, 486);
             this.Controls.Add(this.LinkToNewReferee);
             this.Controls.Add(this.LinkToEditPlayer);
             this.Controls.Add(this.LinkToNewLeague);

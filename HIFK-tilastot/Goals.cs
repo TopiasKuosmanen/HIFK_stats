@@ -59,10 +59,12 @@ namespace HIFK_tilastot
             OpponentBox.Size = new Size(141, 150);
             OpponentBox.Name = "OpponentBox";
             OpponentBox.SelectionMode = SelectionMode.One;
+            OpponentBox.Items.Add("All");
             foreach (Opponent o in opponents)
             {
                 OpponentBox.Items.Add(o.Team);
             }
+            OpponentBox.SelectedIndex = 0;
             this.Controls.Add(OpponentBox);
 
             leagues = db.GetLeagues();
@@ -71,6 +73,7 @@ namespace HIFK_tilastot
             {
                 listBox1.Items.Add(l.LeagueName);
             }
+            listBox1.SelectedIndex = 0;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -113,15 +116,7 @@ namespace HIFK_tilastot
             }
 
             DataAccess db = new DataAccess();
-            if (AllOpponents.Checked)
-            {
-                goals = db.GetGoals(listBox1.SelectedItem.ToString(), "All", Convert.ToDateTime(DateTimeBox1.Text.ToString()), Convert.ToDateTime(DateTimeBox2.Text.ToString()), PlayerNameText.Text, winners, penalties, AssistBox.Text, minmin, maxmin);
-            }
-            else
-            {
-                goals = db.GetGoals(listBox1.SelectedItem.ToString(), OpponentBox.SelectedItem.ToString(), Convert.ToDateTime(DateTimeBox1.Text.ToString()), Convert.ToDateTime(DateTimeBox2.Text.ToString()), PlayerNameText.Text, winners, penalties, AssistBox.Text, minmin, maxmin);
-            }
-
+            goals = db.GetGoals(listBox1.SelectedItem.ToString(), OpponentBox.SelectedItem.ToString(), Convert.ToDateTime(DateTimeBox1.Text.ToString()), Convert.ToDateTime(DateTimeBox2.Text.ToString()), PlayerNameText.Text, winners, penalties, AssistBox.Text, minmin, maxmin);
             GoalsDataView.DataSource = goals;
         }
 

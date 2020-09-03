@@ -70,6 +70,7 @@
             this.AllOpponents.TabIndex = 49;
             this.AllOpponents.Text = "Select All";
             this.AllOpponents.UseVisualStyleBackColor = true;
+            this.AllOpponents.Visible = false;
             // 
             // label2
             // 

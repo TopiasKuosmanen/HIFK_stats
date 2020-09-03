@@ -65,7 +65,7 @@
             // LinkToResults
             // 
             this.LinkToResults.AutoSize = true;
-            this.LinkToResults.Location = new System.Drawing.Point(36, 77);
+            this.LinkToResults.Location = new System.Drawing.Point(36, 78);
             this.LinkToResults.Name = "LinkToResults";
             this.LinkToResults.Size = new System.Drawing.Size(110, 32);
             this.LinkToResults.TabIndex = 13;
@@ -76,7 +76,7 @@
             // LinkToPlayersAndStats
             // 
             this.LinkToPlayersAndStats.AutoSize = true;
-            this.LinkToPlayersAndStats.Location = new System.Drawing.Point(36, 131);
+            this.LinkToPlayersAndStats.Location = new System.Drawing.Point(36, 128);
             this.LinkToPlayersAndStats.Name = "LinkToPlayersAndStats";
             this.LinkToPlayersAndStats.Size = new System.Drawing.Size(183, 32);
             this.LinkToPlayersAndStats.TabIndex = 14;
@@ -87,7 +87,7 @@
             // LinkToMore
             // 
             this.LinkToMore.AutoSize = true;
-            this.LinkToMore.Location = new System.Drawing.Point(36, 198);
+            this.LinkToMore.Location = new System.Drawing.Point(36, 228);
             this.LinkToMore.Name = "LinkToMore";
             this.LinkToMore.Size = new System.Drawing.Size(79, 32);
             this.LinkToMore.TabIndex = 15;
@@ -98,7 +98,7 @@
             // LinkToGoals
             // 
             this.LinkToGoals.AutoSize = true;
-            this.LinkToGoals.Location = new System.Drawing.Point(36, 166);
+            this.LinkToGoals.Location = new System.Drawing.Point(36, 178);
             this.LinkToGoals.Name = "LinkToGoals";
             this.LinkToGoals.Size = new System.Drawing.Size(90, 32);
             this.LinkToGoals.TabIndex = 16;

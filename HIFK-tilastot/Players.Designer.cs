@@ -167,6 +167,7 @@
             this.AllOpponents.TabIndex = 33;
             this.AllOpponents.Text = "Select All";
             this.AllOpponents.UseVisualStyleBackColor = true;
+            this.AllOpponents.Visible = false;
             // 
             // label3
             // 
@@ -194,6 +195,7 @@
             this.button1.TabIndex = 36;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
@@ -204,6 +206,7 @@
             this.label4.Size = new System.Drawing.Size(39, 17);
             this.label4.TabIndex = 37;
             this.label4.Text = "Testi";
+            this.label4.Visible = false;
             // 
             // Players
             // 
