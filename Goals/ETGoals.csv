@@ -1,0 +1,11 @@
+﻿Id,GameId,Goal,Winner,Player,Assist,Penalty,Minute,FirstName,LastName,AssistFirstName,AssistLastName
+40,16148,,True,0,0,False,96,Sakari,Mattila,Mostagh,Yaghoubi
+1046,6030,,False,0,0,False,93,,Tiquinho,Jabar,Sharza
+3048,6036,,False,0,0,False,92,Sakari,Tukiainen,,Tiquinho
+4046,6037,,False,0,0,False,94,,Tiquinho,Hannu,Patronen
+6055,9058,,False,0,0,False,93,,Tiquinho,,
+9055,16063,,True,0,0,False,92,Pauli,Kuusijärvi,Youness,Rahimi
+12064,16081,,False,0,0,False,93,Nnaemeka,Anyamele,,
+14059,16094,,False,0,0,False,94,Juho,Pirttijoki,,
+21066,18154,,False,0,0,False,93,Juho,Mäkelä,,
+21081,18164,,False,0,0,False,93,Mikael,Forssell,Esa,Terävä
