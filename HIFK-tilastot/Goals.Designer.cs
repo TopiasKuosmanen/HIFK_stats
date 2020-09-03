@@ -95,6 +95,9 @@
             // 
             this.backgroundWorker.WorkerReportsProgress = true;
             this.backgroundWorker.WorkerSupportsCancellation = true;
+            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork_1);
+            this.backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_ProgressChanged_1);
+            this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted_1);
             // 
             // lblStatus
             // 
@@ -120,6 +123,7 @@
             this.toExcel.TabIndex = 44;
             this.toExcel.Text = "Export to Excel";
             this.toExcel.UseVisualStyleBackColor = true;
+            this.toExcel.Click += new System.EventHandler(this.toExcel_Click);
             // 
             // GoalsDataView
             // 
