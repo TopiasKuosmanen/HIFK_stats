@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-Data = pd.read_csv('VeikkausliigaResults.csv', encoding='latin-1', 
+Data = pd.read_csv('Veikkausliiga2019.csv', encoding='latin-1', 
                    usecols = ['Id', 'Opponent', 'DateTime', 'Result', 'ResultCode', 
                               'Stadion', 'Home_match'])
 # CONVERTING DATETIME TO Datetime64-type
@@ -12,8 +12,7 @@ from functools import partial
 to_datetime_fmt = partial(pd.to_datetime, format='%d.%m.%Y %H.%M.%S')
 Data['DateTime'] = Data['DateTime'].apply(to_datetime_fmt)
 
-
-print(Data.dtypes)
+Data = Data.where(Data['Home_match'] == False)
 
 
 
@@ -51,11 +50,11 @@ x_index = np.arange(len(x))
 plt.bar(x, palkit, color=("green","yellow","red"), align="center")
 plt.xlabel("")
 plt.ylabel("Ottelut")
-plt.title("HIFK:n Veikkausliiga-ottelut 2015-2020 (27.8.2020)")
+plt.title("HIFK:n vierasottelut Veikkausliigassa 2019")
 plt.xticks(x_index, x, rotation=10)
 
 
-plt.text(-0.4, 50, ('Pistekeskiarvo ' + str("%.2f" % PointsPerGame)), fontsize = 14)
+plt.text(1, 3.5, ('Pistekeskiarvo ' + str("%.2f" % PointsPerGame)), fontsize = 14)
 
 
 
