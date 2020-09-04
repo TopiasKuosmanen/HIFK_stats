@@ -56,6 +56,4 @@ plt.xticks(x_index, x, rotation=10)
 
 plt.text(1, 3.5, ('Pistekeskiarvo ' + str("%.2f" % PointsPerGame)), fontsize = 14)
 
-
-
 print(PointsPerGame)
