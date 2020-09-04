@@ -2,14 +2,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-Data = pd.read_csv('AllGoalsVeikkausliiga.csv', encoding='latin-1', 
-                   usecols = ['Id', 'Winner', 'Penalty', 'FirstName', 
-                              'LastName', 'Minute', 'AssistFirstName', 'AssistLastName'])
+Data = pd.read_csv('AllGoalsVeikkausliigaOpponents.csv', encoding='latin-1', 
+                   usecols = ['Id', 'Winner', 'Penalty', 'Minute'])
 
-Data['FirstName'] = Data['FirstName'].astype(str)
-Data['LastName'] = Data['LastName'].astype(str)
-Data['AssistFirstName'] = Data['AssistFirstName'].astype(str)
-Data['AssistLastName'] = Data['AssistLastName'].astype(str)
+
 
 
 Data1 = Data.where(Data['Minute'] < 16)
