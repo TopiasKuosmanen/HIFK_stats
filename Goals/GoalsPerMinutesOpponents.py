@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-Data = pd.read_csv('AllGoalsVeikkausliigaOpponents.csv', encoding='latin-1', 
+Data = pd.read_csv('testi2.csv', encoding='latin-1', 
                    usecols = ['Id', 'Winner', 'Penalty', 'Minute'])
 
 
