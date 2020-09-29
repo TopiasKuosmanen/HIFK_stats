@@ -58,18 +58,6 @@ sixth = Data14.dropna()
 
 # voittomaalien minuuttijako
 
-x = ['0-15', '16-30', '31-45', '46-60', '61-75', '76-90']
-x_index = np.arange(len(x))
-
-
-palkit=[len(first.index), len(second.index), len(third.index), 
-        len(fourth.index), len(fifth.index), len(sixth.index)]
-plt.bar(x, palkit, color=("skyblue"), align="center")
-plt.xlabel("Peliminuutti")
-plt.ylabel("Ottelut")
-plt.title("HIFK:n voittomaalit Honkavaaran aikana")
-plt.xticks(x_index, x, rotation=10)
-
 
 # 85+ minuutilla syntyneet maalit per valmentaja
 
