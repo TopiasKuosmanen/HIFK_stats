@@ -1,0 +1,17 @@
+﻿Id,GameId,Goal,Winner,Penalty,Minute
+22,6017,,False,False,49
+29,6027,,True,False,9
+30,6027,,False,False,32
+9028,16060,,False,False,4
+12031,16074,,False,False,49
+13032,16080,,False,False,38
+18035,16101,,False,False,2
+18036,16101,,True,False,11
+20034,16124,,False,False,83
+22043,18151,,True,False,19
+22044,18151,,False,False,44
+22055,18158,,False,False,55
+22056,18158,,True,False,76
+22103,9062,,False,False,24
+22104,9062,,False,False,52
+22105,9062,,False,True,80
