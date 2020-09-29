@@ -47,5 +47,11 @@ namespace HIFK_tilastot
             Goals form = new Goals();
             form.Show();
         }
+
+        private void LinkToOpponentsGoals_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OpponentsGoals form = new OpponentsGoals();
+            form.Show();
+        }
     }
 }

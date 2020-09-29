@@ -20,5 +20,6 @@ namespace HIFK_tilastot
         public string LastName { get; set; }
         public string AssistFirstName { get; set; }
         public string AssistLastName { get; set; }
+        public string Score { get; set; }
     }
 }
