@@ -695,44 +695,6 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Goal].[Id]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Goal]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="42" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[OpponentGoal].[Id]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[OpponentGoal]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="43" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
 								<References Name="[dbo].[Referee].[Id]" />
 							</Entry>
 						</Relationship>
@@ -744,7 +706,7 @@
 					<References Name="[dbo].[Referee]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="44" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="42" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -761,6 +723,44 @@
 			<Relationship Name="DefiningTable">
 				<Entry>
 					<References Name="[dbo].[Game]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="43" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Goal].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Goal]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="44" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[OpponentGoal].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[OpponentGoal]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="45" />
@@ -3434,7 +3434,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="45" />
+			<AttachedAnnotation Disambiguator="43" />
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[GamesOnThisDay]">
 			<Property Name="BodyScript">
@@ -3442,7 +3442,7 @@ END]]></Value>
 BEGIN
 	SELECT o.Team AS Opponent, g.OpponentId, g.DateTime, DATENAME(WEEKDAY, g.DateTime) AS WeekDay, g.Serie, g.Result, g.Stadion, g.Home_match, g.ResultCode, g.Attendance, (r.FirstName + ' ' + r.LastName) AS Referee
 	FROM Game g JOIN Opponent o ON g.OpponentId = o.Id LEFT JOIN Referee r ON g.RefereeId = r.Id
-	WHERE DAY(DateTime) = DAY(GETDATE())+1 AND MONTH(DateTime) = MONTH(GETDATE()) AND YEAR(DateTime) != YEAR(GETDATE())
+	WHERE DAY(DateTime) = DAY(GETDATE()) AND MONTH(DateTime) = MONTH(GETDATE()) AND YEAR(DateTime) != YEAR(GETDATE())
 END]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -3511,7 +3511,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="481" />
+				<Property Name="Length" Value="479" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GamesOnThisDay]&#xD;&#xA;AS" />
@@ -3948,7 +3948,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max
 END
 /*110000*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
@@ -3957,7 +3957,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents 
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents 
 END
 /*111000*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
@@ -3966,7 +3966,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1
 END
 /*111100*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
@@ -3975,7 +3975,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0
 END
 /*111110*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -3984,7 +3984,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0
 END
 /*111111*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NULL)
@@ -3993,7 +3993,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0
 END
 /*101111*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NULL)
@@ -4002,7 +4002,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Winner = 1 AND G.Penalty = 0
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Winner = 1 AND G.Penalty = 0
 END
 /*100111*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NULL)
@@ -4011,7 +4011,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Penalty = 0
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Penalty = 0
 END
 /*100011*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NULL)
@@ -4020,7 +4020,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL)
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL)
 END
 /*100001*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NULL)
@@ -4029,7 +4029,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min
 END
 /*110100*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
@@ -4038,7 +4038,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Penalty = 0
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Penalty = 0
 END
 /*110110*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -4047,7 +4047,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute <= @Max AND O.Team = @Opponents AND G.Penalty = 0
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute <= @Max AND O.Team = @Opponents AND G.Penalty = 0
 END
 /*110111*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NULL)
@@ -4056,7 +4056,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND O.Team = @Opponents AND G.Penalty = 0
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND O.Team = @Opponents AND G.Penalty = 0
 END
 /*110101*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NULL)
@@ -4065,7 +4065,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND O.Team = @Opponents AND G.Penalty = 0
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND O.Team = @Opponents AND G.Penalty = 0
 END
 /*110010*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -4074,7 +4074,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute <= @Max AND O.Team = @Opponents
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute <= @Max AND O.Team = @Opponents
 END
 /*110001*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NULL)
@@ -4083,7 +4083,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND O.Team = @Opponents
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND O.Team = @Opponents
 END
 /*110011*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NULL)
@@ -4092,7 +4092,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Player + '%' OR A.FirstName LIKE '%' + @Player + '%' OR A.LastName IS NULL) AND O.Team = @Opponents
+(A.LastName LIKE '%' + @Player + '%' OR A.FirstName LIKE '%' + @Player + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND O.Team = @Opponents
 END
 /*111101*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NULL)
@@ -4101,7 +4101,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0
 END
 /*111001*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NULL)
@@ -4110,7 +4110,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND O.Team = @Opponents AND G.Winner = 1
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND O.Team = @Opponents AND G.Winner = 1
 END
 /*111011*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NULL)
@@ -4119,7 +4119,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Player + '%' OR A.FirstName LIKE '%' + @Player + '%' OR A.LastName IS NULL) AND O.Team = @Opponents AND G.Winner = 1
+(A.LastName LIKE '%' + @Player + '%' OR A.FirstName LIKE '%' + @Player + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND O.Team = @Opponents AND G.Winner = 1
 END
 /*111010*/
 IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -4128,7 +4128,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND O.Team = @Opponents AND G.Winner = 1 AND G.Minute <= @Max
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND O.Team = @Opponents AND G.Winner = 1 AND G.Minute <= @Max
 END
 /*100110*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -4137,7 +4137,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute <= @Max AND G.Penalty = 0
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute <= @Max AND G.Penalty = 0
 END
 /*100100*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
@@ -4146,7 +4146,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Penalty = 0 AND G.Minute >= @Min AND G.Minute <= @Max
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Penalty = 0 AND G.Minute >= @Min AND G.Minute <= @Max
 END
 /*100101*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NULL)
@@ -4155,7 +4155,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Penalty = 0 AND G.Minute >= @Min
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Penalty = 0 AND G.Minute >= @Min
 END
 /*100010*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -4164,7 +4164,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute <= @Max
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute <= @Max
 END
 /*101110*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -4173,7 +4173,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute <= @Max AND G.Penalty = 0 AND G.Winner = 1
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute <= @Max AND G.Penalty = 0 AND G.Winner = 1
 END
 /*101100*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
@@ -4182,7 +4182,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute <= @Max AND G.Penalty = 0 AND G.Winner = 1 AND G.Minute >= @Min
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute <= @Max AND G.Penalty = 0 AND G.Winner = 1 AND G.Minute >= @Min
 END
 /*101101*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NULL)
@@ -4191,7 +4191,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Penalty = 0 AND G.Winner = 1 AND G.Minute >= @Min
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Penalty = 0 AND G.Winner = 1 AND G.Minute >= @Min
 END
 /*101000*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
@@ -4200,7 +4200,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Winner = 1 AND G.Minute >= @Min AND G.Minute <= @Max
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Winner = 1 AND G.Minute >= @Min AND G.Minute <= @Max
 END
 /*101001*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NULL)
@@ -4209,7 +4209,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Winner = 1 AND G.Minute >= @Min
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Winner = 1 AND G.Minute >= @Min
 END
 /*101011*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NULL)
@@ -4218,7 +4218,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Winner = 1
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Winner = 1
 END
 /*101010*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -4227,7 +4227,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Winner = 1 AND G.Minute <= @Max
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Winner = 1 AND G.Minute <= @Max
 END
 END /*NEXT ELSE IF OPPONENT = ALL*/
 ELSE
@@ -4239,7 +4239,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND GA.Serie = @Leagues
 END
 /*010000*/
 IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
@@ -4248,7 +4248,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents  AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents  AND GA.Serie = @Leagues
 END
 /*011000*/
 IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
@@ -4257,7 +4257,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1 AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1 AND GA.Serie = @Leagues
 END
 /*011100*/
 IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
@@ -4266,7 +4266,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0 AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0 AND GA.Serie = @Leagues
 END
 /*011110*/
 IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -4275,7 +4275,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0 AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0 AND GA.Serie = @Leagues
 END
 /*011111*/
 IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NULL)
@@ -4293,7 +4293,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Player + '%' OR A.FirstName LIKE '%' + @Player + '%' OR A.LastName IS NULL) AND G.Winner = 1 AND G.Penalty = 0 AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Player + '%' OR A.FirstName LIKE '%' + @Player + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Winner = 1 AND G.Penalty = 0 AND GA.Serie = @Leagues
 END
 /*000111*/
 IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NULL)
@@ -4302,7 +4302,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Penalty = 0 AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Penalty = 0 AND GA.Serie = @Leagues
 END
 /*000011*/
 IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NULL)
@@ -4311,7 +4311,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND GA.Serie = @Leagues
 END
 /*000001*/
 IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NULL)
@@ -4320,7 +4320,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND GA.Serie = @Leagues
 END
 /*010100*/
 IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
@@ -4329,7 +4329,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Penalty = 0 AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Penalty = 0 AND GA.Serie = @Leagues
 END
 /*010110*/
 IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -4338,7 +4338,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute <= @Max AND O.Team = @Opponents AND G.Penalty = 0 AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute <= @Max AND O.Team = @Opponents AND G.Penalty = 0 AND GA.Serie = @Leagues
 END
 /*010111*/
 IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NULL)
@@ -4347,7 +4347,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND O.Team = @Opponents AND G.Penalty = 0 AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND O.Team = @Opponents AND G.Penalty = 0 AND GA.Serie = @Leagues
 END
 /*010101*/
 IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NULL)
@@ -4356,7 +4356,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND O.Team = @Opponents AND G.Penalty = 0 AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND O.Team = @Opponents AND G.Penalty = 0 AND GA.Serie = @Leagues
 END
 /*010010*/
 IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -4365,7 +4365,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute <= @Max AND O.Team = @Opponents AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute <= @Max AND O.Team = @Opponents AND GA.Serie = @Leagues
 END
 /*010001*/
 IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NULL)
@@ -4383,7 +4383,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND O.Team = @Opponents AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND O.Team = @Opponents AND GA.Serie = @Leagues
 END
 /*011101*/
 IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NULL)
@@ -4392,7 +4392,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0 AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0 AND GA.Serie = @Leagues
 END
 /*011001*/
 IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NULL)
@@ -4401,7 +4401,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute >= @Min AND O.Team = @Opponents AND G.Winner = 1 AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND O.Team = @Opponents AND G.Winner = 1 AND GA.Serie = @Leagues
 END
 /*011011*/
 IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NULL)
@@ -4410,7 +4410,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND O.Team = @Opponents AND G.Winner = 1 AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND O.Team = @Opponents AND G.Winner = 1 AND GA.Serie = @Leagues
 END
 /*011010*/
 IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -4419,7 +4419,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND O.Team = @Opponents AND G.Winner = 1 AND G.Minute <= @Max AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND O.Team = @Opponents AND G.Winner = 1 AND G.Minute <= @Max AND GA.Serie = @Leagues
 END
 /*000110*/
 IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -4428,7 +4428,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute <= @Max AND G.Penalty = 0 AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute <= @Max AND G.Penalty = 0 AND GA.Serie = @Leagues
 END
 /*000100*/
 IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
@@ -4437,7 +4437,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Penalty = 0 AND G.Minute >= @Min AND G.Minute <= @Max AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Penalty = 0 AND G.Minute >= @Min AND G.Minute <= @Max AND GA.Serie = @Leagues
 END
 /*000101*/
 IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NULL)
@@ -4446,7 +4446,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Penalty = 0 AND G.Minute >= @Min AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Penalty = 0 AND G.Minute >= @Min AND GA.Serie = @Leagues
 END
 /*000010*/
 IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -4455,7 +4455,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute <= @Max AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute <= @Max AND GA.Serie = @Leagues
 END
 /*001110*/
 IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -4464,7 +4464,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Minute <= @Max AND G.Penalty = 0 AND G.Winner = 1 AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute <= @Max AND G.Penalty = 0 AND G.Winner = 1 AND GA.Serie = @Leagues
 END
 /*001100*/
 IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
@@ -4482,7 +4482,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Penalty = 0 AND G.Winner = 1 AND G.Minute >= @Min AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Penalty = 0 AND G.Winner = 1 AND G.Minute >= @Min AND GA.Serie = @Leagues
 END
 /*001000*/
 IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
@@ -4500,7 +4500,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Winner = 1 AND G.Minute >= @Min AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Winner = 1 AND G.Minute >= @Min AND GA.Serie = @Leagues
 END
 /*001011*/
 IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NULL)
@@ -4509,7 +4509,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Winner = 1 AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Winner = 1 AND GA.Serie = @Leagues
 END
 /*001010*/
 IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
@@ -4518,7 +4518,7 @@ BEGIN
 FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
-(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL) AND G.Winner = 1 AND G.Minute <= @Max AND GA.Serie = @Leagues
+(A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Winner = 1 AND G.Minute <= @Max AND GA.Serie = @Leagues
 END
 END
 END]]></Value>
@@ -4829,10 +4829,679 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="56391" />
+				<Property Name="Length" Value="57771" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetGoals]&#xD;&#xA;&#x9;@Leagues NVARCHAR(50),&#xD;&#xA;&#x9;@Opponents NVARCHAR(50),&#xD;&#xA;&#x9;@StartingDay DATETIME,&#xD;&#xA;&#x9;@EndingDay DATETIME,&#xD;&#xA;&#x9;@Player NVARCHAR(50),&#xD;&#xA;&#x9;@Winner BIT,&#xD;&#xA;&#x9;@Penalty BIT,&#xD;&#xA;&#x9;@Assist NVARCHAR(50),&#xD;&#xA;&#x9;@Min INT,&#xD;&#xA;&#x9;@Max INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetOpponentGoals]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+/*IF LEAGUE = ALL*/
+IF (@Leagues = 'ALL')
+BEGIN
+/*100000*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Minute <= @Max
+END
+/*110000*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents
+END
+/*111000*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1
+END
+/*111100*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0
+END
+/*111110*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0
+END
+/*111111*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0
+END
+/*101111*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Winner = 1 AND G.Penalty = 0
+END
+/*100111*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Penalty = 0
+END
+/*100011*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay
+END
+/*100001*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min
+END
+/*110100*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Penalty = 0
+END
+/*110110*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max AND O.Team = @Opponents AND G.Penalty = 0
+END
+/*110111*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND O.Team = @Opponents AND G.Penalty = 0
+END
+/*110101*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND O.Team = @Opponents AND G.Penalty = 0 AND G.Minute >= @Min
+END
+/*110010*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max AND O.Team = @Opponents
+END
+/*110001*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND O.Team = @Opponents
+END
+/*110011*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND O.Team = @Opponents
+END
+/*111101*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0
+END
+/*111001*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND O.Team = @Opponents AND G.Winner = 1
+END
+/*111011*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND O.Team = @Opponents AND G.Winner = 1
+END
+/*111010*/
+IF (@Leagues = 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND O.Team = @Opponents AND G.Winner = 1 AND G.Minute <= @Max
+END
+/*100110*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max AND G.Penalty = 0
+END
+/*100100*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max AND G.Penalty = 0 AND G.Minute <= @Max
+END
+/*100101*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Penalty = 0
+END
+/*100010*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max
+END
+/*101110*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max AND G.Winner = 1 AND G.Penalty = 0
+END
+/*101100*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max AND G.Winner = 1 AND G.Penalty = 0 AND G.Minute >= @Min
+END
+/*101101*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Winner = 1 AND G.Penalty = 0 AND G.Minute >= @Min
+END
+/*101000*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Minute <= @Max AND G.Winner = 1
+END
+/*101001*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Winner = 1
+END
+/*101011*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Winner = 1
+END
+/*101010*/
+IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Winner = 1 AND G.Minute >= @Min
+END
+END /*NEXT ELSE IF OPPONENT = ALL*/
+ELSE
+BEGIN
+/*100000*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Minute <= @Max AND GA.Serie = @Leagues
+END
+/*110000*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND GA.Serie = @Leagues
+END
+/*111000*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1 AND GA.Serie = @Leagues
+END
+/*111100*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0 AND GA.Serie = @Leagues
+END
+/*111110*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0 AND GA.Serie = @Leagues
+END
+/*111111*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0 AND GA.Serie = @Leagues
+END
+/*101111*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Winner = 1 AND G.Penalty = 0 AND GA.Serie = @Leagues
+END
+/*100111*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Penalty = 0 AND GA.Serie = @Leagues
+END
+/*100011*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND GA.Serie = @Leagues
+END
+/*100001*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND GA.Serie = @Leagues
+END
+/*110100*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Minute <= @Max AND O.Team = @Opponents AND G.Penalty = 0 AND GA.Serie = @Leagues
+END
+/*110110*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max AND O.Team = @Opponents AND G.Penalty = 0 AND GA.Serie = @Leagues
+END
+/*110111*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND O.Team = @Opponents AND G.Penalty = 0 AND GA.Serie = @Leagues
+END
+/*110101*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND O.Team = @Opponents AND G.Penalty = 0 AND G.Minute >= @Min AND GA.Serie = @Leagues
+END
+/*110010*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max AND O.Team = @Opponents AND GA.Serie = @Leagues
+END
+/*110001*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND O.Team = @Opponents AND GA.Serie = @Leagues
+END
+/*110011*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND O.Team = @Opponents AND GA.Serie = @Leagues
+END
+/*111101*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND O.Team = @Opponents AND G.Winner = 1 AND G.Penalty = 0 AND GA.Serie = @Leagues
+END
+/*111001*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND O.Team = @Opponents AND G.Winner = 1 AND GA.Serie = @Leagues
+END
+/*111011*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND O.Team = @Opponents AND G.Winner = 1 AND GA.Serie = @Leagues
+END
+/*111010*/
+IF (@Leagues != 'All' AND @Opponents != 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND O.Team = @Opponents AND G.Winner = 1 AND G.Minute <= @Max AND GA.Serie = @Leagues
+END
+/*100110*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max AND G.Penalty = 0 AND GA.Serie = @Leagues
+END
+/*100100*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max AND G.Penalty = 0 AND G.Minute <= @Max AND GA.Serie = @Leagues
+END
+/*100101*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Penalty = 0 AND GA.Serie = @Leagues
+END
+/*100010*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max AND GA.Serie = @Leagues
+END
+/*101110*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max AND G.Winner = 1 AND G.Penalty = 0 AND GA.Serie = @Leagues
+END
+/*101100*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute <= @Max AND G.Winner = 1 AND G.Penalty = 0 AND G.Minute >= @Min AND GA.Serie = @Leagues
+END
+/*101101*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 1 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Winner = 1 AND G.Penalty = 0 AND G.Minute >= @Min AND GA.Serie = @Leagues
+END
+/*101000*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Minute <= @Max AND G.Winner = 1 AND GA.Serie = @Leagues
+END
+/*101001*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Winner = 1 AND GA.Serie = @Leagues
+END
+/*101011*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Winner = 1 AND GA.Serie = @Leagues
+END
+/*101010*/
+IF (@Leagues != 'All' AND @Opponents = 'All' AND @Winner = 1 AND @Penalty = 0 AND @Min IS NULL AND @Max IS NOT NULL)
+BEGIN
+	SELECT G.Id, G.GameID, G.Winner, G.Penalty, G.Minute
+FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
+WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Winner = 1 AND G.Minute >= @Min AND GA.Serie = @Leagues
+END
+END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[GetOpponentGoals].[@Leagues]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetOpponentGoals].[@Opponents]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetOpponentGoals].[@Winner]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetOpponentGoals].[@Penalty]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetOpponentGoals].[@Min]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetOpponentGoals].[@Max]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[OpponentGoal]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[OpponentGoal].[GameId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Opponent]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[OpponentId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Opponent].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[OpponentGoal].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[OpponentGoal].[GameId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[OpponentGoal].[Winner]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[OpponentGoal].[Penalty]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[OpponentGoal].[Minute]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[DateTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetOpponentGoals].[@StartingDay]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetOpponentGoals].[@EndingDay]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Opponent].[Team]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Game].[Serie]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetOpponentGoals].[@Leagues]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetOpponentGoals].[@Opponents]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetOpponentGoals].[@StartingDay]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetOpponentGoals].[@EndingDay]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetOpponentGoals].[@Winner]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetOpponentGoals].[@Penalty]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetOpponentGoals].[@Min]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetOpponentGoals].[@Max]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="27101" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetOpponentGoals]&#xD;&#xA;&#x9;@Leagues NVARCHAR(50),&#xD;&#xA;&#x9;@Opponents NVARCHAR(50),&#xD;&#xA;&#x9;@StartingDay DATETIME,&#xD;&#xA;&#x9;@EndingDay DATETIME,&#xD;&#xA;&#x9;@Winner BIT,&#xD;&#xA;&#x9;@Penalty BIT,&#xD;&#xA;&#x9;@Min INT,&#xD;&#xA;&#x9;@Max INT&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[GetPlayersNames]">
@@ -5385,7 +6054,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="42" />
+						<AttachedAnnotation Disambiguator="44" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -6117,7 +6786,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="43" />
+						<AttachedAnnotation Disambiguator="45" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -7137,7 +7806,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="44" />
+						<AttachedAnnotation Disambiguator="42" />
 					</Element>
 				</Entry>
 				<Entry>

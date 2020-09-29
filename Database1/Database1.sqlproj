@@ -135,6 +135,7 @@
     <Build Include="dbo\Stored Procedures\BirthdayProcedure.sql" />
     <Build Include="dbo\Stored Procedures\ResultsByPlayer.sql" />
     <Build Include="dbo\Stored Procedures\GetGoals.sql" />
+    <Build Include="dbo\Stored Procedures\GetOpponentGoals.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Database1.refactorlog" />

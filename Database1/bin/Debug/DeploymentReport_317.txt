@@ -1,0 +1,19 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [dbo].[Tie_Win_Lose_ETW_ETL_PKW_PKL] (Check Constraint)
+     Create
+       [dbo].[Tie_Win_Lose_ETW_ETL_PKW_PKL] (Check Constraint)
+     Alter
+       [dbo].[GetOpponentGoals] (Procedure)
+
+** Supporting actions
