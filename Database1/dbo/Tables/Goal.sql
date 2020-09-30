@@ -2,7 +2,7 @@
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [GameId] INT NOT NULL, 
-    [Goal] NVARCHAR(10) NOT NULL, 
+	[Score] NVARCHAR(10) NULL,
     [Winner] BIT NOT NULL, 
     [PlayerId] INT NOT NULL, 
     [AssistId] INT NULL, 

@@ -153,14 +153,14 @@ namespace HIFK_tilastot
             using (StreamWriter sw = new StreamWriter(new FileStream(filename, FileMode.Create), Encoding.UTF8))
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine("Id,GameId,Goal,Winner,Player,Assist,Penalty,Minute,FirstName,LastName,AssistFirstName,AssistLastName");
+                sb.AppendLine("Id,GameId,Score,Winner,Player,Assist,Penalty,Minute,FirstName,LastName,AssistFirstName,AssistLastName");
                 foreach (GOAL s in list)
                 {
                     if (!backgroundWorker.CancellationPending)
                     {
                         backgroundWorker.ReportProgress(index++ * 100 / process);
                         sb.AppendLine(string.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11}",
-                            s.Id, s.GameId, s.Goal, s.Winner, s.Player, s.Assist, s.Penalty,
+                            s.Id, s.GameId, s.Score, s.Winner, s.Player, s.Assist, s.Penalty,
                             s.Minute, s.FirstName, s.LastName, s.AssistFirstName, s.AssistLastName));
                     }
                 }

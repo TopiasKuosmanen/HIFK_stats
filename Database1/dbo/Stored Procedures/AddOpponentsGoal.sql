@@ -6,6 +6,6 @@
 	@Minute INT
 AS
 BEGIN
-	INSERT INTO dbo.OpponentGoal (GameId, Goal, Winner, Penalty, Minute)
+	INSERT INTO dbo.OpponentGoal (GameId, Score, Winner, Penalty, Minute)
 	VALUES (@GameId, @Goal, @Winner, @Penalty, @Minute)
 END

@@ -1,0 +1,30 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Goal]
+       [dbo].[OpponentGoal]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [dbo].[Tie_Win_Lose_ETW_ETL_PKW_PKL] (Check Constraint)
+     Table rebuild
+       [dbo].[Goal] (Table)
+       [dbo].[OpponentGoal] (Table)
+     Create
+       [dbo].[Tie_Win_Lose_ETW_ETL_PKW_PKL] (Check Constraint)
+
+** Supporting actions
+     Refresh
+       [dbo].[AddGoal] (Procedure)
+       [dbo].[DeleteGame] (Procedure)
+       [dbo].[GetGoals] (Procedure)
+       [dbo].[AddOpponentsGoal] (Procedure)
+       [dbo].[GetOpponentGoals] (Procedure)
+
+If this deployment is executed, changes to [dbo].[OpponentGoal] might introduce run-time errors in [dbo].[GetOpponentsGoals].
+

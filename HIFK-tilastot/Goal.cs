@@ -10,7 +10,7 @@ namespace HIFK_tilastot
     {
         public int Id { get; set; }
         public int GameId { get; set; }
-        public string Goal { get; set; }
+        public string Score { get; set; }
         public bool Winner { get; set; }
         public int Player { get; set; }
         public int Assist { get; set; }
@@ -20,6 +20,5 @@ namespace HIFK_tilastot
         public string LastName { get; set; }
         public string AssistFirstName { get; set; }
         public string AssistLastName { get; set; }
-        public string Score { get; set; }
     }
 }
