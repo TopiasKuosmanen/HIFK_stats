@@ -78,7 +78,6 @@
     <Build Include="dbo\Views\Defender.sql" />
     <Build Include="dbo\Tables\Nationality.sql" />
     <Build Include="dbo\Tables\PlayersNationality.sql" />
-    <Build Include="dbo\Views\TotalStats2020.sql" />
     <Build Include="dbo\Tables\Opponent.sql" />
     <Build Include="dbo\Stored Procedures\PlayerFilterByPosition.sql" />
     <Build Include="dbo\Stored Procedures\FixturesByLeague.sql" />

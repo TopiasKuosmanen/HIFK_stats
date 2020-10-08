@@ -15,7 +15,7 @@ BEGIN
 /*100000*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
 BEGIN
-	SELECT G.Id, G.GameID, G.Score, G.Winner, G.Penalty, G.Minute
+	SELECT G.Id, G.GameId, G.Score, G.Winner, G.Penalty, G.Minute
 FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Minute <= @Max
 END

@@ -18,7 +18,7 @@ BEGIN
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
 BEGIN
 	SELECT G.Id, G.GameID, G.Score, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute, A.FirstName AS AssistFirstName, A.LastName AS AssistLastName
-FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
+FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameId, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
 (A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max

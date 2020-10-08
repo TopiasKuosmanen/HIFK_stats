@@ -50,390 +50,6 @@
 			</Property>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[Goals]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[Assists]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[YellowCards]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[RedCards]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[PlayedMinutes]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[StartingXI]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[SubstitutedIn]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[OnTheBench]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[Goals]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[Assists]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[YellowCards]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[RedCards]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[PlayedMinutes]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[StartingXI]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[SubstitutedIn]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[OnTheBench]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[Goals]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[Assists]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[YellowCards]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[RedCards]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[PlayedMinutes]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[StartingXI]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[SubstitutedIn]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[OnTheBench]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[0]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
 					<References Name="[dbo].[Stats]" />
 				</Entry>
 			</Relationship>
@@ -442,7 +58,7 @@
 					<References Name="[dbo].[Stats].[Goals]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="27" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -458,7 +74,7 @@
 					<References Name="[dbo].[Stats].[Assists]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="28" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -474,7 +90,7 @@
 					<References Name="[dbo].[Stats].[YellowCards]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="29" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -490,7 +106,7 @@
 					<References Name="[dbo].[Stats].[RedCards]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="30" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -506,7 +122,7 @@
 					<References Name="[dbo].[Stats].[PlayedMinutes]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="31" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -522,7 +138,7 @@
 					<References Name="[dbo].[Stats].[StartingXI]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="32" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -538,7 +154,7 @@
 					<References Name="[dbo].[Stats].[SubstitutedIn]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="33" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -554,7 +170,7 @@
 					<References Name="[dbo].[Stats].[OnTheBench]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="34" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -573,7 +189,7 @@
 					<References Name="[dbo].[Opponent]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="35" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -592,7 +208,7 @@
 					<References Name="[dbo].[Nationality]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="36" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -611,7 +227,7 @@
 					<References Name="[dbo].[Position]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="37" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -630,7 +246,7 @@
 					<References Name="[dbo].[Staff]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="38" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -649,7 +265,7 @@
 					<References Name="[dbo].[Player]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="39" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -668,7 +284,7 @@
 					<References Name="[dbo].[Stadium]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="40" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -687,7 +303,7 @@
 					<References Name="[dbo].[League]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="41" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -706,7 +322,7 @@
 					<References Name="[dbo].[Referee]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="42" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -725,7 +341,7 @@
 					<References Name="[dbo].[Game]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="43" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -744,7 +360,7 @@
 					<References Name="[dbo].[OpponentGoal]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="44" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -763,7 +379,7 @@
 					<References Name="[dbo].[Goal]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="45" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[AddGameProcedure]">
 			<Property Name="BodyScript">
@@ -2485,97 +2101,6 @@ END]]></Value>
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AddStatsByGameId]&#xD;&#xA;&#x9;@League NVARCHAR(50),&#xD;&#xA;&#x9;@PlayerId INT,&#xD;&#xA;&#x9;@GameId INT,&#xD;&#xA;&#x9;@Goals INT,&#xD;&#xA;&#x9;@Assists INT,&#xD;&#xA;&#x9;@YellowCards INT,&#xD;&#xA;&#x9;@RedCards INT,&#xD;&#xA;&#x9;@PlayedMinutes INT,&#xD;&#xA;&#x9;@StartingXI INT,&#xD;&#xA;&#x9;@SubstitutedIn INT,&#xD;&#xA;&#x9;@OnTheBench INT&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
-		<Element Type="SqlProcedure" Name="[dbo].[BestScorersByLeague]">
-			<Property Name="BodyScript">
-				<Value><![CDATA[
-IF (@League = 'All')
-BEGIN
-	SELECT p.FirstName, p.LastName, SUM(S.Goals) AS Goals
-	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
-	GROUP BY p.FirstName, p.LastName
-	ORDER BY Goals DESC
-END
-ELSE
-BEGIN
-	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals
-	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
-	WHERE s.LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
-	GROUP BY p.FirstName, p.LastName	
-	ORDER BY Goals DESC
-END]]></Value>
-			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="BodyDependencies">
-				<Entry>
-					<References Name="[dbo].[BestScorersByLeague].[@League]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[LeagueId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[League]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[League].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[League].[LeagueName]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="Parameters">
-				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[dbo].[BestScorersByLeague].[@League]">
-						<Relationship Name="Type">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Property Name="Length" Value="50" />
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="Schema">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="526" />
-				<Property Name="StartLine" Value="1" />
-				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[BestScorersByLeague]&#xD;&#xA;&#x9;@League NVARCHAR(50)&#xD;&#xA;AS" />
-			</Annotation>
-		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[BirthdayProcedure]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
@@ -2995,7 +2520,7 @@ END]]></Value>
 					<References Name="[dbo].[Stadium]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="46" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_PlayersNationality_Nationality]">
 			<Relationship Name="Columns">
@@ -3018,7 +2543,7 @@ END]]></Value>
 					<References Name="[dbo].[Nationality]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="47" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Playersposition_Position]">
 			<Relationship Name="Columns">
@@ -3041,7 +2566,7 @@ END]]></Value>
 					<References Name="[dbo].[Position]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="48" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Stats_League]">
 			<Relationship Name="Columns">
@@ -3064,177 +2589,7 @@ END]]></Value>
 					<References Name="[dbo].[League]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="49" />
-		</Element>
-		<Element Type="SqlTable" Name="[dbo].[Friendlystats]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="Columns">
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Friendlystats].[PlayerId]">
-						<Property Name="IsNullable" Value="False" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Friendlystats].[GameId]">
-						<Property Name="IsNullable" Value="False" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Friendlystats].[Goals]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="3" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Friendlystats].[Assists]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="4" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Friendlystats].[YellowCards]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="5" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Friendlystats].[RedCards]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="6" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Friendlystats].[PlayedMinutes]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="7" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Friendlystats].[StartingXI]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="8" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Friendlystats].[SubstitutedIn]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="9" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Friendlystats].[OnTheBench]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="10" />
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="Schema">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Game]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -3395,7 +2750,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="50" />
+						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -3434,7 +2789,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="43" />
+			<AttachedAnnotation Disambiguator="19" />
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[GamesOnThisDay]">
 			<Property Name="BodyScript">
@@ -3638,257 +2993,6 @@ END]]></Value>
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAllReferees]&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
-		<Element Type="SqlProcedure" Name="[dbo].[GetAllStats]">
-			<Property Name="BodyScript">
-				<Value><![CDATA[
-
-IF (@Year = 0 AND @League <> 'All')
-BEGIN
-	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
-	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
-	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards, p.Id AS PlayerId
-	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
-	WHERE s.LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
-	GROUP BY p.FirstName, p.LastName, p.Id
-	ORDER BY Goals DESC
-END
-IF (@League = 'All' AND @Year = 0)
-BEGIN
-	SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
-	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
-	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards, p.Id AS PlayerId
-	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
-	GROUP BY p.FirstName, p.LastName, p.Id
-	ORDER BY Goals DESC
-END
-
-IF (@Year <> 0)
-BEGIN
-	IF (@League = 'All')
-	BEGIN
-		SELECT FirstName, LastName, SUM(Games) AS Games, SUM(Goals) AS Goals, SUM(Assists) AS Assists,
-		SUM(PlayedMinutes) AS PlayedMinutes, SUM(StartingXI) AS StartingXI, SUM(SubstitutedIn) AS SubstitutedIn,
-		SUM(OnTheBench) AS OnTheBench, SUM(YellowCards) AS YellowCards, SUM(RedCards) AS RedCards, PlayerId AS PlayerId
-	    FROM
-		(
-			SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
-			SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
-			SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards, p.Id AS PlayerId
-			FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
-			WHERE s.GameId IN (SELECT Id
-					   FROM Game
-					   WHERE YEAR(Game.DateTime) = @Year
-					   )
-			GROUP BY p.FirstName, p.LastName, p.Id
-		) AS p
-		GROUP BY FirstName, LastName, PlayerId
-	END
-	ELSE
-	BEGIN
-		SELECT p.FirstName, p.LastName, SUM(s.Goals) AS Goals, SUM(s.StartingXI + s.SubstitutedIn) AS Games, SUM(s.Assists) AS Assists,
-	   SUM(s.PlayedMinutes) AS PlayedMinutes, SUM(s.StartingXI) AS StartingXI, SUM(s.SubstitutedIn) AS SubstitutedIn,
-	   SUM(s.OnTheBench) AS OnTheBench, SUM(s.YellowCards) AS YellowCards, SUM(s.RedCards) AS RedCards, p.Id AS PlayerId
-	FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
-	WHERE s.GameId IN (SELECT Id
-					   FROM Game
-					   WHERE YEAR(Game.DateTime) = @Year
-					   ) AND s.LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
-	GROUP BY p.FirstName, p.LastName, p.Id
-	ORDER BY Goals DESC
-	END
-	
-
-END]]></Value>
-			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="BodyDependencies">
-				<Entry>
-					<References Name="[dbo].[GetAllStats].[@Year]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[GetAllStats].[@League]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[SubstitutedIn]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[Assists]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[PlayedMinutes]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[OnTheBench]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[YellowCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[RedCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[LeagueId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[League]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[League].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[League].[LeagueName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[SubstitutedIn]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[Assists]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[PlayedMinutes]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[OnTheBench]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[YellowCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[RedCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[GameId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[DateTime]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[GameId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Game].[DateTime]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="Parameters">
-				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetAllStats].[@League]">
-						<Relationship Name="Type">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Property Name="Length" Value="50" />
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetAllStats].[@Year]">
-						<Relationship Name="Type">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="Schema">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="2911" />
-				<Property Name="StartLine" Value="1" />
-				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAllStats]&#xD;&#xA;&#x9;@League NVARCHAR(50),&#xD;&#xA;&#x9;@Year INT&#xD;&#xA;AS" />
-			</Annotation>
-		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[GetGameWithoutTheResult]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
@@ -3945,7 +3049,7 @@ BEGIN
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
 BEGIN
 	SELECT G.Id, G.GameID, G.Score, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute, A.FirstName AS AssistFirstName, A.LastName AS AssistLastName
-FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameID, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
+FROM Goal G JOIN Player P ON P.Id = G.PlayerId LEFT JOIN (SELECT G.Id, G.GameId, P.FirstName, P.LastName, G.Winner, G.Penalty, G.Minute
 FROM Goal G JOIN Player P ON P.Id = G.AssistId) A ON A.Id = G.Id JOIN Game GA ON GA.Id = G.GameId JOIN Opponent O ON O.Id = GA.OpponentId
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND (P.LastName LIKE '%' + @Player + '%' OR P.FirstName LIKE '%' + @Player + '%') AND 
 (A.LastName LIKE '%' + @Assist + '%' OR A.FirstName LIKE '%' + @Assist + '%' OR A.LastName IS NULL OR A.FirstName IS NULL) AND G.Minute >= @Min AND G.Minute <= @Max
@@ -4664,6 +3768,9 @@ END]]></Value>
 					<References Name="[dbo].[Player].[FirstName]" />
 				</Entry>
 				<Entry>
+					<References Name="[dbo].[Goal].[GameId]" />
+				</Entry>
+				<Entry>
 					<References Name="[dbo].[Opponent].[Team]" />
 				</Entry>
 				<Entry>
@@ -4848,7 +3955,7 @@ BEGIN
 /*100000*/
 IF (@Leagues = 'All' AND @Opponents = 'All' AND @Winner = 0 AND @Penalty = 0 AND @Min IS NOT NULL AND @Max IS NOT NULL)
 BEGIN
-	SELECT G.Id, G.GameID, G.Score, G.Winner, G.Penalty, G.Minute
+	SELECT G.Id, G.GameId, G.Score, G.Winner, G.Penalty, G.Minute
 FROM OpponentGoal G JOIN Game GA ON G.GameId = GA.Id JOIN Opponent O ON GA.OpponentId = O.Id
 WHERE GA.DateTime >= @StartingDay AND GA.DateTime <= @EndingDay AND G.Minute >= @Min AND G.Minute <= @Max
 END
@@ -5366,6 +4473,9 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[GetOpponentGoals].[@EndingDay]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[OpponentGoal].[GameId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Opponent].[Team]" />
@@ -6060,7 +5170,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="45" />
+						<AttachedAnnotation Disambiguator="21" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -6360,7 +5470,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="41" />
+						<AttachedAnnotation Disambiguator="17" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -6510,138 +5620,6 @@ END]]></Value>
 				<Property Name="HeaderContents" Value="CREATE VIEW [dbo].[Midfielder]&#xD;&#xA;&#x9;AS" />
 			</Annotation>
 		</Element>
-		<Element Type="SqlProcedure" Name="[dbo].[MostPlayedPlayersByLeague]">
-			<Property Name="BodyScript">
-				<Value><![CDATA[
-
-
-BEGIN
-	IF (@League = 'ALL')
-	BEGIN
-		IF (@MinutesOrGames = 'Minutes')
-		BEGIN
-		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
-		ORDER BY s.PlayedMinutes
-	END
-	IF (@MinutesOrGames = 'Games')
-		BEGIN
-		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
-		ORDER BY (s.StartingXI+s.SubstitutedIn)
-	END
-	END
-	ELSE
-	IF (@MinutesOrGames = 'Minutes')
-		BEGIN
-		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
-		WHERE s.LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
-		ORDER BY s.PlayedMinutes
-	END
-	IF (@MinutesOrGames = 'Games')
-		BEGIN
-		SELECT p.FirstName, p.LastName, s.PlayedMinutes, (s.StartingXI+s.SubstitutedIn) AS 'PlayedGames'
-		FROM [Stats] s JOIN Player p ON s.PlayerId = p.Id
-		WHERE s.LeagueId = (SELECT Id FROM League WHERE LeagueName = @League)
-		ORDER BY (s.StartingXI+s.SubstitutedIn)
-	END
-END]]></Value>
-			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="BodyDependencies">
-				<Entry>
-					<References Name="[dbo].[MostPlayedPlayersByLeague].[@League]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[MostPlayedPlayersByLeague].[@MinutesOrGames]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[PlayedMinutes]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[SubstitutedIn]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Stats].[LeagueId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[League]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[League].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[League].[LeagueName]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="Parameters">
-				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[dbo].[MostPlayedPlayersByLeague].[@MinutesOrGames]">
-						<Relationship Name="Type">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Property Name="Length" Value="50" />
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[varchar]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[dbo].[MostPlayedPlayersByLeague].[@League]">
-						<Relationship Name="Type">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Property Name="Length" Value="50" />
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[varchar]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="Schema">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1264" />
-				<Property Name="StartLine" Value="1" />
-				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[MostPlayedPlayersByLeague]&#xD;&#xA;&#x9;@MinutesOrGames VARCHAR(50),&#xD;&#xA;&#x9;@League VARCHAR(50)&#xD;&#xA;AS" />
-			</Annotation>
-		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Nationality]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
@@ -6660,7 +5638,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="36" />
+						<AttachedAnnotation Disambiguator="12" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -6730,7 +5708,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="35" />
+						<AttachedAnnotation Disambiguator="11" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -6771,7 +5749,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="46" />
+			<AttachedAnnotation Disambiguator="22" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[OpponentGoal]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -6791,7 +5769,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="44" />
+						<AttachedAnnotation Disambiguator="20" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -6991,116 +5969,6 @@ END]]></Value>
 				<Property Name="HeaderContents" Value="CREATE VIEW [dbo].[Person]&#xD;&#xA;&#x9;AS" />
 			</Annotation>
 		</Element>
-		<Element Type="SqlProcedure" Name="[dbo].[Person_FilterByName]">
-			<Property Name="BodyScript">
-				<Value><![CDATA[
-BEGIN
-	SELECT p.Id, p.FirstName, p.LastName, P.BirthDate, FLOOR((CAST (GetDate() AS INTEGER) - CAST(P.BirthDate AS INTEGER)) / 365.25) AS Age
-	FROM dbo.Player p
-	WHERE P.LastName LIKE '%' + @Name + '%' OR P.FirstName LIKE '%' + @Name + '%'
-	UNION
-	SELECT s.Id, s.FirstName, s.LastName, s.BirthDate, FLOOR((CAST (GETDATE() AS INTEGER) - CAST(S.BirthDate AS INTEGER)) / 365.25) AS Age
-	FROM dbo.Staff s
-	WHERE S.LastName LIKE '%' + @Name + '%' OR S.FirstName LIKE '%' + @Name + '%'
-	ORDER BY LastName
-END]]></Value>
-			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="BodyDependencies">
-				<Entry>
-					<References Name="[dbo].[Player]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[BirthDate]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[int]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[int]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Person_FilterByName].[@Name]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Staff]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Staff].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Staff].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Staff].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Staff].[BirthDate]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[int]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[int]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Staff].[BirthDate]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Staff].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Staff].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="Parameters">
-				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[dbo].[Person_FilterByName].[@Name]">
-						<Relationship Name="Type">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Property Name="Length" Value="50" />
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="Schema">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="583" />
-				<Property Name="StartLine" Value="1" />
-				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[Person_FilterByName]&#xD;&#xA;&#x9;@Name NVARCHAR (50)&#xD;&#xA;AS" />
-			</Annotation>
-		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[PersonByNameAndBirthday]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
@@ -7235,7 +6103,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="39" />
+						<AttachedAnnotation Disambiguator="15" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -7340,102 +6208,6 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="SqlProcedure" Name="[dbo].[Player_FilterByName]">
-			<Property Name="BodyScript">
-				<Value><![CDATA[
-BEGIN
-	SELECT p.Id, p.FirstName, p.LastName, p.BirthDate, FLOOR((CAST (GETDATE() AS INTEGER) - CAST(p.BirthDate AS INTEGER)) / 365.25) AS Age,
-		   s.Goals, s.Assists, (s.StartingXI + s.SubstitutedIn) AS 'Games', s.PlayedMinutes
-	FROM dbo.Player p JOIN dbo.TotalStats2020 s ON s.PlayerId = p.Id
-	WHERE p.LastName LIKE '%' + @PlayerName + '%' OR p.FirstName LIKE '%' + @PlayerName + '%'
-	AND ContractEndDate > GETDATE()
-	ORDER BY LastName
-END]]></Value>
-			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="BodyDependencies">
-				<Entry>
-					<References Name="[dbo].[Player]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[Id]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[FirstName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[BirthDate]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[int]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[int]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Assists]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[SubstitutedIn]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[TotalStats2020].[PlayedMinutes]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player_FilterByName].[@PlayerName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[ContractEndDate]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Player].[LastName]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="Parameters">
-				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[dbo].[Player_FilterByName].[@PlayerName]">
-						<Relationship Name="Type">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Property Name="Length" Value="50" />
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="Schema">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="526" />
-				<Property Name="StartLine" Value="1" />
-				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[Player_FilterByName]&#xD;&#xA;&#x9;@PlayerName NVARCHAR (50)&#xD;&#xA;AS" />
-			</Annotation>
-		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[PlayerFilterByPosition]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
@@ -7444,25 +6216,25 @@ IF (@PlayerPosition = 'Goalkeeper')
 BEGIN
 	SELECT p.*, FLOOR((CAST (GETDATE() AS INTEGER) - CAST(p.BirthDate AS INTEGER)) / 365.25) AS Age,
 		   s.Goals, s.Assists, (s.StartingXI + s.SubstitutedIn) AS 'Games', s.PlayedMinutes
-	FROM Goalkeeper p JOIN dbo.TotalStats2020 s ON s.PlayerId = p.Id
+	FROM Goalkeeper p JOIN Stats s ON s.PlayerId = p.Id
 END
 IF (@PlayerPosition = 'Defender')
 BEGIN
 	SELECT p.*, FLOOR((CAST (GETDATE() AS INTEGER) - CAST(p.BirthDate AS INTEGER)) / 365.25) AS Age,
 		   s.Goals, s.Assists, (s.StartingXI + s.SubstituTedIn) AS 'Games', s.PlayedMinutes
-	FROM Defender p JOIN dbo.TotalStats2020 s ON s.PlayerId = p.Id
+	FROM Defender p JOIN Stats s ON s.PlayerId = p.Id
 END
 IF (@PlayerPosition = 'Midfielder')
 BEGIN
 	SELECT p.*, FLOOR((CAST (GETDATE() AS INTEGER) - CAST(p.BirthDate AS INTEGER)) / 365.25) AS Age,
 		   s.Goals, s.Assists, (s.StartingXI + s.SubstituTedIn) AS 'Games', s.PlayedMinutes
-	FROM Midfielder p JOIN dbo.TotalStats2020 s ON s.PlayerId = p.Id
+	FROM Midfielder p JOIN Stats s ON s.PlayerId = p.Id
 END
 IF (@PlayerPosition = 'Striker')
 BEGIN
 	SELECT p.*, FLOOR((CAST (GETDATE() AS INTEGER) - CAST(p.BirthDate AS INTEGER)) / 365.25) AS Age,
 		   s.Goals, s.Assists, (s.StartingXI + s.SubstituTedIn) AS 'Games', s.PlayedMinutes
-	FROM Striker p JOIN dbo.TotalStats2020 s ON s.PlayerId = p.Id
+	FROM Striker p JOIN Stats s ON s.PlayerId = p.Id
 END]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -7474,10 +6246,10 @@ END]]></Value>
 					<References Name="[dbo].[Goalkeeper]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020]" />
+					<References Name="[dbo].[Stats]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[PlayerId]" />
+					<References Name="[dbo].[Stats].[PlayerId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Goalkeeper].[Id]" />
@@ -7492,25 +6264,25 @@ END]]></Value>
 					<References Name="[dbo].[Goalkeeper].[BirthDate]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Goals]" />
+					<References Name="[dbo].[Stats].[Goals]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Assists]" />
+					<References Name="[dbo].[Stats].[Assists]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[StartingXI]" />
+					<References Name="[dbo].[Stats].[StartingXI]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[SubstitutedIn]" />
+					<References Name="[dbo].[Stats].[SubstitutedIn]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[PlayedMinutes]" />
+					<References Name="[dbo].[Stats].[PlayedMinutes]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Defender]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[PlayerId]" />
+					<References Name="[dbo].[Stats].[PlayerId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Defender].[Id]" />
@@ -7525,25 +6297,25 @@ END]]></Value>
 					<References Name="[dbo].[Defender].[BirthDate]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Goals]" />
+					<References Name="[dbo].[Stats].[Goals]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Assists]" />
+					<References Name="[dbo].[Stats].[Assists]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[StartingXI]" />
+					<References Name="[dbo].[Stats].[StartingXI]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[SubstitutedIn]" />
+					<References Name="[dbo].[Stats].[SubstitutedIn]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[PlayedMinutes]" />
+					<References Name="[dbo].[Stats].[PlayedMinutes]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Midfielder]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[PlayerId]" />
+					<References Name="[dbo].[Stats].[PlayerId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Midfielder].[Id]" />
@@ -7558,25 +6330,25 @@ END]]></Value>
 					<References Name="[dbo].[Midfielder].[BirthDate]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Goals]" />
+					<References Name="[dbo].[Stats].[Goals]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Assists]" />
+					<References Name="[dbo].[Stats].[Assists]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[StartingXI]" />
+					<References Name="[dbo].[Stats].[StartingXI]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[SubstitutedIn]" />
+					<References Name="[dbo].[Stats].[SubstitutedIn]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[PlayedMinutes]" />
+					<References Name="[dbo].[Stats].[PlayedMinutes]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Striker]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[PlayerId]" />
+					<References Name="[dbo].[Stats].[PlayerId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Striker].[Id]" />
@@ -7591,19 +6363,19 @@ END]]></Value>
 					<References Name="[dbo].[Striker].[BirthDate]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Goals]" />
+					<References Name="[dbo].[Stats].[Goals]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[Assists]" />
+					<References Name="[dbo].[Stats].[Assists]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[StartingXI]" />
+					<References Name="[dbo].[Stats].[StartingXI]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[SubstitutedIn]" />
+					<References Name="[dbo].[Stats].[SubstitutedIn]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[TotalStats2020].[PlayedMinutes]" />
+					<References Name="[dbo].[Stats].[PlayedMinutes]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -7630,7 +6402,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1283" />
+				<Property Name="Length" Value="1231" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[PlayerFilterByPosition]&#xD;&#xA;&#x9;@PlayerPosition NVARCHAR (50)&#xD;&#xA;AS" />
@@ -7677,7 +6449,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="47" />
+			<AttachedAnnotation Disambiguator="23" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Playersposition]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -7720,7 +6492,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="48" />
+			<AttachedAnnotation Disambiguator="24" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Position]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -7740,7 +6512,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="37" />
+						<AttachedAnnotation Disambiguator="13" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -7810,7 +6582,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="42" />
+						<AttachedAnnotation Disambiguator="18" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -7868,68 +6640,6 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="SqlProcedure" Name="[dbo].[ResultsByPlayer]">
-			<Property Name="BodyScript">
-				<Value><![CDATA[
-	SELECT @param1, @param2
-RETURN 0]]></Value>
-			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="BodyDependencies">
-				<Entry>
-					<References Name="[dbo].[ResultsByPlayer].[@param1]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[ResultsByPlayer].[@param2]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="Parameters">
-				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[dbo].[ResultsByPlayer].[@param1]">
-						<Property Name="DefaultExpressionScript">
-							<Value><![CDATA[0]]></Value>
-						</Property>
-						<Relationship Name="Type">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[dbo].[ResultsByPlayer].[@param2]">
-						<Relationship Name="Type">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="Schema">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="113" />
-				<Property Name="StartLine" Value="1" />
-				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[ResultsByPlayer]&#xD;&#xA;&#x9;@param1 int = 0,&#xD;&#xA;&#x9;@param2 int&#xD;&#xA;AS" />
-			</Annotation>
-		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Stadium]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
@@ -7948,7 +6658,7 @@ RETURN 0]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="40" />
+						<AttachedAnnotation Disambiguator="16" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -8052,7 +6762,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="38" />
+						<AttachedAnnotation Disambiguator="14" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -8157,61 +6867,6 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="SqlProcedure" Name="[dbo].[StaffFilterByName]">
-			<Property Name="BodyScript">
-				<Value><![CDATA[
-BEGIN
-	SELECT  *
-	FROM Staff
-	WHERE LastName LIKE '%' + @StaffName + '%' OR FirstName LIKE '%' + @StaffName + '%'
-	ORDER BY LastName
-END]]></Value>
-			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="BodyDependencies">
-				<Entry>
-					<References Name="[dbo].[Staff]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Staff].[LastName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[StaffFilterByName].[@StaffName]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Staff].[FirstName]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="Parameters">
-				<Entry>
-					<Element Type="SqlSubroutineParameter" Name="[dbo].[StaffFilterByName].[@StaffName]">
-						<Relationship Name="Type">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Property Name="Length" Value="50" />
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="Schema">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="216" />
-				<Property Name="StartLine" Value="1" />
-				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[StaffFilterByName]&#xD;&#xA;&#x9;@StaffName NVARCHAR (50)&#xD;&#xA;AS" />
-			</Annotation>
-		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Stats]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
@@ -8276,7 +6931,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="27" />
+						<AttachedAnnotation Disambiguator="3" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -8292,7 +6947,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="28" />
+						<AttachedAnnotation Disambiguator="4" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -8308,7 +6963,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="29" />
+						<AttachedAnnotation Disambiguator="5" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -8324,7 +6979,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="30" />
+						<AttachedAnnotation Disambiguator="6" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -8340,7 +6995,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="31" />
+						<AttachedAnnotation Disambiguator="7" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -8356,7 +7011,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="32" />
+						<AttachedAnnotation Disambiguator="8" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -8372,7 +7027,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="33" />
+						<AttachedAnnotation Disambiguator="9" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -8388,7 +7043,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="34" />
+						<AttachedAnnotation Disambiguator="10" />
 					</Element>
 				</Entry>
 			</Relationship>
@@ -8397,7 +7052,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="49" />
+			<AttachedAnnotation Disambiguator="25" />
 		</Element>
 		<Element Type="SqlView" Name="[dbo].[Striker]">
 			<Property Name="QueryScript">
@@ -8497,176 +7152,6 @@ END]]></Value>
 				<Property Name="HeaderContents" Value="CREATE VIEW [dbo].[Striker]&#xD;&#xA;&#x9;AS" />
 			</Annotation>
 		</Element>
-		<Element Type="SqlTable" Name="[dbo].[Suomencupstats]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="Columns">
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Suomencupstats].[PlayerId]">
-						<Property Name="IsNullable" Value="False" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Suomencupstats].[GameId]">
-						<Property Name="IsNullable" Value="False" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Suomencupstats].[Goals]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="11" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Suomencupstats].[Assists]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="12" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Suomencupstats].[YellowCards]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="13" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Suomencupstats].[RedCards]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="14" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Suomencupstats].[PlayedMinutes]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="15" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Suomencupstats].[StartingXI]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="16" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Suomencupstats].[SubstitutedIn]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="17" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Suomencupstats].[OnTheBench]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="18" />
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="Schema">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
-		</Element>
 		<Element Type="SqlCheckConstraint" Name="[dbo].[Tie_Win_Lose_ETW_ETL_PKW_PKL]">
 			<Property Name="CheckExpressionScript">
 				<Value><![CDATA[ResultCode BETWEEN 0 AND 6]]></Value>
@@ -8681,181 +7166,7 @@ END]]></Value>
 					<References Name="[dbo].[Game]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="50" />
-		</Element>
-		<Element Type="SqlView" Name="[dbo].[TotalStats2020]">
-			<Property Name="QueryScript">
-				<Value><![CDATA[ 
-	SELECT PlayerId, SUM(Games) AS Games, SUM(Goals) AS Goals, SUM(Assists) AS Assists,
-	   SUM(PlayedMinutes) AS PlayedMinutes, SUM(StartingXI) AS StartingXI, SUM(SubstitutedIn) AS SubstitutedIn,
-	   SUM(OnTheBench) AS OnTheBench, SUM(YellowCards) AS YellowCards, SUM(RedCards) AS RedCards 
-FROM
-(
-	SELECT PlayerId, SUM(StartingXI + SubstitutedIn) AS Games, SUM(Goals) AS Goals, SUM(Assists) AS Assists,
-	   SUM(PlayedMinutes) AS PlayedMinutes, SUM(StartingXI) AS StartingXI, SUM(SubstitutedIn) AS SubstitutedIn,
-	   SUM(OnTheBench) AS OnTheBench, SUM(YellowCards) AS YellowCards, SUM(RedCards) AS RedCards 
-FROM Veikkausliigastats
-GROUP BY PlayerId
-UNION
-SELECT PlayerId, SUM(StartingXI + SubstitutedIn) AS Games, SUM(Goals) AS Goals, SUM(Assists) AS Assists,
-	   SUM(PlayedMinutes) AS PlayedMinutes, SUM(StartingXI) AS StartingXI, SUM(SubstitutedIn) AS SubstitutedIn,
-	   SUM(OnTheBench) AS OnTheBench, SUM(YellowCards) AS YellowCards, SUM(RedCards) AS RedCards 
-FROM Suomencupstats
-GROUP BY PlayerId
-UNION
-SELECT PlayerId, SUM(StartingXI + SubstitutedIn) AS Games, SUM(Goals) AS Goals, SUM(Assists) AS Assists,
-	   SUM(PlayedMinutes) AS PlayedMinutes, SUM(StartingXI) AS StartingXI, SUM(SubstitutedIn) AS SubstitutedIn,
-	   SUM(OnTheBench) AS OnTheBench, SUM(YellowCards) AS YellowCards, SUM(RedCards) AS RedCards 
-FROM Friendlystats
-GROUP BY PlayerId
-) AS A
-GROUP BY A.PlayerId]]></Value>
-			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="Columns">
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[TotalStats2020].[PlayerId]">
-						<Relationship Name="ExpressionDependencies">
-							<Entry>
-								<References Name="[dbo].[Veikkausliigastats].[PlayerId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[TotalStats2020].[Games]" />
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[TotalStats2020].[Goals]" />
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[TotalStats2020].[Assists]" />
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[TotalStats2020].[PlayedMinutes]" />
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[TotalStats2020].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[TotalStats2020].[SubstitutedIn]" />
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[TotalStats2020].[OnTheBench]" />
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[TotalStats2020].[YellowCards]" />
-				</Entry>
-				<Entry>
-					<Element Type="SqlComputedColumn" Name="[dbo].[TotalStats2020].[RedCards]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="QueryDependencies">
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[SubstitutedIn]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[Assists]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[PlayedMinutes]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[OnTheBench]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[YellowCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[RedCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[SubstitutedIn]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[Assists]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[PlayedMinutes]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[OnTheBench]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[YellowCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Suomencupstats].[RedCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[PlayerId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[StartingXI]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[SubstitutedIn]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[Goals]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[Assists]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[PlayedMinutes]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[OnTheBench]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[YellowCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Friendlystats].[RedCards]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Veikkausliigastats].[PlayerId]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="Schema">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1444" />
-				<Property Name="StartLine" Value="1" />
-				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE VIEW [dbo].[TotalStats2020]&#xD;&#xA;&#x9;AS" />
-			</Annotation>
+			<AttachedAnnotation Disambiguator="26" />
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[UpdatePlayer]">
 			<Property Name="BodyScript">
@@ -9107,176 +7418,6 @@ END]]></Value>
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[UpdateResult]&#xD;&#xA;&#x9;@GameId INT,&#xD;&#xA;&#x9;@Result NVARCHAR(10)&#xD;&#xA;&#xD;&#xA;AS" />
 			</Annotation>
-		</Element>
-		<Element Type="SqlTable" Name="[dbo].[Veikkausliigastats]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="Columns">
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Veikkausliigastats].[PlayerId]">
-						<Property Name="IsNullable" Value="False" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Veikkausliigastats].[GameId]">
-						<Property Name="IsNullable" Value="False" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Veikkausliigastats].[Goals]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="19" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Veikkausliigastats].[Assists]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="20" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Veikkausliigastats].[YellowCards]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="21" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Veikkausliigastats].[RedCards]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="22" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Veikkausliigastats].[PlayedMinutes]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="23" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Veikkausliigastats].[StartingXI]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="24" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Veikkausliigastats].[SubstitutedIn]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="25" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Veikkausliigastats].[OnTheBench]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="SqlTypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="26" />
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="Schema">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
 		</Element>
 	</Model>
 </DataSchemaModel>
