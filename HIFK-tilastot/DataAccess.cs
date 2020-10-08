@@ -11,14 +11,6 @@ namespace HIFK_tilastot
     public class DataAccess
     {
         string dataBase = "HIFKDB";
-        public List<Person> GetPersons(string name)
-        {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
-            {
-                var output = connection.Query<Person>("dbo.Person_FilterByName @Name", new { Name = name}).ToList();
-                return output;
-            }
-        }
 
         public List<Person> GetPlayersToEdit(string name)
         {
@@ -85,7 +77,7 @@ namespace HIFK_tilastot
             }
         }
 
-        public List<Game> GetAllGames()
+        public List<Game> GetAllGames() // List games when adding results
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
             {
@@ -153,7 +145,7 @@ namespace HIFK_tilastot
             }
         }
 
-        public List<Person> GetPlayersNames()
+        public List<Person> GetPlayersNames() // Used in AddNewPlayer; checking duplicate values
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
             {
@@ -250,17 +242,6 @@ namespace HIFK_tilastot
             }
         }
 
-        public List<Person> GetPersonsWithoutPlayers(string name)
-        {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
-            {
-                var output = connection.Query<Person>("dbo.StaffFilterByName @StaffName", new { StaffName = name }).ToList();
-                return output;
-            }
-        }
-
-
-
         public List<STATS> GetPlayerStats(string name)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
@@ -279,14 +260,6 @@ namespace HIFK_tilastot
             }
         }
 
-        public List<STATS> GetTopScorers(string league)
-        {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
-            {
-                var output = connection.Query<STATS>("dbo.BestScorersByLeague @League", new { League = league }).ToList();
-                return output;
-            }
-        }
 
 
         public List<Game> GetResults(string league, DateTime startingday, DateTime endingday)
@@ -319,7 +292,7 @@ namespace HIFK_tilastot
             }
         }
 
-        public List<Person> GetPersonId(string firstname, string lastname, DateTime birthday)
+        public List<Person> GetPersonId(string firstname, string lastname, DateTime birthday) // Used in AddNewPlayer to add a nationality
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal($"{dataBase}")))
             {

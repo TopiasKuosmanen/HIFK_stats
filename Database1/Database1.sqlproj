@@ -69,13 +69,9 @@
     <Build Include="dbo\Tables\Game.sql" />
     <Build Include="dbo\Tables\Player.sql" />
     <Build Include="dbo\Tables\Staff.sql" />
-    <Build Include="dbo\Tables\Veikkausliigastats.sql" />
     <Build Include="dbo\Views\Person.sql" />
-    <Build Include="dbo\Tables\Suomencupstats.sql" />
-    <Build Include="dbo\Tables\Friendlystats.sql" />
     <Build Include="dbo\Tables\Position.sql" />
     <Build Include="dbo\Tables\Playersposition.sql" />
-    <Build Include="dbo\Stored Procedures\Person_FilterByName.sql" />
     <Build Include="dbo\Views\Goalkeeper.sql" />
     <Build Include="dbo\Views\Midfielder.sql" />
     <Build Include="dbo\Views\Striker.sql" />
@@ -83,11 +79,7 @@
     <Build Include="dbo\Tables\Nationality.sql" />
     <Build Include="dbo\Tables\PlayersNationality.sql" />
     <Build Include="dbo\Views\TotalStats2020.sql" />
-    <Build Include="dbo\Stored Procedures\PlayerFilterByName.sql" />
     <Build Include="dbo\Tables\Opponent.sql" />
-    <Build Include="dbo\Stored Procedures\StaffFilterByName.sql" />
-    <Build Include="dbo\Stored Procedures\BestScorersByLeague.sql" />
-    <Build Include="dbo\Stored Procedures\MostPlayedPlayersByLeague.sql" />
     <Build Include="dbo\Stored Procedures\PlayerFilterByPosition.sql" />
     <Build Include="dbo\Stored Procedures\FixturesByLeague.sql" />
     <Build Include="dbo\Stored Procedures\AddPlayerProcedure.sql" />
@@ -116,7 +108,6 @@
     <Build Include="dbo\Stored Procedures\UpdatePlayer.sql" />
     <Build Include="dbo\Stored Procedures\AddNewStadium.sql" />
     <Build Include="dbo\Stored Procedures\AddNewOpponent.sql" />
-    <Build Include="dbo\Stored Procedures\GetAllStats.sql" />
     <Build Include="dbo\Stored Procedures\GetPlayersPositions.sql" />
     <Build Include="dbo\Stored Procedures\GetPlayersNationalities.sql" />
     <Build Include="dbo\Stored Procedures\GetPlayersNames.sql" />
@@ -133,7 +124,6 @@
     <Build Include="dbo\Stored Procedures\GetAllReferees.sql" />
     <Build Include="dbo\Stored Procedures\GamesOnThisDay.sql" />
     <Build Include="dbo\Stored Procedures\BirthdayProcedure.sql" />
-    <Build Include="dbo\Stored Procedures\ResultsByPlayer.sql" />
     <Build Include="dbo\Stored Procedures\GetGoals.sql" />
     <Build Include="dbo\Stored Procedures\GetOpponentGoals.sql" />
   </ItemGroup>
