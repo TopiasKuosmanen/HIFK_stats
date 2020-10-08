@@ -2,16 +2,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-Data = pd.read_csv('VeikkausliigaGoals2020.csv', encoding='latin-1', 
-                   usecols = ['Id', 'Winner', 'Penalty', 'FirstName', 
-                              'LastName', 'Minute', 'AssistFirstName', 'AssistLastName'])
+Data = pd.read_csv('AllVeikkausliigaGoals.csv', encoding='latin-1', 
+                   usecols = ['Id', 'Winner', 'Minute', 'Penalty'])
 
-Data['FirstName'] = Data['FirstName'].astype(str)
-Data['LastName'] = Data['LastName'].astype(str)
-Data['AssistFirstName'] = Data['AssistFirstName'].astype(str)
-Data['AssistLastName'] = Data['AssistLastName'].astype(str)
-
-print(Data.dtypes)
 Data1 = Data.where(Data['Minute'] < 16)
 first = Data1.dropna()
 Data2 = Data.where((Data['Minute'] < 31) & (Data['Minute'] > 15))
@@ -38,10 +31,10 @@ x_index = np.arange(len(x))
 
 palkit=[len(first.index), len(second.index), len(third.index), 
         len(fourth.index), len(fifth.index), len(sixth.index)]
-plt.bar(x, palkit, color=("skyblue"), align="center")
+plt.bar(x, palkit, color=("grey"), align="center")
 plt.xlabel("Peliminuutti")
 plt.ylabel("Ottelut")
-plt.title("HIFK:n Veikkausliigamaalit minuuttijaoilla 2015-2020")
+plt.title("HIFK:n päästetyt maalit Veikkausliigassa 2015-2020")
 plt.xticks(x_index, x, rotation=10)
 
 
