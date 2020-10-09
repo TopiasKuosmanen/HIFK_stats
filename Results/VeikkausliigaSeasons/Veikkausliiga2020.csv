@@ -1,10 +1,11 @@
 ﻿Id,Opponent,DateTime,Serie,Result,ResultCode,Stadion,Home_match,Referee,Attendance
-9067,Esport Honka,2.10.2020 18.30.00,Veikkausliiga,1-1,0,Bolt Arena,True,Ville Nevalainen,1517
+21156,KuPS,8.10.2020 18.30.00,Veikkausliiga,3-2,2,Savon Sanomat Areena,False,Ville Nevalainen,1578
+9067,FC Honka,2.10.2020 18.30.00,Veikkausliiga,1-1,0,Bolt Arena,True,Ville Nevalainen,1517
 9066,SJK,28.9.2020 18.30.00,Veikkausliiga,3-2,2,OmaSp Stadion,False,Petri Viljanen,2287
 9064,IFK Mariehamn,19.9.2020 17.00.00,Veikkausliiga,2-2,0,Bolt Arena,True,Oliver Reitala,1425
 9063,FC Inter,14.9.2020 18.30.00,Veikkausliiga,0-0,0,Bolt Arena,True,Antti Munukka,1502
 9062,HJK,10.9.2020 18.30.00,Veikkausliiga,4-3,1,Bolt Arena,True,Mattias Gestranius,2900
-11054,Esport Honka,1.9.2020 18.30.00,Veikkausliiga,0-1,1,Tapiolan urheilupuisto,False,Oskari Hämäläinen,1446
+11054,FC Honka,1.9.2020 18.30.00,Veikkausliiga,0-1,1,Tapiolan urheilupuisto,False,Oskari Hämäläinen,1446
 9059,TPS,26.8.2020 18.30.00,Veikkausliiga,1-0,2,Veritas Stadion,False,Dennis Antamo,3027
 12054,Haka,23.8.2020 18.30.00,Veikkausliiga,0-1,2,Bolt Arena,True,Toni Pohjoismäki,1672
 11053,FC Inter,14.8.2020 18.30.00,Veikkausliiga,3-2,2,Veritas Stadion,False,Petri Viljanen,1662

@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-Data = pd.read_csv('VeikkausliigaGoals2020.csv', encoding='latin-1', 
+Data = pd.read_csv('AllGoalsVeikkausliiga.csv', encoding='latin-1', 
                    usecols = ['Id', 'Winner', 'Penalty', 'FirstName', 
                               'LastName', 'Minute', 'AssistFirstName', 'AssistLastName'])
 
@@ -41,7 +41,7 @@ palkit=[len(first.index), len(second.index), len(third.index),
 plt.bar(x, palkit, color=("skyblue"), align="center")
 plt.xlabel("Peliminuutti")
 plt.ylabel("Ottelut")
-plt.title("HIFK:n Veikkausliigamaalit minuuttijaoilla 2015-2020")
+plt.title("HIFK:n Veikkausliigamaalit 2015-2020")
 plt.xticks(x_index, x, rotation=10)
 
 

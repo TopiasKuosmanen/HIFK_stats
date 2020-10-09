@@ -1,10 +1,11 @@
 ﻿Id,Opponent,DateTime,Serie,Result,ResultCode,Stadion,Home_match,Referee,Attendance
-9067,Esport Honka,2.10.2020 18.30.00,Veikkausliiga,1-1,0,Bolt Arena,True,Ville Nevalainen,1517
+21156,KuPS,8.10.2020 18.30.00,Veikkausliiga,3-2,2,Savon Sanomat Areena,False,Ville Nevalainen,1578
+9067,FC Honka,2.10.2020 18.30.00,Veikkausliiga,1-1,0,Bolt Arena,True,Ville Nevalainen,1517
 9066,SJK,28.9.2020 18.30.00,Veikkausliiga,3-2,2,OmaSp Stadion,False,Petri Viljanen,2287
 9064,IFK Mariehamn,19.9.2020 17.00.00,Veikkausliiga,2-2,0,Bolt Arena,True,Oliver Reitala,1425
 9063,FC Inter,14.9.2020 18.30.00,Veikkausliiga,0-0,0,Bolt Arena,True,Antti Munukka,1502
 9062,HJK,10.9.2020 18.30.00,Veikkausliiga,4-3,1,Bolt Arena,True,Mattias Gestranius,2900
-11054,Esport Honka,1.9.2020 18.30.00,Veikkausliiga,0-1,1,Tapiolan urheilupuisto,False,Oskari Hämäläinen,1446
+11054,FC Honka,1.9.2020 18.30.00,Veikkausliiga,0-1,1,Tapiolan urheilupuisto,False,Oskari Hämäläinen,1446
 9059,TPS,26.8.2020 18.30.00,Veikkausliiga,1-0,2,Veritas Stadion,False,Dennis Antamo,3027
 12054,Haka,23.8.2020 18.30.00,Veikkausliiga,0-1,2,Bolt Arena,True,Toni Pohjoismäki,1672
 11053,FC Inter,14.8.2020 18.30.00,Veikkausliiga,3-2,2,Veritas Stadion,False,Petri Viljanen,1662
@@ -29,7 +30,7 @@
 6031,KuPS,4.8.2019 17.00.00,Veikkausliiga,1-1,0,Savon Sanomat Areena,False,,2029
 6030,IFK Mariehamn,28.7.2019 17.00.00,Veikkausliiga,1-3,1,Wiklöf Holding Arena,False,,1403
 6029,RoPS,21.7.2019 17.00.00,Veikkausliiga,1-0,1,Telia 5G Areena,True,,2103
-6028,Esport Honka,13.7.2019 13.00.00,Veikkausliiga,3-0,2,Tapiolan urheilupuisto,False,,3512
+6028,FC Honka,13.7.2019 13.00.00,Veikkausliiga,3-0,2,Tapiolan urheilupuisto,False,,3512
 6027,HJK,4.7.2019 18.30.00,Veikkausliiga,0-2,2,Telia 5G Areena,True,,10256
 6026,FC Lahti,30.6.2019 18.30.00,Veikkausliiga,0-0,0,Lahden kisapuisto,False,,2784
 6025,SJK,18.6.2019 18.30.00,Veikkausliiga,1-0,1,Telia 5G Areena,True,,1879
@@ -39,7 +40,7 @@
 6021,KuPS,12.5.2019 18.30.00,Veikkausliiga,1-1,0,Telia 5G Areena,True,,1627
 6020,IFK Mariehamn,8.5.2019 18.30.00,Veikkausliiga,1-1,0,Telia 5G Areena,True,,1603
 6019,RoPS,3.5.2019 18.30.00,Veikkausliiga,1-0,2,Rovaniemen keskuskenttä,False,,1026
-6018,Esport Honka,29.4.2019 18.30.00,Veikkausliiga,2-0,1,Telia 5G Areena,True,,1901
+6018,FC Honka,29.4.2019 18.30.00,Veikkausliiga,2-0,1,Telia 5G Areena,True,,1901
 6017,HJK,23.4.2019 18.30.00,Veikkausliiga,1-1,0,Telia 5G Areena,False,,10251
 6016,FC Lahti,15.4.2019 18.30.00,Veikkausliiga,0-1,2,Telia 5G Areena,True,,1573
 6015,SJK,6.4.2019 15.00.00,Veikkausliiga,1-0,2,OmaSp Stadion,False,,2269

@@ -12,7 +12,7 @@ from functools import partial
 to_datetime_fmt = partial(pd.to_datetime, format='%d.%m.%Y %H.%M.%S')
 Data['DateTime'] = Data['DateTime'].apply(to_datetime_fmt)
 
-Data = Data.where(Data['Home_match'] == True)
+Data = Data.where(Data['Home_match'] == False)
 
 
 
@@ -54,7 +54,7 @@ plt.title("HIFK:n kotiottelut Veikkausliigassa 2020")
 plt.xticks(x_index, x, rotation=10)
 
 
-plt.text(1, 3.5, ('Pistekeskiarvo ' + str("%.2f" % PointsPerGame)), fontsize = 14)
+plt.text(1, 4.6, ('Pistekeskiarvo ' + str("%.2f" % PointsPerGame)), fontsize = 14)
 
 
 

@@ -53,7 +53,7 @@ plt.xlabel("")
 plt.ylabel("Ottelut")
 plt.title("HIFK:n Veikkausliiga-ottelut Kankkusen ja Keeneyn alaisuudessa")
 plt.xticks(x_index, x, rotation=10)
-plt.text(1, 5, ('Pistekeskiarvo ' + str("%.2f" % PointsPerGame)), fontsize = 14)
+plt.text(1, 5.5, ('Pistekeskiarvo ' + str("%.2f" % PointsPerGame)), fontsize = 14)
 
 
 
