@@ -12,7 +12,7 @@ from functools import partial
 to_datetime_fmt = partial(pd.to_datetime, format='%d.%m.%Y %H.%M.%S')
 Data['DateTime'] = Data['DateTime'].apply(to_datetime_fmt)
 
-Data = Data.where(Data['Home_match'] == False)
+Data = Data.where(Data['Home_match'] == True)
 
 
 
@@ -46,13 +46,13 @@ PointsPerGame = Points/Games
 
 
 x_index = np.arange(len(x))
-
+y = [0,5,10,15,20,25,30,35]
 plt.bar(x, palkit, color=("green","yellow","red"), align="center")
 plt.xlabel("")
 plt.ylabel("Ottelut")
-plt.title("HIFK:n vierasottelut Veikkausliigassa 2015-2020")
+plt.title("HIFK:n kotiottelut Veikkausliigassa 2015-2020")
 plt.xticks(x_index, x, rotation=10)
-
+plt.yticks(y)
 
 plt.text(-0.4, 31, ('Pistekeskiarvo ' + str("%.2f" % PointsPerGame)), fontsize = 14)
 

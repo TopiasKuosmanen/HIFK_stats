@@ -1,4 +1,7 @@
 ﻿Id,Opponent,DateTime,Serie,Result,ResultCode,Stadion,Home_match,Referee,Attendance
+22157,RoPS,22.10.2020 18.00.00,Veikkausliiga,1-0,1,Bolt Arena,True,Toni Pohjoismäki,841
+11056,HJK,18.10.2020 16.00.00,Veikkausliiga,3-0,2,Bolt Arena,False,Antti Munukka,2840
+11055,Ilves,15.10.2020 18.30.00,Veikkausliiga,1-2,2,Bolt Arena,True,Juuso Mikkola,1247
 21156,KuPS,8.10.2020 18.30.00,Veikkausliiga,3-2,2,Savon Sanomat Areena,False,Ville Nevalainen,1578
 9067,FC Honka,2.10.2020 18.30.00,Veikkausliiga,1-1,0,Bolt Arena,True,Ville Nevalainen,1517
 9066,SJK,28.9.2020 18.30.00,Veikkausliiga,3-2,2,OmaSp Stadion,False,Petri Viljanen,2287
