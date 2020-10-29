@@ -1,204 +1,203 @@
-﻿Id;OpponentId;DateTime;Serie;Result;Stadion;Home_match;Extra_time;Penalties;ResultCode;Attendance;RefereeId
-7;12;2019-12-15 12:15:00.000;Friendly;5-0       ;Talin jalkapallohalli;1;0;0;1;NULL;NULL
-6015;10;2019-04-06 15:00:00.000;Veikkausliiga;1-0;OmaSp Stadion;0;0;0;2;NULL;NULL
-6016;5;2019-04-15 18:30:00.000;Veikkausliiga;0-1;Telia 5G Areena;1;0;0;2;NULL;NULL
-6017;1;2019-04-23 18:30:00.000;Veikkausliiga;1.tammi;Telia 5G Areena;0;0;0;0;NULL;NULL
-6018;3;2019-04-29 18:30:00.000;Veikkausliiga;2-0;Telia 5G Areena;1;0;0;1;NULL;NULL
-6019;9;2019-05-03 18:30:00.000;Veikkausliiga;1-0;Rovaniemen keskuskenttä;0;0;0;2;NULL;NULL
-6020;6;2019-05-08 18:30:00.000;Veikkausliiga;1.tammi;Telia 5G Areena;1;0;0;0;NULL;NULL
-6021;8;2019-05-12 18:30:00.000;Veikkausliiga;1.tammi;Telia 5G Areena;1;0;0;0;NULL;NULL
-6022;18;2019-05-20 18:30:00.000;Veikkausliiga;1.tammi;Kokkolan keskuskenttä;0;0;0;0;NULL;NULL
-6023;4;2019-05-25 17:00:00.000;Veikkausliiga;1.tammi;Telia 5G Areena;1;0;0;0;NULL;NULL
-6024;23;2019-05-31 18:30:00.000;Veikkausliiga;2.tammi;Telia 5G Areena;1;0;0;1;NULL;NULL
+﻿7;12;2019-12-15 12:15:00.000;Friendly;5-0       ;Talin jalkapallohalli;1;0;0;1;NULL;NULL
+6015;10;2019-04-06 15:00:00.000;Veikkausliiga;1-0;OmaSp Stadion;0;0;0;2;2269;NULL
+6016;5;2019-04-15 18:30:00.000;Veikkausliiga;0-1;Telia 5G Areena;1;0;0;2;1573;NULL
+6017;1;2019-04-23 18:30:00.000;Veikkausliiga;1-1;Telia 5G Areena;0;0;0;0;10251;NULL
+6018;3;2019-04-29 18:30:00.000;Veikkausliiga;2-0;Telia 5G Areena;1;0;0;1;1901;NULL
+6019;9;2019-05-03 18:30:00.000;Veikkausliiga;1-0;Rovaniemen keskuskenttä;0;0;0;2;1026;NULL
+6020;6;2019-05-08 18:30:00.000;Veikkausliiga;1-1;Telia 5G Areena;1;0;0;0;1603;NULL
+6021;8;2019-05-12 18:30:00.000;Veikkausliiga;1-1;Telia 5G Areena;1;0;0;0;1627;NULL
+6022;18;2019-05-20 18:30:00.000;Veikkausliiga;1-1;Kokkolan keskuskenttä;0;0;0;0;1530;NULL
+6023;4;2019-05-25 17:00:00.000;Veikkausliiga;1-1;Telia 5G Areena;1;0;0;0;1627;NULL
+6024;23;2019-05-31 18:30:00.000;Veikkausliiga;2-1;Telia 5G Areena;1;0;0;1;1670;NULL
 6025;10;2019-06-18 18:30:00.000;Veikkausliiga;1-0;Telia 5G Areena;1;0;0;1;1879;NULL
 6026;5;2019-06-30 18:30:00.000;Veikkausliiga;0-0;Lahden kisapuisto;0;0;0;0;2784;NULL
 6027;1;2019-07-04 18:30:00.000;Veikkausliiga;0-2;Telia 5G Areena;1;0;0;2;10256;NULL
 6028;3;2019-07-13 13:00:00.000;Veikkausliiga;3-0;Tapiolan urheilupuisto;0;0;0;2;3512;NULL
 6029;9;2019-07-21 17:00:00.000;Veikkausliiga;1-0;Telia 5G Areena;1;0;0;1;2103;NULL
-6030;6;2019-07-28 17:00:00.000;Veikkausliiga;1.maalis;Wiklöf Holding Arena;0;0;0;1;1403;NULL
-6031;8;2019-08-04 17:00:00.000;Veikkausliiga;1.tammi;Savon Sanomat Areena;0;0;0;0;2029;NULL
-6032;18;2019-08-09 18:30:00.000;Veikkausliiga;3.helmi;Telia 5G Areena;1;0;0;1;2026;NULL
-6033;4;2019-08-16 18:30:00.000;Veikkausliiga;3.helmi;Veritas Stadion;0;0;0;2;3644;NULL
-6034;7;2019-08-23 18:30:00.000;Veikkausliiga;2.helmi;Telia 5G Areena;1;0;0;0;2085;NULL
-6035;7;2019-08-27 18:30:00.000;Veikkausliiga;3.tammi;Tammelan Stadion;0;0;0;2;5004;NULL
-6036;23;2019-08-31 17:00:00.000;Veikkausliiga;3.helmi;Elisa Stadion;0;0;0;2;1752;NULL
-6037;18;2019-09-13 18:30:00.000;Veikkausliiga;3.tammi;Telia 5G Areena;1;0;0;1;1525;NULL
+6030;6;2019-07-28 17:00:00.000;Veikkausliiga;1-3;Wiklöf Holding Arena;0;0;0;1;1403;NULL
+6031;8;2019-08-04 17:00:00.000;Veikkausliiga;1-1;Savon Sanomat Areena;0;0;0;0;2029;NULL
+6032;18;2019-08-09 18:30:00.000;Veikkausliiga;3-2;Telia 5G Areena;1;0;0;1;2026;NULL
+6033;4;2019-08-16 18:30:00.000;Veikkausliiga;3-2;Veritas Stadion;0;0;0;2;3644;NULL
+6034;7;2019-08-23 18:30:00.000;Veikkausliiga;2-2;Telia 5G Areena;1;0;0;0;2085;NULL
+6035;7;2019-08-27 18:30:00.000;Veikkausliiga;3-1;Tammelan Stadion;0;0;0;2;5004;NULL
+6036;23;2019-08-31 17:00:00.000;Veikkausliiga;3-2;Elisa Stadion;0;0;0;2;1752;NULL
+6037;18;2019-09-13 18:30:00.000;Veikkausliiga;3-1;Telia 5G Areena;1;0;0;1;1525;NULL
 6038;10;2019-09-21 18:00:00.000;Veikkausliiga;2-0;Telia 5G Areena;1;0;0;1;753;NULL
-6039;5;2019-09-28 14:00:00.000;Veikkausliiga;2.helmi;Lahden kisapuisto;0;0;0;0;1631;NULL
-6040;23;2019-10-06 16:00:00.000;Veikkausliiga;2.maalis;Elisa Stadion;0;0;0;1;1845;NULL
+6039;5;2019-09-28 14:00:00.000;Veikkausliiga;2-2;Lahden kisapuisto;0;0;0;0;1631;NULL
+6040;23;2019-10-06 16:00:00.000;Veikkausliiga;2-3;Elisa Stadion;0;0;0;1;1845;NULL
 6041;9;2019-10-19 15:00:00.000;Veikkausliiga;2-0;Telia 5G Areena;1;0;0;1;1540;NULL
-6048;5;2019-02-02 14:00:00.000;Suomen Cup;2.tammi;Mukkulan kuplahalli;0;0;0;2;NULL;NULL
-6049;3;2019-02-09 16:00:00.000;Suomen Cup;1.helmi;Talin jalkapallohalli;1;0;0;2;NULL;NULL
-6050;4;2019-02-23 13:00:00.000;Suomen Cup;1.maalis;Talin jalkapallohalli;1;0;0;2;NULL;NULL
+6048;5;2019-02-02 14:00:00.000;Suomen Cup;2-1;Mukkulan kuplahalli;0;0;0;2;NULL;NULL
+6049;3;2019-02-09 16:00:00.000;Suomen Cup;1-2;Talin jalkapallohalli;1;0;0;2;NULL;NULL
+6050;4;2019-02-23 13:00:00.000;Suomen Cup;1-3;Talin jalkapallohalli;1;0;0;2;NULL;NULL
 6051;6;2019-03-03 18:00:00.000;Suomen Cup;3-0;Eckeröhallen;0;0;0;2;NULL;NULL
 6053;2007;2020-03-08 15:00:00.000;Friendly;0-1;Side, Turkey;1;0;0;2;NULL;NULL
-6054;2006;2020-03-10 15:00:00.000;Friendly;1.helmi;Side, Turkey;1;0;0;2;NULL;NULL
+6054;2006;2020-03-10 15:00:00.000;Friendly;1-2;Side, Turkey;1;0;0;2;NULL;NULL
 8054;14;2020-06-17 18:30:00.000;Friendly;0-4;Tammisaaren Keskuskenttä;0;0;0;1;NULL;NULL
 9056;6;2020-07-26 18:30:00.000;Veikkausliiga;0-3;Wiklöf Holding Arena;0;0;0;1;1000;6
-9057;7;2020-08-01 17:00:00.000;Veikkausliiga;2.helmi;Tammelan Stadion;0;0;0;0;2384;10
+9057;7;2020-08-01 17:00:00.000;Veikkausliiga;2-2;Tammelan Stadion;0;0;0;0;2384;10
 9058;2;2020-08-05 18:30:00.000;Veikkausliiga;0-2;Tehtaan kenttä;0;0;0;1;1575;2
 9059;11;2020-08-26 18:30:00.000;Veikkausliiga;1-0;Veritas Stadion;0;0;0;2;3027;2
-9062;1;2020-09-10 18:30:00.000;Veikkausliiga;4.maalis;Bolt Arena;1;0;0;1;2900;1
+9062;1;2020-09-10 18:30:00.000;Veikkausliiga;4-3;Bolt Arena;1;0;0;1;2900;1
 9063;4;2020-09-14 18:30:00.000;Veikkausliiga;0-0;Bolt Arena;1;0;0;0;1502;8
-9064;6;2020-09-19 17:00:00.000;Veikkausliiga;2.helmi;Bolt Arena;1;0;0;0;1425;14
-9066;10;2020-09-28 18:30:00.000;Veikkausliiga;NULL;OmaSp Stadion;0;0;0;NULL;NULL;NULL
-9067;3;2020-10-02 18:30:00.000;Veikkausliiga;NULL;Bolt Arena;1;0;0;NULL;NULL;NULL
-10053;6;2020-06-24 13:50:00.000;Friendly;1.tammi;Bolt Arena;1;0;0;0;NULL;NULL
-11053;4;2020-08-14 18:30:00.000;Veikkausliiga;3.helmi;Veritas Stadion;0;0;0;2;1662;6
+9064;6;2020-09-19 17:00:00.000;Veikkausliiga;2-2;Bolt Arena;1;0;0;0;1425;14
+9066;10;2020-09-28 18:30:00.000;Veikkausliiga;3-2;OmaSp Stadion;0;0;0;2;2287;6
+9067;3;2020-10-02 18:30:00.000;Veikkausliiga;1-1;Bolt Arena;1;0;0;0;1517;7
+10053;6;2020-06-24 13:50:00.000;Friendly;1-1;Bolt Arena;1;0;0;0;NULL;NULL
+11053;4;2020-08-14 18:30:00.000;Veikkausliiga;3-2;Veritas Stadion;0;0;0;2;1662;6
 11054;3;2020-09-01 18:30:00.000;Veikkausliiga;0-1;Tapiolan urheilupuisto;0;0;0;1;1446;5
-11055;7;2020-10-15 18:30:00.000;Veikkausliiga;NULL;Bolt Arena;1;0;0;NULL;NULL;NULL
-11056;1;2020-10-18 16:00:00.000;Veikkausliiga;NULL;Bolt Arena;0;0;0;NULL;NULL;NULL
-11057;9;2020-10-22 18:30:00.000;Veikkausliiga;NULL;Bolt Arena;1;0;0;NULL;NULL;NULL
-11058;5;2020-10-25 14:00:00.000;Veikkausliiga;NULL;Lahden kisapuisto;0;0;0;NULL;NULL;NULL
+11055;7;2020-10-15 18:30:00.000;Veikkausliiga;1-2;Bolt Arena;1;0;0;2;1247;15
+11056;1;2020-10-18 16:00:00.000;Veikkausliiga;3-0;Bolt Arena;0;0;0;2;2840;8
 12053;11;2020-08-10 18:30:00.000;Veikkausliiga;2-0;Bolt Arena;1;0;0;1;1762;3
 12054;2;2020-08-23 18:30:00.000;Veikkausliiga;0-1;Bolt Arena;1;0;0;2;1672;12
 13053;1;2019-01-29 17:00:00.000;Suomen Cup;1-0;Talin jalkapallohalli;0;0;0;2;NULL;NULL
-15054;17;2018-01-19 18:00:00.000;Suomen Cup;1.tammi;Talin jalkapallohalli;1;0;0;0;NULL;NULL
-15055;3004;2018-02-04 13:00:00.000;Suomen Cup;1.huhti;Aviasport Areena;0;0;0;1;NULL;NULL
-15056;19;2018-02-09 18:00:00.000;Suomen Cup;3.tammi;Talin jalkapallohalli;1;0;0;1;NULL;NULL
-15057;3;2018-02-16 18:00:00.000;Suomen Cup;2.maalis;Talin jalkapallohalli;1;0;0;2;NULL;NULL
+15054;17;2018-01-19 18:00:00.000;Suomen Cup;1-1;Talin jalkapallohalli;1;0;0;0;NULL;NULL
+15055;3004;2018-02-04 13:00:00.000;Suomen Cup;1-4;Aviasport Areena;0;0;0;1;NULL;NULL
+15056;19;2018-02-09 18:00:00.000;Suomen Cup;3-1;Talin jalkapallohalli;1;0;0;1;NULL;NULL
+15057;3;2018-02-16 18:00:00.000;Suomen Cup;2-3;Talin jalkapallohalli;1;0;0;2;NULL;NULL
 15058;1;2018-02-24 14:00:00.000;Suomen Cup;1-0;Talin jalkapallohalli;0;0;0;2;NULL;NULL
-16054;4004;2017-01-21 12:00:00.000;Suomen Cup;2.helmi;Talin jalkapallohalli;1;0;0;0;NULL;NULL
+16054;4004;2017-01-21 12:00:00.000;Suomen Cup;2-2;Talin jalkapallohalli;1;0;0;0;NULL;NULL
 16055;3;2017-02-04 13:00:00.000;Suomen Cup;3-0;Esport Arena;0;0;0;2;NULL;NULL
 16056;17;2017-02-11 12:00:00.000;Suomen Cup;0-2;Talin jalkapallohalli;1;0;0;2;NULL;NULL
 16057;19;2017-02-18 16:00:00.000;Suomen Cup;3-0;Talin jalkapallohalli;1;0;0;1;NULL;NULL
 16058;1;2017-03-01 17:00:00.000;Suomen Cup;4-0;Talin jalkapallohalli;0;0;0;2;NULL;NULL
-16059;6;2015-04-19 16:00:00.000;Veikkausliiga;1.tammi;Wiklöf Holding Arena;0;0;0;0;0;NULL
-16060;1;2015-04-23 18:30:00.000;Veikkausliiga;1.tammi;Bolt Arena;1;0;0;0;10500;NULL
+16059;6;2015-04-19 16:00:00.000;Veikkausliiga;1-1;Wiklöf Holding Arena;0;0;0;0;0;NULL
+16060;1;2015-04-23 18:30:00.000;Veikkausliiga;1-1;Bolt Arena;1;0;0;0;10500;NULL
 16061;9;2015-04-29 18:30:00.000;Veikkausliiga;2-0;Rovaniemen keskuskenttä;0;0;0;2;0;NULL
 16062;10;2015-05-03 16:00:00.000;Veikkausliiga;2-0;OmaSp Stadion;0;0;0;2;0;NULL
-16063;4;2015-05-08 18:30:00.000;Veikkausliiga;2.tammi;Bolt Arena;1;0;0;1;0;NULL
-16064;7;2015-05-14 14:00:00.000;Veikkausliiga;1.tammi;Tammelan Stadion;0;0;0;0;0;NULL
-16065;16;2015-05-17 17:00:00.000;Veikkausliiga;3.helmi;Bolt Arena;1;0;0;1;0;NULL
-16066;19;2015-05-21 18:30:00.000;Veikkausliiga;1.helmi;Arto Tolsa Areena;0;0;0;1;0;NULL
-16067;8;2015-05-25 18:30:00.000;Veikkausliiga;1.tammi;Bolt Arena;1;0;0;0;0;NULL
+16063;4;2015-05-08 18:30:00.000;Veikkausliiga;2-1;Bolt Arena;1;0;0;1;0;NULL
+16064;7;2015-05-14 14:00:00.000;Veikkausliiga;1-1;Tammelan Stadion;0;0;0;0;0;NULL
+16065;16;2015-05-17 17:00:00.000;Veikkausliiga;3-2;Bolt Arena;1;0;0;1;0;NULL
+16066;19;2015-05-21 18:30:00.000;Veikkausliiga;1-2;Arto Tolsa Areena;0;0;0;1;0;NULL
+16067;8;2015-05-25 18:30:00.000;Veikkausliiga;1-1;Bolt Arena;1;0;0;0;0;NULL
 16068;5;2015-06-03 18:30:00.000;Veikkausliiga;2-0;Lahden kisapuisto;0;0;0;2;0;NULL
 16069;16;2015-06-07 14:00:00.000;Veikkausliiga;0-0;Bolt Arena;1;0;0;0;0;NULL
-16070;9;2015-06-16 18:30:00.000;Veikkausliiga;1.tammi;Bolt Arena;1;0;0;0;0;NULL
-16071;4;2015-06-22 18:30:00.000;Veikkausliiga;3.tammi;Veritas Stadion;0;0;0;2;0;NULL
+16070;9;2015-06-16 18:30:00.000;Veikkausliiga;1-1;Bolt Arena;1;0;0;0;0;NULL
+16071;4;2015-06-22 18:30:00.000;Veikkausliiga;3-1;Veritas Stadion;0;0;0;2;0;NULL
 16072;23;2015-06-25 18:30:00.000;Veikkausliiga;0-2;Elisa Stadion;0;0;0;1;0;NULL
-16073;6;2015-06-28 18:30:00.000;Veikkausliiga;1.tammi;Bolt Arena;1;0;0;0;0;NULL
-16074;1;2015-07-06 18:30:00.000;Veikkausliiga;1.tammi;Bolt Arena;0;0;0;0;10500;NULL
-16075;10;2015-07-19 18:30:00.000;Veikkausliiga;4.tammi;OmaSp Stadion;0;0;0;2;0;NULL
+16073;6;2015-06-28 18:30:00.000;Veikkausliiga;1-1;Bolt Arena;1;0;0;0;0;NULL
+16074;1;2015-07-06 18:30:00.000;Veikkausliiga;1-1;Bolt Arena;0;0;0;0;10500;NULL
+16075;10;2015-07-19 18:30:00.000;Veikkausliiga;4-1;OmaSp Stadion;0;0;0;2;0;NULL
 16076;16;2015-07-25 16:00:00.000;Veikkausliiga;0-2;Pietarsaaren keskuskenttä;0;0;0;1;0;NULL
-16077;7;2015-08-01 16:00:00.000;Veikkausliiga;2.helmi;Bolt Arena;1;0;0;0;0;NULL
+16077;7;2015-08-01 16:00:00.000;Veikkausliiga;2-2;Bolt Arena;1;0;0;0;0;NULL
 16078;8;2015-08-09 16:00:00.000;Veikkausliiga;2-0;Savon Sanomat Areena;0;0;0;2;0;NULL
-16079;9;2015-08-17 18:30:00.000;Veikkausliiga;1.tammi;Bolt Arena;1;0;0;0;0;NULL
-16080;1;2015-08-24 18:30:00.000;Veikkausliiga;1.tammi;Bolt Arena;0;0;0;0;10325;NULL
+16079;9;2015-08-17 18:30:00.000;Veikkausliiga;1-1;Bolt Arena;1;0;0;0;0;NULL
+16080;1;2015-08-24 18:30:00.000;Veikkausliiga;1-1;Bolt Arena;0;0;0;0;10325;NULL
 16081;23;2015-08-30 18:30:00.000;Veikkausliiga;3-0;Bolt Arena;1;0;0;1;0;NULL
 16082;6;2015-09-10 18:30:00.000;Veikkausliiga;1-0;Wiklöf Holding Arena;0;0;0;2;1247;NULL
-16083;8;2015-09-14 18:30:00.000;Veikkausliiga;1.maalis;Bolt Arena;1;0;0;2;2111;NULL
+16083;8;2015-09-14 18:30:00.000;Veikkausliiga;1-3;Bolt Arena;1;0;0;2;2111;NULL
 16084;23;2015-09-17 18:30:00.000;Veikkausliiga;0-3;Bolt Arena;1;0;0;2;0;NULL
 16085;5;2015-09-20 18:30:00.000;Veikkausliiga;0-5;Lahden kisapuisto;0;0;0;1;3095;NULL
 16086;19;2015-09-23 18:30:00.000;Veikkausliiga;0-0;Bolt Arena;1;0;0;0;2594;NULL
 16087;10;2015-09-28 18:30:00.000;Veikkausliiga;1-0;Bolt Arena;1;0;0;1;2644;NULL
-16089;5;2015-10-15 18:30:00.000;Veikkausliiga;3.maalis;Bolt Arena;1;0;0;0;3004;NULL
-16090;7;2015-10-18 18:30:00.000;Veikkausliiga;1.maalis;Tammelan Stadion;0;0;0;1;0;NULL
+16089;5;2015-10-15 18:30:00.000;Veikkausliiga;3-3;Bolt Arena;1;0;0;0;3004;NULL
+16090;7;2015-10-18 18:30:00.000;Veikkausliiga;1-3;Tammelan Stadion;0;0;0;1;0;NULL
 16091;4;2015-10-25 13:00:00.000;Veikkausliiga;2-0;Bolt Arena;1;0;0;1;0;NULL
 16092;4006;2016-04-09 16:00:00.000;Veikkausliiga;0-2;Myyrmäen jalkapallostasion;0;0;0;1;2471;NULL
-16093;4;2016-04-14 18:30:00.000;Veikkausliiga;1.helmi;Bolt Arena;1;0;0;2;2374;NULL
-16094;5;2016-04-18 18:30:00.000;Veikkausliiga;2.helmi;Lahden kisapuisto;0;0;0;0;1911;NULL
+16093;4;2016-04-14 18:30:00.000;Veikkausliiga;1-2;Bolt Arena;1;0;0;2;2374;NULL
+16094;5;2016-04-18 18:30:00.000;Veikkausliiga;2-2;Lahden kisapuisto;0;0;0;0;1911;NULL
 16095;4007;2016-04-25 18:30:00.000;Veikkausliiga;0-0;Bolt Arena;1;0;0;0;2218;NULL
-16096;8;2016-04-28 18:30:00.000;Veikkausliiga;3.helmi;Bolt Arena;1;0;0;1;2129;NULL
-16097;23;2016-05-04 18:30:00.000;Veikkausliiga;3.tammi;Elisa Stadion;0;0;0;2;1898;NULL
-16098;9;2016-05-09 18:00:00.000;Veikkausliiga;1.tammi;Bolt Arena;1;0;0;0;2649;NULL
-16099;10;2016-05-14 16:00:00.000;Veikkausliiga;2.tammi;OmaSp Stadion;0;0;0;2;1387;NULL
+16096;8;2016-04-28 18:30:00.000;Veikkausliiga;3-2;Bolt Arena;1;0;0;1;2129;NULL
+16097;23;2016-05-04 18:30:00.000;Veikkausliiga;3-1;Elisa Stadion;0;0;0;2;1898;NULL
+16098;9;2016-05-09 18:00:00.000;Veikkausliiga;1-1;Bolt Arena;1;0;0;0;2649;NULL
+16099;10;2016-05-14 16:00:00.000;Veikkausliiga;2-1;OmaSp Stadion;0;0;0;2;1387;NULL
 16100;6;2016-05-20 18:30:00.000;Veikkausliiga;0-1;Bolt Arena;1;0;0;2;2511;NULL
-16101;1;2016-05-26 18:30:00.000;Veikkausliiga;2.tammi;Bolt Arena;0;0;0;2;10500;NULL
+16101;1;2016-05-26 18:30:00.000;Veikkausliiga;2-1;Bolt Arena;0;0;0;2;10500;NULL
 16102;7;2016-05-29 18:30:00.000;Veikkausliiga;0-1;Bolt Arena;1;0;0;2;2455;NULL
-16103;4006;2016-06-09 18:30:00.000;Veikkausliiga;1.helmi;Bolt Arena;1;0;0;2;2816;NULL
+16103;4006;2016-06-09 18:30:00.000;Veikkausliiga;1-2;Bolt Arena;1;0;0;2;2816;NULL
 16104;4;2016-06-12 13:30:00.000;Veikkausliiga;1-0;Veritas Stadion;0;0;0;2;4760;NULL
-16105;5;2016-06-18 13:30:00.000;Veikkausliiga;2.helmi;Bolt Arena;1;0;0;0;2405;NULL
-16106;4007;2016-07-03 18:30:00.000;Veikkausliiga;1.helmi;Sauvosaaren urheilupuisto;0;0;0;1;1807;NULL
+16105;5;2016-06-18 13:30:00.000;Veikkausliiga;2-2;Bolt Arena;1;0;0;0;2405;NULL
+16106;4007;2016-07-03 18:30:00.000;Veikkausliiga;1-2;Sauvosaaren urheilupuisto;0;0;0;1;1807;NULL
 16107;8;2016-07-10 17:00:00.000;Veikkausliiga;1-0;Savon Sanomat Areena;0;0;0;2;2055;NULL
 16108;23;2016-07-18 18:30:00.000;Veikkausliiga;0-1;Bolt Arena;1;0;0;2;2918;NULL
 16109;9;2016-07-24 18:30:00.000;Veikkausliiga;1-0;Rovaniemen keskuskenttä;0;0;0;2;2011;NULL
-16110;10;2016-07-30 16:00:00.000;Veikkausliiga;1.tammi;Bolt Arena;1;0;0;0;3313;NULL
-16111;6;2016-08-07 18:30:00.000;Veikkausliiga;2.touko;Wiklöf Holding Arena;0;0;0;1;1462;NULL
+16110;10;2016-07-30 16:00:00.000;Veikkausliiga;1-1;Bolt Arena;1;0;0;0;3313;NULL
+16111;6;2016-08-07 18:30:00.000;Veikkausliiga;2-5;Wiklöf Holding Arena;0;0;0;1;1462;NULL
 16112;1;2016-08-10 18:30:00.000;Veikkausliiga;0-0;Bolt Arena;1;0;0;0;10500;NULL
-16113;7;2016-08-13 16:00:00.000;Veikkausliiga;3.tammi;Tammelan Stadion;0;0;0;2;2609;NULL
+16113;7;2016-08-13 16:00:00.000;Veikkausliiga;3-1;Tammelan Stadion;0;0;0;2;2609;NULL
 16114;6;2016-08-21 18:30:00.000;Veikkausliiga;1-0;Wiklöf Holding Arena;0;0;0;2;1205;NULL
 16118;23;2016-09-09 18:30:00.000;Veikkausliiga;0-1;Bolt Arena;1;0;0;2;2962;NULL
-16119;10;2016-08-27 16:00:00.000;Veikkausliiga;3.tammi;Bolt Arena;1;0;0;1;3297;NULL
+16119;10;2016-08-27 16:00:00.000;Veikkausliiga;3-1;Bolt Arena;1;0;0;1;3297;NULL
 16120;4;2016-09-12 18:30:00.000;Veikkausliiga;0-0;Veritas Stadion;0;0;0;0;2197;NULL
-16121;4007;2016-09-16 18:30:00.000;Veikkausliiga;3.tammi;Bolt Arena;1;0;0;1;2510;NULL
+16121;4007;2016-09-16 18:30:00.000;Veikkausliiga;3-1;Bolt Arena;1;0;0;1;2510;NULL
 16122;4006;2016-09-20 18:30:00.000;Veikkausliiga;0-2;Myyrmäen jalkapallostasion;0;0;0;1;1230;NULL
 16123;5;2016-09-26 18:30:00.000;Veikkausliiga;0-0;Lahden kisapuisto;0;0;0;0;2115;NULL
-16124;1;2016-09-30 18:30:00.000;Veikkausliiga;2.tammi;Bolt Arena;1;0;0;1;10171;NULL
-16125;7;2016-10-14 18:30:00.000;Veikkausliiga;1.tammi;Tammelan Stadion;0;0;0;0;4873;NULL
+16124;1;2016-09-30 18:30:00.000;Veikkausliiga;2-1;Bolt Arena;1;0;0;1;10171;NULL
+16125;7;2016-10-14 18:30:00.000;Veikkausliiga;1-1;Tammelan Stadion;0;0;0;0;4873;NULL
 16126;8;2016-10-17 18:30:00.000;Veikkausliiga;0-2;Bolt Arena;1;0;0;2;2887;NULL
 16127;9;2016-10-23 15:00:00.000;Veikkausliiga;0-0;Rovaniemen keskuskenttä;0;0;0;0;1285;NULL
-16144;8;2020-07-01 18:30:00.000;Veikkausliiga;0-3;Bolt Arena;1;0;0;2;NULL;8
-16145;9;2020-07-08 18:30:00.000;Veikkausliiga;0-1;Rovaniemen keskuskenttä;0;0;0;1;NULL;3
-16147;5;2020-07-18 17:00:00.000;Veikkausliiga;0-3;Bolt Arena;1;0;0;2;NULL;1
-16148;10;2020-07-22 18:30:00.000;Veikkausliiga;2.tammi;Bolt Arena;1;0;0;1;NULL;5
-16149;3;2020-01-26 15:00:00.000;Suomen Cup;1.tammi;Tapiolan urheilupuisto;0;0;0;0;0;NULL
-16150;1;2020-02-01 13:30:00.000;Suomen Cup;1.helmi;Talin jalkapallohalli;1;0;0;2;500;NULL
+16144;8;2020-07-01 18:30:00.000;Veikkausliiga;0-3;Bolt Arena;1;0;0;2;1854;8
+16145;9;2020-07-08 18:30:00.000;Veikkausliiga;0-1;Rovaniemen keskuskenttä;0;0;0;1;1397;3
+16147;5;2020-07-18 17:00:00.000;Veikkausliiga;0-3;Bolt Arena;1;0;0;2;1837;1
+16148;10;2020-07-22 18:30:00.000;Veikkausliiga;2-1;Bolt Arena;1;0;0;1;1721;5
+16149;3;2020-01-26 15:00:00.000;Suomen Cup;1-1;Tapiolan urheilupuisto;0;0;0;0;0;NULL
+16150;1;2020-02-01 13:30:00.000;Suomen Cup;1-2;Talin jalkapallohalli;1;0;0;2;500;NULL
 16151;11;2020-02-07 14:00:00.000;Suomen Cup;1-0;Lähitapiola-Areena;0;0;0;2;0;NULL
-16152;4;2020-02-14 18:00:00.000;Suomen Cup;1.tammi;Talin jalkapallohalli;1;0;0;0;500;NULL
-16153;6;2020-02-29 19:00:00.000;Suomen Cup;2.helmi;Eckeröhallen;0;0;0;0;400;NULL
+16152;4;2020-02-14 18:00:00.000;Suomen Cup;1-1;Talin jalkapallohalli;1;0;0;0;500;NULL
+16153;6;2020-02-29 19:00:00.000;Suomen Cup;2-2;Eckeröhallen;0;0;0;0;400;NULL
 17149;4007;2017-04-08 16:00:00.000;Veikkausliiga;0-0;Sauvosaaren urheilupuisto;0;0;0;0;405;NULL
 17150;4008;2017-04-15 16:00:00.000;Veikkausliiga;0-0;Bolt Arena;1;0;0;0;2329;NULL
-17151;5;2017-04-24 18:30:00.000;Veikkausliiga;1.helmi;Bolt Arena;1;0;0;2;2112;NULL
-17152;10;2017-04-28 20:00:00.000;Veikkausliiga;3.maalis;OmaSp Stadion;0;0;0;0;2433;NULL
+17151;5;2017-04-24 18:30:00.000;Veikkausliiga;1-2;Bolt Arena;1;0;0;2;2112;NULL
+17152;10;2017-04-28 20:00:00.000;Veikkausliiga;3-3;OmaSp Stadion;0;0;0;0;2433;NULL
 17153;9;2017-05-06 18:00:00.000;Veikkausliiga;1-0;Bolt Arena;1;0;0;1;2372;NULL
-17154;8;2017-05-12 18:30:00.000;Veikkausliiga;2.tammi;Savon Sanomat Areena;0;0;0;2;1788;NULL
-17155;6;2017-05-19 18:30:00.000;Veikkausliiga;1.tammi;Bolt Arena;1;0;0;0;2351;NULL
+17154;8;2017-05-12 18:30:00.000;Veikkausliiga;2-1;Savon Sanomat Areena;0;0;0;2;1788;NULL
+17155;6;2017-05-19 18:30:00.000;Veikkausliiga;1-1;Bolt Arena;1;0;0;0;2351;NULL
 17156;1;2017-05-23 18:30:00.000;Veikkausliiga;0-0;Bolt Arena;1;0;0;0;10500;NULL
 17157;4;2017-05-27 15:00:00.000;Veikkausliiga;0-2;Bolt Arena;1;0;0;2;2828;NULL
-17158;23;2017-05-31 18:30:00.000;Veikkausliiga;1.tammi;Elisa Stadion;0;0;0;0;1889;NULL
+17158;23;2017-05-31 18:30:00.000;Veikkausliiga;1-1;Elisa Stadion;0;0;0;0;1889;NULL
 17159;7;2017-06-04 18:30:00.000;Veikkausliiga;0-1;Bolt Arena;1;0;0;2;2302;NULL
 17160;10;2017-06-14 18:30:00.000;Veikkausliiga;0-2;Bolt Arena;1;0;0;2;3721;NULL
 17161;4007;2017-06-17 15:00:00.000;Veikkausliiga;0-2;Bolt Arena;1;0;0;2;2546;NULL
 17162;4008;2017-06-21 18:30:00.000;Veikkausliiga;0-3;Harjun stadion;0;0;0;1;1835;NULL
-17163;5;2017-06-27 18:30:00.000;Veikkausliiga;4.tammi;Lahden kisapuisto;0;0;0;2;2847;NULL
-17165;9;2017-07-08 17:00:00.000;Veikkausliiga;2.helmi;Rovaniemen keskuskenttä;0;0;0;0;2863;NULL
-18149;8;2017-07-17 18:30:00.000;Veikkausliiga;1.huhti;Bolt Arena;1;0;0;2;2617;NULL
-18150;6;2017-07-22 16:00:00.000;Veikkausliiga;1.tammi;Wiklöf Holding Arena;0;0;0;0;1809;NULL
+17163;5;2017-06-27 18:30:00.000;Veikkausliiga;4-1;Lahden kisapuisto;0;0;0;2;2847;NULL
+17165;9;2017-07-08 17:00:00.000;Veikkausliiga;2-2;Rovaniemen keskuskenttä;0;0;0;0;2863;NULL
+18149;8;2017-07-17 18:30:00.000;Veikkausliiga;1-4;Bolt Arena;1;0;0;2;2617;NULL
+18150;6;2017-07-22 16:00:00.000;Veikkausliiga;1-1;Wiklöf Holding Arena;0;0;0;0;1809;NULL
 18151;1;2017-07-31 18:30:00.000;Veikkausliiga;2-0;Bolt Arena;0;0;0;2;10500;NULL
 18152;4;2017-08-04 18:30:00.000;Veikkausliiga;3-0;Veritas Stadion;0;0;0;2;2311;NULL
-18153;23;2017-08-09 18:30:00.000;Veikkausliiga;2.tammi;Bolt Arena;1;0;0;1;2414;NULL
-18154;7;2017-08-14 18:30:00.000;Veikkausliiga;4.maalis;Tammelan Stadion;0;0;0;2;3620;NULL
+18153;23;2017-08-09 18:30:00.000;Veikkausliiga;2-1;Bolt Arena;1;0;0;1;2414;NULL
+18154;7;2017-08-14 18:30:00.000;Veikkausliiga;4-3;Tammelan Stadion;0;0;0;2;3620;NULL
 18155;9;2017-08-19 17:00:00.000;Veikkausliiga;1-0;Bolt Arena;1;0;0;1;4705;NULL
-18156;7;2017-08-26 17:00:00.000;Veikkausliiga;2.tammi;Tammelan Stadion;0;0;0;2;2796;NULL
+18156;7;2017-08-26 17:00:00.000;Veikkausliiga;2-1;Tammelan Stadion;0;0;0;2;2796;NULL
 18157;6;2017-09-08 18:30:00.000;Veikkausliiga;0-0;Bolt Arena;1;0;0;0;2317;NULL
-18158;1;2017-09-12 18:30:00.000;Veikkausliiga;2.tammi;Bolt Arena;0;0;0;2;8567;NULL
-18159;4008;2017-09-15 18:30:00.000;Veikkausliiga;1.tammi;Bolt Arena;1;0;0;0;2493;NULL
-18160;8;2017-09-24 18:30:00.000;Veikkausliiga;3.helmi;Savon Sanomat Areena;0;0;0;2;3188;NULL
-18161;23;2017-09-29 18:30:00.000;Veikkausliiga;1.helmi;Elisa Stadion;0;0;0;1;1789;NULL
+18158;1;2017-09-12 18:30:00.000;Veikkausliiga;2-1;Bolt Arena;0;0;0;2;8567;NULL
+18159;4008;2017-09-15 18:30:00.000;Veikkausliiga;1-1;Bolt Arena;1;0;0;0;2493;NULL
+18160;8;2017-09-24 18:30:00.000;Veikkausliiga;3-2;Savon Sanomat Areena;0;0;0;2;3188;NULL
+18161;23;2017-09-29 18:30:00.000;Veikkausliiga;1-2;Elisa Stadion;0;0;0;1;1789;NULL
 18162;4007;2017-10-12 18:30:00.000;Veikkausliiga;4-0;Bolt Arena;1;0;0;1;2427;NULL
-18163;4;2017-10-16 18:30:00.000;Veikkausliiga;4.tammi;Veritas Stadion;0;0;0;2;1442;NULL
-18164;10;2017-10-20 18:30:00.000;Veikkausliiga;2.helmi;Bolt Arena;1;0;0;0;2563;NULL
-18165;5;2017-10-28 14:00:00.000;Veikkausliiga;2.tammi;Lahden kisapuisto;0;0;0;2;2568;NULL
+18163;4;2017-10-16 18:30:00.000;Veikkausliiga;4-1;Veritas Stadion;0;0;0;2;1442;NULL
+18164;10;2017-10-20 18:30:00.000;Veikkausliiga;2-2;Bolt Arena;1;0;0;0;2563;NULL
+18165;5;2017-10-28 14:00:00.000;Veikkausliiga;2-1;Lahden kisapuisto;0;0;0;2;2568;NULL
 18166;3;2017-11-01 18:30:00.000;Liigakarsinta;0-0;Tapiolan urheilupuisto;0;0;0;0;2674;NULL
-18167;3;2017-11-04 14:00:00.000;Liigakarsinta;1.tammi;Bolt Arena;1;0;0;0;4158;NULL
-19149;2;2018-04-28 17:00:00.000;Ykkönen;1.helmi;Tehtaan kenttä;0;0;0;1;0;NULL
-19150;15;2018-05-09 18:30:00.000;Ykkönen;3.tammi;Raatin stadion;0;0;0;2;0;NULL
-19151;16;2018-05-14 18:30:00.000;Ykkönen;2.tammi;Bolt Arena;1;0;0;1;0;NULL
+18167;3;2017-11-04 14:00:00.000;Liigakarsinta;1-1;Bolt Arena;1;0;0;0;4158;NULL
+19149;2;2018-04-28 17:00:00.000;Ykkönen;1-2;Tehtaan kenttä;0;0;0;1;0;NULL
+19150;15;2018-05-09 18:30:00.000;Ykkönen;3-1;Raatin stadion;0;0;0;2;0;NULL
+19151;16;2018-05-14 18:30:00.000;Ykkönen;2-1;Bolt Arena;1;0;0;1;0;NULL
 19152;4009;2018-05-21 18:30:00.000;Ykkönen;2-0;Bolt Arena;1;0;0;1;0;NULL
 19153;14;2018-05-26 17:00:00.000;Ykkönen;0-0;Tammisaaren Keskuskenttä;0;0;0;0;0;NULL
 19154;4008;2018-06-01 18:30:00.000;Ykkönen;0-2;Harjun stadion;0;0;0;1;0;NULL
-19155;19;2018-06-09 17:00:00.000;Ykkönen;1.tammi;Bolt Arena;1;0;0;0;0;NULL
+19155;19;2018-06-09 17:00:00.000;Ykkönen;1-1;Bolt Arena;1;0;0;0;0;NULL
 19156;18;2018-06-13 18:30:00.000;Ykkönen;2-0;Bolt Arena;1;0;0;1;0;NULL
-19157;13;2018-06-20 18:30:00.000;Ykkönen;2.tammi;Kajaanin liikuntapuisto;0;0;0;2;0;NULL
+19157;13;2018-06-20 18:30:00.000;Ykkönen;2-1;Kajaanin liikuntapuisto;0;0;0;2;0;NULL
 19158;2;2018-06-26 18:30:00.000;Ykkönen;2-0;Bolt Arena;1;0;0;1;0;NULL
 19159;15;2018-06-30 15:00:00.000;Ykkönen;3-0;Bolt Arena;1;0;0;1;0;NULL
 19160;16;2018-07-09 18:30:00.000;Ykkönen;0-3;Pietarsaaren keskuskenttä;0;0;0;1;0;NULL
-19161;14;2018-07-21 17:00:00.000;Ykkönen;1.tammi;Bolt Arena;1;0;0;0;0;NULL
-19162;4008;2018-07-27 18:30:00.000;Ykkönen;2.helmi;Bolt Arena;1;0;0;0;0;NULL
-19163;19;2018-08-06 18:30:00.000;Ykkönen;2.tammi;Arto Tolsa Areena;0;0;0;2;0;NULL
-19164;18;2018-08-11 17:00:00.000;Ykkönen;2.helmi;Kokkolan keskuskenttä;0;0;0;0;0;NULL
-19165;13;2018-08-19 18:30:00.000;Ykkönen;2.helmi;Bolt Arena;1;0;0;0;0;NULL
-19166;4009;2018-08-23 18:30:00.000;Ykkönen;1.maalis;Bolt Arena;0;0;0;1;0;NULL
+19161;14;2018-07-21 17:00:00.000;Ykkönen;1-1;Bolt Arena;1;0;0;0;0;NULL
+19162;4008;2018-07-27 18:30:00.000;Ykkönen;2-2;Bolt Arena;1;0;0;0;0;NULL
+19163;19;2018-08-06 18:30:00.000;Ykkönen;2-1;Arto Tolsa Areena;0;0;0;2;0;NULL
+19164;18;2018-08-11 17:00:00.000;Ykkönen;2-2;Kokkolan keskuskenttä;0;0;0;0;0;NULL
+19165;13;2018-08-19 18:30:00.000;Ykkönen;2-2;Bolt Arena;1;0;0;0;0;NULL
+19166;4009;2018-08-23 18:30:00.000;Ykkönen;1-3;Bolt Arena;0;0;0;1;0;NULL
 19167;2;2018-08-27 18:30:00.000;Ykkönen;2-0;Bolt Arena;1;0;0;1;0;NULL
-19168;15;2018-09-01 17:00:00.000;Ykkönen;2.tammi;Raatin stadion;0;0;0;2;0;NULL
+19168;15;2018-09-01 17:00:00.000;Ykkönen;2-1;Raatin stadion;0;0;0;2;0;NULL
 19169;16;2018-09-10 18:30:00.000;Ykkönen;0-1;Bolt Arena;1;0;0;2;0;NULL
 19170;4009;2018-09-17 18:30:00.000;Ykkönen;3-0;Bolt Arena;1;0;0;1;0;NULL
 19171;14;2018-09-23 18:30:00.000;Ykkönen;0-3;Tammisaaren Keskuskenttä;0;0;0;1;0;NULL
 19172;4008;2018-09-29 17:00:00.000;Ykkönen;0-2;Harjun stadion;0;0;0;1;0;NULL
 19173;19;2018-10-06 17:00:00.000;Ykkönen;1-0;Bolt Arena;1;0;0;1;0;NULL
-19174;18;2018-10-20 14:00:00.000;Ykkönen;2.tammi;Bolt Arena;1;0;0;1;0;NULL
+19174;18;2018-10-20 14:00:00.000;Ykkönen;2-1;Bolt Arena;1;0;0;1;0;NULL
 19175;13;2018-10-27 13:00:00.000;Ykkönen;0-1;Kajaanin liikuntapuisto;0;0;0;1;0;NULL
 20149;19;2015-10-04 15:00:00.000;Veikkausliiga;1-0;Arto Tolsa Areena;0;0;0;2;2682;NULL
 21154;6;2019-10-23 18:30:00.000;Eurolopputurnaus;1-0;Wiklöf Holding Arena;0;1;1;2;925;3
-21156;8;2020-10-08 18:30:00.000;Veikkausliiga;NULL;Savon Sanomat Areena;0;0;0;NULL;NULL;NULL
+21156;8;2020-10-08 18:30:00.000;Veikkausliiga;3-2;Savon Sanomat Areena;0;0;0;2;1578;7
+22157;9;2020-10-22 18:00:00.000;Veikkausliiga;1-0;Bolt Arena;1;0;0;1;841;12
+24157;5;2020-11-04 18:30:00.000;Veikkausliiga;NULL;Lahden kisapuisto;0;0;0;NULL;NULL;NULL
