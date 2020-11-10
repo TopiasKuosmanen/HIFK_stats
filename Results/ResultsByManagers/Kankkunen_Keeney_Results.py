@@ -43,7 +43,7 @@ x = ['Voitot', 'Tasapelit', 'Tappiot']
 
 palkit=[int(data["Voitot"].values), int(data["Tasapelit"].values), int(data["Tappiot"].values)]
 
-y = [0,1,2,3,4,5,6,7,8]
+y = [0,2,4,6,8,10]
 
 
 x_index = np.arange(len(x))
@@ -54,7 +54,7 @@ plt.ylabel("Ottelut")
 plt.title("HIFK:n Veikkausliiga-ottelut Kankkusen ja Keeneyn alaisuudessa")
 plt.xticks(x_index, x, rotation=10)
 plt.yticks(y)
-plt.text(1, 7.4, ('Pistekeskiarvo ' + str("%.2f" % PointsPerGame)), fontsize = 14)
+plt.text(1, 8.3, ('Pistekeskiarvo ' + str("%.2f" % PointsPerGame)), fontsize = 14)
 
 
 

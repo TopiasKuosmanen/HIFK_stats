@@ -51,7 +51,7 @@ x_index = np.arange(len(x))
 plt.bar(x, palkit, color=("green","yellow","red"), align="center")
 plt.xlabel("")
 plt.ylabel("Ottelut")
-plt.title("HIFK:n Veikkausliiga-ottelut 2015-2020 (23.10.2020)")
+plt.title("HIFK:n Veikkausliiga-ottelut 2015-2020")
 plt.xticks(x_index, x, rotation=10)
 
 

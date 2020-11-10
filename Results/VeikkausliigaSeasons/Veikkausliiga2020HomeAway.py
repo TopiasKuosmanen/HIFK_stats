@@ -12,7 +12,7 @@ from functools import partial
 to_datetime_fmt = partial(pd.to_datetime, format='%d.%m.%Y %H.%M.%S')
 Data['DateTime'] = Data['DateTime'].apply(to_datetime_fmt)
 
-Data = Data.where(Data['Home_match'] == True)
+Data = Data.where(Data['Home_match'] == False)
 
 
 
